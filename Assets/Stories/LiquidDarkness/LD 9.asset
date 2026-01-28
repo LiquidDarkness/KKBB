@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de026e5a0771fbd49933004fa9fc52a8, type: 3}
+  m_Name: LD 9
+  m_EditorClassIdentifier: 
+  title: 
+  sceneName: 
+  levelThumbnail: {fileID: 21300000, guid: a6a7358d6c8833942904a4ee702ebead, type: 3}
+  background: {fileID: 21300000, guid: a6a7358d6c8833942904a4ee702ebead, type: 3}
+  content: {fileID: 8827648431139042896, guid: 72bd44ba9204cce48ae394226e3d32a4, type: 3}
+  ambience: {fileID: 8300000, guid: ed6ff60394e1fe74e9df57c49b835c8a, type: 3}

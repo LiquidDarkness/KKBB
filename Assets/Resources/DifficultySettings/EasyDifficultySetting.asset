@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6385bd46cdb9431448b3cc0408faa0eb, type: 3}
+  m_Name: EasyDifficultySetting
+  m_EditorClassIdentifier: 
+  baseGameSpeed: 2
+  maxSpeed: 4
+  chainDestructionProbability: 0.7
+  particleEffect: {fileID: 5753145595872108419, guid: 88ef3f525347117478876e7c56c7ed98, type: 3}
+  drops:
+  - prefab: {fileID: 2053659990884397355, guid: 93ecba752aa2acd4795a3c11a0e9c33e, type: 3}
+    weight: 50
+  - prefab: {fileID: 4571137713182151196, guid: bea8ab816797f5944941a8f0b948c0b0, type: 3}
+    weight: 40
+  - prefab: {fileID: 7206583613052520274, guid: e8ba99614bdbba741b54a9ff1005eb2b, type: 3}
+    weight: 80
+  - prefab: {fileID: 7206583613052520274, guid: 4da62be1a7f24f7488b561ac72b2ea2e, type: 3}
+    weight: 50
+  - prefab: {fileID: 7206583613052520274, guid: 70e9bae9e0703ab40bb4a39d4596de0f, type: 3}
+    weight: 70
+  - prefab: {fileID: 3935426488065718295, guid: e04d4c1667153a1499f17d190bd1b47a, type: 3}
+    weight: 100
+  - prefab: {fileID: 6930105602038542894, guid: a3aa14d9297be964abc3e5031a432427, type: 3}
+    weight: 100
+  - prefab: {fileID: 8983444278019405547, guid: dc6d1af1794a8554b9450997dc3b90e8, type: 3}
+    weight: 100
+  - prefab: {fileID: 3935426488065718295, guid: 47cbe9d0449134940b2bb4f7b860b07c, type: 3}
+    weight: 1400
+  - prefab: {fileID: 8983444278019405547, guid: b1d11a6c1e078184384af0533de45273, type: 3}
+    weight: 10

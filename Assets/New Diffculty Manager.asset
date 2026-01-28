@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efd4616150374ef4da421fd36b038403, type: 3}
+  m_Name: New Diffculty Manager
+  m_EditorClassIdentifier: 
+  dropDifficulties:
+  - {fileID: 11400000, guid: c5ca12f361cb5114c942637ab7925461, type: 2}
+  - {fileID: 11400000, guid: 45f20b440708ed2468821c6720ccc974, type: 2}
+  - {fileID: 11400000, guid: 604f473655c9e2748ba1823a348c28af, type: 2}
+  - {fileID: 11400000, guid: 66b9f254e4d0b24449d77afec98d9db2, type: 2}
+  difficultyLevel: {fileID: 11400000, guid: 017f443193e09d248a76445eee4d8d5b, type: 2}

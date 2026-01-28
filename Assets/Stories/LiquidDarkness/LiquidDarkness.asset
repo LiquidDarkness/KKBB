@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb397e06914f4774cb74c5d765ea9dde, type: 3}
+  m_Name: LiquidDarkness
+  m_EditorClassIdentifier: 
+  chosenScenario: {fileID: 0}
+  stories:
+  - backgroundSprite: {fileID: 21300000, guid: b846c3f817d0ab64bb6461877045c1ac, type: 3}
+    level: {fileID: 11400000, guid: 16363931ffa0f5f448fcc8dc820f7f71, type: 2}
+  - backgroundSprite: {fileID: 21300000, guid: 537c831eaa768d94d82610cf10173f46, type: 3}
+    level: {fileID: 11400000, guid: 68e95aa0b7c783f48ae9ec4e5841692b, type: 2}
+  - backgroundSprite: {fileID: 21300000, guid: bc6c116f9794c4b468ad2119ea006a74, type: 3}
+    level: {fileID: 11400000, guid: 3a22fc40800123440bf984b35ffa5f7a, type: 2}
+  - backgroundSprite: {fileID: 21300000, guid: 0b969eadb1a6e3547832d94515d71300, type: 3}
+    level: {fileID: 11400000, guid: 3cdec912ca74d2c4a81f0387d159c3a5, type: 2}
+  - backgroundSprite: {fileID: 21300000, guid: 7644291ca02cebc479f9eaa41f738df9, type: 3}
+    level: {fileID: 11400000, guid: 0d54fbc03385dc147a0538d1b3a380b1, type: 2}
+  - backgroundSprite: {fileID: 21300000, guid: f636b80e9d5b4324391ce3744d79fe7c, type: 3}
+    level: {fileID: 11400000, guid: 6d9bfd36549265246bad712dbe398fa6, type: 2}
+  - backgroundSprite: {fileID: 21300000, guid: 7e289283773763a41b995766a0b7fa0c, type: 3}
+    level: {fileID: 11400000, guid: 7116affbcaa214e439f69481df656051, type: 2}
+  - backgroundSprite: {fileID: 21300000, guid: 116eafe6f133e8041a5e5c7bb403d0c6, type: 3}
+    level: {fileID: 11400000, guid: 86284740a11583644b07173f1550917c, type: 2}
+  - backgroundSprite: {fileID: 21300000, guid: a6a7358d6c8833942904a4ee702ebead, type: 3}
+    level: {fileID: 11400000, guid: aedae2c16e677f442afc10d8437a2310, type: 2}
+  - backgroundSprite: {fileID: 21300000, guid: e4a3e151b5422824aafa898b8f486880, type: 3}
+    level: {fileID: 11400000, guid: 450509ef916562144aca44906a95372c, type: 2}
+  - backgroundSprite: {fileID: 21300000, guid: 4a9c5fb698ac7314f939c42ff3658c8a, type: 3}
+    level: {fileID: 11400000, guid: 13d8bd6aa09811f49b9187104e4fc10b, type: 2}
+  - backgroundSprite: {fileID: 21300000, guid: adcf195b83fc3724ab5ebd51357f12cf, type: 3}
+    level: {fileID: 11400000, guid: ed17cbc324009bd43b78066e6fda124d, type: 2}
+  - backgroundSprite: {fileID: 21300000, guid: ae6be4686bdedd441a086f24f4c81f91, type: 3}
+    level: {fileID: 11400000, guid: e97ede5ba77305c40b4cfb7bf06b2f5f, type: 2}
+  - backgroundSprite: {fileID: 21300000, guid: 7a13d54fdf0642549b374573a7405c8a, type: 3}
+    level: {fileID: 11400000, guid: 06d4f8ec3b4f8724bbad3512c91807cc, type: 2}

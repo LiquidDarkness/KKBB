@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f9cc5717c320346af8a8eefc32ca4f, type: 3}
+  m_Name: New Scene Loader
+  m_EditorClassIdentifier: 
+  currentLvl: {fileID: 11400000, guid: 76e20662c26c8734698d39f790c7cb65, type: 2}
+  loadscreenPrefab: {fileID: 8435547208402558207, guid: edd37fb5deea30241831f73ba0e2016a, type: 3}
+  loadscreenInstance: {fileID: 0}
+  levels:
+  - {fileID: 102900000, guid: 775de8ae4435b6c4a86b0aedb4ba57f1, type: 3}
+  - {fileID: 102900000, guid: fa900bf841b0a334db469fc70ea1bc5d, type: 3}
+  - {fileID: 102900000, guid: d2bce77272bfcee4ea91da0728aaab6f, type: 3}
+  - {fileID: 102900000, guid: c226ab05742f06143852748153f1c232, type: 3}
+  - {fileID: 102900000, guid: c867a85955aa71f4f8a5a59813d78957, type: 3}
+  - {fileID: 102900000, guid: 782755703802cbd40a9502585dbd0cd5, type: 3}
+  - {fileID: 102900000, guid: a569ce639614ed84daba244405b3c710, type: 3}
+  - {fileID: 102900000, guid: f61a96348671f8941b22eca868b9386a, type: 3}

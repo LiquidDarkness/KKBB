@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb397e06914f4774cb74c5d765ea9dde, type: 3}
+  m_Name: SimbaBimba
+  m_EditorClassIdentifier: 
+  stories:
+  - backgroundSprite: {fileID: 21300000, guid: c6862652c1171ad40a6660cf95656327, type: 3}
+    level: {fileID: 11400000, guid: aa65cebe0c4ae4244a09caef8a3b2e63, type: 2}
+  - backgroundSprite: {fileID: 21300000, guid: f32688387ffe3bb4db026395d73ad43a, type: 3}
+    level: {fileID: 11400000, guid: d3667d38add5f49409b83a78ef317493, type: 2}
+  - backgroundSprite: {fileID: 21300000, guid: 9c2a40fa9cb95b64fbcf94cc84e8f6c6, type: 3}
+    level: {fileID: 11400000, guid: 9261075ff982ec440b9363d6166add83, type: 2}
+  - backgroundSprite: {fileID: 21300000, guid: 97a0834f019815f47b567f65effa562b, type: 3}
+    level: {fileID: 11400000, guid: 41201e49bdd8fac47a4543b1291df14f, type: 2}
+  - backgroundSprite: {fileID: 21300000, guid: a8a053c238bf7da46897d6e09f5d1562, type: 3}
+    level: {fileID: 11400000, guid: 9b7d1a5016c8b734fb023e8d171de490, type: 2}
+  - backgroundSprite: {fileID: 21300000, guid: 40739475cb5935744b31ddb18b520e1a, type: 3}
+    level: {fileID: 11400000, guid: 4201a01eb1a0c754f98e2827ef8f813d, type: 2}
+  - backgroundSprite: {fileID: 21300000, guid: c9c52af2f7f24194f848c69a22c75ad5, type: 3}
+    level: {fileID: 11400000, guid: 2c7760642b33d6942b756b5ad08cfc1f, type: 2}
+  - backgroundSprite: {fileID: 21300000, guid: 55abc372cffbee34b9054e79e494f258, type: 3}
+    level: {fileID: 11400000, guid: 55d7ec44406be5740abb463853a38063, type: 2}
+  - backgroundSprite: {fileID: 21300000, guid: 210eb42598f75064f9cd7085a86904c2, type: 3}
+    level: {fileID: 11400000, guid: b0bd7297f4188b041a49cbbf654efb58, type: 2}
+  - backgroundSprite: {fileID: 21300000, guid: 8356ca34467504048b1ca49828b7eb8d, type: 3}
+    level: {fileID: 11400000, guid: 96a4eca28b0cea049a010ed8730edbb2, type: 2}
+  - backgroundSprite: {fileID: 21300000, guid: 6a5b5a4fa8e220e479b508010c0a4af0, type: 3}
+    level: {fileID: 11400000, guid: 7bac6f75be29f0a40ace657de340b471, type: 2}
+  - backgroundSprite: {fileID: 21300000, guid: b0ed2790438839f46ba66d13a737deb2, type: 3}
+    level: {fileID: 11400000, guid: 9fbb3ace58ed00344b32bd2092cf790e, type: 2}
