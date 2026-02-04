@@ -51,12 +51,7 @@ public class BallMovement : MonoBehaviour
     private void Update()
     {
         ApplyFakeGravity();
-        SetLaunchBool();
-
-        if (canBeLaunched && Input.GetButton("LaunchBall"))
-        {
-            LaunchBall();
-        }
+        SetLaunchBool(); // TODO: wtf
     }
 
     private void ApplyFakeGravity()

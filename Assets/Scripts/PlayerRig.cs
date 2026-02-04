@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerRig : MonoBehaviour
@@ -18,14 +19,33 @@ public class PlayerRig : MonoBehaviour
         // Subskrypcje eventów
         PaddleChanger.OnPaddleChanged += HandlePaddleChanged;
         PlayerHealth.OnHealthLost += HandleHealthLost;
-        Level.OnLevelCompleted += LockToPaddle;
+        Level.OnLevelCompleted += HandleLevelCompleted;
+    }
+
+    private void Update()
+    {
+        if (ball.canBeLaunched && Input.GetButton("LaunchBall"))
+        {
+            LaunchBall();
+        }
     }
 
     private void OnDestroy()
     {
         PaddleChanger.OnPaddleChanged -= HandlePaddleChanged;
         PlayerHealth.OnHealthLost -= HandleHealthLost;
-        Level.OnLevelCompleted -= LockToPaddle;
+        Level.OnLevelCompleted -= HandleLevelCompleted;
+    }
+
+    private void HandleLevelCompleted()
+    {
+        LockToPaddle();
+        SetDropPickup(false);
+    }
+
+    private void SetDropPickup(bool allowPickups)
+    {
+        paddle.GetComponent<Collider2D>().enabled = allowPickups;
     }
 
     private void HandleHealthLost()
@@ -41,6 +61,7 @@ public class PlayerRig : MonoBehaviour
     public void LaunchBall()
     {
         ball.LaunchBall();
+        SetDropPickup(true);
     }
 
     public void LockToPaddle()
