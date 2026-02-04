@@ -23,6 +23,9 @@ public class TranslationMediator : MonoBehaviour
         else
         {
             Debug.LogWarning($"Key not found in storyDataDictionary: {key}");
+#if UNITY_EDITOR
+            onTranslationSet.Invoke(key);
+#endif
         }
     }
 

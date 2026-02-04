@@ -30,17 +30,14 @@ public class StoryManager : MonoBehaviour, ICoreReferencer
 
     public void Awake()
     {
+        MainManager.OnStoryLoaded += DisplayStoryContent;
+
         ShowEndingButton(false);
         Level.OnLevelCompleted += Progress;
         if (!boink.activeInHierarchy)
         {
             boink.SetActive(true);
         }
-    }
-
-    public void Start()
-    {
-        DisplayStoryContent();
     }
 
     public void Update()

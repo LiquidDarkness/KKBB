@@ -29,6 +29,7 @@ public class MainManager : MonoBehaviour
     public TypeDistinguisher currentLevel;
     public TypeDistinguisher scenarioIndex;
     public static event Action OnLevelLoaded;
+    public static event Action OnStoryLoaded;
 
     //private StoryManager storyManager;
 
@@ -53,7 +54,7 @@ public class MainManager : MonoBehaviour
     {
         levels.Clear();
         chosenScenario = scenarioManager.CurrentScenarioSettings;
-
+        Debug.Log($"[{nameof(MainManager)}] chosenScenario: {chosenScenario.name}");
         foreach (var item in chosenScenario.stories)
         {
             levels.Add(item.level);
@@ -84,6 +85,8 @@ public class MainManager : MonoBehaviour
         Debug.Log($"Reading from key: {scenarioManager.chosenScenario.PrefsKey}");
         */
         scenarioManager.chosenScenario.LogValue();
+
+        OnStoryLoaded?.Invoke();
     }
 
     public void SeekReference()

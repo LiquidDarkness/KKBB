@@ -7,5 +7,6 @@ public class LevelData : ScriptableObject
     public Sprite background;
 
     public GameObject content;
-    public AudioClip ambience;
+    public AudioClip intro;
+    public AudioClip loop;
 }

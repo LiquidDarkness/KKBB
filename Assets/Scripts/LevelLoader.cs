@@ -22,10 +22,18 @@ public class LevelLoader : MonoBehaviour
             {
                 Destroy(child.gameObject);
             }
-
         }
+
         StartCoroutine(RandomBlockInstantiotor(Instantiate(levelToLoad.content, container)));
-        coreReferences.musicSwitcher.SwitchAudio(levelToLoad.ambience);
+
+        if (levelToLoad.intro != null)
+        {
+            coreReferences.musicSwitcher.SwitchToSequence(levelToLoad.intro, levelToLoad.loop);
+        }
+        else
+        {
+            coreReferences.musicSwitcher.SwitchAudio(levelToLoad.loop);
+        }
     }
 
     private IEnumerator RandomBlockInstantiotor(GameObject blockFormation)

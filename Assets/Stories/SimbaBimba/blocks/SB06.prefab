@@ -32,8 +32,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 49
+  m_Father: {fileID: 8887187741636568674}
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &989796707715669374
 SpriteRenderer:
@@ -104,6 +104,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &3875964338869526381
 CircleCollider2D:
@@ -167,7 +169,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
+  m_Father: {fileID: 5068832992444017281}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5101848154657360951
@@ -239,6 +241,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1066465797464447268
 CircleCollider2D:
@@ -302,8 +306,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 33
+  m_Father: {fileID: 3733360975575169352}
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2959019908967278654
 SpriteRenderer:
@@ -374,6 +378,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &8660916459547761345
 CircleCollider2D:
@@ -437,8 +443,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 77
+  m_Father: {fileID: 8220622315043841499}
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5792888159883785397
 SpriteRenderer:
@@ -509,6 +515,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &6989280590265187548
 CircleCollider2D:
@@ -540,6 +548,105 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   block: {fileID: 6042362128527105553}
   diffcultyManager: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+--- !u!1 &398721016595330704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8887187741636568674}
+  m_Layer: 0
+  m_Name: red
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &8887187741636568674
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398721016595330704}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 9075232091052080253}
+  - {fileID: 7890420315709114202}
+  - {fileID: 4875302731118412524}
+  - {fileID: 7219045592804982604}
+  - {fileID: 8283595192285384494}
+  - {fileID: 3687646700385785638}
+  - {fileID: 7185444321247651005}
+  - {fileID: 8786794189950822373}
+  - {fileID: 8003701144634304269}
+  - {fileID: 6062111460185907484}
+  - {fileID: 398124682313521194}
+  - {fileID: 1155522921135980074}
+  - {fileID: 886013861534923523}
+  - {fileID: 698589367137537247}
+  - {fileID: 5048854775150964581}
+  - {fileID: 8852890871585312424}
+  - {fileID: 5187416867604185474}
+  m_Father: {fileID: 2828778189895891889}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &616023789204654755
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3733360975575169352}
+  m_Layer: 0
+  m_Name: yellow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &3733360975575169352
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616023789204654755}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1596866482838524301}
+  - {fileID: 1850987449028049083}
+  - {fileID: 7008659421665683125}
+  - {fileID: 5860684124798165432}
+  - {fileID: 8698770853404979763}
+  - {fileID: 2049691482005382123}
+  - {fileID: 5951800870005506827}
+  - {fileID: 7175010698398217875}
+  - {fileID: 3072522337320159853}
+  - {fileID: 8117065922074953902}
+  - {fileID: 7389594301594870656}
+  - {fileID: 2390395117250449801}
+  - {fileID: 4854129953347964418}
+  - {fileID: 539440194251935679}
+  - {fileID: 5126756838947554572}
+  - {fileID: 3084333766254688596}
+  - {fileID: 2219644524398125512}
+  - {fileID: 3698103281016829691}
+  - {fileID: 4096249599669695315}
+  - {fileID: 951344459518082695}
+  m_Father: {fileID: 2828778189895891889}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &714332870377705190
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,8 +679,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 56
+  m_Father: {fileID: 8220622315043841499}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6359836570967101690
 SpriteRenderer:
@@ -644,6 +751,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &6570421288869414726
 CircleCollider2D:
@@ -707,8 +816,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 81
+  m_Father: {fileID: 8220622315043841499}
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4858355361578627427
 SpriteRenderer:
@@ -779,6 +888,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &8281471984477052147
 CircleCollider2D:
@@ -842,8 +953,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 16
+  m_Father: {fileID: 3733360975575169352}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &350330386140767452
 SpriteRenderer:
@@ -914,6 +1025,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &571566481878322250
 CircleCollider2D:
@@ -977,8 +1090,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 59
+  m_Father: {fileID: 8220622315043841499}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &892815502763561622
 SpriteRenderer:
@@ -1049,6 +1162,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &3309700623506700199
 CircleCollider2D:
@@ -1112,8 +1227,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 47
+  m_Father: {fileID: 8887187741636568674}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &9159959679808143254
 SpriteRenderer:
@@ -1184,6 +1299,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &6009342718935338344
 CircleCollider2D:
@@ -1247,8 +1364,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 45
+  m_Father: {fileID: 8887187741636568674}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3397576885645307559
 SpriteRenderer:
@@ -1319,6 +1436,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1631825055635320347
 CircleCollider2D:
@@ -1382,8 +1501,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 62
+  m_Father: {fileID: 8220622315043841499}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3152741763579317075
 SpriteRenderer:
@@ -1454,6 +1573,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &8978141277992499903
 CircleCollider2D:
@@ -1517,8 +1638,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 78
+  m_Father: {fileID: 8220622315043841499}
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5931779289345148127
 SpriteRenderer:
@@ -1589,6 +1710,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1577085223112710648
 CircleCollider2D:
@@ -1652,8 +1775,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 44
+  m_Father: {fileID: 8887187741636568674}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8050068210021274226
 SpriteRenderer:
@@ -1724,6 +1847,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &4705164073958075282
 CircleCollider2D:
@@ -1787,8 +1912,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 71
+  m_Father: {fileID: 8220622315043841499}
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &497039791768506040
 SpriteRenderer:
@@ -1859,6 +1984,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &43039639221722039
 CircleCollider2D:
@@ -1922,8 +2049,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 57
+  m_Father: {fileID: 8220622315043841499}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6655387958729419650
 SpriteRenderer:
@@ -1994,6 +2121,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1638054827998713281
 CircleCollider2D:
@@ -2057,8 +2186,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 61
+  m_Father: {fileID: 8220622315043841499}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5799002848986935385
 SpriteRenderer:
@@ -2129,6 +2258,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &5019531729393868695
 CircleCollider2D:
@@ -2192,8 +2323,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 53
+  m_Father: {fileID: 8220622315043841499}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6893996767074547834
 SpriteRenderer:
@@ -2264,6 +2395,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &9199645602503781320
 CircleCollider2D:
@@ -2327,8 +2460,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 23
+  m_Father: {fileID: 3733360975575169352}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4821622867947619712
 SpriteRenderer:
@@ -2399,6 +2532,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &952352317630626880
 CircleCollider2D:
@@ -2462,8 +2597,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 80
+  m_Father: {fileID: 8220622315043841499}
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6539163895745346460
 SpriteRenderer:
@@ -2534,6 +2669,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &4883888406121952350
 CircleCollider2D:
@@ -2597,8 +2734,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 35
+  m_Father: {fileID: 8887187741636568674}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3059253561461953698
 SpriteRenderer:
@@ -2669,6 +2806,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1119913459311973068
 CircleCollider2D:
@@ -2732,8 +2871,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 82
+  m_Father: {fileID: 8220622315043841499}
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4159834365470761454
 SpriteRenderer:
@@ -2804,6 +2943,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &2417404755347413663
 CircleCollider2D:
@@ -2867,8 +3008,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 43
+  m_Father: {fileID: 8887187741636568674}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6067012585197300215
 SpriteRenderer:
@@ -2939,6 +3080,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &6484508814487293296
 CircleCollider2D:
@@ -3002,8 +3145,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 30
+  m_Father: {fileID: 3733360975575169352}
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1079757887139011417
 SpriteRenderer:
@@ -3074,6 +3217,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &2987928170850276531
 CircleCollider2D:
@@ -3137,8 +3282,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 66
+  m_Father: {fileID: 8220622315043841499}
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2916003074141277758
 SpriteRenderer:
@@ -3209,6 +3354,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &8331293131646451717
 CircleCollider2D:
@@ -3272,7 +3419,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
+  m_Father: {fileID: 5068832992444017281}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &274660791060570615
@@ -3344,6 +3491,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &3281848489990000783
 CircleCollider2D:
@@ -3407,8 +3556,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 36
+  m_Father: {fileID: 8887187741636568674}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5209107436427408726
 SpriteRenderer:
@@ -3479,6 +3628,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &4712571700440696001
 CircleCollider2D:
@@ -3542,8 +3693,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 48
+  m_Father: {fileID: 8887187741636568674}
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &552294977752650726
 SpriteRenderer:
@@ -3614,6 +3765,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &8170525592607245973
 CircleCollider2D:
@@ -3677,8 +3830,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 63
+  m_Father: {fileID: 8220622315043841499}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8879694459358286590
 SpriteRenderer:
@@ -3749,6 +3902,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &4503199128699535212
 CircleCollider2D:
@@ -3812,8 +3967,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 74
+  m_Father: {fileID: 8220622315043841499}
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4123508257978351657
 SpriteRenderer:
@@ -3884,6 +4039,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &9164496825586692938
 CircleCollider2D:
@@ -3925,6 +4082,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2828778189895891889}
   - component: {fileID: 2828778189895891890}
+  - component: {fileID: 2045293845291027986}
   m_Layer: 0
   m_Name: SB06
   m_TagString: Untagged
@@ -3944,93 +4102,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2828778189679404990}
-  - {fileID: 1802195016914688698}
-  - {fileID: 5427009431995759383}
-  - {fileID: 2622301941681556559}
-  - {fileID: 4465379521076488897}
-  - {fileID: 207896682868553271}
-  - {fileID: 1051816160719217165}
-  - {fileID: 8231425921576386283}
-  - {fileID: 3489601903605715021}
-  - {fileID: 3160131925450470288}
-  - {fileID: 889977212504959588}
-  - {fileID: 3716483560350932976}
-  - {fileID: 6863199792476521252}
-  - {fileID: 1304523214751422528}
-  - {fileID: 1596866482838524301}
-  - {fileID: 1850987449028049083}
-  - {fileID: 7008659421665683125}
-  - {fileID: 5860684124798165432}
-  - {fileID: 8698770853404979763}
-  - {fileID: 2049691482005382123}
-  - {fileID: 5951800870005506827}
-  - {fileID: 7175010698398217875}
-  - {fileID: 3072522337320159853}
-  - {fileID: 8117065922074953902}
-  - {fileID: 7389594301594870656}
-  - {fileID: 2390395117250449801}
-  - {fileID: 4854129953347964418}
-  - {fileID: 539440194251935679}
-  - {fileID: 5126756838947554572}
-  - {fileID: 3084333766254688596}
-  - {fileID: 2219644524398125512}
-  - {fileID: 3698103281016829691}
-  - {fileID: 4096249599669695315}
-  - {fileID: 951344459518082695}
-  - {fileID: 9075232091052080253}
-  - {fileID: 7890420315709114202}
-  - {fileID: 4875302731118412524}
-  - {fileID: 7219045592804982604}
-  - {fileID: 8283595192285384494}
-  - {fileID: 3687646700385785638}
-  - {fileID: 7185444321247651005}
-  - {fileID: 8786794189950822373}
-  - {fileID: 8003701144634304269}
-  - {fileID: 6062111460185907484}
-  - {fileID: 398124682313521194}
-  - {fileID: 1155522921135980074}
-  - {fileID: 886013861534923523}
-  - {fileID: 698589367137537247}
-  - {fileID: 5048854775150964581}
-  - {fileID: 8852890871585312424}
-  - {fileID: 5187416867604185474}
-  - {fileID: 4217504256102886383}
-  - {fileID: 7662097498653797346}
-  - {fileID: 4169309418081214912}
-  - {fileID: 7598043924246479264}
-  - {fileID: 3258757939677698512}
-  - {fileID: 2016121560538259930}
-  - {fileID: 4351199156610477081}
-  - {fileID: 5826387959533594396}
-  - {fileID: 5256913316601360312}
-  - {fileID: 5729163587852269009}
-  - {fileID: 9051880064147662444}
-  - {fileID: 2212589644391840658}
-  - {fileID: 2947954789852902061}
-  - {fileID: 4783890188724247416}
-  - {fileID: 2992520122736146344}
-  - {fileID: 492715068652054083}
-  - {fileID: 3393153328029912046}
-  - {fileID: 8599149577817170320}
-  - {fileID: 5164271139747476081}
-  - {fileID: 6168702196461196426}
-  - {fileID: 1434912313058996516}
-  - {fileID: 3488145696036890019}
-  - {fileID: 7328519515214048019}
-  - {fileID: 2920890143432977033}
-  - {fileID: 6952573436829686031}
-  - {fileID: 7044532949608298023}
-  - {fileID: 5647400633322809290}
-  - {fileID: 7316683656561730128}
-  - {fileID: 8441206443986981406}
-  - {fileID: 7195654737988952769}
-  - {fileID: 8486658701082794217}
-  - {fileID: 658865797553373001}
-  - {fileID: 5300466721463744573}
-  - {fileID: 4312678984668827738}
-  - {fileID: 5784652575712562287}
-  - {fileID: 6651076683061583847}
+  - {fileID: 5068832992444017281}
+  - {fileID: 3733360975575169352}
+  - {fileID: 8887187741636568674}
+  - {fileID: 8220622315043841499}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4046,6 +4121,26 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!95 &2045293845291027986
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2828778189895891891}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ba1e9d2ac289ed9478a15071074da53d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 1
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2828778191118421608
 GameObject:
   m_ObjectHideFlags: 0
@@ -4078,7 +4173,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
+  m_Father: {fileID: 5068832992444017281}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2828778189679404979
@@ -4150,6 +4245,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &2828778189679404989
 CircleCollider2D:
@@ -4181,6 +4278,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   block: {fileID: 2828778189679404988}
   diffcultyManager: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+--- !u!1 &2914586551871017922
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5068832992444017281}
+  m_Layer: 0
+  m_Name: green
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &5068832992444017281
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2914586551871017922}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2828778189679404990}
+  - {fileID: 1802195016914688698}
+  - {fileID: 5427009431995759383}
+  - {fileID: 2622301941681556559}
+  - {fileID: 4465379521076488897}
+  - {fileID: 207896682868553271}
+  - {fileID: 1051816160719217165}
+  - {fileID: 8231425921576386283}
+  - {fileID: 3489601903605715021}
+  - {fileID: 3160131925450470288}
+  - {fileID: 889977212504959588}
+  - {fileID: 3716483560350932976}
+  - {fileID: 6863199792476521252}
+  - {fileID: 1304523214751422528}
+  m_Father: {fileID: 2828778189895891889}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3019368749421036853
 GameObject:
   m_ObjectHideFlags: 0
@@ -4213,8 +4355,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 60
+  m_Father: {fileID: 8220622315043841499}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6660524278258358431
 SpriteRenderer:
@@ -4285,6 +4427,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &4188841176871524256
 CircleCollider2D:
@@ -4348,7 +4492,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
+  m_Father: {fileID: 5068832992444017281}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7975118077474871303
@@ -4420,6 +4564,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &4129855215211047394
 CircleCollider2D:
@@ -4483,8 +4629,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 26
+  m_Father: {fileID: 3733360975575169352}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3415035452593819150
 SpriteRenderer:
@@ -4555,6 +4701,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &5929520521548173062
 CircleCollider2D:
@@ -4618,8 +4766,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 32
+  m_Father: {fileID: 3733360975575169352}
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6239615142372555584
 SpriteRenderer:
@@ -4690,6 +4838,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &2359374019120732359
 CircleCollider2D:
@@ -4753,7 +4903,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
+  m_Father: {fileID: 5068832992444017281}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3120735375526426575
@@ -4825,6 +4975,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &7473615394430066604
 CircleCollider2D:
@@ -4888,7 +5040,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
+  m_Father: {fileID: 5068832992444017281}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6702454611862524669
@@ -4960,6 +5112,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &8013452716179152552
 CircleCollider2D:
@@ -5023,8 +5177,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 38
+  m_Father: {fileID: 8887187741636568674}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1384439596975922299
 SpriteRenderer:
@@ -5095,6 +5249,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &537756813727102376
 CircleCollider2D:
@@ -5158,8 +5314,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 65
+  m_Father: {fileID: 8220622315043841499}
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8943830330360633350
 SpriteRenderer:
@@ -5230,6 +5386,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &7664762543457714953
 CircleCollider2D:
@@ -5293,8 +5451,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 72
+  m_Father: {fileID: 8220622315043841499}
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1891105072333267334
 SpriteRenderer:
@@ -5365,6 +5523,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &607316556843638442
 CircleCollider2D:
@@ -5428,8 +5588,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 18
+  m_Father: {fileID: 3733360975575169352}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8228018569775041442
 SpriteRenderer:
@@ -5500,6 +5660,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &3126846695115131669
 CircleCollider2D:
@@ -5563,7 +5725,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
+  m_Father: {fileID: 5068832992444017281}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7538046917796120207
@@ -5635,6 +5797,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &4805442658552654148
 CircleCollider2D:
@@ -5698,7 +5862,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
+  m_Father: {fileID: 5068832992444017281}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &13962957913306937
@@ -5770,6 +5934,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &7488959243131786619
 CircleCollider2D:
@@ -5833,8 +5999,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 24
+  m_Father: {fileID: 3733360975575169352}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &90890069898694069
 SpriteRenderer:
@@ -5905,6 +6071,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &8414080973978527896
 CircleCollider2D:
@@ -5968,8 +6136,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 34
+  m_Father: {fileID: 8887187741636568674}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6664036413183394546
 SpriteRenderer:
@@ -6040,6 +6208,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &2250789282804756202
 CircleCollider2D:
@@ -6103,8 +6273,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 15
+  m_Father: {fileID: 3733360975575169352}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8622045798124012497
 SpriteRenderer:
@@ -6175,6 +6345,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1235401307037304143
 CircleCollider2D:
@@ -6238,8 +6410,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 68
+  m_Father: {fileID: 8220622315043841499}
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1710635910084885013
 SpriteRenderer:
@@ -6310,6 +6482,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &6670576187581369958
 CircleCollider2D:
@@ -6373,8 +6547,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 73
+  m_Father: {fileID: 8220622315043841499}
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &419316975003567876
 SpriteRenderer:
@@ -6445,6 +6619,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &7925889100467407288
 CircleCollider2D:
@@ -6508,8 +6684,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 37
+  m_Father: {fileID: 8887187741636568674}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &857509029868068956
 SpriteRenderer:
@@ -6580,6 +6756,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &7082846199117755394
 CircleCollider2D:
@@ -6643,8 +6821,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 46
+  m_Father: {fileID: 8887187741636568674}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8858900124446143795
 SpriteRenderer:
@@ -6715,6 +6893,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &7062216081449080389
 CircleCollider2D:
@@ -6778,8 +6958,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 40
+  m_Father: {fileID: 8887187741636568674}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3985156903920089176
 SpriteRenderer:
@@ -6850,6 +7030,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &6371010781728938784
 CircleCollider2D:
@@ -6913,8 +7095,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 42
+  m_Father: {fileID: 8887187741636568674}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1389356887357028078
 SpriteRenderer:
@@ -6985,6 +7167,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1720402251465724847
 CircleCollider2D:
@@ -7048,8 +7232,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 20
+  m_Father: {fileID: 3733360975575169352}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8428125068365312966
 SpriteRenderer:
@@ -7120,6 +7304,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &799487239894548302
 CircleCollider2D:
@@ -7183,8 +7369,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 22
+  m_Father: {fileID: 3733360975575169352}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5737910215455540017
 SpriteRenderer:
@@ -7255,6 +7441,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &7915020318810243595
 CircleCollider2D:
@@ -7318,8 +7506,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 27
+  m_Father: {fileID: 3733360975575169352}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6978038405636399325
 SpriteRenderer:
@@ -7390,6 +7578,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &6801808316631501049
 CircleCollider2D:
@@ -7453,8 +7643,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 85
+  m_Father: {fileID: 8220622315043841499}
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3086836878102042778
 SpriteRenderer:
@@ -7525,6 +7715,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &8542792977548166000
 CircleCollider2D:
@@ -7588,8 +7780,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 17
+  m_Father: {fileID: 3733360975575169352}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7297734835721195685
 SpriteRenderer:
@@ -7660,6 +7852,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &5050462815086615476
 CircleCollider2D:
@@ -7723,8 +7917,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 79
+  m_Father: {fileID: 8220622315043841499}
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6721187411185106607
 SpriteRenderer:
@@ -7795,6 +7989,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1966081884218789454
 CircleCollider2D:
@@ -7858,7 +8054,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
+  m_Father: {fileID: 5068832992444017281}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &9197637686730295156
@@ -7930,6 +8126,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &7813563058681845098
 CircleCollider2D:
@@ -7993,8 +8191,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 19
+  m_Father: {fileID: 3733360975575169352}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &9127640953013744607
 SpriteRenderer:
@@ -8065,6 +8263,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &456243093760578163
 CircleCollider2D:
@@ -8128,8 +8328,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 69
+  m_Father: {fileID: 8220622315043841499}
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4226217978206876968
 SpriteRenderer:
@@ -8200,6 +8400,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &7439995246102138676
 CircleCollider2D:
@@ -8263,8 +8465,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 55
+  m_Father: {fileID: 8220622315043841499}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6425694419578530548
 SpriteRenderer:
@@ -8335,6 +8537,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &3160154492496766913
 CircleCollider2D:
@@ -8398,8 +8602,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 52
+  m_Father: {fileID: 8220622315043841499}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6621160108874106224
 SpriteRenderer:
@@ -8470,6 +8674,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &7095275134319010847
 CircleCollider2D:
@@ -8533,8 +8739,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 76
+  m_Father: {fileID: 8220622315043841499}
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &9164840694553250131
 SpriteRenderer:
@@ -8605,6 +8811,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &8687387899200859543
 CircleCollider2D:
@@ -8668,8 +8876,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 58
+  m_Father: {fileID: 8220622315043841499}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1937355685611645887
 SpriteRenderer:
@@ -8740,6 +8948,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &8057788902389641414
 CircleCollider2D:
@@ -8803,8 +9013,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 83
+  m_Father: {fileID: 8220622315043841499}
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5078691882888006010
 SpriteRenderer:
@@ -8875,6 +9085,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &4624336532605454389
 CircleCollider2D:
@@ -8938,8 +9150,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 21
+  m_Father: {fileID: 3733360975575169352}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &9001750104492005055
 SpriteRenderer:
@@ -9010,6 +9222,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &2575165901329160280
 CircleCollider2D:
@@ -9073,8 +9287,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 67
+  m_Father: {fileID: 8220622315043841499}
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5899609904046589622
 SpriteRenderer:
@@ -9145,6 +9359,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &5976891025430902054
 CircleCollider2D:
@@ -9208,7 +9424,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
+  m_Father: {fileID: 5068832992444017281}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2780277898507566685
@@ -9280,6 +9496,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &424078415445982373
 CircleCollider2D:
@@ -9343,8 +9561,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 70
+  m_Father: {fileID: 8220622315043841499}
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1418592304888429004
 SpriteRenderer:
@@ -9415,6 +9633,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1147134657660394636
 CircleCollider2D:
@@ -9478,8 +9698,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 39
+  m_Father: {fileID: 8887187741636568674}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3346052889033915265
 SpriteRenderer:
@@ -9550,6 +9770,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1525712884920360926
 CircleCollider2D:
@@ -9613,8 +9835,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 25
+  m_Father: {fileID: 3733360975575169352}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4849730204897349639
 SpriteRenderer:
@@ -9685,6 +9907,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &2558754641338354197
 CircleCollider2D:
@@ -9748,8 +9972,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 28
+  m_Father: {fileID: 3733360975575169352}
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8833191290252585764
 SpriteRenderer:
@@ -9820,6 +10044,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &520642466202199832
 CircleCollider2D:
@@ -9883,8 +10109,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 64
+  m_Father: {fileID: 8220622315043841499}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4911186918631928561
 SpriteRenderer:
@@ -9955,6 +10181,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &6768187797656437191
 CircleCollider2D:
@@ -10018,7 +10246,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
+  m_Father: {fileID: 5068832992444017281}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4026998896380807543
@@ -10090,6 +10318,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &9073832645130839244
 CircleCollider2D:
@@ -10121,6 +10351,73 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   block: {fileID: 2442036939111459987}
   diffcultyManager: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+--- !u!1 &8072403523918793371
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8220622315043841499}
+  m_Layer: 0
+  m_Name: violet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &8220622315043841499
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8072403523918793371}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4217504256102886383}
+  - {fileID: 7662097498653797346}
+  - {fileID: 4169309418081214912}
+  - {fileID: 7598043924246479264}
+  - {fileID: 3258757939677698512}
+  - {fileID: 2016121560538259930}
+  - {fileID: 4351199156610477081}
+  - {fileID: 5826387959533594396}
+  - {fileID: 5256913316601360312}
+  - {fileID: 5729163587852269009}
+  - {fileID: 9051880064147662444}
+  - {fileID: 2212589644391840658}
+  - {fileID: 2947954789852902061}
+  - {fileID: 4783890188724247416}
+  - {fileID: 2992520122736146344}
+  - {fileID: 492715068652054083}
+  - {fileID: 3393153328029912046}
+  - {fileID: 8599149577817170320}
+  - {fileID: 5164271139747476081}
+  - {fileID: 6168702196461196426}
+  - {fileID: 1434912313058996516}
+  - {fileID: 3488145696036890019}
+  - {fileID: 7328519515214048019}
+  - {fileID: 2920890143432977033}
+  - {fileID: 6952573436829686031}
+  - {fileID: 7044532949608298023}
+  - {fileID: 5647400633322809290}
+  - {fileID: 7316683656561730128}
+  - {fileID: 8441206443986981406}
+  - {fileID: 7195654737988952769}
+  - {fileID: 8486658701082794217}
+  - {fileID: 658865797553373001}
+  - {fileID: 5300466721463744573}
+  - {fileID: 4312678984668827738}
+  - {fileID: 5784652575712562287}
+  - {fileID: 6651076683061583847}
+  m_Father: {fileID: 2828778189895891889}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8227447688454832015
 GameObject:
   m_ObjectHideFlags: 0
@@ -10153,7 +10450,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
+  m_Father: {fileID: 5068832992444017281}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6610346571935526608
@@ -10225,6 +10522,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &361042851940468305
 CircleCollider2D:
@@ -10288,8 +10587,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 75
+  m_Father: {fileID: 8220622315043841499}
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &28605766376769290
 SpriteRenderer:
@@ -10360,6 +10659,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &7611910307226429489
 CircleCollider2D:
@@ -10423,8 +10724,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 54
+  m_Father: {fileID: 8220622315043841499}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4456989729817324843
 SpriteRenderer:
@@ -10495,6 +10796,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &6163917801978767162
 CircleCollider2D:
@@ -10558,8 +10861,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 31
+  m_Father: {fileID: 3733360975575169352}
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3755636814954032090
 SpriteRenderer:
@@ -10630,6 +10933,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1472523218861733244
 CircleCollider2D:
@@ -10693,8 +10998,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 50
+  m_Father: {fileID: 8887187741636568674}
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1280564757795708812
 SpriteRenderer:
@@ -10765,6 +11070,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &2588060375584241853
 CircleCollider2D:
@@ -10828,8 +11135,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 84
+  m_Father: {fileID: 8220622315043841499}
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2475804196017658381
 SpriteRenderer:
@@ -10900,6 +11207,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &203628281782927666
 CircleCollider2D:
@@ -10963,8 +11272,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 14
+  m_Father: {fileID: 3733360975575169352}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &9087438015913562819
 SpriteRenderer:
@@ -11035,6 +11344,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &3237062066552355608
 CircleCollider2D:
@@ -11098,8 +11409,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 86
+  m_Father: {fileID: 8220622315043841499}
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2616048575405820562
 SpriteRenderer:
@@ -11170,6 +11481,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &8878390542101482310
 CircleCollider2D:
@@ -11233,8 +11546,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 51
+  m_Father: {fileID: 8220622315043841499}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7102585868231076260
 SpriteRenderer:
@@ -11305,6 +11618,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &82029660720133699
 CircleCollider2D:
@@ -11368,8 +11683,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 29
+  m_Father: {fileID: 3733360975575169352}
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2023808199198385358
 SpriteRenderer:
@@ -11440,6 +11755,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1682954258524455818
 CircleCollider2D:
@@ -11503,7 +11820,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
+  m_Father: {fileID: 5068832992444017281}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8567784669220623346
@@ -11575,6 +11892,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &8841363634099452038
 CircleCollider2D:
@@ -11638,8 +11957,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
-  m_RootOrder: 41
+  m_Father: {fileID: 8887187741636568674}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6482219187181683554
 SpriteRenderer:
@@ -11710,6 +12029,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &2563743567423249587
 CircleCollider2D:
@@ -11773,7 +12094,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2828778189895891889}
+  m_Father: {fileID: 5068832992444017281}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7591604905248317530
@@ -11845,6 +12166,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &5097241733594923108
 CircleCollider2D:
