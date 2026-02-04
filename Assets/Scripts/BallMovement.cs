@@ -51,7 +51,7 @@ public class BallMovement : MonoBehaviour
     private void Update()
     {
         ApplyFakeGravity();
-        SetLaunchBool(); // TODO: wtf
+        SetLaunchBool(); //TODO: wtf
     }
 
     private void ApplyFakeGravity()

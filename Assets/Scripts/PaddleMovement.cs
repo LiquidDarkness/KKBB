@@ -19,7 +19,6 @@ public class PaddleMovement : MonoBehaviour
         targetCamera = Camera.main;
         paddleWidth = GetComponent<Collider2D>().bounds.size.x;
         CalculateScreenSize();
-        SetPosition(0.5f);
         currentPositionX = desiredPositionX;
         Move();
     }
@@ -50,6 +49,15 @@ public class PaddleMovement : MonoBehaviour
         {
             CalculatePaddleFromKeyboard();
         }
+    }
+
+    internal void MoveToForcedPosition(float viewportPosition)
+    {
+        desiredPositionX = viewportPosition * screenWidthInUnits;
+        float minX = paddleWidth / 2;
+        float maxX = screenWidthInUnits - (paddleWidth / 2);
+        currentPositionX = Mathf.Clamp(desiredPositionX, minX, maxX);
+        transform.position = new Vector2(currentPositionX - (screenWidthInUnits / 2), transform.position.y);
     }
 
     private void CalculatePaddleFromMouse()

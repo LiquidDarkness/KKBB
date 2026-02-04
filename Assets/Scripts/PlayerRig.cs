@@ -41,6 +41,7 @@ public class PlayerRig : MonoBehaviour
     {
         LockToPaddle();
         SetDropPickup(false);
+        paddle.MoveToForcedPosition(0.5f);
     }
 
     private void SetDropPickup(bool allowPickups)
@@ -103,5 +104,6 @@ public class PlayerRig : MonoBehaviour
         {
             LockToPaddle();
         }
+        Debug.Break();
     }
 }
