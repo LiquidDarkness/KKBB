@@ -35,9 +35,9 @@ public class MainManager : MonoBehaviour
 
     public void Awake()
     {
+        //Level.OnLevelCompleted += LoadNextLevel;
         //chosenScenario = null;
         //chosenScenario = scenarioManager.scenarios[scenarioIndex.IntValue];
-        Level.OnLevelCompleted += LoadNextLevel;
         //Debug.Log(scenarioIndex.IntValue);
     }
 
@@ -136,7 +136,6 @@ public class MainManager : MonoBehaviour
         levelLoader.LoadLevel(levelData);
         //Instantiate(levelData.content, contentContainer);
         //coreferences.musicSwitcher.SwitchAudio(levelData.ambience);
-        //TODO: ³adowaæ obiekty z resourców. (scenariusz.nazwa) ale po to mam przecie¿ CustomStoryContainer?
         OnLevelLoaded?.Invoke();
     }
 }

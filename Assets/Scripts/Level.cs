@@ -37,8 +37,8 @@ public class Level : MonoBehaviour
     {
         if (breakableBlocks == 0)
         {
-            OnLevelCompleted?.Invoke();
             Debug.Log("Block hit and level completed");
+            OnLevelCompleted?.Invoke();
         }
     }
 }

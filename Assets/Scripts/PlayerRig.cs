@@ -18,12 +18,14 @@ public class PlayerRig : MonoBehaviour
         // Subskrypcje eventów
         PaddleChanger.OnPaddleChanged += HandlePaddleChanged;
         PlayerHealth.OnHealthLost += HandleHealthLost;
+        Level.OnLevelCompleted += LockToPaddle;
     }
 
     private void OnDestroy()
     {
         PaddleChanger.OnPaddleChanged -= HandlePaddleChanged;
         PlayerHealth.OnHealthLost -= HandleHealthLost;
+        Level.OnLevelCompleted -= LockToPaddle;
     }
 
     private void HandleHealthLost()
