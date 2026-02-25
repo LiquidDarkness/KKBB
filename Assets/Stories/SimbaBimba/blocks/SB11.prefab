@@ -104,6 +104,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403010975088135
 CircleCollider2D:
@@ -239,6 +241,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403011036626348
 CircleCollider2D:
@@ -374,6 +378,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403011041080984
 CircleCollider2D:
@@ -509,6 +515,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403011052795981
 CircleCollider2D:
@@ -644,6 +652,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403011200422274
 CircleCollider2D:
@@ -779,6 +789,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403011205250618
 CircleCollider2D:
@@ -914,6 +926,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403011229769732
 CircleCollider2D:
@@ -1049,6 +1063,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403011256092147
 CircleCollider2D:
@@ -1184,6 +1200,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403011330456278
 CircleCollider2D:
@@ -1319,6 +1337,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403011469643641
 CircleCollider2D:
@@ -1454,6 +1474,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403011504508219
 CircleCollider2D:
@@ -1589,6 +1611,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403011529894247
 CircleCollider2D:
@@ -1724,6 +1748,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403011576637442
 CircleCollider2D:
@@ -1859,6 +1885,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403011577129422
 CircleCollider2D:
@@ -1994,6 +2022,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403011675678443
 CircleCollider2D:
@@ -2129,6 +2159,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403011677596996
 CircleCollider2D:
@@ -2264,6 +2296,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403011690289321
 CircleCollider2D:
@@ -2399,6 +2433,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403011731264393
 CircleCollider2D:
@@ -2534,6 +2570,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403011769712527
 CircleCollider2D:
@@ -2669,6 +2707,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403011890436585
 CircleCollider2D:
@@ -2804,6 +2844,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403011968987379
 CircleCollider2D:
@@ -2939,6 +2981,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403011983837168
 CircleCollider2D:
@@ -3074,6 +3118,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403012008406479
 CircleCollider2D:
@@ -3209,6 +3255,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403012057594645
 CircleCollider2D:
@@ -3344,6 +3392,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403012121829529
 CircleCollider2D:
@@ -3479,6 +3529,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403012167155508
 CircleCollider2D:
@@ -3614,6 +3666,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403012204445422
 CircleCollider2D:
@@ -3749,6 +3803,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403012234174264
 CircleCollider2D:
@@ -3884,6 +3940,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403012326735147
 CircleCollider2D:
@@ -4019,6 +4077,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403012414307081
 CircleCollider2D:
@@ -4154,6 +4214,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403012449602161
 CircleCollider2D:
@@ -4289,6 +4351,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403012542753548
 CircleCollider2D:
@@ -4424,6 +4488,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403012556093297
 CircleCollider2D:
@@ -4559,6 +4625,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403012567631004
 CircleCollider2D:
@@ -4694,6 +4762,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403012582520349
 CircleCollider2D:
@@ -4829,6 +4899,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403012592479847
 CircleCollider2D:
@@ -4964,6 +5036,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403012622327260
 CircleCollider2D:
@@ -5099,6 +5173,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403012659109441
 CircleCollider2D:
@@ -5234,6 +5310,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403012684492204
 CircleCollider2D:
@@ -5369,6 +5447,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403012687592602
 CircleCollider2D:
@@ -5504,6 +5584,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403012754833427
 CircleCollider2D:
@@ -5639,6 +5721,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403012802007318
 CircleCollider2D:
@@ -5774,6 +5858,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403012846044495
 CircleCollider2D:
@@ -5909,6 +5995,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403012847125108
 CircleCollider2D:
@@ -6044,6 +6132,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403012886941138
 CircleCollider2D:
@@ -6179,6 +6269,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403012903688451
 CircleCollider2D:
@@ -6314,6 +6406,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403012941049457
 CircleCollider2D:
@@ -6449,6 +6543,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &1975403013013892317
 CircleCollider2D:
@@ -6584,6 +6680,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 0}
+  chainDestroyer: {fileID: 0}
   breakable: 1
 --- !u!58 &4058985086906867895
 CircleCollider2D:
@@ -6625,6 +6723,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4058985086418844859}
   - component: {fileID: 4058985086418844856}
+  - component: {fileID: 559339275496625160}
   m_Layer: 0
   m_Name: SB11
   m_TagString: Untagged
@@ -6724,6 +6823,26 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!95 &559339275496625160
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4058985086418844857}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 78b1f14e4d2ad6247b4aff1ceae96eb5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 1
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &827727583142658804
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6858,6 +6977,10 @@ PrefabInstance:
     - target: {fileID: 573928395617129545, guid: 0ac0468423a15d346920e9acf4edf69b, type: 3}
       propertyPath: m_Name
       value: invisible (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 573928395617129545, guid: 0ac0468423a15d346920e9acf4edf69b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 573928395617129551, guid: 0ac0468423a15d346920e9acf4edf69b, type: 3}
       propertyPath: m_RootOrder
@@ -7541,6 +7664,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: invisible (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 573928395617129545, guid: 0ac0468423a15d346920e9acf4edf69b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 573928395617129551, guid: 0ac0468423a15d346920e9acf4edf69b, type: 3}
       propertyPath: m_RootOrder
       value: 64
@@ -7602,6 +7729,10 @@ PrefabInstance:
     - target: {fileID: 573928395617129545, guid: 0ac0468423a15d346920e9acf4edf69b, type: 3}
       propertyPath: m_Name
       value: invisible (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 573928395617129545, guid: 0ac0468423a15d346920e9acf4edf69b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 573928395617129551, guid: 0ac0468423a15d346920e9acf4edf69b, type: 3}
       propertyPath: m_RootOrder

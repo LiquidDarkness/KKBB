@@ -28,19 +28,24 @@ public class SceneLoader : MonoBehaviour
             //Dzia³a jak event Action, ale nie ma potrzeby subskrybowania siê i odsubrybowania,
             //wydarzy siê jednorazowo, ale bêdzie dzia³a³o za ka¿dym wywo³anie LoadLevel z odpowiedni¹ zawartoœci¹.
             Debug.Log("Transitioning to: " + sceneName);
-            StartCoroutine(TransitionSequence(sceneName));
+            IEnumerator routine = TransitionSequence(sceneName);
+            Debug.Log($"Routine exists: {routine != null}");
+            StartCoroutine(routine);
         });
     }
 
     IEnumerator TransitionSequence(string sceneName)
     {
+        Debug.Log("Loading scene: " + sceneName);
         SceneManager.LoadScene(sceneName,LoadSceneMode.Single);
         yield return null;
 
         switch (sceneName)
         {
             case "Gameplay":
-                OnGameplayLoaded.Invoke();
+                Debug.Log("Calling OnGameplayLoaded: " + OnGameplayLoaded != null);
+                OnGameplayLoaded?.Invoke();
+                Debug.Log("Loading saved game.");
                 SaveManager.Load();
                 break;
 
@@ -52,6 +57,7 @@ public class SceneLoader : MonoBehaviour
                 break;
         }
 
+        Debug.Log("Calling OnSceneChanged: " + OnSceneChanged != null);
         OnSceneChanged?.Invoke();
         coreReferences.loadingScreen.FadeToClear();
     }

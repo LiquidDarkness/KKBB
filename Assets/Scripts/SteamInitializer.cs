@@ -4,7 +4,8 @@ using UnityEngine.SceneManagement;
 public class SteamInitializer : MonoBehaviour
 {
     public ScriptableBool demoFlag;
-    public int demoID, fullID; //1878110
+    public ScriptableBool playtestFlag;
+    public int demoID, fullID, playtestID; //1878110
 
     private void Start()
     {
@@ -14,6 +15,10 @@ public class SteamInitializer : MonoBehaviour
         if (demoFlag.value)
         {
             id = (uint)demoID;
+        }
+        else if (playtestFlag.value)
+        {
+            id = (uint)playtestID;
         }
         else
         {
@@ -30,6 +35,6 @@ public class SteamInitializer : MonoBehaviour
         }
         Debug.Log("Init's working");
 
-        SceneManager.LoadScene(1);
+        //SceneManager.LoadScene(1);
     }
 }
