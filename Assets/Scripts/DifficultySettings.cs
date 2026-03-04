@@ -6,6 +6,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class DifficultySettings : ScriptableObject
 {
+    public int livesNumber;
     public float baseGameSpeed;
     public float maxSpeed;
     public float chainDestructionProbability;

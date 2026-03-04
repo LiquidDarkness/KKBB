@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6385bd46cdb9431448b3cc0408faa0eb, type: 3}
   m_Name: MediumDifficultySetting
   m_EditorClassIdentifier: 
+  livesNumber: 2
   baseGameSpeed: 4
   maxSpeed: 8
   chainDestructionProbability: 0.3

@@ -3,8 +3,8 @@ using UnityEngine;
 
 public static class PlayerHealth
 {
-    //TODO: zmieñ liczbê ¿yæ
-    public const int startingHealth = 1;
+    //TODO: zmieñ liczbê ¿yæ na podan¹ dla ka¿dego poziomu trudnoœci
+    public const int startingHealth = 3;
 
     // Referencja do TD (trzymana np. w PlayerRig albo podawana na start gry).
     public static TypeDistinguisher healthTD;

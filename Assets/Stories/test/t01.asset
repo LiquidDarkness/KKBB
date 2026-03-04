@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de026e5a0771fbd49933004fa9fc52a8, type: 3}
-  m_Name: LD 1
+  m_Name: t01
   m_EditorClassIdentifier: 
   levelThumbnail: {fileID: 21300000, guid: b846c3f817d0ab64bb6461877045c1ac, type: 3}
   background: {fileID: 21300000, guid: b846c3f817d0ab64bb6461877045c1ac, type: 3}
-  content: {fileID: 129331524074610270, guid: 4d8aedf0c070da146ac4efb04c4fd158, type: 3}
+  content: {fileID: 129331524074610270, guid: 5fbc47161330caf44a3e12517069b813, type: 3}
   intro: {fileID: 8300000, guid: 507856b63af733a40aee8795810c0945, type: 3}
   loop: {fileID: 8300000, guid: 5ba77b743bd34c0409146214d1bb7c11, type: 3}
