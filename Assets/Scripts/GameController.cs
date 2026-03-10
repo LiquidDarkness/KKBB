@@ -4,21 +4,11 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    public SceneLoader sceneLoader;
     public GameObject window;
     public CoreReferences coreReferences;
 
     [SerializeField] private string sceneName;
     [SerializeField] private string menuSceneName;
-
-    public void Awake()
-    {
-        //SaveManager.Load();
-        if (sceneLoader == null)
-        {
-            sceneLoader = FindObjectOfType<SceneLoader>();
-        }
-    }
 
     public void PurgeGameProgress()
     {
@@ -30,13 +20,13 @@ public class GameController : MonoBehaviour
     {
         //PlayerPrefs.Save();
         //SaveManager.Save();
-        sceneLoader.LoadScene(sceneName);
+        coreReferences.sceneLoader.LoadScene(sceneName);
     }
 
     public void ContinueGame()
     {
         //SaveManager.Load();
-        sceneLoader.LoadScene(sceneName);
+        coreReferences.sceneLoader.LoadScene(sceneName);
     }
 
     public void OpenCreditsWindow()
@@ -53,14 +43,14 @@ public class GameController : MonoBehaviour
     {
         Debug.Log("ReturnToMenu wywo³ane!");
 
-        if (sceneLoader != null)
+        if (coreReferences.sceneLoader != null)
         {
-            Debug.Log("SceneLoader istnieje, próbujemy za³adowaæ scenê: " + menuSceneName);
-            sceneLoader.LoadScene(menuSceneName);
+            Debug.Log("coreReferences.sceneLoader istnieje, próbujemy za³adowaæ scenê: " + menuSceneName);
+            coreReferences.sceneLoader.LoadScene(menuSceneName);
         }
         else
         {
-            Debug.LogWarning("SceneLoader nie przypisany!");
+            Debug.LogWarning("coreReferences.sceneLoader nie przypisany!");
             //SceneManager.LoadScene(menuSceneName);
         }
     }

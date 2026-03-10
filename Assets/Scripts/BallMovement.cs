@@ -51,7 +51,7 @@ public class BallMovement : MonoBehaviour
     private void Update()
     {
         ApplyFakeGravity();
-        SetLaunchBool(); //TODO: wtf
+        SetLaunchBool();
     }
 
     private void ApplyFakeGravity()
@@ -121,7 +121,7 @@ public class BallMovement : MonoBehaviour
 
     public void SetLaunchBool()
     {
-        if (StoryManager.isStoryActive || GameSpeedManager.isGamePaused || hasBeenLaunched)
+        if (StoryManager.isStoryActive || PauseManager.IsPaused|| hasBeenLaunched)
         {
             canBeLaunched = false;
         }

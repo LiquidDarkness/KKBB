@@ -372,8 +372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
-  hitSprites:
-  - {fileID: 21300000, guid: c8c4d52e526f22f438db93136ec662b4, type: 3}
+  hitSprites: []
   pointsPerBlockDestroyed: 10
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
@@ -917,8 +916,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
-  hitSprites:
-  - {fileID: 21300000, guid: df31e939182ae03449b20f2244929d88, type: 3}
+  hitSprites: []
   pointsPerBlockDestroyed: 10
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
@@ -1598,8 +1596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
-  hitSprites:
-  - {fileID: 21300000, guid: df31e939182ae03449b20f2244929d88, type: 3}
+  hitSprites: []
   pointsPerBlockDestroyed: 10
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
@@ -1871,8 +1868,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
-  hitSprites:
-  - {fileID: 21300000, guid: c8c4d52e526f22f438db93136ec662b4, type: 3}
+  hitSprites: []
   pointsPerBlockDestroyed: 10
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
@@ -2008,8 +2004,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
-  hitSprites:
-  - {fileID: 21300000, guid: c8c4d52e526f22f438db93136ec662b4, type: 3}
+  hitSprites: []
   pointsPerBlockDestroyed: 10
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
@@ -2553,8 +2548,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
-  hitSprites:
-  - {fileID: 21300000, guid: df31e939182ae03449b20f2244929d88, type: 3}
+  hitSprites: []
   pointsPerBlockDestroyed: 10
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
@@ -2690,8 +2684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
-  hitSprites:
-  - {fileID: 21300000, guid: c8c4d52e526f22f438db93136ec662b4, type: 3}
+  hitSprites: []
   pointsPerBlockDestroyed: 10
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
@@ -2827,8 +2820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
-  hitSprites:
-  - {fileID: 21300000, guid: c8c4d52e526f22f438db93136ec662b4, type: 3}
+  hitSprites: []
   pointsPerBlockDestroyed: 10
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
@@ -3236,8 +3228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
-  hitSprites:
-  - {fileID: 21300000, guid: c8c4d52e526f22f438db93136ec662b4, type: 3}
+  hitSprites: []
   pointsPerBlockDestroyed: 10
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
@@ -4733,8 +4724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
-  hitSprites:
-  - {fileID: 21300000, guid: c8c4d52e526f22f438db93136ec662b4, type: 3}
+  hitSprites: []
   pointsPerBlockDestroyed: 10
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
@@ -5278,8 +5268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
-  hitSprites:
-  - {fileID: 21300000, guid: c8c4d52e526f22f438db93136ec662b4, type: 3}
+  hitSprites: []
   pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
@@ -5823,8 +5812,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
-  hitSprites:
-  - {fileID: 21300000, guid: c8c4d52e526f22f438db93136ec662b4, type: 3}
+  hitSprites: []
   pointsPerBlockDestroyed: 10
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
@@ -6096,8 +6084,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
-  hitSprites:
-  - {fileID: 21300000, guid: df31e939182ae03449b20f2244929d88, type: 3}
+  hitSprites: []
   pointsPerBlockDestroyed: 10
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
@@ -6369,8 +6356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
-  hitSprites:
-  - {fileID: 21300000, guid: c8c4d52e526f22f438db93136ec662b4, type: 3}
+  hitSprites: []
   pointsPerBlockDestroyed: 10
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
@@ -6526,6 +6512,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 129331524074610268}
     m_Modifications:
+    - target: {fileID: 7012976875569864168, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
+      propertyPath: hitSprites.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7012976875569864171, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
       propertyPath: m_RootOrder
       value: 58
@@ -6588,6 +6578,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 129331524074610268}
     m_Modifications:
+    - target: {fileID: 7012976875569864168, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
+      propertyPath: hitSprites.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7012976875569864171, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
       propertyPath: m_RootOrder
       value: 60
@@ -6650,6 +6644,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 129331524074610268}
     m_Modifications:
+    - target: {fileID: 7012976875569864168, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
+      propertyPath: hitSprites.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7012976875569864171, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
       propertyPath: m_RootOrder
       value: 59
@@ -6712,6 +6710,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 129331524074610268}
     m_Modifications:
+    - target: {fileID: 7012976875569864168, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
+      propertyPath: hitSprites.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7012976875569864171, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
       propertyPath: m_RootOrder
       value: 50
@@ -6774,6 +6776,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 129331524074610268}
     m_Modifications:
+    - target: {fileID: 7012976875569864168, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
+      propertyPath: hitSprites.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7012976875569864171, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
       propertyPath: m_RootOrder
       value: 62
@@ -6836,6 +6842,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 129331524074610268}
     m_Modifications:
+    - target: {fileID: 7012976875569864168, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
+      propertyPath: hitSprites.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7012976875569864171, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
       propertyPath: m_RootOrder
       value: 63
@@ -6898,6 +6908,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 129331524074610268}
     m_Modifications:
+    - target: {fileID: 7012976875569864168, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
+      propertyPath: hitSprites.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7012976875569864171, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
       propertyPath: m_RootOrder
       value: 52
@@ -6960,6 +6974,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 129331524074610268}
     m_Modifications:
+    - target: {fileID: 7012976875569864168, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
+      propertyPath: hitSprites.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7012976875569864171, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
       propertyPath: m_RootOrder
       value: 53
@@ -7022,6 +7040,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 129331524074610268}
     m_Modifications:
+    - target: {fileID: 7012976875569864168, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
+      propertyPath: hitSprites.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7012976875569864171, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
       propertyPath: m_RootOrder
       value: 54
@@ -7084,6 +7106,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 129331524074610268}
     m_Modifications:
+    - target: {fileID: 7012976875569864168, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
+      propertyPath: hitSprites.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7012976875569864171, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
       propertyPath: m_RootOrder
       value: 65
@@ -7146,6 +7172,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 129331524074610268}
     m_Modifications:
+    - target: {fileID: 7012976875569864168, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
+      propertyPath: hitSprites.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7012976875569864171, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
       propertyPath: m_RootOrder
       value: 61
@@ -7208,6 +7238,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 129331524074610268}
     m_Modifications:
+    - target: {fileID: 7012976875569864168, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
+      propertyPath: hitSprites.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7012976875569864171, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
       propertyPath: m_RootOrder
       value: 56
@@ -7270,6 +7304,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 129331524074610268}
     m_Modifications:
+    - target: {fileID: 7012976875569864168, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
+      propertyPath: hitSprites.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7012976875569864171, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
       propertyPath: m_RootOrder
       value: 51
@@ -7332,6 +7370,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 129331524074610268}
     m_Modifications:
+    - target: {fileID: 7012976875569864168, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
+      propertyPath: hitSprites.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7012976875569864171, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
       propertyPath: m_RootOrder
       value: 66
@@ -7394,6 +7436,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 129331524074610268}
     m_Modifications:
+    - target: {fileID: 7012976875569864168, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
+      propertyPath: hitSprites.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7012976875569864171, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
       propertyPath: m_RootOrder
       value: 67
@@ -7456,6 +7502,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 129331524074610268}
     m_Modifications:
+    - target: {fileID: 7012976875569864168, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
+      propertyPath: hitSprites.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7012976875569864171, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
       propertyPath: m_RootOrder
       value: 64
@@ -7518,6 +7568,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 129331524074610268}
     m_Modifications:
+    - target: {fileID: 7012976875569864168, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
+      propertyPath: hitSprites.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7012976875569864171, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
       propertyPath: m_RootOrder
       value: 49
@@ -7580,6 +7634,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 129331524074610268}
     m_Modifications:
+    - target: {fileID: 7012976875569864168, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
+      propertyPath: hitSprites.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7012976875569864171, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
       propertyPath: m_RootOrder
       value: 47
@@ -7642,6 +7700,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 129331524074610268}
     m_Modifications:
+    - target: {fileID: 7012976875569864168, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
+      propertyPath: hitSprites.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7012976875569864171, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
       propertyPath: m_RootOrder
       value: 48
@@ -7704,6 +7766,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 129331524074610268}
     m_Modifications:
+    - target: {fileID: 7012976875569864168, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
+      propertyPath: hitSprites.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7012976875569864171, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
       propertyPath: m_RootOrder
       value: 57
@@ -7766,6 +7832,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 129331524074610268}
     m_Modifications:
+    - target: {fileID: 7012976875569864168, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
+      propertyPath: hitSprites.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7012976875569864171, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
       propertyPath: m_RootOrder
       value: 55
@@ -7828,6 +7898,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 129331524074610268}
     m_Modifications:
+    - target: {fileID: 7012976875569864168, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
+      propertyPath: hitSprites.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7012976875569864171, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
       propertyPath: m_RootOrder
       value: 68

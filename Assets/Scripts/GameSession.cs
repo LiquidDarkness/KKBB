@@ -6,9 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class GameSession : MonoBehaviour
 {
-    public GameSpeedManager gameSpeedHandler;
     public ScoreManager scoreDisplayer;
     public HealthDisplayer healthDisplayer;
+
+    const string PAUSE_LOCK = nameof(GameSession);
 
     private void Awake()
     {
@@ -24,8 +25,6 @@ public class GameSession : MonoBehaviour
         {
             DontDestroyOnLoad(gameObject);
         }
-
-        gameSpeedHandler = GetComponent<GameSpeedManager>();
     }
 
     public void ResetGame()
@@ -35,11 +34,11 @@ public class GameSession : MonoBehaviour
 
     public void Pause()
     {
-        gameSpeedHandler.Pause();
+        PauseManager.Pause(PAUSE_LOCK);
     }
 
     public void Unpause()
     {
-        gameSpeedHandler.Unpause();
+        PauseManager.Unpause(PAUSE_LOCK);
     }
 }

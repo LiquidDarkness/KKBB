@@ -3,11 +3,12 @@ using UnityEngine;
 
 public class WindowManager : MonoBehaviour
 {
-    public GameSpeedManager speedManager;
+    const string PAUSE_LOCK = nameof(WindowManager);
+
     [System.Serializable]
     public class WindowToggle
     {
-        public string windowName; // Nazwa okna, np. "Shop"
+        public string WindowName => window.name; // Nazwa okna, np. "Shop"
         public GameObject window; // Odwo³anie do okienka
         public string toggleKey; // Nazwa klawisza w Input Manager, np. "Tab"
     }
@@ -21,7 +22,7 @@ public class WindowManager : MonoBehaviour
         // Inicjalizacja s³ownika dla szybszego dostêpu do okienek po nazwie
         foreach (var windowToggle in windows)
         {
-            windowDict[windowToggle.windowName] = windowToggle.window;
+            windowDict[windowToggle.WindowName] = windowToggle.window;
             if (windowToggle.window != null)
                 windowToggle.window.SetActive(false); // Ustawienie okienek jako nieaktywne na starcie
         }
@@ -34,26 +35,30 @@ public class WindowManager : MonoBehaviour
         {
             if (Input.GetButtonDown(windowToggle.toggleKey))
             {
-                ToggleWindow(windowToggle.windowName);
+                ToggleWindow(windowToggle.WindowName);
             }
         }
+    }
+
+    public void ToggleWindow(GameObject window)
+    {
+        ToggleWindow(window.name);
     }
 
     public void ToggleWindow(string windowName)
     {
         if (windowDict.TryGetValue(windowName, out GameObject window))
         {
-            bool isActive = window.activeSelf;
-            window.SetActive(!isActive); // Prze³¹czamy widocznoœæ okienka
+            bool isActive = !window.activeSelf; // Prze³¹czamy widocznoœæ okienka
+            window.SetActive(isActive); 
             
-            //TODO: nie odpauzowuje siê
             if (isActive)
             {
-                speedManager.Unpause();
+                PauseManager.Pause(windowName);
             }
             else
             {
-                speedManager.Pause();
+                PauseManager.Unpause(windowName);
             }
         }
         else

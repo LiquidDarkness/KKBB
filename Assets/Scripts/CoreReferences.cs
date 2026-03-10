@@ -7,6 +7,7 @@ public class CoreReferences : ScriptableObject
     public LoadingScreen loadingScreen;
     public GameSession gameSession;
     public StoryManager storyManager;
+    public SceneLoader sceneLoader;
 
     [ContextMenu("ValidateReferences")]
     public void ValidateReferences()
@@ -15,5 +16,6 @@ public class CoreReferences : ScriptableObject
         Debug.Assert(loadingScreen != null);
         Debug.Assert(gameSession != null);
         Debug.Assert(storyManager != null);
+        Debug.Assert(sceneLoader != null);
     }
 }

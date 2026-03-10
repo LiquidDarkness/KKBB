@@ -9,13 +9,11 @@ public class ParticleEffectManager : MonoBehaviour
 
     public void Awake()
     {
-        FillReference();
         SceneLoader.OnGameplayLoaded += FillReference;
     }
 
     public void FillReference()
     {
-        block = gameObject.GetComponent<Block>();
         block.blockSparklesVFX = diffcultyManager.CurrentSettings.particleEffect;
     }
 }

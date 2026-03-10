@@ -94,6 +94,7 @@ public class MusicSwitcher : MonoBehaviour
             timeElapsed = Time.realtimeSinceStartup - referenceTime;
             yield return null;
         }
+        audioSource.Stop();
         audioSource.clip = second;
         audioSource.Play();
     }

@@ -13,7 +13,6 @@ public class GameSpeedManager : MonoBehaviour
     private float cachedGameSpeed;
     private float elapsedTime = 0.0f;
 
-    public static bool isGamePaused;
     public event Action<float, bool> OnGameSpeedModified;
     public event Action<bool> OnGameSpeedChanged;
 
@@ -23,6 +22,15 @@ public class GameSpeedManager : MonoBehaviour
     public void Awake()
     {
         DiffcultyManager.OnSettingsChanged += HandleDifficultySettingsChanged;
+        PauseManager.OnPause += HandlePause;
+        PauseManager.OnUnpause += HandleUnpause;
+    }
+
+    private void OnDestroy()
+    {
+        DiffcultyManager.OnSettingsChanged -= HandleDifficultySettingsChanged;
+        PauseManager.OnPause -= HandlePause;
+        PauseManager.OnUnpause -= HandleUnpause;
     }
 
     private void HandleDifficultySettingsChanged(DifficultySettings _)
@@ -101,41 +109,16 @@ public class GameSpeedManager : MonoBehaviour
         routine = StartCoroutine(ChangeGameSpeed(dropInfluence, duration));
     }
 
-    public void Pause()
+    private void HandlePause()
     {
-        if (isGamePaused)
-        {
-            return;
-        }
         cachedGameSpeed = gameSpeed;
         gameSpeed = 0.0001f;
         Time.timeScale = gameSpeed;
-        isGamePaused = true;
     }
 
-    public void Unpause()
+    private void HandleUnpause()
     {
         gameSpeed = cachedGameSpeed;
         Time.timeScale = gameSpeed;
-        isGamePaused = false;
     }
 }
-    /*public IEnumerator ChangeGameSpeed(float dropInfluence, float duration)
-    {
-        float elapsedTime = 0.0f;
-        if (gameSpeed > dropInfluence && (gameSpeed + dropInfluence) <= 20)
-        {
-            gameSpeed += dropInfluence;
-        }
-
-        while (duration > elapsedTime)
-        {
-            elapsedTime += Time.deltaTime;
-            effectCountDown = duration - elapsedTime;
-            Time.timeScale = gameSpeed;
-            yield return null;
-        }
-
-        gameSpeed = originalGameSpeed;
-    } */
-

@@ -16,3 +16,4 @@ MonoBehaviour:
   loadingScreen: {fileID: 0}
   gameSession: {fileID: 0}
   storyManager: {fileID: 0}
+  sceneLoader: {fileID: 2089342500302452207, guid: 7de24c3fdefa3894ea9aa35b75e7a206, type: 3}

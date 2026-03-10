@@ -104,6 +104,5 @@ public class PlayerRig : MonoBehaviour
         {
             LockToPaddle();
         }
-        Debug.Break();
     }
 }
