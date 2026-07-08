@@ -1,5 +1,5 @@
 ﻿public interface IDropReceiver
 {
-    void DigestDrop();
+    void DigestDrop(DropReceiver source);
 
 }

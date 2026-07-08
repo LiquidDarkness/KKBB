@@ -12,4 +12,10 @@ public static class Score
         currentScore = currentScore += points;
         OnScoreChanged?.Invoke(currentScore);
     }
+
+    public static void SetScore(int points)
+    {
+        currentScore = points;
+        OnScoreChanged?.Invoke(currentScore);
+    }
 }

@@ -27,7 +27,7 @@ public class SpriteChanger : MonoBehaviour
             foreach (Image image in slots)
             {
                 image.sprite = sprites[RandomIndex()];
-                yield return new WaitForSeconds(refreshInterval);
+                yield return new WaitForSecondsRealtime(refreshInterval);
             }
         }
     }

@@ -17,6 +17,7 @@ public static class PauseManager
         locks.Clear();
     }
 
+#if UNITY_EDITOR
     [MenuItem("Debug/Log pause locks")]
     static void DebugLocks()
     {
@@ -25,6 +26,7 @@ public static class PauseManager
             Debug.Log(item);
         }
     }
+#endif
 
     public static void Pause(string locker)
     {

@@ -10,6 +10,8 @@ public class TimedEffectDisplayer : MonoBehaviour
     [SerializeField] GameSpeedManager speedManager;
     [SerializeField] Color speedUpColor;
     [SerializeField] Color speedDownColor;
+    [SerializeField] ParticleFedder particleFedderDown;
+    [SerializeField] ParticleFedder particleFedderUp;
 
     private void Awake()
     {
@@ -22,6 +24,8 @@ public class TimedEffectDisplayer : MonoBehaviour
     {
         border.enabled = isSpeedChanged;
         timer.enabled = isSpeedChanged;
+        particleFedderDown.particleSystem.gameObject.SetActive(isSpeedChanged);
+        particleFedderUp.particleSystem.gameObject.SetActive(isSpeedChanged);
     }
 
     private void UpdateTimer(float timeLeft, bool isSpedUp)
@@ -31,11 +35,13 @@ public class TimedEffectDisplayer : MonoBehaviour
         if (isSpedUp)
         {
             border.color = speedUpColor;
+            particleFedderUp.Play();
             timer.color = speedUpColor;
         }
         else
         {
             border.color = speedDownColor;
+            particleFedderDown.Play();
             timer.color = speedDownColor;
         }
     }

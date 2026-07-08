@@ -50,6 +50,7 @@ public class WindowManager : MonoBehaviour
         if (windowDict.TryGetValue(windowName, out GameObject window))
         {
             bool isActive = !window.activeSelf; // Prze³¹czamy widocznoœæ okienka
+            Debug.Log("Toggled window: " + window.name);
             window.SetActive(isActive); 
             
             if (isActive)

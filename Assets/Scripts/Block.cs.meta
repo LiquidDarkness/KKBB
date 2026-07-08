@@ -3,7 +3,10 @@ guid: 7a2e1c8189d320047860966b4d41d19e
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - blockSparklesVFX: {instanceID: 0}
+  - difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  - chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
 
     public void PurgeGameProgress()
     {
+        Debug.Log("Purging");
         PersistentSettings.PurgePlayerPrefs();
         SaveManager.Save();
     }

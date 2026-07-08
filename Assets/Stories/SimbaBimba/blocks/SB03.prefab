@@ -104,6 +104,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &2484034067650893473
 CircleCollider2D:
@@ -239,6 +241,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &6808291470534311693
 CircleCollider2D:
@@ -374,6 +378,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &8509181931994101841
 CircleCollider2D:
@@ -509,6 +515,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &3518437410561927287
 CircleCollider2D:
@@ -644,6 +652,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &9058699591715135644
 CircleCollider2D:
@@ -779,6 +789,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &1364403788055958910
 CircleCollider2D:
@@ -914,6 +926,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &896743959131622342
 CircleCollider2D:
@@ -1049,6 +1063,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &6581006826369636231
 CircleCollider2D:
@@ -1184,6 +1200,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &6655607513009065803
 CircleCollider2D:
@@ -1319,6 +1337,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &1230741086785927648
 CircleCollider2D:
@@ -1454,6 +1474,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &1853539819249105918
 CircleCollider2D:
@@ -1589,6 +1611,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &3945002395476087419
 CircleCollider2D:
@@ -1724,6 +1748,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &9001247182576524654
 CircleCollider2D:
@@ -1859,6 +1885,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &6973339147350724231
 CircleCollider2D:
@@ -2128,6 +2156,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &4715402982769697216
 CircleCollider2D:
@@ -2263,6 +2293,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &1302030678598598399
 CircleCollider2D:
@@ -2398,6 +2430,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &710130209179804087
 CircleCollider2D:
@@ -2533,6 +2567,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &2838696641277129400
 CircleCollider2D:
@@ -2668,6 +2704,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627829730837163
 CircleCollider2D:
@@ -2803,6 +2841,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627829744677077
 CircleCollider2D:
@@ -2938,6 +2978,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627829755240366
 CircleCollider2D:
@@ -3073,6 +3115,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627829766594498
 CircleCollider2D:
@@ -3208,6 +3252,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627829768657077
 CircleCollider2D:
@@ -3343,6 +3389,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627829779495417
 CircleCollider2D:
@@ -3478,6 +3526,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627829818904003
 CircleCollider2D:
@@ -3613,6 +3663,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627829823334310
 CircleCollider2D:
@@ -3748,6 +3800,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627829850041794
 CircleCollider2D:
@@ -3883,6 +3937,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627829880501507
 CircleCollider2D:
@@ -4018,6 +4074,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627829955442278
 CircleCollider2D:
@@ -4153,6 +4211,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627830068330612
 CircleCollider2D:
@@ -4288,6 +4348,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627830096267752
 CircleCollider2D:
@@ -4423,6 +4485,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627830103040056
 CircleCollider2D:
@@ -4558,6 +4622,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627830140068722
 CircleCollider2D:
@@ -4693,6 +4759,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627830164198470
 CircleCollider2D:
@@ -4828,6 +4896,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627830166208063
 CircleCollider2D:
@@ -4963,6 +5033,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627830191005667
 CircleCollider2D:
@@ -5098,6 +5170,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627830215521054
 CircleCollider2D:
@@ -5233,6 +5307,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627830221045011
 CircleCollider2D:
@@ -5368,6 +5444,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627830283224255
 CircleCollider2D:
@@ -5503,6 +5581,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627830309343370
 CircleCollider2D:
@@ -5638,6 +5718,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627830312727993
 CircleCollider2D:
@@ -5773,6 +5855,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627830331402984
 CircleCollider2D:
@@ -5908,6 +5992,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627830350093379
 CircleCollider2D:
@@ -6043,6 +6129,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627830355629463
 CircleCollider2D:
@@ -6178,6 +6266,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627830361494995
 CircleCollider2D:
@@ -6313,6 +6403,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627830418887609
 CircleCollider2D:
@@ -6448,6 +6540,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627830457348538
 CircleCollider2D:
@@ -6583,6 +6677,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627830494060983
 CircleCollider2D:
@@ -6718,6 +6814,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627830556723726
 CircleCollider2D:
@@ -6853,6 +6951,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627830567868823
 CircleCollider2D:
@@ -6988,6 +7088,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627830572471220
 CircleCollider2D:
@@ -7123,6 +7225,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627830614108563
 CircleCollider2D:
@@ -7258,6 +7362,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627830624085784
 CircleCollider2D:
@@ -7393,6 +7499,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627830680499791
 CircleCollider2D:
@@ -7528,6 +7636,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627830712853799
 CircleCollider2D:
@@ -7663,6 +7773,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627830733624836
 CircleCollider2D:
@@ -7798,6 +7910,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627830765070157
 CircleCollider2D:
@@ -7933,6 +8047,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627830794767153
 CircleCollider2D:
@@ -8068,6 +8184,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627830832695135
 CircleCollider2D:
@@ -8203,6 +8321,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627830868121501
 CircleCollider2D:
@@ -8338,6 +8458,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627830934067629
 CircleCollider2D:
@@ -8473,6 +8595,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627831011752548
 CircleCollider2D:
@@ -8608,6 +8732,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627831029898218
 CircleCollider2D:
@@ -8743,6 +8869,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627831070444715
 CircleCollider2D:
@@ -8878,6 +9006,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627831127587645
 CircleCollider2D:
@@ -9013,6 +9143,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627831210525895
 CircleCollider2D:
@@ -9148,6 +9280,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627831217228203
 CircleCollider2D:
@@ -9283,6 +9417,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627831219536444
 CircleCollider2D:
@@ -9418,6 +9554,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627831393720734
 CircleCollider2D:
@@ -9553,6 +9691,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627831424820066
 CircleCollider2D:
@@ -9688,6 +9828,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627831448181958
 CircleCollider2D:
@@ -9823,6 +9965,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627831454305369
 CircleCollider2D:
@@ -9958,6 +10102,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627831463739591
 CircleCollider2D:
@@ -10093,6 +10239,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627831475024893
 CircleCollider2D:
@@ -10228,6 +10376,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627831549213010
 CircleCollider2D:
@@ -10363,6 +10513,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627831571355715
 CircleCollider2D:
@@ -10498,6 +10650,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627831586491984
 CircleCollider2D:
@@ -10633,6 +10787,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627831594681849
 CircleCollider2D:
@@ -10768,6 +10924,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627831630721737
 CircleCollider2D:
@@ -10903,6 +11061,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627831638979549
 CircleCollider2D:
@@ -11038,6 +11198,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627831743505461
 CircleCollider2D:
@@ -11173,6 +11335,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627831815514429
 CircleCollider2D:
@@ -11308,6 +11472,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7083627831837880869
 CircleCollider2D:
@@ -11443,6 +11609,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &5797588114707201375
 CircleCollider2D:
@@ -11578,6 +11746,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &5889551230424086367
 CircleCollider2D:
@@ -11713,6 +11883,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &7904394763860663417
 CircleCollider2D:
@@ -11848,6 +12020,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &1935547388534279439
 CircleCollider2D:
@@ -11983,6 +12157,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &4955136413783786146
 CircleCollider2D:
@@ -12118,6 +12294,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &2425260667693325066
 CircleCollider2D:
@@ -12253,6 +12431,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
   pointsPerBlockDestroyed: 10
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 1
 --- !u!58 &165732339654529340
 CircleCollider2D:

@@ -15,15 +15,23 @@ public class ScoreManager : MonoBehaviour
 
     public void Awake()
     {
-        LoadScore();
-        Score.OnScoreChanged += DisplayScore;
+        Debug.Log("ScoreManager created");
+        Score.OnScoreChanged += HandleScoreChanged;
         SceneLoader.OnGameplayLoaded += ShowScore;
         SceneLoader.OnMenuLoaded += HideScore;
+        Level.OnLevelCompleted += HandleLevelCompleted;
+        LoadScore();
+        HideScore();
+    }
+
+    private void HandleLevelCompleted()
+    {
+        savedScore.SetIntValue(Score.currentScore);
     }
 
     public void OnDestroy()
     {
-        Score.OnScoreChanged -= DisplayScore;
+        Score.OnScoreChanged -= HandleScoreChanged;
     }
 
     public void Start()
@@ -41,11 +49,12 @@ public class ScoreManager : MonoBehaviour
         scoreContainer.SetActive(false);
     }
 
-    public void DisplayScore(int scoreToDisplay)
+    public void HandleScoreChanged(int scoreToDisplay)
     {
         ShowScore();
         scoreText.text = "";
         scoreText.text = scoreToDisplay.ToString();
+
     }
 
     private void ShowScore()
@@ -58,7 +67,7 @@ public class ScoreManager : MonoBehaviour
 
     public void LoadScore()
     {
-        Score.currentScore = savedScore.IntValue;
+        Score.SetScore(savedScore.IntValue);
     }
 
     public void Purchase(int cost, ShopDropHandler dropHandler)

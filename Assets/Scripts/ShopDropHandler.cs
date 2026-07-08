@@ -22,6 +22,6 @@ public class ShopDropHandler : MonoBehaviour
 
     public void SpawnDrop()
     {
-        (dropToSpawn as IDropReceiver).DigestDrop();
+        (dropToSpawn as IDropReceiver).DigestDrop(null);
     }
 }

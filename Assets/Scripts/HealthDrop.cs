@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealthDrop : MonoBehaviour, IDropReceiver
 {
-    public void DigestDrop()
+    public void DigestDrop(DropReceiver _)
     {
         GainHealth();
     }

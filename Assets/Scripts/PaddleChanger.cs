@@ -8,7 +8,7 @@ public class PaddleChanger : MonoBehaviour, IDropReceiver
     private static Dictionary<PaddleMovement, PaddleMovement> cachedPaddles = new();
     public static event Action<PaddleMovement> OnPaddleChanged;
 
-    public void DigestDrop()
+    public void DigestDrop(DropReceiver _)
     {
         ChangePaddle();
     }

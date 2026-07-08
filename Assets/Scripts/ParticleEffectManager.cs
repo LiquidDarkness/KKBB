@@ -12,6 +12,11 @@ public class ParticleEffectManager : MonoBehaviour
         SceneLoader.OnGameplayLoaded += FillReference;
     }
 
+    public void OnDestroy()
+    {
+        SceneLoader.OnGameplayLoaded -= FillReference;
+    }
+
     public void FillReference()
     {
         block.blockSparklesVFX = diffcultyManager.CurrentSettings.particleEffect;

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Block : MonoBehaviour
@@ -9,7 +10,7 @@ public class Block : MonoBehaviour
     [SerializeField] int timesHit;
     [SerializeField] DiffcultyManager difficultySettings;
     public static event Action<Vector3> OnBlockBroken;
-    public static event Action OnBlockHit;
+    public static event Action<Block> OnBlockHit;
 
     public ChainDestroyer chainDestroyer;
 
@@ -27,7 +28,7 @@ public class Block : MonoBehaviour
             HandleHit(difficultySettings.CurrentSettings.chainDestructionProbability);
         }
 
-        OnBlockHit?.Invoke();
+        OnBlockHit?.Invoke(this);
     }
 
     public bool IsDestroyed
@@ -91,5 +92,29 @@ public class Block : MonoBehaviour
     public void TriggerSparklesVFX()
     {
         Instantiate(blockSparklesVFX, transform.position, transform.rotation);
+    }
+
+    public List<Block> CollectNeighboringBlocks(float radius, int blockLayerMask)
+    {
+        List<Block> neighboringBlocks = new List<Block>();
+
+        Collider2D[] hitResults = Physics2D.OverlapCircleAll(
+            transform.position,
+            radius,
+            blockLayerMask
+        );
+
+        foreach (Collider2D hitCollider in hitResults)
+        {
+            Block block = hitCollider.GetComponent<Block>();
+            if (block != null)
+            {
+                neighboringBlocks.Add(block);
+            }
+        }
+
+        // 1b. Usuniêcie z listy s¹siadów tego bloku, który w³aœnie bêdzie niszczony
+        neighboringBlocks.Remove(this);
+        return neighboringBlocks;
     }
 }

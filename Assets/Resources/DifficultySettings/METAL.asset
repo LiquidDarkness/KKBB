@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6385bd46cdb9431448b3cc0408faa0eb, type: 3}
   m_Name: METAL
   m_EditorClassIdentifier: 
+  livesNumber: 0
   baseGameSpeed: 16
   maxSpeed: 25
   chainDestructionProbability: 0.05
@@ -37,3 +38,5 @@ MonoBehaviour:
     weight: 50
   - prefab: {fileID: 8983444278019405547, guid: b1d11a6c1e078184384af0533de45273, type: 3}
     weight: 0
+  - prefab: {fileID: 7206583613052520274, guid: 2f73712a260c6a648949c298e3c272d9, type: 3}
+    weight: 15

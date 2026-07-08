@@ -6,16 +6,20 @@ public class DropReceiver : MonoBehaviour
     public static event Action<SpeedDropData> OnSpeedDropReceived;
     public static event Action OnDropCollected;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        IDropReceiver dropReceiver = collision.gameObject.GetComponent<IDropReceiver>();
+        IDropReceiver[] dropReceivers = collision.gameObject.GetComponents<IDropReceiver>();
 
-        if (dropReceiver == null)
+        foreach (var dropReceiver in dropReceivers)
         {
-            //Debug.Log("Drop receiver is null");
-            return;
+            ProcessReceiver(collision, dropReceiver);
         }
 
+        Destroy(collision.gameObject);
+    }
+
+    private void ProcessReceiver(Collider2D collision, IDropReceiver dropReceiver)
+    {
         SpeedDropData speedDropData = collision.gameObject.GetComponent<SpeedDropData>();
 
         if (speedDropData != null)
@@ -24,9 +28,9 @@ public class DropReceiver : MonoBehaviour
         }
 
         OnDropCollected?.Invoke();
-        dropReceiver.DigestDrop();
-        Destroy(collision.gameObject);
+        dropReceiver.DigestDrop(this);
     }
+
 
     /*
     private void OnCollisionEnter2D_Back(Collision2D collision)

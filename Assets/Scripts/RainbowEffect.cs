@@ -6,7 +6,7 @@ public class RainbowEffect : MonoBehaviour
 {
     // ¯eby dzia³a³o, w komponencie TextMeshProUGUI nale¿y zaznaczyæ 'Override tags'
 
-    public TextMeshProUGUI txtMshComp;
+    public TextMeshProUGUI textMeshComp;
     public float refreshSpeed;
     private int count = 0;  // Zmienna œledz¹ca przesuniêcie kolorów
 
@@ -19,20 +19,20 @@ public class RainbowEffect : MonoBehaviour
     {
         while (true)
         {
-            for (int i = 0; i < txtMshComp.textInfo.characterCount; ++i)
+            for (int i = 0; i < textMeshComp.textInfo.characterCount; ++i)
             {
-                if (!txtMshComp.textInfo.characterInfo[i].isVisible)
+                if (!textMeshComp.textInfo.characterInfo[i].isVisible)
                 {
                     continue;
                 }
 
                 // Oblicz wartoœæ hex koloru têczy dla ka¿dej litery
-                string hexcolor = Rainbow(txtMshComp.textInfo.characterCount * 5, i + count);
+                string hexcolor = Rainbow(textMeshComp.textInfo.characterCount * 5, i + count);
                 Color32 myColor32 = HexToColor(hexcolor);
 
-                int meshIndex = txtMshComp.textInfo.characterInfo[i].materialReferenceIndex;
-                int vertexIndex = txtMshComp.textInfo.characterInfo[i].vertexIndex;
-                Color32[] vertexColors = txtMshComp.textInfo.meshInfo[meshIndex].colors32;
+                int meshIndex = textMeshComp.textInfo.characterInfo[i].materialReferenceIndex;
+                int vertexIndex = textMeshComp.textInfo.characterInfo[i].vertexIndex;
+                Color32[] vertexColors = textMeshComp.textInfo.meshInfo[meshIndex].colors32;
 
                 vertexColors[vertexIndex + 0] = myColor32;
                 vertexColors[vertexIndex + 1] = myColor32;
@@ -41,8 +41,8 @@ public class RainbowEffect : MonoBehaviour
             }
 
             count++;  // Aktualizuj count, aby zmieniaæ kolory z czasem
-            txtMshComp.UpdateVertexData(TMP_VertexDataUpdateFlags.All);
-            yield return new WaitForSeconds(refreshSpeed);
+            textMeshComp.UpdateVertexData(TMP_VertexDataUpdateFlags.All);
+            yield return new WaitForSecondsRealtime(refreshSpeed);
         }
     }
 

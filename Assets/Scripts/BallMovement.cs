@@ -24,7 +24,7 @@ public class BallMovement : MonoBehaviour
     private void Awake()
     {
         myRigidBody2D = GetComponent<Rigidbody2D>();
-        SetLaunchBool();
+        SetLaunchBool(string.Empty);
         SceneLoader.OnSceneChanged += SetLaunchBool;
         Level.OnLevelCompleted += ReLockBall;
     }
@@ -51,7 +51,7 @@ public class BallMovement : MonoBehaviour
     private void Update()
     {
         ApplyFakeGravity();
-        SetLaunchBool();
+        SetLaunchBool(string.Empty);
     }
 
     private void ApplyFakeGravity()
@@ -119,7 +119,7 @@ public class BallMovement : MonoBehaviour
         }
     }
 
-    public void SetLaunchBool()
+    public void SetLaunchBool(string _)
     {
         if (StoryManager.isStoryActive || PauseManager.IsPaused|| hasBeenLaunched)
         {

@@ -6,7 +6,7 @@ public class PointAdder : MonoBehaviour, IDropReceiver
 {
     public int pointsUponCollection;
 
-    public void DigestDrop()
+    public void DigestDrop(DropReceiver _)
     {
         Score.AddToScore(pointsUponCollection);
     }

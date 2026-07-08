@@ -25,7 +25,7 @@ public class SFXPlayer : MonoBehaviour
         breakSound = breakSounds.Length;
     }
 
-    public void PlayCollisionClip()
+    public void PlayCollisionClip(Block _)
     {
         if (collisionSounds.Length > 0)
         {

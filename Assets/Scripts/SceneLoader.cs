@@ -17,7 +17,7 @@ public class SceneLoader : MonoBehaviour
 
     public static event Action OnGameplayLoaded;
     public static event Action OnMenuLoaded;
-    public static event Action OnSceneChanged;
+    public static event Action<string> OnSceneChanged;
 
     public CoreReferences coreReferences;
 
@@ -75,7 +75,7 @@ public class SceneLoader : MonoBehaviour
         }
 
         Debug.Log("Calling OnSceneChanged: " + OnSceneChanged != null);
-        OnSceneChanged?.Invoke();
+        OnSceneChanged?.Invoke(sceneName);
         coreReferences.loadingScreen.FadeToClear();
 
         if (tempRunner != null)

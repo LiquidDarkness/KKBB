@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7889622887218498313}
   - component: {fileID: 728051668705911016}
   - component: {fileID: 2132305249887795185}
+  - component: {fileID: 925555614494848225}
   m_Layer: 0
   m_Name: GameMusic
   m_TagString: Untagged
@@ -210,9 +211,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSwitcher: {fileID: 8286503496128243020}
   loadingScreen: {fileID: 0}
+  gameSession: {fileID: 0}
+  storyManager: {fileID: 0}
   coreReferences: {fileID: 11400000, guid: 9ff01efc2579a3241b409409c97497ca, type: 2}
   injectMusicSwitcher: 1
   injectLoadingScreen: 0
+  injectGameSession: 0
+  injectStoryManager: 0
 --- !u!114 &2132305249887795185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,3 +231,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 8286503496128243020}
+--- !u!114 &925555614494848225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65817139720415317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0af01cd22b8ff674e9b5def296db8f57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnSceneSwitched:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7889622887218498313}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  expectedScene: Menu

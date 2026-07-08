@@ -103,6 +103,8 @@ MonoBehaviour:
   hitSprites: []
   pointsPerBlockDestroyed: 5
   timesHit: 0
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
   breakable: 0
 --- !u!58 &8402513905835290847
 CircleCollider2D:

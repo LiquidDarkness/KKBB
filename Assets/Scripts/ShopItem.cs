@@ -8,7 +8,7 @@ public class ShopItem : MonoBehaviour
      public void Buy()
     {
         iDrop = item.GetComponent<IDropReceiver>();
-        iDrop.DigestDrop();
+        iDrop.DigestDrop(null);
     }
 
     private void OnValidate()

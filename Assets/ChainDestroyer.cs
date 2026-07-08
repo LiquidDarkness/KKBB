@@ -38,7 +38,7 @@ public class ChainDestroyer : MonoBehaviour
     private IEnumerator ChainDestructionCoroutine()
     {
         // 1a. Pobranie wszystkich s¹siadów przez Overlap
-        List<Block> neighboringBlocks = CollectNeighboringBlocks();
+        List<Block> neighboringBlocks = targetBlock.CollectNeighboringBlocks(radius, blockLayerMask);
 
         // 2. Niszczenie bloku za pomoc¹ Twojej metody
         targetBlock.DestroyBlock();
@@ -57,31 +57,6 @@ public class ChainDestroyer : MonoBehaviour
         }
 
         Destroy(gameObject);
-    }
-
-    [ContextMenu("Test Chain")]
-    private List<Block> CollectNeighboringBlocks()
-    {
-        List<Block> neighboringBlocks = new List<Block>();
-
-        Collider2D[] hitResults = Physics2D.OverlapCircleAll(
-            transform.position,
-            radius,
-            blockLayerMask
-        );
-
-        foreach (Collider2D hitCollider in hitResults)
-        {
-            Block block = hitCollider.GetComponent<Block>();
-            if (block != null)
-            {
-                neighboringBlocks.Add(block);
-            }
-        }
-
-        // 1b. Usuniêcie z listy s¹siadów tego bloku, który w³aœnie bêdzie niszczony
-        neighboringBlocks.Remove(targetBlock);
-        return neighboringBlocks;
     }
 
     private void OnDrawGizmosSelected()
