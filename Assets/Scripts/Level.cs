@@ -14,6 +14,12 @@ public class Level : MonoBehaviour
         Block.OnBlockBroken += BlockDestroyed;
     }
 
+    public void OnDestroy()
+    {
+        MainManager.OnLevelLoaded -= CountBlocks;
+        Block.OnBlockBroken -= BlockDestroyed;
+    }
+
     public void CountBlocks()
     {
         breakableBlocks = 0;

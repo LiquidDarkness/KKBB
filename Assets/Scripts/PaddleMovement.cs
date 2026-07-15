@@ -4,7 +4,6 @@ public class PaddleMovement : MonoBehaviour
 {
     public float desiredPositionX;
     public float paddleWidth;
-    public bool navigateByMouse;
     public Transform mountPoint;
     public float paddleSpeed;
 
@@ -19,14 +18,16 @@ public class PaddleMovement : MonoBehaviour
         targetCamera = Camera.main;
         paddleWidth = GetComponent<Collider2D>().bounds.size.x;
         CalculateScreenSize();
-        currentPositionX = desiredPositionX;
+        CalcuteBounds(out float minX, out float maxX);
+        currentPositionX = desiredPositionX = (minX + maxX) / 2f;
         Move();
     }
 
     private void Update()
     {
         CalculateScreenSize();
-        SetXPosition();
+        ReadKeyboardInput();
+        Move();
     }
 
     private void CalculateScreenSize()
@@ -39,37 +40,18 @@ public class PaddleMovement : MonoBehaviour
         }
     }
 
-    private void SetXPosition()
-    {
-        if (navigateByMouse)
-        {
-            CalculatePaddleFromMouse();
-        }
-        else
-        {
-            CalculatePaddleFromKeyboard();
-        }
-    }
-
     internal void MoveToForcedPosition(float viewportPosition)
     {
         desiredPositionX = viewportPosition * screenWidthInUnits;
-        float minX = paddleWidth / 2;
-        float maxX = screenWidthInUnits - (paddleWidth / 2);
+        CalcuteBounds(out float minX, out float maxX);
         currentPositionX = Mathf.Clamp(desiredPositionX, minX, maxX);
         transform.position = new Vector2(currentPositionX - (screenWidthInUnits / 2), transform.position.y);
     }
 
-    private void CalculatePaddleFromMouse()
+    private void CalcuteBounds(out float minX, out float maxX)
     {
-        ReadMouseInput();
-        Move();
-    }
-
-    private void CalculatePaddleFromKeyboard()
-    {
-        ReadKeyboardInput();
-        Move();
+        minX = paddleWidth / 2;
+        maxX = screenWidthInUnits - (paddleWidth / 2);
     }
 
     private void ReadKeyboardInput()
@@ -84,18 +66,9 @@ public class PaddleMovement : MonoBehaviour
         SetPosition((v + 1) / 2);
     }
 
-    private void ReadMouseInput()
-    {
-        float screenHeightInUnits = targetCamera.orthographicSize * 2;
-        screenWidthInUnits = screenHeightInUnits * targetCamera.aspect;
-        float mousePosition = targetCamera.ScreenToViewportPoint(Input.mousePosition).x;
-        desiredPositionX = mousePosition * screenWidthInUnits;
-    }
-
     public void Move()
     {
-        float minX = paddleWidth / 2;
-        float maxX = screenWidthInUnits - (paddleWidth / 2);
+        CalcuteBounds(out float minX, out float maxX);
         var xPosition = Mathf.Clamp(desiredPositionX, minX, maxX);
         currentPositionX = Mathf.MoveTowards(currentPositionX, xPosition, paddleSpeed * Time.deltaTime);
         transform.position = new Vector2(currentPositionX - (screenWidthInUnits / 2), transform.position.y);

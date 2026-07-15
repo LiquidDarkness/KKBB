@@ -54,7 +54,6 @@ public class ScoreManager : MonoBehaviour
         ShowScore();
         scoreText.text = "";
         scoreText.text = scoreToDisplay.ToString();
-
     }
 
     private void ShowScore()

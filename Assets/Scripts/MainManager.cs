@@ -25,29 +25,19 @@ public class MainManager : MonoBehaviour
     public LevelLoader levelLoader;
     public ScenarioManager scenarioManager;
 
-    public static int currentLevelIndex;
     public TypeDistinguisher currentLevel;
     public TypeDistinguisher scenarioIndex;
+
+    public Story CurrentStory { get => chosenScenario.stories[currentLevel.IntValue]; }
+
     public static event Action OnLevelLoaded;
     public static event Action OnStoryLoaded;
-
-    //private StoryManager storyManager;
-
-    public void Awake()
-    {
-        //Level.OnLevelCompleted += LoadNextLevel;
-        //chosenScenario = null;
-        //chosenScenario = scenarioManager.scenarios[scenarioIndex.IntValue];
-        //Debug.Log(scenarioIndex.IntValue);
-    }
 
     public void Start()
     {
         SeekReference();
 
         TryLoadScenario();
-
-        //LoadLevel(chosenScenario.stories[currentLevel.IntValue].level);
     }
 
     private void TryLoadScenario()
@@ -60,30 +50,6 @@ public class MainManager : MonoBehaviour
             levels.Add(item.level);
         }
 
-        /*
-        if (chosenScenario != scenarioManager.scenarios[scenarioIndex.IntValue])
-        {
-            chosenScenario = scenarioManager.scenarios[scenarioIndex.IntValue];
-        }
-
-        if (chosenScenario != null)
-        {
-            foreach (var item in chosenScenario.stories)
-            {
-                levels.Add(item.level);
-            }
-        }
-        else
-        {
-            chosenScenario = scenarioManager.scenarios[scenarioManager.chosenScenario.IntValue];
-            Debug.Log("Chosen scenario is null");
-        }
-
-        Debug.Log($"PlayerPrefs scenario: {PlayerPrefs.GetInt(scenarioManager.chosenScenario.PrefsKey)}");
-        Debug.Log($"TypeDistinguisher scenario: {scenarioManager.scenarios[scenarioIndex.IntValue]}");
-        Debug.Log("Chosen scenario: " + chosenScenario.name);
-        Debug.Log($"Reading from key: {scenarioManager.chosenScenario.PrefsKey}");
-        */
         scenarioManager.chosenScenario.LogValue();
 
         OnStoryLoaded?.Invoke();
@@ -110,23 +76,17 @@ public class MainManager : MonoBehaviour
         }
     }
 
-    //[ContextMenu("test loading")]
-    //public void TestLoading()
-    //{
-    //    levelLoader.LoadLevel(levels[currentLevelIndex]);
-    //}
-
-    //[ContextMenu("Advance")]
     public void LoadNextLevel()
     {
-        currentLevelIndex = (currentLevelIndex + 1) % levels.Count;
+        Debug.Log("MainManager progress");
+        int currentLevelIndex = (currentLevel.IntValue + 1) % levels.Count;
         if (contentContainer.childCount != 0)
         {
             Destroy(contentContainer.GetChild(0).gameObject);
         }
 
         LevelData levelData = levels[currentLevelIndex];
-        //SaveManager.Save();
+        currentLevel.SetIntValue(currentLevelIndex);
         LoadLevel(levelData);
     }
 
@@ -134,8 +94,6 @@ public class MainManager : MonoBehaviour
     {
         backgroundSprite.sprite = levelData.background;
         levelLoader.LoadLevel(levelData);
-        //Instantiate(levelData.content, contentContainer);
-        //coreferences.musicSwitcher.SwitchAudio(levelData.ambience);
         OnLevelLoaded?.Invoke();
     }
 }

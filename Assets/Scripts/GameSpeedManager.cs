@@ -42,6 +42,7 @@ public class GameSpeedManager : MonoBehaviour
     {
         speedChangeSemaphore.RemoveAllListeners();
         speedChangeSemaphore.AddListener(StartValueChange);
+        SetGameSpeed();
         originalGameSpeed = gameSpeed;
     }
 

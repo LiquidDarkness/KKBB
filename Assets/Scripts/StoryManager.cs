@@ -16,7 +16,6 @@ public class StoryManager : MonoBehaviour, ICoreReferencer
     public TypeDistinguisher currentLvl;
     public TypeDistinguisher chosenScenario;
     public Story currentStory;
-    public int currentLevelNumber;
     internal static bool isStoryActive;
 
     [Header("Blocks")]
@@ -55,24 +54,28 @@ public class StoryManager : MonoBehaviour, ICoreReferencer
     [ContextMenu("test progress")]
     public void Progress()
     {
-        currentLevelNumber = currentLvl.IntValue;
-        currentLevelNumber += 1;
+        Debug.Log("Storymanager progress from level: " + currentLvl.IntValue);
+
+        int currentLevelNumber = currentLvl.IntValue + 1;
+        PlayerPrefs.SetInt(currentLvl.PrefsKey, currentLevelNumber % mainManager.levels.Count);
         DisplayStoryContent();
-        PlayerPrefs.SetInt(currentLvl.PrefsKey, currentLevelNumber);
-        boink.SetActive(true);
+        ShowEndingButton(currentLevelNumber == mainManager.levels.Count - 1);
+
+        Debug.Log("Storymanager progress to level: " + currentLvl.IntValue);
     }
 
     [ContextMenu("test story")]
     public void DisplayStoryContent()
     {
-        currentStory = mainManager.chosenScenario.stories[currentLevelNumber];
+        Debug.Log("Story displayed for level: " + currentLvl.IntValue);
+        currentStory = mainManager.CurrentStory;
         isStoryActive = true;
         if (textContainer != null)
         {
             textContainer.SetActive(true);
         }
 
-        storyText.key = mainManager.chosenScenario.name + currentLevelNumber;
+        storyText.key = mainManager.chosenScenario.name + currentLvl.IntValue;
         //LiquidDarkness1
         storyText.UpdateTranslation();
     }

@@ -852,6 +852,7 @@ GameObject:
   - component: {fileID: 3007742471343142554}
   - component: {fileID: 3007742471343142549}
   - component: {fileID: 3007742471343142548}
+  - component: {fileID: 8337841074404637579}
   m_Layer: 0
   m_Name: GameSession
   m_TagString: Untagged
@@ -1097,6 +1098,18 @@ MonoBehaviour:
   speedDownColor: {r: 1, g: 0.609763, b: 0.18396229, a: 0.7490196}
   particleFedderDown: {fileID: 3007742472820369409}
   particleFedderUp: {fileID: 2870624377563659907}
+--- !u!114 &8337841074404637579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3007742471343142533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a4d3f04478c1840806b2dc41cb6453, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3007742471348010940
 GameObject:
   m_ObjectHideFlags: 0
@@ -9911,6 +9924,30 @@ PrefabInstance:
     - target: {fileID: 1521974237543203901, guid: 41e87726a1191204fb4fa035dfc1fa8f, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602186747454938084, guid: 41e87726a1191204fb4fa035dfc1fa8f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602186747454938084, guid: 41e87726a1191204fb4fa035dfc1fa8f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 3007742471343142554}
+    - target: {fileID: 1602186747454938084, guid: 41e87726a1191204fb4fa035dfc1fa8f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ToggleWindow
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602186747454938084, guid: 41e87726a1191204fb4fa035dfc1fa8f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: WindowManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602186747454938084, guid: 41e87726a1191204fb4fa035dfc1fa8f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 3007742472506412230}
+    - target: {fileID: 1602186747454938084, guid: 41e87726a1191204fb4fa035dfc1fa8f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2491714423983385724, guid: 41e87726a1191204fb4fa035dfc1fa8f, type: 3}
       propertyPath: m_AnchorMax.y
