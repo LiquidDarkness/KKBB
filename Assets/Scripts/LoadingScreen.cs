@@ -8,8 +8,6 @@ public class LoadingScreen : MonoBehaviour
     [SerializeField] private Image loadingImage;
     [SerializeField] private float fadeoutSpeed;
 
-    private bool isBusy;
-
     public void FadeToClear(Action callback = null)
     {
         StartCoroutine(FadeoutSquare(Color.black, Color.clear, callback));
@@ -23,8 +21,6 @@ public class LoadingScreen : MonoBehaviour
 
     private IEnumerator FadeoutSquare(Color fromFade, Color toFade, Action callback)
     {
-        isBusy = true;
-
         float fadeAmount = 0;
         loadingImage.color = fromFade;
 
@@ -36,8 +32,6 @@ public class LoadingScreen : MonoBehaviour
             loadingImage.color = Color.Lerp(fromFade, toFade, fadeAmount);
         }
         loadingImage.color = toFade;
-
-        isBusy = false;
 
         callback?.Invoke();
     }
