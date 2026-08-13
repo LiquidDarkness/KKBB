@@ -10,12 +10,17 @@ public class PaddleChanger : MonoBehaviour, IDropReceiver
 
     public void DigestDrop(DropReceiver _)
     {
-        ChangePaddle();
+        ChangePaddle(replacingPaddle);
     }
 
     public void ChangePaddle()
     {
-        if (replacingPaddle == null)
+        ChangePaddle(replacingPaddle);
+    }
+
+    public void ChangePaddle(PaddleMovement paddleToUse)
+    {
+        if (paddleToUse == null)
         {
             Debug.LogWarning("New paddle is null.");
             return;
@@ -24,15 +29,15 @@ public class PaddleChanger : MonoBehaviour, IDropReceiver
         PaddleMovement paddleInstance;
 
         // Jeœli mamy ju¿ instancjê w cache, u¿ywamy jej
-        if (cachedPaddles.ContainsKey(replacingPaddle))
+        if (cachedPaddles.ContainsKey(paddleToUse))
         {
-            paddleInstance = cachedPaddles[replacingPaddle];
+            paddleInstance = cachedPaddles[paddleToUse];
         }
         else
         {
             // Inaczej instancjonujemy nowy obiekt i dodajemy do cache
-            paddleInstance = Instantiate(replacingPaddle);
-            cachedPaddles.Add(replacingPaddle, paddleInstance);
+            paddleInstance = Instantiate(paddleToUse);
+            cachedPaddles.Add(paddleToUse, paddleInstance);
         }
 
         // Aktywujemy paddle i podnosimy event

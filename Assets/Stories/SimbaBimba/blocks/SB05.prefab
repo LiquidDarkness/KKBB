@@ -2784,6 +2784,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1255289585442128186}
   - component: {fileID: 2328121621477900420}
+  - component: {fileID: 15936104788022478}
   m_Layer: 0
   m_Name: flies
   m_TagString: Untagged
@@ -2820,7 +2821,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 9a13518068c20f1438a72de25bd0089e, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 1
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -5693,3 +5694,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 573928395617129551, guid: 0ac0468423a15d346920e9acf4edf69b, type: 3}
   m_PrefabInstance: {fileID: 8690749808930459383}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &15936104788022478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8771661242699669640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a55cc0d9619189368080ceb5b132fb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}

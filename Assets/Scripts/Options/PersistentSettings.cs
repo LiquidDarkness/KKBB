@@ -104,18 +104,4 @@ public static class PersistentSettings
             }
         }
     }
-
-
-
-    /* public static List<int> listaIntów;
-
-    public static void TyruRyru(int doUsuniêcia) // 2
-    {
-        for (int i = 0; i < doUsuniêcia; i++)
-        {
-            listaIntów.RemoveAt(listaIntów.Count - 1);
-        }
-    }
-
-    */
 }

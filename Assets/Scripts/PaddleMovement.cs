@@ -13,8 +13,12 @@ public class PaddleMovement : MonoBehaviour
 
     public float currentPositionX;
 
-    private void Start()
+    private void Awake()
     {
+        // Awake (not Start): this must be ready the instant the paddle is instantiated. When a
+        // drop swaps paddles, PlayerRig.HandlePaddleChanged positions the new paddle by calling
+        // Move() in the same frame it's created - Start() would still be pending at that point,
+        // leaving screenWidthInUnits/paddleWidth at 0 and placing the paddle in the wrong spot.
         targetCamera = Camera.main;
         paddleWidth = GetComponent<Collider2D>().bounds.size.x;
         CalculateScreenSize();

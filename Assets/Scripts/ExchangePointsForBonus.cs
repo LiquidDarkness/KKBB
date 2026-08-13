@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class ExchangePointsForBonus : MonoBehaviour
 {
     public GameSession gameSession;
+    public PaddleChanger paddleChanger;
     public Button buyHealthButton;
     public Button paddle1Buy;
     public Button paddle2Buy;
@@ -58,11 +59,14 @@ public class ExchangePointsForBonus : MonoBehaviour
         }
     }
 
-    public void FinalisePaddleExchange()
+    public void FinalisePaddleExchange(PaddleMovement boughtPaddle)
     {
         if (Score.currentScore >= 500)
         {
             Score.AddToScore(-500);
+            // Swaps the active paddle for the bought one, in the same spot the active paddle
+            // currently occupies (PlayerRig.HandlePaddleChanged preserves position on swap).
+            paddleChanger.ChangePaddle(boughtPaddle);
         }
 
         else

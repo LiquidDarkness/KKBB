@@ -3,8 +3,10 @@ using UnityEngine;
 
 public static class PlayerHealth
 {
-    //TODO: zmieñ liczbê ¿yæ na podan¹ dla ka¿dego poziomu trudnoœci
-    public const int startingHealth = 3;
+    public const int defaultStartingHealth = 3;
+
+    // Number of lives for the currently selected difficulty (DifficultySettings.livesNumber).
+    private static int startingHealth = defaultStartingHealth;
 
     // Referencja do TD (trzymana np. w PlayerRig albo podawana na start gry).
     public static TypeDistinguisher healthTD;
@@ -15,9 +17,14 @@ public static class PlayerHealth
 
     public static int Health => healthTD?.IntValue ?? startingHealth;
 
-    public static void Initialize(TypeDistinguisher td)
+    public static void Initialize(TypeDistinguisher td, int? livesForDifficulty = null)
     {
         healthTD = td;
+
+        if (livesForDifficulty.HasValue && livesForDifficulty.Value > 0)
+        {
+            startingHealth = livesForDifficulty.Value;
+        }
 
         if (healthTD.IntValue <= 0)
         {

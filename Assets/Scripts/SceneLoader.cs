@@ -21,37 +21,23 @@ public class SceneLoader : MonoBehaviour
 
     public CoreReferences coreReferences;
 
-    private GameObject tempRunner;
     public void LoadScene(string sceneName)
     {
-        coreReferences.loadingScreen.FadeToBlack(() =>
+        LoadingScreen loadingScreen = coreReferences.loadingScreen;
+        loadingScreen.FadeToBlack(() =>
         {
             //Dzia³a jak event Action, ale nie ma potrzeby subskrybowania siê i odsubrybowania,
             //wydarzy siê jednorazowo, ale bêdzie dzia³a³o za ka¿dym wywo³anie LoadLevel z odpowiedni¹ zawartoœci¹.
             Debug.Log("Transitioning to: " + sceneName);
-            IEnumerator routine = TransitionSequence(sceneName);
-            Debug.Log($"Routine exists: {routine != null}");
-            if (this.isActiveAndEnabled)
-            {
-                StartCoroutine(routine);
-            }
-            else
-            {
-                StartRemoteRoutine(routine);
-            }
+            // Always run on the persistent LoadingScreen, never on `this`: this SceneLoader
+            // instance might live in the very scene about to be unloaded (e.g. a trigger placed
+            // in Gameplay), in which case it would be destroyed mid-transition, silently
+            // killing the coroutine before FadeToClear() runs.
+            loadingScreen.StartCoroutine(TransitionSequence(sceneName, loadingScreen));
         });
     }
 
-    private void StartRemoteRoutine(IEnumerator routine)
-    {
-        tempRunner = new GameObject();
-        DontDestroyOnLoad(tempRunner);
-        tempRunner.AddComponent<DummyBehaviour>().StartCoroutine(routine);
-    }
-
-    class DummyBehaviour : MonoBehaviour {}
-
-    IEnumerator TransitionSequence(string sceneName)
+    IEnumerator TransitionSequence(string sceneName, LoadingScreen loadingScreen)
     {
         Debug.Log("Loading scene: " + sceneName);
         SceneManager.LoadScene(sceneName,LoadSceneMode.Single);
@@ -60,27 +46,19 @@ public class SceneLoader : MonoBehaviour
         switch (sceneName)
         {
             case "Gameplay":
-                Debug.Log("Calling OnGameplayLoaded: " + OnGameplayLoaded != null);
                 OnGameplayLoaded?.Invoke();
-                Debug.Log("Loading saved game.");
                 SaveManager.Load();
                 break;
 
             case "Menu":
-                OnMenuLoaded.Invoke();
+                OnMenuLoaded?.Invoke();
                 break;
 
             default:
                 break;
         }
 
-        Debug.Log("Calling OnSceneChanged: " + OnSceneChanged != null);
         OnSceneChanged?.Invoke(sceneName);
-        coreReferences.loadingScreen.FadeToClear();
-
-        if (tempRunner != null)
-        {
-            Destroy(tempRunner);
-        }
+        loadingScreen.FadeToClear();
     }
 }

@@ -12,8 +12,6 @@ public class LevelLoader : MonoBehaviour
 
     public float spawnTime;
 
-    public TypeDistinguisher recentLevel;
-
     public void LoadLevel(LevelData levelToLoad)
     {
         if (container.childCount != 0)
@@ -39,7 +37,6 @@ public class LevelLoader : MonoBehaviour
     private IEnumerator RandomBlockInstantiotor(GameObject blockFormation)
     {
         yield return null;
-        // TODO: zrobiæ maksymaln¹ duration na pojawienie siê wszystkich klocków jako zmienn¹.
         // Pobierz wszystkie bloki w content
         Block[] blocks = blockFormation.GetComponentsInChildren<Block>(true);
         var wait = new WaitForSeconds(spawnTime / blocks.Length);
@@ -61,6 +58,4 @@ public class LevelLoader : MonoBehaviour
             yield return wait; // czas oczekiwania miêdzy pojawieniami siê bloków
         }
     }
-
-    class Dummy : MonoBehaviour { }
 }

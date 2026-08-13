@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -9,9 +6,6 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI scoreText;
     public TypeDistinguisher savedScore;
     public GameObject scoreContainer;
-    public bool canBePurchased;
-
-    public static event Action<bool> OnPurchaseAttempt;
 
     public void Awake()
     {
@@ -67,22 +61,5 @@ public class ScoreManager : MonoBehaviour
     public void LoadScore()
     {
         Score.SetScore(savedScore.IntValue);
-    }
-
-    public void Purchase(int cost, ShopDropHandler dropHandler)
-    {
-        if (Score.currentScore >= cost)
-        {
-            Score.AddToScore(-cost);
-            dropHandler.SpawnDrop();
-            OnPurchaseAttempt.Invoke(true);
-            Debug.Log($"[ScoreManager] Purchase successful! Spent {cost} points.");
-        }
-        else
-        {
-            OnPurchaseAttempt.Invoke(false);
-            Debug.Log("[ScoreManager] Not enough points to buy this item.");
-            // tutaj dodaæ wyœwietlenie komunikatu w UI
-        }
     }
 }

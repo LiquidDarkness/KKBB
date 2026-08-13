@@ -33,20 +33,6 @@ public class TypeDistinguisher : ScriptableObject
         Debug.Log(this.ToString());
     }
 
-    public void GetValue(out int value)
-    {
-        value = PlayerPrefs.GetInt(PrefsKey);
-    }
-    public void GetValue(out float value)
-    {
-        value = PlayerPrefs.GetFloat(PrefsKey);
-    }    
-
-    public void GetValue(out string value)
-    {
-        value = PlayerPrefs.GetString(PrefsKey);
-    }
-
     public int IntValue => PlayerPrefs.GetInt(PrefsKey);
     public float FloatValue => PlayerPrefs.GetFloat(PrefsKey);
     public string StringValue => PlayerPrefs.GetString(PrefsKey);
@@ -79,10 +65,9 @@ public class TypeDistinguisher : ScriptableObject
         BOOL,
     }
 
-    public void SetBoolValue(bool value) => SetValue(value); 
-    public void SetFloatValue(float value) => SetValue(value); 
-    public void SetIntValue(int value) => SetValue(value); 
-    public void SetStringValue(string value) => SetValue(value); 
+    public void SetBoolValue(bool value) => SetValue(value);
+    public void SetFloatValue(float value) => SetValue(value);
+    public void SetIntValue(int value) => SetValue(value);
 
     internal static void FromString(string item)
     {

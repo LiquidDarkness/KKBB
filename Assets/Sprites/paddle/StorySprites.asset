@@ -1,0 +1,129 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84a92b25f83d49b9bc132d206b370281, type: 3}
+  m_Name: StorySprites
+  m_EditorClassIdentifier:
+  hashCode: -23279592
+  material: {fileID: 9000813817658928138}
+  materialHashCode: 0
+  m_Version: 1.1.0
+  m_FaceInfo:
+    m_FaceIndex: 0
+    m_FamilyName: 
+    m_StyleName: 
+    m_PointSize: 0
+    m_Scale: 0
+    m_LineHeight: 0
+    m_AscentLine: 0
+    m_CapLine: 0
+    m_MeanLine: 0
+    m_Baseline: 0
+    m_DescentLine: 0
+    m_SuperscriptOffset: 0
+    m_SuperscriptSize: 0
+    m_SubscriptOffset: 0
+    m_SubscriptSize: 0
+    m_UnderlineOffset: 0
+    m_UnderlineThickness: 0
+    m_StrikethroughOffset: 0
+    m_StrikethroughThickness: 0
+    m_TabWidth: 0
+  spriteSheet: {fileID: 2800000, guid: 05e0973ef20d16440b7022751e5cc623, type: 3}
+  m_SpriteCharacterTable:
+  - m_ElementType: 2
+    m_Unicode: 65534
+    m_GlyphIndex: 0
+    m_Scale: 1
+    m_Name: paddle
+    m_HashCode: -23279592
+  m_SpriteGlyphTable:
+  - m_Index: 0
+    m_Metrics:
+      m_Width: 1035
+      m_Height: 205
+      m_HorizontalBearingX: -517.5
+      m_HorizontalBearingY: 102.5
+      m_HorizontalAdvance: 1035
+    m_GlyphRect:
+      m_X: 0
+      m_Y: 0
+      m_Width: 1035
+      m_Height: 205
+    m_Scale: 1
+    m_AtlasIndex: 0
+    sprite: {fileID: 21300000, guid: 05e0973ef20d16440b7022751e5cc623, type: 3}
+  spriteInfoList: []
+  fallbackSpriteAssets:
+  - {fileID: 11400000, guid: 6e981d2fb81f0f045b063b6ff26e6016, type: 2}
+  - {fileID: 11400000, guid: 86d20108fb30ae343b185c625db0c6d7, type: 2}
+  - {fileID: 11400000, guid: 5858b5855f1b5434a98141b21c10a210, type: 2}
+  - {fileID: 11400000, guid: a7f1b3cb76f335d4eb8f49d38b26aa93, type: 2}
+  - {fileID: 11400000, guid: 6d937616992ffd8459d81e21a7ae606b, type: 2}
+  - {fileID: 11400000, guid: ff946a6d4fe6ccf4c9097ed787fb4fb6, type: 2}
+  - {fileID: 11400000, guid: cdddb3eeb5ca7684cbec8bfc1a9f7c11, type: 2}
+  - {fileID: 11400000, guid: a23d1af3b9a1c2f42b5a3c3f1560983c, type: 2}
+  - {fileID: 11400000, guid: 4a2cd201492f30f4887c1e49aca59364, type: 2}
+  - {fileID: 11400000, guid: bac174845ff7f1940a2f8ae89261b81b, type: 2}
+  - {fileID: 11400000, guid: 2732e8dd0f8d40145a3ef9fc5207a30b, type: 2}
+  - {fileID: 11400000, guid: bd54900fe52987442bdd6bebebcdfd2e, type: 2}
+  - {fileID: 11400000, guid: b1c75aee21431af47934246bd0c4c17f, type: 2}
+  - {fileID: 11400000, guid: fedd7e2183a9ebb4996863d35cd92097, type: 2}
+  - {fileID: 11400000, guid: f9802d0ffaeea6e4688082d8cf409632, type: 2}
+  - {fileID: 11400000, guid: 186fe96974a98fb4eaff830eb6b8c0fc, type: 2}
+  - {fileID: 11400000, guid: 0604da87ae69e3a4f8125aeae9237202, type: 2}
+  - {fileID: 11400000, guid: fed27ae1d4a07234dab427f2ced87f16, type: 2}
+  - {fileID: 11400000, guid: a6d4ac6b172bd3543961877cbcd0521a, type: 2}
+  - {fileID: 11400000, guid: 7f4bd10e301fc7043b53db28e5cd0ff6, type: 2}
+  - {fileID: 11400000, guid: a23af97eb94b5364ebb669d0b0ba8043, type: 2}
+  - {fileID: 11400000, guid: ef3d3d2b2892d5a458c7c8449db63a88, type: 2}
+  - {fileID: 11400000, guid: 44c2c7ededdd47f4f82ed34babbafdcf, type: 2}
+  - {fileID: 11400000, guid: ed31c3ee7eeb33444a60ba03b6d22970, type: 2}
+  - {fileID: 11400000, guid: c2fd72f169ffd3643a9eb43617345425, type: 2}
+  - {fileID: 11400000, guid: 32889df5698244d4aae0741b9c804d87, type: 2}
+--- !u!21 &9000813817658928138
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TextMeshPro/Sprite
+  m_Shader: {fileID: 4800000, guid: cf81c85f95fe47e1a27f6ae460cf182c, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 05e0973ef20d16440b7022751e5cc623, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _CullMode: 0
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []

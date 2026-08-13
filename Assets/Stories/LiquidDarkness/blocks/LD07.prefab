@@ -168,6 +168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6267424718433961301}
   - component: {fileID: 3668467891800479963}
+  - component: {fileID: 67651322374756185}
   m_Layer: 0
   m_Name: Aliens
   m_TagString: Untagged
@@ -204,7 +205,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 2a44707cd26240c42b3f5988eb931f72, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 1
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -3687,3 +3688,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7012976875569864171, guid: a2f19aac1e625834da6c3902161c1085, type: 3}
   m_PrefabInstance: {fileID: 6635801131010044095}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &67651322374756185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8917857074930930439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a55cc0d9619189368080ceb5b132fb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}

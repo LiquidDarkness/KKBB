@@ -24,6 +24,7 @@ public class GameSpeedManager : MonoBehaviour
         DiffcultyManager.OnSettingsChanged += HandleDifficultySettingsChanged;
         PauseManager.OnPause += HandlePause;
         PauseManager.OnUnpause += HandleUnpause;
+        Level.OnLevelCompleted += HandleLevelCompleted;
     }
 
     private void OnDestroy()
@@ -31,6 +32,20 @@ public class GameSpeedManager : MonoBehaviour
         DiffcultyManager.OnSettingsChanged -= HandleDifficultySettingsChanged;
         PauseManager.OnPause -= HandlePause;
         PauseManager.OnUnpause -= HandleUnpause;
+        Level.OnLevelCompleted -= HandleLevelCompleted;
+    }
+
+    private void HandleLevelCompleted()
+    {
+        if (routine != null)
+        {
+            StopCoroutine(routine);
+            routine = null;
+        }
+
+        gameSpeed = originalGameSpeed;
+        Time.timeScale = gameSpeed;
+        OnGameSpeedChanged?.Invoke(false);
     }
 
     private void HandleDifficultySettingsChanged(DifficultySettings _)
@@ -63,13 +78,6 @@ public class GameSpeedManager : MonoBehaviour
         Time.timeScale = gameSpeed;
     }
 
-    //TODO: jeœli wp³yw dropsa sprawia, ¿e prêdkoœæ gry spada poni¿ej 0, wówczas czas trwania spowolnienia
-    //zostaje przed³u¿ona o 'duration'.
-    //TODO: jeœli wp³yw dropsa sprawia, ¿e prêdkoœæ gry przekracza prêdkoœæ maksymaln¹ ustalon¹ w wybranym
-    //poziomie trudnoœci, wówczas czas trwania przyspieszenia zostaje przed³u¿ona o 'duration'.
-
-
-    //TODO: jak skoñczy siê level, to koñczy siê efekt
     public IEnumerator ChangeGameSpeed(float dropInfluence, float duration)
     {
         elapsedTime = 0;
@@ -95,11 +103,28 @@ public class GameSpeedManager : MonoBehaviour
 
     public void StartValueChange(float dropInfluence, float duration)
     {
-        if ((gameSpeed > originalGameSpeed && dropInfluence > 0)
-            || (gameSpeed < originalGameSpeed && dropInfluence < 0))
+        bool isSpedUp = gameSpeed > originalGameSpeed;
+        bool isSlowedDown = gameSpeed < originalGameSpeed;
+
+        if ((isSpedUp && dropInfluence > 0) || (isSlowedDown && dropInfluence < 0))
         {
+            // Same direction as the currently running effect: extend the total duration by the
+            // full duration of the newly caught drop.
             elapsedTime -= duration;
             return;
+        }
+
+        if ((isSpedUp && dropInfluence < 0) || (isSlowedDown && dropInfluence > 0))
+        {
+            if (effectCountDown > duration)
+            {
+                // Opposite direction, but shorter than what is left of the current effect: it just
+                // eats into the remaining time, current effect keeps running as-is.
+                elapsedTime += duration;
+                return;
+            }
+            // Opposite direction and at least as long as what is left: current effect is fully
+            // cancelled out, fall through and catch this drop as if nothing was running.
         }
 
         if (routine != null)

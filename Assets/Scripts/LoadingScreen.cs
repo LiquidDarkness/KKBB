@@ -10,8 +10,6 @@ public class LoadingScreen : MonoBehaviour
 
     private bool isBusy;
 
-    public bool IsBusy { get => isBusy; }
-
     public void FadeToClear(Action callback = null)
     {
         StartCoroutine(FadeoutSquare(Color.black, Color.clear, callback));

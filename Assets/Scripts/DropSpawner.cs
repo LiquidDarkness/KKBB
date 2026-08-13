@@ -30,7 +30,6 @@ public class DropSpawner : MonoBehaviour
         DiffcultyManager.OnSettingsChanged -= SetSettings;
     }
 
-    //TODO: dzia³a dla holdera, wartoœæ w DropSpawnerze siê nie aktualizuje. Dlaczego?
     void SetSettings(DifficultySettings settings)
     {
         lotto.FillBucket(settings.drops.Select(d => new KeyValuePair<GameObject, int>(d.prefab, d.weight)));
@@ -38,6 +37,10 @@ public class DropSpawner : MonoBehaviour
 
     public void Spawn(Vector3 position)
     {
+        // Refresh right before rolling: DiffcultyManager.CurrentSettings is always current, but
+        // OnSettingsChanged is not raised on every path that changes difficulty (e.g. loading a save),
+        // which could leave the cached lotto stale.
+        SetSettings(diffcultyManager.CurrentSettings);
         Instantiate(lotto.GetRandomTicket(), position, Quaternion.identity);
     }
 }

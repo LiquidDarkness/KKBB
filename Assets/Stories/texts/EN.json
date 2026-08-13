@@ -92,6 +92,36 @@
 		 }
 		 ,
 		 {
+		   "key": "Tutorial0",
+		   "value": "Hello there! Welcome to Kitty Kitty Bounce Bounce!\nLet’s learn how to play the game. First, navigation: to move around, press A/D or left/right arrow on your keyboard. Once you feel ready to launch Kitty, press spacebar or click the left mouse button - but launching Kitty is only possible in the gameplay view, in case you were surprised it doesn’t work right now.\nSometimes, the text you see on the screen is slightly too long - and this is where scrolling enters. Autoscrolling is on by default but you can change it - and the speed in which the text is scrolled - in the options. Click ‘O’ on your keyboard to open the options window at any time. If some part of the story scrolled too soon or you’re still faster than the auto scrolling, you can scroll up and down the text with either W/S button or the up/down arrows.\nOnce you’re ready to continue with the game, run Kitty into the green block on the right."
+		 }
+		 ,
+		 {
+		   "key": "Tutorial1",
+		   "value": "You might have noticed that breaking blocks can make them drop things. Let’s focus on those that have a big and long impact on your gameplay experience: paddles. They vary in sizes and bounciness so you might want to find which one suits your style of playing.\n<sprite name=\"paddle\">\nYour default paddle: purple, balanced, and medium in size. Pretty comfortable, but it’ll neither help nor hinder your playthrough.\n<sprite name=\"paddle2\">\nThe fast boi: golden, bouncy, and a bit narrower than the default one. The extra bounciness and the size of this paddle might be demanding but definitely speeds up your playthrough and adds some excitement to it!\n<sprite name=\"paddle3\">\nLast but not least: blue, soft, and really wide. A safety net in the form of a cushion - it shouldn’t surprise you too much and it’s definitely a way to make your playthrough a little calmer."
+		 }
+		 ,
+		 {
+		   "key": "Tutorial2",
+		   "value": "Another two types of drops you should keep your eyes peeled for are:\n <sprite name=\"bomb\">\nand\n<sprite name=\"serducho\">\nCan you guess what they’re for?\nYeah, the heart gives you another go in case you fall off the paddle and lose a life.\nBut the bomb! This one is pretty cool. Catch the drop and you’ll be armed with a bomb - and you can catch more than one at a time! Once you’ve got a bomb and Kitty touches the paddle, they’ll be automatically grabbing it and using it at the first block they boink against. As soon as the boink occurs so does the explosion!\nAnd if you like the explosion, you’ll like the chain destruction that can be triggered randomly, more likely in the lower difficulty levels."
+		 }
+		 ,
+		 {
+		   "key": "Tutorial3",
+		   "value": "Lastly, there are the drops you can catch that will give you extra points.\n<sprite name=\"5drop\"><sprite name=\"10drop\"><sprite name=\"15drop\">\nBreaking blocks on its own will reward you with points but you’ll find that points are a nice thing to have in abundance - especially if you ever find yourself in a pickle. Then, press “Tab” to open the shop and spend your hard-earned points!"
+		 }
+		 ,
+		 {
+		   "key": "Tutorial4",
+		   "value": "Alright, that’s the last piece of advice, promise! Apart from a variety of drops, there’s also a variety of blocks and what they can do:\n<sprite name=\"01\"><sprite name=\"02\"><sprite name=\"03\"><sprite name=\"04\"><sprite name=\"05\"><sprite name=\"06\"><sprite name=\"07\"><sprite name=\"08\"><sprite name=\"09\"><sprite name=\"10\"><sprite name=\"11\"><sprite name=\"12\"><sprite name=\"13\"><sprite name=\"14\">\nThese are your garden variety blocks, Kitty usually only needs to collide with them once and they break, you get the points and probably a drop, depending on the difficulty setting you chose.\n<sprite name=\"invisible0\"><sprite name=\"invisible1\"><sprite name=\"invisible2\"><sprite name=\"invisible3\">\nThese take a couple of boinks before finally giving in and breaking. They begin at their least transparency and get more opaque the more damaged they are.\n<sprite name=\"invincible\">\nThese don’t appear too often and are unbreakable, hence their sinister appearance.\nNow, all those blocks can and sometimes are animated for some extra flare and challenge, hehe."
+		 }
+		 ,
+		 {
+		   "key": "Tutorial5",
+		   "value": "Have fun and thanks for playing Kitty Kitty Bounce Bounce!"
+		 }
+		 ,
+		 {
 		   "key": "LiquidDarkness0",
 		   "value": "Curious fluffy little Kitty found some cuddly fluffy balls of yarn. They were simply gorgeous! All rainbow-y and string-y, and funny smelling. But when bit, they tickled Kitty's tongue in a stomach-turning way. Kitty quickly spat the colourful wool out of his mouth with disgust. Kitty tried snuggling with the yarn instead but his fur and the wool produced different types of electricity. It wasn’t a very nice sensation and it left Kitty’s fur all cranky.\nKitty decided he didn’t want to play with the yarn anymore but when he tried to leave, the yarn attacked him once again with a malicious zap in the butt! It was yarn or Kitty!\nPippity, poppity, gonna give you the zoppity!"
 		 }

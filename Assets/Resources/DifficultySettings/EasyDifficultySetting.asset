@@ -15,7 +15,9 @@ MonoBehaviour:
   livesNumber: 3
   baseGameSpeed: 2
   maxSpeed: 4
+  blockAnimationSpeed: 0.25
   chainDestructionProbability: 0.7
+  chainDamageMultiplier: 0.15
   particleEffect: {fileID: 5753145595872108419, guid: 88ef3f525347117478876e7c56c7ed98, type: 3}
   drops:
   - prefab: {fileID: 2053659990884397355, guid: 93ecba752aa2acd4795a3c11a0e9c33e, type: 3}

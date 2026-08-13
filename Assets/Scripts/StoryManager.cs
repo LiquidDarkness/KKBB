@@ -107,6 +107,6 @@ public class StoryManager : MonoBehaviour, ICoreReferencer
 
     public void Provide(CoreReferences coreReferences)
     {
-        throw new System.NotImplementedException();
+        this.coreReferences = coreReferences;
     }
 }

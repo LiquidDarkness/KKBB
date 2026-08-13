@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: New Scenario Manager
   m_EditorClassIdentifier: 
   scenarios:
+  - {fileID: 11400000, guid: 8b6b10916b653634f9cb6ec27eeb0609, type: 2}
   - {fileID: 11400000, guid: 1c9a4921218b86e4b8442123b43f036e, type: 2}
   - {fileID: 11400000, guid: 4ad866cf1419b994d955ce2f71fc7557, type: 2}
-  - {fileID: 11400000, guid: 8b6b10916b653634f9cb6ec27eeb0609, type: 2}
+  - {fileID: 11400000, guid: cd2b1be85f1d21a40b97b4f905faf63b, type: 2}
   chosenScenario: {fileID: 11400000, guid: bdd0fc957230cb3419174682bda9452b, type: 2}

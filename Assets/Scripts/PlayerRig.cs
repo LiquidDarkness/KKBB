@@ -6,6 +6,7 @@ public class PlayerRig : MonoBehaviour
     [SerializeReference] private BallMovement ball;
     [SerializeReference] private PaddleMovement paddle;
     public TypeDistinguisher healthTD;
+    public DiffcultyManager diffcultyManager;
 
     public static PlayerRig instance;
 
@@ -13,8 +14,9 @@ public class PlayerRig : MonoBehaviour
     {
         instance = this;
 
-        // Inicjalizacja PlayerHealth
-        PlayerHealth.Initialize(healthTD);
+        // Inicjalizacja PlayerHealth, z liczba zyc dla aktualnego poziomu trudnosci
+        int? livesForDifficulty = diffcultyManager != null ? diffcultyManager.CurrentSettings.livesNumber : null;
+        PlayerHealth.Initialize(healthTD, livesForDifficulty);
 
         // Subskrypcje eventów
         PaddleChanger.OnPaddleChanged += HandlePaddleChanged;

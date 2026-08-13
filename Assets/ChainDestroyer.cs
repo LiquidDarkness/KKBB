@@ -52,8 +52,7 @@ public class ChainDestroyer : MonoBehaviour
             }
             // 0. Czekamy 0.2 sekundy
             yield return new WaitForSeconds(delayBeforeDestruction);
-            //TODO: wartoœæ 0.15f przerzuciæ jako zmienn¹ do wybranego poziomu trudnoœci, gdzie 0.15 to najwy¿sza sensowna wartoœæ
-            neighbor.HandleHit(chance * 0.15f);
+            neighbor.HandleHit(chance * difficultySettings.CurrentSettings.chainDamageMultiplier);
         }
 
         Destroy(gameObject);

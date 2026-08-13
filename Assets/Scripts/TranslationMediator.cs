@@ -35,27 +35,3 @@ public class TranslationMediator : MonoBehaviour
         TranslationJSONDeserializer.OnTransaltionUpdated -= UpdateTranslation;
     }
 }
-
-//using UnityEngine;
-
-//public class TranslationMediator : MonoBehaviour
-//{
-//    public string key;
-//    public UnityStringEvent onTranslationSet;
-
-//    public void OnEnable()
-//    {
-//        StoryJSONDeserializer.OnTransaltionUpdated += UpdateTranslation;
-//        UpdateTranslation();
-//    }
-
-//    public void UpdateTranslation()
-//    {
-//        onTranslationSet.Invoke(StoryJSONDeserializer.storyDataDictionary[key]);
-//    }
-
-//    private void OnDisable()
-//    {
-//        StoryJSONDeserializer.OnTransaltionUpdated -= UpdateTranslation;
-//    }
-//}

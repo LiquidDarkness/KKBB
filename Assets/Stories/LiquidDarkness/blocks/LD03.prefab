@@ -116,6 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5333390977982473141}
   - component: {fileID: 7651035404963924719}
+  - component: {fileID: 18393873351132977}
   m_Layer: 0
   m_Name: Boobles
   m_TagString: Untagged
@@ -154,7 +155,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 8424388fe33c74c4893fbeaecc7c92cd, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 1
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -4436,3 +4437,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 573928395617129551, guid: 0ac0468423a15d346920e9acf4edf69b, type: 3}
   m_PrefabInstance: {fileID: 5860603282017547466}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &18393873351132977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4982041734789054014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a55cc0d9619189368080ceb5b132fb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}

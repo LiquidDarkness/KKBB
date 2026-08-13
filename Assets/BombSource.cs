@@ -50,11 +50,4 @@ public class BombSource : MonoBehaviour
             bombFace.gameObject.SetActive(false);
         }
     }
-
-    private void ShowBombDisplay()
-    {
-        bombNumber.gameObject.SetActive(true);
-        bombFace.gameObject.SetActive(true);
-        bombNumber.text = bombCount.ToString();
-    }
 }

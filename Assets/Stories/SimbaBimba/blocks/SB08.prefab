@@ -2614,6 +2614,7 @@ GameObject:
   - component: {fileID: 1605578233286269370}
   - component: {fileID: 1605578233286269369}
   - component: {fileID: 2726981713465340507}
+  - component: {fileID: 16049622538088842}
   m_Layer: 0
   m_Name: SB08
   m_TagString: Untagged
@@ -2665,7 +2666,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 3eace50c50c4c2242b269601bdbb6a9e, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 1
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -15129,3 +15130,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   block: {fileID: 3693976936723197999}
   diffcultyManager: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+--- !u!114 &16049622538088842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605578233286269368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a55cc0d9619189368080ceb5b132fb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
