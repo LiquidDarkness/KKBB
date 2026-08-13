@@ -81,8 +81,19 @@ public class Block : MonoBehaviour
         }
     }
 
+    // Guards against a block being destroyed twice: several systems (chain destruction,
+    // bombs, the ball) can each hold a reference to the same block and act on it in the same
+    // frame or across frames.
+    private bool isBeingDestroyed;
+
     public void DestroyBlock()
     {
+        if (isBeingDestroyed)
+        {
+            return;
+        }
+        isBeingDestroyed = true;
+
         TriggerSparklesVFX();
         OnBlockBroken?.Invoke(transform.position);
         Destroy(gameObject);

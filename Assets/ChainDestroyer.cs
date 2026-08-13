@@ -52,6 +52,16 @@ public class ChainDestroyer : MonoBehaviour
             }
             // 0. Czekamy 0.2 sekundy
             yield return new WaitForSeconds(delayBeforeDestruction);
+
+            // While we waited, this neighbour may already have been destroyed by something
+            // else (another chain, a bomb, the ball). Unity reports destroyed objects as null,
+            // and calling into one throws MissingReferenceException the moment it touches
+            // transform.
+            if (neighbor == null)
+            {
+                continue;
+            }
+
             neighbor.HandleHit(chance * difficultySettings.CurrentSettings.chainDamageMultiplier);
         }
 

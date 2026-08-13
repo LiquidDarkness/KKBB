@@ -16,4 +16,4 @@ MonoBehaviour:
   background: {fileID: 21300000, guid: 6928ddc7da4512b498503daec5d58141, type: 3}
   content: {fileID: 129331524074610270, guid: 96cc614e17ac7554d94398576ba02e20, type: 3}
   intro: {fileID: 0}
-  loop: {fileID: 0}
+  loop: {fileID: 8300000, guid: 96ffbd7d7a2b39f4cbfb4e5b4068782b, type: 3}

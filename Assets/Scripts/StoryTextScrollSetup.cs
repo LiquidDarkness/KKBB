@@ -24,10 +24,14 @@ public class StoryTextScrollSetup : MonoBehaviour
     public TypeDistinguisher autoScrollSpeedSetting;
     [Tooltip("How long auto-scroll stays paused after the last manual scroll input (drag, wheel, or keyboard).")]
     [SerializeField] private float manualScrollPauseDuration = 1.5f;
+    [Tooltip("Grace period after a new story appears, so the player can read the opening lines before auto-scroll starts moving them.")]
+    [SerializeField] private float autoScrollStartDelay = 2.5f;
 
     private ScrollRect scrollRect;
     private TMP_Text content;
     private float manualScrollCooldown;
+    private float autoScrollStartCountdown;
+    private string lastText;
 
     public void Awake()
     {
@@ -88,6 +92,22 @@ public class StoryTextScrollSetup : MonoBehaviour
             return;
         }
 
+        // Every new story starts at the top with a short grace period, so the player always
+        // sees it from the first line. Watching the text itself catches every path that can
+        // swap the content (story progression, language change) without extra wiring.
+        if (content.text != lastText)
+        {
+            lastText = content.text;
+            ScrollToTop();
+            autoScrollStartCountdown = autoScrollStartDelay;
+            manualScrollCooldown = 0f;
+        }
+
+        if (autoScrollStartCountdown > 0)
+        {
+            autoScrollStartCountdown -= Time.unscaledDeltaTime;
+        }
+
         // Normalized-position distance covered by exactly one line, so every configured speed
         // below reads as "lines per second" no matter how long the current chunk of text is.
         float normalizedPerLine = GetNormalizedDistancePerLine();
@@ -115,7 +135,7 @@ public class StoryTextScrollSetup : MonoBehaviour
             manualScrollCooldown -= Time.unscaledDeltaTime;
         }
 
-        if (autoScrollAnimation.BoolValue && manualScrollCooldown <= 0)
+        if (autoScrollAnimation.BoolValue && manualScrollCooldown <= 0 && autoScrollStartCountdown <= 0)
         {
             float speed = autoScrollSpeedSetting.FloatValue;
             float linesPerSecond = speed > 0 ? speed : defaultAutoScrollSpeed;
@@ -127,6 +147,15 @@ public class StoryTextScrollSetup : MonoBehaviour
             scrollRect.verticalNormalizedPosition = Mathf.Clamp01(
                 scrollRect.verticalNormalizedPosition + delta * Time.unscaledDeltaTime);
         }
+    }
+
+    private void ScrollToTop()
+    {
+        // The ContentSizeFitter hasn't resized the text to the new content yet, so force the
+        // layout through first - otherwise "top" is measured against the previous story's height.
+        LayoutRebuilder.ForceRebuildLayoutImmediate(scrollRect.content);
+        scrollRect.verticalNormalizedPosition = 1f;
+        scrollRect.velocity = Vector2.zero;
     }
 
     private float GetNormalizedDistancePerLine()
