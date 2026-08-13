@@ -43,3 +43,4 @@ MonoBehaviour:
     level: {fileID: 11400000, guid: 06d4f8ec3b4f8724bbad3512c91807cc, type: 2}
   - backgroundSprite: {fileID: 21300000, guid: 7e289283773763a41b995766a0b7fa0c, type: 3}
     level: {fileID: 11400000, guid: e2affceabbf5c924ca38cbf30578bf4e, type: 2}
+  availableInDemo: 1
