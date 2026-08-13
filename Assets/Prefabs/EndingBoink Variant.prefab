@@ -311,4 +311,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b8e5eb8e2c764c40b60ca83b1328216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playtestFlag: {fileID: 11400000, guid: d524d06b9874b454fb903afb66f6aa88, type: 2}

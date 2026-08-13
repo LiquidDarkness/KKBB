@@ -3,27 +3,20 @@ using UnityEngine.SceneManagement;
 
 public class SteamInitializer : MonoBehaviour
 {
-    public ScriptableBool demoFlag;
-    public ScriptableBool playtestFlag;
-    public int demoID, fullID, playtestID; //1878110
+    public int demoID, fullID;
 
     private void Start()
     {
         //skomentuj, żeby unablnąć aczki
         //PlayerPrefs.SetInt("storiesRead", storiesRead.);
-        uint id;
-        if (demoFlag.value)
-        {
-            id = (uint)demoID;
-        }
-        else if (playtestFlag.value)
-        {
-            id = (uint)playtestID;
-        }
-        else
-        {
-            id = (uint)fullID;
-        }
+
+        // Driven by the DEMO_BUILD scripting define symbol, the same switch that gates which
+        // scenarios are playable - so the build can't end up reporting the wrong app to Steam.
+#if DEMO_BUILD
+        uint id = (uint)demoID;
+#else
+        uint id = (uint)fullID;
+#endif
 
         try
         {

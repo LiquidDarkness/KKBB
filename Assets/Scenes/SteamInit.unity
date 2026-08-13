@@ -153,11 +153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f33e7ed7af40fcc459b117a8e8797608, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  demoFlag: {fileID: 11400000, guid: 9fba3d326844c6b49989d79748208875, type: 2}
-  playtestFlag: {fileID: 11400000, guid: d524d06b9874b454fb903afb66f6aa88, type: 2}
   demoID: 2837660
   fullID: 2833360
-  playtestID: 4292760
 --- !u!4 &755746094
 Transform:
   m_ObjectHideFlags: 0
