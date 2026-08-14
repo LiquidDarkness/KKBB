@@ -28,6 +28,14 @@ public class Bomb : MonoBehaviour
         List<Block> neighboringBlocks = block.CollectNeighboringBlocks(radius, blockLayerMask);
         foreach (Block neighbour in neighboringBlocks)
         {
+            // Unbreakable blocks are not part of Level's breakable count, so blowing one up
+            // used to decrement that count without a matching block, and the level finished
+            // one (or more) blocks early.
+            if (!neighbour.breakable)
+            {
+                continue;
+            }
+
             neighbour.DestroyBlock();
         }
         RemoveBomb();

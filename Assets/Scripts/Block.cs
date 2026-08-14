@@ -41,6 +41,14 @@ public class Block : MonoBehaviour
 
     public void HandleHit(float chainChance = 0)
     {
+        // Unbreakable blocks are excluded from Level.breakableBlocks, so letting chain
+        // destruction or a bomb knock one out desynchronises the count and the level
+        // finishes early, with blocks still standing.
+        if (!breakable)
+        {
+            return;
+        }
+
         if (IsDestroyed)
         {
             return;

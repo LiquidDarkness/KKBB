@@ -11,6 +11,12 @@ public class ScoreManager : MonoBehaviour
     {
         Debug.Log("ScoreManager created");
         Score.OnScoreChanged += HandleScoreChanged;
+        // The score lives in two places - the static Score.currentScore and the
+        // scoreValue TypeDistinguisher in PlayerPrefs - and Awake syncs them only once
+        // per app launch, because this manager is never destroyed. Re-reading on every
+        // entry into gameplay is what makes New Game (which zeroes the saved value) and
+        // Purge show up on screen, instead of carrying the previous run's score over.
+        SceneLoader.OnGameplayLoaded += LoadScore;
         SceneLoader.OnGameplayLoaded += ShowScore;
         SceneLoader.OnMenuLoaded += HideScore;
         Level.OnLevelCompleted += HandleLevelCompleted;
@@ -26,6 +32,10 @@ public class ScoreManager : MonoBehaviour
     public void OnDestroy()
     {
         Score.OnScoreChanged -= HandleScoreChanged;
+        SceneLoader.OnGameplayLoaded -= LoadScore;
+        SceneLoader.OnGameplayLoaded -= ShowScore;
+        SceneLoader.OnMenuLoaded -= HideScore;
+        Level.OnLevelCompleted -= HandleLevelCompleted;
     }
 
     public void Start()

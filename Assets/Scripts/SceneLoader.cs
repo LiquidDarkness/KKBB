@@ -46,8 +46,13 @@ public class SceneLoader : MonoBehaviour
         switch (sceneName)
         {
             case "Gameplay":
-                OnGameplayLoaded?.Invoke();
+                // Load before the event, not after: subscribers read PlayerPrefs
+                // (ScoreManager pulls the saved score out of it), and on the first
+                // gameplay load of the app SaveManager.Load is what puts the save file
+                // into PlayerPrefs in the first place. Firing the event first handed
+                // those subscribers the pre-load values.
                 SaveManager.Load();
+                OnGameplayLoaded?.Invoke();
                 break;
 
             case "Menu":
