@@ -92,77 +92,77 @@
 		 }
 		 ,
 		 {
-		   "key": "Liquid_01",
+		   "key": "LiquidDarkness0",
 		   "value": "Curious fluffy little Kitty found some cuddly fluffy balls of yarn. They were simply gorgeous! All rainbow-y and string-y, and funny smelling. But when bit, they tickled Kitty's tongue in a stomach-turning way. Kitty quickly spat the colourful wool out of his mouth with disgust. Kitty tried snuggling with the yarn instead but his fur and the wool produced different types of electricity. It wasn’t a very nice sensation and it left Kitty’s fur all cranky.\nKitty decided he didn’t want to play with the yarn anymore but when he tried to leave, the yarn attacked him once again with a malicious zap in the butt! It was yarn or Kitty!\nPippity, poppity, gonna give you the zoppity!"
 		 }
 		 ,
 		 {
-		   "key": "Liquid_02",
+		   "key": "LiquidDarkness1",
 		   "value": "Tłumaczonko w drodze."
 		 }		 
 		 ,
 		 {
-		   "key": "Liquid_03",
+		   "key": "LiquidDarkness2",
 		   "value": "Tłumaczonko w drodze."
 		 }
 		 ,
 		 {
-		   "key": "Liquid_04",
+		   "key": "LiquidDarkness3",
 		   "value": "Tłumaczonko w drodze."
 		 }
 		 ,
 		 {
-		   "key": "Liquid_05",
+		   "key": "LiquidDarkness4",
 		   "value": "Tłumaczonko w drodze."
 		 }
 		 ,
 		 {
-		   "key": "Liquid_06",
+		   "key": "LiquidDarkness5",
 		   "value": "Tłumaczonko w drodze."
 		 }
 		 ,
 		 {
-		   "key": "Liquid_07",
+		   "key": "LiquidDarkness6",
 		   "value": "Tłumaczonko w drodze."
 		 }
 		 ,
 		 {
-		   "key": "Liquid_08",
+		   "key": "LiquidDarkness7",
 		   "value": "Tłumaczonko w drodze."
 		 }
 		 ,
 		 {
-		   "key": "Liquid_09",
+		   "key": "LiquidDarkness8",
 		   "value": "Tłumaczonko w drodze."
 		 }
 		 ,
 		 {
-		   "key": "Liquid_10",
+		   "key": "LiquidDarkness9",
 		   "value": "Tłumaczonko w drodze."
 		 }
 		 ,
 		 {
-		   "key": "Liquid_11",
+		   "key": "LiquidDarkness10",
 		   "value": "Tłumaczonko w drodze."
 		 }
 		 ,
 		 {
-		   "key": "Liquid_12",
+		   "key": "LiquidDarkness11",
 		   "value": "Tłumaczonko w drodze."
 		 }
 		 ,
 		 {
-		   "key": "Liquid_13",
+		   "key": "LiquidDarkness12",
 		   "value": "Tłumaczonko w drodze."
 		 }
 		 ,
 		 {
-		   "key": "Liquid_14",
+		   "key": "LiquidDarkness13",
 		   "value": "Tłumaczonko w drodze."
 		 }
 		 ,
 		 {
-		   "key": "Liquid_End",
+		   "key": "LiquidDarkness14",
 		   "value": "Tłumaczonko w drodze."
 		 }
 		 ,
@@ -288,6 +288,36 @@
 		 ,
 		 {
 		   "key": "ZiggiesMunda11",
+		   "value": "Tłumaczonko w drodze."
+		 }
+		 ,
+		 {
+		   "key": "Tutorial0",
+		   "value": "Tłumaczonko w drodze."
+		 }
+		 ,
+		 {
+		   "key": "Tutorial1",
+		   "value": "Tłumaczonko w drodze."
+		 }
+		 ,
+		 {
+		   "key": "Tutorial2",
+		   "value": "Tłumaczonko w drodze."
+		 }
+		 ,
+		 {
+		   "key": "Tutorial3",
+		   "value": "Tłumaczonko w drodze."
+		 }
+		 ,
+		 {
+		   "key": "Tutorial4",
+		   "value": "Tłumaczonko w drodze."
+		 }
+		 ,
+		 {
+		   "key": "Tutorial5",
 		   "value": "Tłumaczonko w drodze."
 		 }
 	]

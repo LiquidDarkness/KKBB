@@ -15,6 +15,8 @@ public class GameSpeedManager : MonoBehaviour
     [Tooltip("Time scale while paused. Not quite zero, so scaled-time animations do not hard-freeze.")]
     public float pausedTimeScale = 0.0001f;
 
+    private const float MinimumGameSpeed = 0.0001f;
+
     // Pausing used to be expressed by writing gameSpeed itself, which made this manager mistake
     // the pause for a running slow-down effect: buying a speed-up while the shop was open was
     // read as "reverse the current effect", and the unpause then overwrote the bought speed with
@@ -72,9 +74,17 @@ public class GameSpeedManager : MonoBehaviour
 
     public void SetGameSpeed()
     {
-        originalGameSpeed = diffcultyManager.CurrentSettings.baseGameSpeed;
+        originalGameSpeed = ClampToDifficulty(diffcultyManager.CurrentSettings.baseGameSpeed);
         gameSpeed = originalGameSpeed;
         ApplyTimeScale();
+    }
+
+    // baseGameSpeed is the pace a level runs at, maxSpeed the ceiling no drop may push Kitty
+    // past. The lower bound only mirrors the Range on gameSpeed - a time scale of zero or less
+    // would stop the game outright rather than slow it down.
+    private float ClampToDifficulty(float speed)
+    {
+        return Mathf.Clamp(speed, MinimumGameSpeed, diffcultyManager.CurrentSettings.maxSpeed);
     }
 
     public void OnValidate()
@@ -90,7 +100,7 @@ public class GameSpeedManager : MonoBehaviour
     public IEnumerator ChangeGameSpeed(float dropInfluence, float duration)
     {
         elapsedTime = 0;
-        gameSpeed += dropInfluence;
+        gameSpeed = ClampToDifficulty(gameSpeed + dropInfluence);
 
         OnGameSpeedChanged?.Invoke(true);
 
