@@ -55,6 +55,10 @@ public class GameSpeedManager : MonoBehaviour
         }
 
         gameSpeed = originalGameSpeed;
+        // Left standing, this keeps the finished effect's remaining time around, and
+        // StartValueChange reads it to decide whether an opposing drop can cancel what is
+        // running - with nothing running it must read as zero.
+        effectCountDown = 0;
         ApplyTimeScale();
         OnGameSpeedChanged?.Invoke(false);
     }
@@ -101,8 +105,17 @@ public class GameSpeedManager : MonoBehaviour
     {
         elapsedTime = 0;
         gameSpeed = ClampToDifficulty(gameSpeed + dropInfluence);
+        effectCountDown = duration;
 
         OnGameSpeedChanged?.Invoke(true);
+
+        // Show the new effect straight away. OnGameSpeedChanged only switches the indicator on;
+        // its colour and its countdown come from OnGameSpeedModified, which the loop below keeps
+        // silent while the game is paused. Without this first call a drop bought in the shop lit
+        // the indicator up still wearing the previous drop's colour and its run-out reading -
+        // which is why buying a speed-up showed a slow-down sitting at 0.0s until the shop was
+        // closed.
+        OnGameSpeedModified?.Invoke(effectCountDown, gameSpeed > originalGameSpeed);
 
         while (elapsedTime < duration)
         {
