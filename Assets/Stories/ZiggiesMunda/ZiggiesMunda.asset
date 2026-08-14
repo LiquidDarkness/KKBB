@@ -13,7 +13,28 @@ MonoBehaviour:
   m_Name: ZiggiesMunda
   m_EditorClassIdentifier: 
   stories:
+  - backgroundSprite: {fileID: 21300000, guid: 46c43bf05d11a334ab0428021713a1c7, type: 3}
+    level: {fileID: 11400000, guid: 5bc8a2c0a72b1f947a552dbf919930e7, type: 2}
+  - backgroundSprite: {fileID: 21300000, guid: 74d6c46d64ee20649a5b4ba7ad2b531f, type: 3}
+    level: {fileID: 11400000, guid: 829c048a2f415954db3903cd5e84d084, type: 2}
+  - backgroundSprite: {fileID: 21300000, guid: 3f5b1025fc5369e4da6e884628799a38, type: 3}
+    level: {fileID: 11400000, guid: 5f92ee67c8009294e9876daa1d2a2b9d, type: 2}
+  - backgroundSprite: {fileID: 21300000, guid: 02a959c300096954eb4b719f5052d0cb, type: 3}
+    level: {fileID: 11400000, guid: 7ef0f337c574c8f4498cd502346dad71, type: 2}
+  - backgroundSprite: {fileID: 21300000, guid: 76e39439584a92641a6567a58bd8d2be, type: 3}
+    level: {fileID: 11400000, guid: 2af2accdcb6bf504d97c9a8e885af2d0, type: 2}
+  - backgroundSprite: {fileID: 21300000, guid: 363b9c711c575444eacc49486586dc7c, type: 3}
+    level: {fileID: 11400000, guid: 9df53a3540d3b1c49831e578d05856c0, type: 2}
+  - backgroundSprite: {fileID: 21300000, guid: 6928ddc7da4512b498503daec5d58141, type: 3}
+    level: {fileID: 11400000, guid: 277e72e189b12b94c844194097d01aa5, type: 2}
+  - backgroundSprite: {fileID: 21300000, guid: 9582586a9ea15b2489f5d0cb1c8771ad, type: 3}
+    level: {fileID: 11400000, guid: 73544ed5ba8e3b74eb034b80e42ec250, type: 2}
   - backgroundSprite: {fileID: 21300000, guid: 9a16f040d7b9c7548b9f8167f634f956, type: 3}
+    level: {fileID: 11400000, guid: d688d62f41a12654cb444d478a692be6, type: 2}
+  - backgroundSprite: {fileID: 21300000, guid: 39d27883dd36bc1478cfd3f8ca572617, type: 3}
     level: {fileID: 11400000, guid: 34cbcb67d22865c4f91e6e527c575feb, type: 2}
-  - backgroundSprite: {fileID: 21300000, guid: 9a16f040d7b9c7548b9f8167f634f956, type: 3}
+  - backgroundSprite: {fileID: 21300000, guid: 0dff489e1b35ebd4183b05018c87e304, type: 3}
+    level: {fileID: 11400000, guid: a72a901631326c046bcbe07d822eb105, type: 2}
+  - backgroundSprite: {fileID: 21300000, guid: 1126c2b7287b2fd438bf3d43001a2d5b, type: 3}
     level: {fileID: 11400000, guid: 9eb2298b57615d53a0f89676b978506d, type: 2}
+  availableInDemo: 0
