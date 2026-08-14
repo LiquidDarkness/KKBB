@@ -80,11 +80,23 @@ public class BallMovement : MonoBehaviour
         }
 
         // Perfectly repeatable bounces are what lets the ball settle into an endless rally, so
-        // every impact is knocked slightly off course. AdjustVelocity puts the speed back.
-        myRigidBody2D.velocity += new Vector2(
+        // every impact is knocked slightly off course. Only the direction may change: adding a
+        // vector to the velocity also lengthens it, and since AdjustVelocity enforces a floor
+        // and never a ceiling, that extra speed was never taken back off - the ball just kept
+        // getting faster with every bounce.
+        Vector2 velocity = myRigidBody2D.velocity;
+        float speed = velocity.magnitude;
+        if (speed < Mathf.Epsilon)
+        {
+            return;
+        }
+
+        Vector2 nudged = velocity + new Vector2(
             Random.Range(-randomFactor, randomFactor),
             Random.Range(-randomFactor, randomFactor)
         );
+
+        myRigidBody2D.velocity = nudged.normalized * speed;
     }
 
     private void Update()

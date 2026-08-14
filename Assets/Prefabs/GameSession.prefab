@@ -1235,7 +1235,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 3007742471348010942}
-        m_TargetAssemblyTypeName: ShopPaddleChanger, Assembly-CSharp
+        m_TargetAssemblyTypeName: ShopDropHandler, Assembly-CSharp
         m_MethodName: SpawnDrop
         m_Mode: 1
         m_Arguments:
@@ -1423,7 +1423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19eedf10148314a41aef5d7914c150d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 0
+  price: 500
   button: {fileID: 3007742471348010936}
 --- !u!1 &3007742471391850665
 GameObject:
@@ -4478,7 +4478,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 3007742471982611038}
-        m_TargetAssemblyTypeName: ShopPaddleChanger, Assembly-CSharp
+        m_TargetAssemblyTypeName: ShopDropHandler, Assembly-CSharp
         m_MethodName: SpawnDrop
         m_Mode: 1
         m_Arguments:
@@ -6505,7 +6505,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 3007742472690198007}
-        m_TargetAssemblyTypeName: ShopPaddleChanger, Assembly-CSharp
+        m_TargetAssemblyTypeName: ShopDropHandler, Assembly-CSharp
         m_MethodName: SpawnDrop
         m_Mode: 1
         m_Arguments:
@@ -6693,7 +6693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19eedf10148314a41aef5d7914c150d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 500
+  price: 2500
   button: {fileID: 3007742472690198001}
 --- !u!1 &3007742472722238488
 GameObject:
@@ -6975,7 +6975,6 @@ MonoBehaviour:
   - {fileID: 7090739964516081630}
   - {fileID: 5670583140007083021}
   - {fileID: 4160290835396583934}
-  balance: {fileID: 11400000, guid: 37525c481e03b5a4baaec2e278496745, type: 2}
 --- !u!1 &3007742472741687057
 GameObject:
   m_ObjectHideFlags: 0
@@ -8211,7 +8210,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 3007742473065693208}
-        m_TargetAssemblyTypeName: ShopPaddleChanger, Assembly-CSharp
+        m_TargetAssemblyTypeName: ShopDropHandler, Assembly-CSharp
         m_MethodName: SpawnDrop
         m_Mode: 1
         m_Arguments:
@@ -8399,7 +8398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19eedf10148314a41aef5d7914c150d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 0
+  price: 500
   button: {fileID: 3007742473065693210}
 --- !u!1 &3007742473068065359
 GameObject:
@@ -9060,7 +9059,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 3007742473150927450}
-        m_TargetAssemblyTypeName: ShopPaddleChanger, Assembly-CSharp
+        m_TargetAssemblyTypeName: ShopDropHandler, Assembly-CSharp
         m_MethodName: SpawnDrop
         m_Mode: 1
         m_Arguments:

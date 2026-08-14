@@ -10,8 +10,17 @@ public class GameSpeedManager : MonoBehaviour
     public float effectCountDown;
     public float originalGameSpeed;
     public float minGameSpeed;
-    private float cachedGameSpeed;
     private float elapsedTime = 0.0f;
+
+    [Tooltip("Time scale while paused. Not quite zero, so scaled-time animations do not hard-freeze.")]
+    public float pausedTimeScale = 0.0001f;
+
+    // Pausing used to be expressed by writing gameSpeed itself, which made this manager mistake
+    // the pause for a running slow-down effect: buying a speed-up while the shop was open was
+    // read as "reverse the current effect", and the unpause then overwrote the bought speed with
+    // the pre-pause one - leaving a speed-up purchase displayed and behaving as a slow-down.
+    // The pause is now a flag of its own and gameSpeed only ever means the speed of play.
+    private bool isPaused;
 
     public event Action<float, bool> OnGameSpeedModified;
     public event Action<bool> OnGameSpeedChanged;
@@ -44,7 +53,7 @@ public class GameSpeedManager : MonoBehaviour
         }
 
         gameSpeed = originalGameSpeed;
-        Time.timeScale = gameSpeed;
+        ApplyTimeScale();
         OnGameSpeedChanged?.Invoke(false);
     }
 
@@ -65,7 +74,7 @@ public class GameSpeedManager : MonoBehaviour
     {
         originalGameSpeed = diffcultyManager.CurrentSettings.baseGameSpeed;
         gameSpeed = originalGameSpeed;
-        Time.timeScale = gameSpeed;
+        ApplyTimeScale();
     }
 
     public void OnValidate()
@@ -75,29 +84,34 @@ public class GameSpeedManager : MonoBehaviour
             return;
         }
         StopAllCoroutines();
-        Time.timeScale = gameSpeed;
+        ApplyTimeScale();
     }
 
     public IEnumerator ChangeGameSpeed(float dropInfluence, float duration)
     {
         elapsedTime = 0;
         gameSpeed += dropInfluence;
-        float maxGameSpeed = diffcultyManager.CurrentSettings.maxSpeed;
 
         OnGameSpeedChanged?.Invoke(true);
 
         while (elapsedTime < duration)
         {
-            elapsedTime += Time.deltaTime;
-            effectCountDown = duration - elapsedTime;
-            Time.timeScale = gameSpeed;
-            bool isGameSpedUp = gameSpeed > originalGameSpeed;
-            OnGameSpeedModified?.Invoke(effectCountDown, isGameSpedUp);
+            // An effect bought in the shop must not start running down while the shop is still
+            // on screen: the countdown, the speed and the border all wait for the unpause.
+            if (!isPaused)
+            {
+                elapsedTime += Time.deltaTime;
+                effectCountDown = duration - elapsedTime;
+                ApplyTimeScale();
+                bool isGameSpedUp = gameSpeed > originalGameSpeed;
+                OnGameSpeedModified?.Invoke(effectCountDown, isGameSpedUp);
+            }
+
             yield return null;
         }
 
         gameSpeed = originalGameSpeed;
-        Time.timeScale = gameSpeed;
+        ApplyTimeScale();
         OnGameSpeedChanged?.Invoke(false);
     }
 
@@ -137,14 +151,20 @@ public class GameSpeedManager : MonoBehaviour
 
     private void HandlePause()
     {
-        cachedGameSpeed = gameSpeed;
-        gameSpeed = 0.0001f;
-        Time.timeScale = gameSpeed;
+        isPaused = true;
+        ApplyTimeScale();
     }
 
     private void HandleUnpause()
     {
-        gameSpeed = cachedGameSpeed;
-        Time.timeScale = gameSpeed;
+        isPaused = false;
+        ApplyTimeScale();
+    }
+
+    // The single place that drives Time.timeScale, so a pause can never be lost to an effect
+    // writing the scale behind its back, nor the other way round.
+    private void ApplyTimeScale()
+    {
+        Time.timeScale = isPaused ? pausedTimeScale : gameSpeed;
     }
 }

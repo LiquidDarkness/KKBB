@@ -12,14 +12,33 @@ public class MusicSwitcher : MonoBehaviour
     public AnimationCurve up, down;
 
 
+    // What the last switch asked for. A story beat and the level that follows it now request
+    // the same track, and so does the ending button, so without remembering the request the
+    // second caller would fade the music out and start it again from the top.
+    private AudioClip requestedIntro;
+    private AudioClip requestedLoop;
+
     public void Start()
     {
         audioSource.clip = startingClip;
+        requestedLoop = startingClip;
         audioSource.Play();
+    }
+
+    private bool IsAlreadyPlaying(AudioClip intro, AudioClip loop)
+    {
+        return requestedIntro == intro && requestedLoop == loop && audioSource.isPlaying;
     }
 
     public void SwitchAudio(AudioClip audioClip)
     {
+        if (IsAlreadyPlaying(null, audioClip))
+        {
+            return;
+        }
+
+        requestedIntro = null;
+        requestedLoop = audioClip;
         StartCoroutine(SwitchAudioRoutine(audioClip));
     }
 
@@ -53,6 +72,13 @@ public class MusicSwitcher : MonoBehaviour
 
     internal void SwitchToSequence(AudioClip first, AudioClip second)
     {
+        if (IsAlreadyPlaying(first, second))
+        {
+            return;
+        }
+
+        requestedIntro = first;
+        requestedLoop = second;
         StartCoroutine(SwitchSequenceRoutine(first, second));
     }
 

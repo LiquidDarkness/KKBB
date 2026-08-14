@@ -78,6 +78,13 @@ public class StoryManager : MonoBehaviour, ICoreReferencer
         storyText.key = mainManager.chosenScenario.name + currentLvl.IntValue;
         //LiquidDarkness1
         storyText.UpdateTranslation();
+
+        // The story beat is shown before its level is loaded, so leaving the music to
+        // LevelLoader meant a scenario opened on silence and its track only started once
+        // the player had read the text and pressed on. The ending is no exception: its
+        // placeholder level carries the finale track and ShowEndingButton then asks for
+        // that very same one, which MusicSwitcher recognises and does not restart.
+        PlayMusicFor(currentStory?.level);
     }
 
     public void HideStoryText()
@@ -115,21 +122,26 @@ public class StoryManager : MonoBehaviour, ICoreReferencer
     // be started from here instead.
     private void PlayEndingMusic()
     {
-        LevelData endingLevel = currentStory?.level;
-        if (endingLevel == null || endingLevel.loop == null)
+        PlayMusicFor(currentStory?.level);
+    }
+
+    // Deliberately silent about levels with no track: keeps whatever is already playing
+    // rather than cutting to nothing, which still matters for the scenarios whose ending
+    // has no music of its own yet.
+    private void PlayMusicFor(LevelData levelData)
+    {
+        if (levelData == null || levelData.loop == null || coreReferences == null)
         {
-            // No ending track for this scenario yet - keep whatever is already playing rather
-            // than cutting the finale to silence.
             return;
         }
 
-        if (endingLevel.intro != null)
+        if (levelData.intro != null)
         {
-            coreReferences.musicSwitcher.SwitchToSequence(endingLevel.intro, endingLevel.loop);
+            coreReferences.musicSwitcher.SwitchToSequence(levelData.intro, levelData.loop);
         }
         else
         {
-            coreReferences.musicSwitcher.SwitchAudio(endingLevel.loop);
+            coreReferences.musicSwitcher.SwitchAudio(levelData.loop);
         }
     }
 

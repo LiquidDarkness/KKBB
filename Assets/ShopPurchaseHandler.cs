@@ -47,7 +47,11 @@ public class ShopPurchaseHandler : MonoBehaviour
 
         while (elapsedTime < duration)
         {
-            elapsedTime += Time.timeScale;
+            // Unscaled, and deltaTime rather than timeScale: this flash only ever plays while
+            // the shop has the game paused, so scaled time barely advances and adding the scale
+            // itself advanced nothing at all - the fade never finished and its coroutine span
+            // for as long as the shop stayed open.
+            elapsedTime += Time.unscaledDeltaTime;
 
             float t = Mathf.Clamp01(elapsedTime / duration);
 
