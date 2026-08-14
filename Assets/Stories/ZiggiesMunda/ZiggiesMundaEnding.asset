@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de026e5a0771fbd49933004fa9fc52a8, type: 3}
-  m_Name: Ending
+  m_Name: ZiggiesMundaEnding
   m_EditorClassIdentifier: 
-  levelThumbnail: {fileID: 0}
-  background: {fileID: 21300000, guid: 7e289283773763a41b995766a0b7fa0c, type: 3}
+  levelThumbnail: {fileID: 21300000, guid: 1126c2b7287b2fd438bf3d43001a2d5b, type: 3}
+  background: {fileID: 21300000, guid: 1126c2b7287b2fd438bf3d43001a2d5b, type: 3}
   content: {fileID: 0}
   intro: {fileID: 0}
-  loop: {fileID: 0}
+  loop: {fileID: 8300000, guid: d89d9b2de9576334997238edd6e62af7, type: 3}

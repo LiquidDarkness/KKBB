@@ -103,6 +103,34 @@ public class StoryManager : MonoBehaviour, ICoreReferencer
     {
         ending.SetActive(shouldShow);
         boink.SetActive(!shouldShow);
+
+        if (shouldShow)
+        {
+            PlayEndingMusic();
+        }
+    }
+
+    // The ending entry pairs its story with a content-less placeholder level that is never
+    // loaded (boink is hidden here), so LevelLoader never gets to start its music - it has to
+    // be started from here instead.
+    private void PlayEndingMusic()
+    {
+        LevelData endingLevel = currentStory?.level;
+        if (endingLevel == null || endingLevel.loop == null)
+        {
+            // No ending track for this scenario yet - keep whatever is already playing rather
+            // than cutting the finale to silence.
+            return;
+        }
+
+        if (endingLevel.intro != null)
+        {
+            coreReferences.musicSwitcher.SwitchToSequence(endingLevel.intro, endingLevel.loop);
+        }
+        else
+        {
+            coreReferences.musicSwitcher.SwitchAudio(endingLevel.loop);
+        }
     }
 
     public void Provide(CoreReferences coreReferences)

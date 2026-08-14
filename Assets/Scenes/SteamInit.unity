@@ -190,6 +190,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4551056684337320810, guid: 6c026613e7e7db94192ddf87b31097b3, type: 3}
+      propertyPath: m_ChildScaleWidth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4551056684337320810, guid: 6c026613e7e7db94192ddf87b31097b3, type: 3}
+      propertyPath: m_ChildControlWidth
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5229684913432418423, guid: 6c026613e7e7db94192ddf87b31097b3, type: 3}
       propertyPath: m_RootOrder
       value: 0

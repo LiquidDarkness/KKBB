@@ -13,14 +13,16 @@ MonoBehaviour:
   m_Name: Tutorial
   m_EditorClassIdentifier: 
   stories:
-  - backgroundSprite: {fileID: 21300000, guid: b846c3f817d0ab64bb6461877045c1ac, type: 3}
+  - backgroundSprite: {fileID: 21300000, guid: 61df030f1573a6f4f8f3257d1c40b85a, type: 3}
     level: {fileID: 11400000, guid: 75fc9833658d70b4ab8857429d656cc5, type: 2}
-  - backgroundSprite: {fileID: 21300000, guid: c6862652c1171ad40a6660cf95656327, type: 3}
+  - backgroundSprite: {fileID: 21300000, guid: fdf74e1b2efec3343880d9d749f793cb, type: 3}
     level: {fileID: 11400000, guid: 538189679f6c4884890c8f22c8ec21e7, type: 2}
-  - backgroundSprite: {fileID: 21300000, guid: b846c3f817d0ab64bb6461877045c1ac, type: 3}
+  - backgroundSprite: {fileID: 21300000, guid: 930f5e995ff90b0409d0a8978cb20f0e, type: 3}
     level: {fileID: 11400000, guid: ce6a356e58ff8ed261451170267deaaf, type: 2}
-  - backgroundSprite: {fileID: 21300000, guid: c6862652c1171ad40a6660cf95656327, type: 3}
+  - backgroundSprite: {fileID: 21300000, guid: a104971efa3bc6043a47eb4a4df9a322, type: 3}
     level: {fileID: 11400000, guid: ee92ddfcbecb7d117d123a4a570e6fe6, type: 2}
-  - backgroundSprite: {fileID: 21300000, guid: b846c3f817d0ab64bb6461877045c1ac, type: 3}
+  - backgroundSprite: {fileID: 21300000, guid: 83ca1fd1692ccea4baeecea4839040b2, type: 3}
     level: {fileID: 11400000, guid: a608bd4bc0f0a050d6c798e685365a2d, type: 2}
+  - backgroundSprite: {fileID: 21300000, guid: 1126c2b7287b2fd438bf3d43001a2d5b, type: 3}
+    level: {fileID: 11400000, guid: d7cb7471d18e1244714c91dc558b8255, type: 2}
   availableInDemo: 1

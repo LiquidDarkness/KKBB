@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de026e5a0771fbd49933004fa9fc52a8, type: 3}
+  m_Name: TutorialEnding
+  m_EditorClassIdentifier: 
+  levelThumbnail: {fileID: 0}
+  background: {fileID: 21300000, guid: 1126c2b7287b2fd438bf3d43001a2d5b, type: 3}
+  content: {fileID: 0}
+  intro: {fileID: 0}
+  loop: {fileID: 0}

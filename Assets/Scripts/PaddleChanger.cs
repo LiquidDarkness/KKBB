@@ -28,16 +28,17 @@ public class PaddleChanger : MonoBehaviour, IDropReceiver
 
         PaddleMovement paddleInstance;
 
-        // Jeœli mamy ju¿ instancjê w cache, u¿ywamy jej
-        if (cachedPaddles.ContainsKey(paddleToUse))
+        // Reuse the instance we already made for this prefab, but only if it is still alive:
+        // the cache is static, so it outlives the scene while the instances in it do not, and a
+        // stale entry would otherwise be handed out as a destroyed object after a scene reload.
+        if (cachedPaddles.TryGetValue(paddleToUse, out paddleInstance) && paddleInstance != null)
         {
-            paddleInstance = cachedPaddles[paddleToUse];
+            // Nothing to do - the cached instance is reused as-is.
         }
         else
         {
-            // Inaczej instancjonujemy nowy obiekt i dodajemy do cache
             paddleInstance = Instantiate(paddleToUse);
-            cachedPaddles.Add(paddleToUse, paddleInstance);
+            cachedPaddles[paddleToUse] = paddleInstance;
         }
 
         // Aktywujemy paddle i podnosimy event

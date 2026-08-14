@@ -6238,6 +6238,9 @@ MonoBehaviour:
   coreReferences: {fileID: 11400000, guid: 9ff01efc2579a3241b409409c97497ca, type: 2}
   sceneName: Gameplay
   menuSceneName: Menu
+  savedScore: {fileID: 11400000, guid: 37525c481e03b5a4baaec2e278496745, type: 2}
+  currentLevel: {fileID: 11400000, guid: 76e20662c26c8734698d39f790c7cb65, type: 2}
+  health: {fileID: 11400000, guid: d4400d2620aebaa4a91d89bf65aa975f, type: 2}
 --- !u!82 &1059604094
 AudioSource:
   m_ObjectHideFlags: 0

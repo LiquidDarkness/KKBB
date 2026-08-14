@@ -284,7 +284,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 50, y: -40}
-  m_SizeDelta: {x: 185, y: 100}
+  m_SizeDelta: {x: 250, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &3007742471227038958
 MonoBehaviour:
@@ -850,7 +850,6 @@ GameObject:
   - component: {fileID: 3007742471343142552}
   - component: {fileID: 3007742471343142555}
   - component: {fileID: 3007742471343142554}
-  - component: {fileID: 3007742471343142549}
   - component: {fileID: 3007742471343142548}
   - component: {fileID: 8337841074404637579}
   m_Layer: 0
@@ -992,7 +991,6 @@ MonoBehaviour:
   scoreText: {fileID: 3007742471418675732}
   savedScore: {fileID: 11400000, guid: 37525c481e03b5a4baaec2e278496745, type: 2}
   scoreContainer: {fileID: 3007742471658185004}
-  canBePurchased: 0
 --- !u!114 &3007742471343142553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1063,22 +1061,6 @@ MonoBehaviour:
     toggleKey: OptionsWindow
   - window: {fileID: 3007742471206756756}
     toggleKey: Pause
---- !u!114 &3007742471343142549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3007742471343142533}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8df4e69fd7dd9ff48964c676314371f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  paddlePrefabs:
-  - {fileID: 3325111486451769460, guid: 11a560129fb45ca4b935316b028e7fc4, type: 3}
-  - {fileID: 5097162734609816294, guid: 3ff6cc061a55c354485d298ca519c0f3, type: 3}
-  - {fileID: -9093511368731776839, guid: 1eea5b1f61f05054bbd5abfeb103b634, type: 3}
 --- !u!114 &3007742471343142548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5907,6 +5889,9 @@ MonoBehaviour:
   coreReferences: {fileID: 11400000, guid: 9ff01efc2579a3241b409409c97497ca, type: 2}
   sceneName: Menu
   menuSceneName: Menu
+  savedScore: {fileID: 11400000, guid: 37525c481e03b5a4baaec2e278496745, type: 2}
+  currentLevel: {fileID: 11400000, guid: 76e20662c26c8734698d39f790c7cb65, type: 2}
+  health: {fileID: 11400000, guid: d4400d2620aebaa4a91d89bf65aa975f, type: 2}
 --- !u!1 &3007742472542838905
 GameObject:
   m_ObjectHideFlags: 0
