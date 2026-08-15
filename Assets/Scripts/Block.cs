@@ -16,11 +16,6 @@ public class Block : MonoBehaviour
 
     public bool breakable;
 
-    public void Awake()
-    {
-        Debug.Log(difficultySettings.CurrentSettings.name);
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (breakable)
@@ -62,7 +57,6 @@ public class Block : MonoBehaviour
             if (chance < chainChance)
             {
                 Instantiate(chainDestroyer, transform.position, Quaternion.identity).Trigger(this);
-                chainDestroyer.chance = difficultySettings.CurrentSettings.chainDestructionProbability;
             }
             else
             {

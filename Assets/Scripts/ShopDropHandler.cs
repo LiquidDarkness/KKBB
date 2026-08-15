@@ -47,7 +47,16 @@ public class ShopDropHandler : MonoBehaviour
             return;
         }
 
+        if (dropToSpawn is not IDropReceiver receiver)
+        {
+            // Refuse before charging: taking the points and handing back nothing is worse than
+            // a dead button, and OnValidate clears this field whenever it is set to the wrong
+            // kind of component.
+            Debug.LogError($"{name} has no drop to spawn.", this);
+            return;
+        }
+
         Score.AddToScore(-price);
-        (dropToSpawn as IDropReceiver).DigestDrop(null);
+        receiver.DigestDrop(null);
     }
 }

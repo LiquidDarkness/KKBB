@@ -22,7 +22,18 @@ public class LevelLoader : MonoBehaviour
             }
         }
 
-        StartCoroutine(RandomBlockInstantiotor(Instantiate(levelToLoad.content, container)));
+        // The ending placeholders deliberately carry no content and are never loaded, so
+        // reaching this with an empty one means something routed us at a level that cannot
+        // be played. Say so rather than throwing inside Instantiate, and still switch the
+        // music below so the scene is not left in silence.
+        if (levelToLoad.content == null)
+        {
+            Debug.LogError($"[{nameof(LevelLoader)}] {levelToLoad.name} has no content to instantiate.", levelToLoad);
+        }
+        else
+        {
+            StartCoroutine(RandomBlockInstantiotor(Instantiate(levelToLoad.content, container)));
+        }
 
         if (levelToLoad.intro != null)
         {

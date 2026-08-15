@@ -22,8 +22,17 @@ public class Lotto<T>
         }
     }
 
+    public bool HasTickets => tickets.Count > 0;
+
     public T GetRandomTicket()
     {
+        // Random.Range(0, 0) hands back 0, so an empty bucket used to index straight out of the
+        // list and throw - once per block destroyed, for as long as the pool stayed empty.
+        if (tickets.Count == 0)
+        {
+            return default;
+        }
+
         return tickets[UnityEngine.Random.Range(0, tickets.Count)];
     }
 }

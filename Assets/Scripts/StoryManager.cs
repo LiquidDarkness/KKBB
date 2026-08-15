@@ -39,6 +39,17 @@ public class StoryManager : MonoBehaviour, ICoreReferencer
         }
     }
 
+    // Both events are static while this component belongs to the Gameplay scene, so
+    // without this every return to the menu left a destroyed StoryManager subscribed.
+    // The stale handler throws the moment it touches anything of its dead object, and an
+    // exception part-way through a multicast invocation stops the delegates queued behind
+    // it - so the live StoryManager would never get told the level was finished.
+    public void OnDestroy()
+    {
+        MainManager.OnStoryLoaded -= DisplayStoryContent;
+        Level.OnLevelCompleted -= Progress;
+    }
+
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.G))

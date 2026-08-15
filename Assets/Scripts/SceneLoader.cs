@@ -43,6 +43,11 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(sceneName,LoadSceneMode.Single);
         yield return null;
 
+        // No pause may cross a scene boundary: the window or the death that took the lock
+        // is gone with the scene it lived in, and an inherited lock leaves the fresh scene
+        // frozen - a paddle that will not move being the first thing the player notices.
+        PauseManager.ReleaseAll();
+
         switch (sceneName)
         {
             case "Gameplay":

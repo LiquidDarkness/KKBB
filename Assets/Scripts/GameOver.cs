@@ -11,6 +11,11 @@ public class GameOver : MonoBehaviour
         PlayerHealth.OnDeath += DisplayGameOver;
     }
 
+    public void OnDestroy()
+    {
+        PlayerHealth.OnDeath -= DisplayGameOver;
+    }
+
     public void DisplayGameOver()
     {
         gameOverScreen.SetActive(true);

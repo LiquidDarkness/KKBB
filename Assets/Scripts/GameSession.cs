@@ -16,6 +16,13 @@ public class GameSession : MonoBehaviour
         PlayerHealth.OnDeath += Pause;
     }
 
+    // ResetGame destroys this object, and PlayerHealth.OnDeath is static: without this
+    // the destroyed session stays in its invocation list.
+    private void OnDestroy()
+    {
+        PlayerHealth.OnDeath -= Pause;
+    }
+
     public void ResetGame()
     {
         Destroy(gameObject);

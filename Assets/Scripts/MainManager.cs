@@ -28,7 +28,27 @@ public class MainManager : MonoBehaviour
     public TypeDistinguisher currentLevel;
     public TypeDistinguisher scenarioIndex;
 
-    public Story CurrentStory { get => chosenScenario.stories[currentLevel.IntValue]; }
+    // A saved level index belongs to the scenario it was saved in, and switching
+    // scenarios does not reset it - only New Game does. Picking a shorter scenario and
+    // continuing therefore indexed straight past the end of its story list and threw.
+    // Falls back to the opening beat rather than the last one, which is the ending
+    // placeholder that is never meant to be played, and writes the correction back so
+    // Progress() does not carry on counting from the stale number.
+    public Story CurrentStory
+    {
+        get
+        {
+            int index = currentLevel.IntValue;
+            if (index < 0 || index >= chosenScenario.stories.Length)
+            {
+                Debug.LogWarning($"[{nameof(MainManager)}] Saved level index {index} is outside {chosenScenario.name} (0-{chosenScenario.stories.Length - 1}). Starting that scenario over.");
+                index = 0;
+                currentLevel.SetIntValue(index);
+            }
+
+            return chosenScenario.stories[index];
+        }
+    }
 
     public static event Action OnLevelLoaded;
     public static event Action OnStoryLoaded;
@@ -63,22 +83,38 @@ public class MainManager : MonoBehaviour
             TryProvideForReferencer(item);
         }
 
-        // Subskrybujemy siê na przysz³e promocje
         DontDestroyOnLoaded.OnPromoted += TryProvideForReferencer;
+    }
 
-        // Lokalna metoda do podawania referencji coreReferences
-        void TryProvideForReferencer(MonoBehaviour loadedObject)
+    // This was a local function, which left no way to unsubscribe. MainManager lives in
+    // the Gameplay scene and dies with it, while OnPromoted is static and went on holding
+    // the dead instance in its invocation list - one more stale handler on every visit to
+    // the scene, each of them reaching into a destroyed object.
+    private void TryProvideForReferencer(MonoBehaviour loadedObject)
+    {
+        if (loadedObject is ICoreReferencer referencer)
         {
-            if (loadedObject is ICoreReferencer referencer)
-            {
-                referencer.Provide(coreReferences);
-            }
+            referencer.Provide(coreReferences);
         }
+    }
+
+    private void OnDestroy()
+    {
+        DontDestroyOnLoaded.OnPromoted -= TryProvideForReferencer;
     }
 
     public void LoadNextLevel()
     {
         Debug.Log("MainManager progress");
+
+        if (levels.Count == 0)
+        {
+            // Modulo by zero throws outright, so say what is wrong instead of dying on
+            // a scenario that was left without a single story entry.
+            Debug.LogError($"[{nameof(MainManager)}] {chosenScenario.name} has no stories - nothing to load.");
+            return;
+        }
+
         int currentLevelIndex = (currentLevel.IntValue + 1) % levels.Count;
         if (contentContainer.childCount != 0)
         {

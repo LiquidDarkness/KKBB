@@ -21,7 +21,6 @@ public class ChainDestroyer : MonoBehaviour
     public void OnEnable()
     {
         HandleDifficultyChanged();
-        Debug.Log(chance);
     }
 
     private void HandleDifficultyChanged()

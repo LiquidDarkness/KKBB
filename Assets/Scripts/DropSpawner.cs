@@ -41,6 +41,16 @@ public class DropSpawner : MonoBehaviour
         // OnSettingsChanged is not raised on every path that changes difficulty (e.g. loading a save),
         // which could leave the cached lotto stale.
         SetSettings(diffcultyManager.CurrentSettings);
-        Instantiate(lotto.GetRandomTicket(), position, Quaternion.identity);
+
+        GameObject ticket = lotto.GetRandomTicket();
+        if (ticket == null)
+        {
+            // Either the difficulty has no drops at all, or the one drawn has no prefab on it.
+            // Instantiate(null) throws, and this runs on every block broken, so a single gap in
+            // the pool would bury the level in exceptions.
+            return;
+        }
+
+        Instantiate(ticket, position, Quaternion.identity);
     }
 }
