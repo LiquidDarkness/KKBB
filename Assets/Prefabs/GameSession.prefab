@@ -907,6 +907,7 @@ MonoBehaviour:
   effectCountDown: 0
   originalGameSpeed: 0
   minGameSpeed: 1
+  pausedTimeScale: 0.0001
   diffcultyManager: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
 --- !u!114 &3007742471343142531
 MonoBehaviour:
@@ -1936,6 +1937,7 @@ GameObject:
   - component: {fileID: 3007742471434031883}
   - component: {fileID: 3007742471434031877}
   - component: {fileID: 3007742471434031882}
+  - component: {fileID: 2046006115293814838}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -2002,8 +2004,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4281282518
+  m_fontColor: {r: 0.8396226, g: 0.18614274, b: 0.18614274, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2020,8 +2022,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 129.8
-  m_fontSizeBase: 129.8
+  m_fontSize: 135
+  m_fontSizeBase: 135
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2062,6 +2064,21 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2046006115293814838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3007742471434031880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.6509804}
+  m_EffectDistance: {x: 0, y: 45}
+  m_UseGraphicAlpha: 1
 --- !u!1 &3007742471452207472
 GameObject:
   m_ObjectHideFlags: 0
