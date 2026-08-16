@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using UnityEngine;
 
 [CreateAssetMenu]
@@ -40,16 +41,20 @@ public class TypeDistinguisher : ScriptableObject
     public bool BoolValue => IntValue > 0;
 
 
+    // Everything below is written and read with the invariant culture. The save file travels
+    // between machines - that is the whole point of Steam Cloud - and the system culture decides
+    // the decimal separator: a Polish Windows wrote "0,54" where an English one expects "0.54",
+    // and cultures that read the comma as a thousands separator would turn it into 54.
     private string GetExportValue()
     {
         switch (prefType)
         {
             case PlayerPrefType.INT:
-                return PlayerPrefs.GetInt(PrefsKey).ToString();            
+                return PlayerPrefs.GetInt(PrefsKey).ToString(CultureInfo.InvariantCulture);
             case PlayerPrefType.BOOL:
-                return PlayerPrefs.GetInt(PrefsKey).ToString();
+                return PlayerPrefs.GetInt(PrefsKey).ToString(CultureInfo.InvariantCulture);
             case PlayerPrefType.FLOAT:
-                return PlayerPrefs.GetFloat(PrefsKey).ToString();
+                return PlayerPrefs.GetFloat(PrefsKey).ToString("R", CultureInfo.InvariantCulture);
             case PlayerPrefType.STRING:
                 return PlayerPrefs.GetString(PrefsKey);
             default:
@@ -73,26 +78,33 @@ public class TypeDistinguisher : ScriptableObject
     {
         string[] elements = item.Split('/');
         Debug.Assert(elements.Length == 3, $"Unable to parse: {item}");
+        // A failed parse used to fall through and store the zero it left behind, which is how a
+        // save file written under another culture silenced the game: the three volume keys became
+        // 0 without a word to the player. Keeping the value already in PlayerPrefs is always the
+        // better answer, and the next Save rewrites the line properly.
         switch (elements[1])
         {
             case nameof(PlayerPrefType.INT):
-                if (!int.TryParse(elements[2], out int iValue))
+                if (!int.TryParse(elements[2], NumberStyles.Integer, CultureInfo.InvariantCulture, out int iValue))
                 {
-                    Debug.LogError($"Wrong int value: {elements[2]}, for key: {elements[0]}");
+                    Debug.LogError($"Wrong int value: {elements[2]}, for key: {elements[0]} - keeping the current one.");
+                    return;
                 }
                 PlayerPrefs.SetInt(elements[0], iValue);
                 break;
             case nameof(PlayerPrefType.BOOL):
-                if (!int.TryParse(elements[2], out int bValue))
+                if (!int.TryParse(elements[2], NumberStyles.Integer, CultureInfo.InvariantCulture, out int bValue))
                 {
-                    Debug.LogError($"Wrong int value: {elements[2]}, for key: {elements[0]}");
+                    Debug.LogError($"Wrong int value: {elements[2]}, for key: {elements[0]} - keeping the current one.");
+                    return;
                 }
                 PlayerPrefs.SetInt(elements[0], bValue);
                 break;
             case nameof(PlayerPrefType.FLOAT):
-                if (!float.TryParse(elements[2], out float fValue))
+                if (!float.TryParse(elements[2], NumberStyles.Float, CultureInfo.InvariantCulture, out float fValue))
                 {
-                    Debug.LogError($"Wrong float value: {elements[2]}, for key: {elements[0]}");
+                    Debug.LogError($"Wrong float value: {elements[2]}, for key: {elements[0]} - keeping the current one.");
+                    return;
                 }
                 PlayerPrefs.SetFloat(elements[0], fValue);
                 break;

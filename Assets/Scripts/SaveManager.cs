@@ -46,7 +46,9 @@ public static class SaveManager
             else
             {
                 Debug.Log("Save file not found. Loading default TypeDistinguisher values...");
-                File.Create(SaveFilePath);
+                // Disposed, unlike before: the handle stayed open for the rest of the run and the
+                // first Save could then fail to open the same path for writing.
+                File.Create(SaveFilePath).Dispose();
                 LoadDefaults();
             }
         }

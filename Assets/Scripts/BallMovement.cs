@@ -10,6 +10,8 @@ public class BallMovement : MonoBehaviour
         "so identical bounces stop repeating forever. 0 turns it off.")]
     public float randomFactor = 0.2f;
     public float minVelocity;
+    [Tooltip("Hard ceiling on the ball's speed, the counterpart to minVelocity. 0 turns it off.")]
+    public float maxVelocity = 15f;
     [Tooltip("Degrees per second the flight path is bent downwards. 0 turns it off.")]
     public float fakeGravityFactor;
     [SerializeField] private float launchBallSpeed;
@@ -68,8 +70,31 @@ public class BallMovement : MonoBehaviour
             velocityAverage.Enqueue(myRigidBody2D.velocity.magnitude);
         }
 
+        ClampMaxSpeed();
         ClampFlightAngle();
         TrackStall();
+    }
+
+    // Blocks and walls bounce the ball at a restitution of exactly 1. A perfectly elastic bounce
+    // is the one case the solver cannot hold to precisely, and it errs upwards, so the ball comes
+    // off a little faster than it went in. minVelocity was a floor with nothing facing it, which
+    // made every one of those gains permanent and let them stack up over a level. Applied at once
+    // rather than through the rolling average, since a single bad bounce is what has to be caught.
+    private void ClampMaxSpeed()
+    {
+        if (maxVelocity <= 0f)
+        {
+            return;
+        }
+
+        Vector2 velocity = myRigidBody2D.velocity;
+        float speed = velocity.magnitude;
+        if (speed <= maxVelocity)
+        {
+            return;
+        }
+
+        myRigidBody2D.velocity = velocity.normalized * maxVelocity;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
