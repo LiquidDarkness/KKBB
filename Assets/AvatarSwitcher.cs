@@ -8,10 +8,31 @@ public class AvatarSwitcher : MonoBehaviour
     public struct Avatar
     {
         public GameObject[] elements;
+
+        [Tooltip("How fast this cat flies. Left at 0 the cat uses BallMovement.defaultSpeed - only fill it in for a cat meant to feel different from the rest.")]
+        public float ballSpeed;
     }
 
     public List<Avatar> avatars;
     public TypeDistinguisher chosenAvatar;
+
+    // The speed asked for by the cat currently in play, or 0 for "no opinion, use the default".
+    // Resolved on every read rather than cached: the avatar is chosen from the menu, and this
+    // component is not reloaded in between.
+    public float CurrentBallSpeed
+    {
+        get
+        {
+            int index = chosenAvatar != null ? chosenAvatar.IntValue : 0;
+
+            if (index < 0 || index >= avatars.Count)
+            {
+                return 0f;
+            }
+
+            return avatars[index].ballSpeed;
+        }
+    }
 
     public void Start()
     {
