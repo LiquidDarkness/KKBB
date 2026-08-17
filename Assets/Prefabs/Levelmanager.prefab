@@ -118,6 +118,7 @@ MonoBehaviour:
   coreReferences: {fileID: 11400000, guid: 9ff01efc2579a3241b409409c97497ca, type: 2}
   container: {fileID: 2143452233366913292}
   spawnTime: 3
+  blockMaterial: {fileID: 6200000, guid: 1a5929c92c505dc419f9f10c1287163c, type: 2}
   recentLevel: {fileID: 0}
 --- !u!1001 &2143452234891553295
 PrefabInstance:
