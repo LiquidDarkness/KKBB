@@ -43,10 +43,18 @@ public class BallMovement : MonoBehaviour
     private AvatarSwitcher avatarSwitcher;
     private Transform lastMountPoint;
 
-    private Collider2D leftBarrier;
-    private Collider2D rightBarrier;
-    private Collider2D upperBarrier;
     private Collider2D ballCollider;
+    private bool arenaResolved;
+    private float arenaLeft = float.NegativeInfinity;
+    private float arenaRight = float.PositiveInfinity;
+    private float arenaTop = float.PositiveInfinity;
+
+    private enum BarrierSide
+    {
+        Left,
+        Right,
+        Top,
+    }
 
     // Every cat is the ball, so every cat gets to fly at its own speed; a cat that leaves its
     // entry at 0 flies at the default. Read live rather than resolved once, since the cat can be
@@ -68,9 +76,6 @@ public class BallMovement : MonoBehaviour
     {
         myRigidBody2D = GetComponent<Rigidbody2D>();
         avatarSwitcher = GetComponentInChildren<AvatarSwitcher>(true);
-        leftBarrier = FindBarrier(leftBarrierName);
-        rightBarrier = FindBarrier(rightBarrierName);
-        upperBarrier = FindBarrier(upperBarrierName);
         SetLaunchBool(string.Empty);
         SceneLoader.OnSceneChanged += SetLaunchBool;
         Level.OnLevelCompleted += ReLockBall;
@@ -108,6 +113,11 @@ public class BallMovement : MonoBehaviour
             return;
         }
 
+        if (!arenaResolved)
+        {
+            ResolveArena();
+        }
+
         Collider2D shape = ResolveBallCollider();
         if (shape == null)
         {
@@ -118,20 +128,20 @@ public class BallMovement : MonoBehaviour
         Vector2 correction = Vector2.zero;
         Vector2 velocity = myRigidBody2D.velocity;
 
-        if (rightBarrier != null && ball.max.x > rightBarrier.bounds.min.x)
+        if (ball.max.x > arenaRight)
         {
-            correction.x = rightBarrier.bounds.min.x - ball.max.x - barrierSkin;
+            correction.x = arenaRight - ball.max.x - barrierSkin;
             velocity.x = -Mathf.Abs(velocity.x);
         }
-        else if (leftBarrier != null && ball.min.x < leftBarrier.bounds.max.x)
+        else if (ball.min.x < arenaLeft)
         {
-            correction.x = leftBarrier.bounds.max.x - ball.min.x + barrierSkin;
+            correction.x = arenaLeft - ball.min.x + barrierSkin;
             velocity.x = Mathf.Abs(velocity.x);
         }
 
-        if (upperBarrier != null && ball.max.y > upperBarrier.bounds.min.y)
+        if (ball.max.y > arenaTop)
         {
-            correction.y = upperBarrier.bounds.min.y - ball.max.y - barrierSkin;
+            correction.y = arenaTop - ball.max.y - barrierSkin;
             velocity.y = -Mathf.Abs(velocity.y);
         }
 
@@ -158,27 +168,76 @@ public class BallMovement : MonoBehaviour
         return ballCollider;
     }
 
-    private Collider2D FindBarrier(string barrierName)
+    // Read once into three numbers rather than kept as live references to the colliders, and
+    // that form is the whole point. Two things make a reference here dangerous. The Gameplay
+    // scene holds more than one object called UpperBarrier - LevelBackground brings its own set,
+    // at the same coordinates - and a Collider2D reports a zero-size bounds sitting at the origin
+    // once it, or its object, is switched off. Held live, whichever copy the lookup happened to
+    // land on could collapse to (0,0) later and turn the ceiling into an invisible floor across
+    // the middle of the screen. Which copy that was depended on object order, which is not the
+    // same in a build as in the editor, so it showed up in one and not the other.
+    //
+    // Numbers cannot go stale, collapsed colliders are refused outright, and of the candidates
+    // the outermost wins - a duplicate can then only ever loosen the arena, never pinch it.
+    // Resolved on the first physics step rather than in Awake, by when every collider is
+    // certainly registered and its bounds are real.
+    private void ResolveArena()
     {
+        arenaResolved = true;
+        arenaLeft = ResolveBarrier(leftBarrierName, BarrierSide.Left);
+        arenaRight = ResolveBarrier(rightBarrierName, BarrierSide.Right);
+        arenaTop = ResolveBarrier(upperBarrierName, BarrierSide.Top);
+    }
+
+    private float ResolveBarrier(string barrierName, BarrierSide side)
+    {
+        float unguarded = side == BarrierSide.Left ? float.NegativeInfinity : float.PositiveInfinity;
+
         if (string.IsNullOrEmpty(barrierName))
         {
-            return null;
+            return unguarded;
         }
 
-        GameObject barrier = GameObject.Find(barrierName);
-        if (barrier == null)
+        bool found = false;
+        float face = 0f;
+
+        foreach (Collider2D candidate in FindObjectsOfType<Collider2D>())
         {
-            Debug.LogWarning($"[{nameof(BallMovement)}] nothing in the scene is called '{barrierName}' - that side of the arena is unguarded.", this);
-            return null;
+            if (candidate.name != barrierName)
+            {
+                continue;
+            }
+
+            Bounds bounds = candidate.bounds;
+
+            // A collapsed bounds means the collider is not really there - taking it at face value
+            // is what put a barrier through the middle of the arena.
+            if (bounds.size.sqrMagnitude < Mathf.Epsilon)
+            {
+                continue;
+            }
+
+            float inner = side == BarrierSide.Left ? bounds.max.x
+                        : side == BarrierSide.Right ? bounds.min.x
+                        : bounds.min.y;
+
+            if (!found)
+            {
+                face = inner;
+                found = true;
+                continue;
+            }
+
+            face = side == BarrierSide.Left ? Mathf.Min(face, inner) : Mathf.Max(face, inner);
         }
 
-        Collider2D found = barrier.GetComponent<Collider2D>();
-        if (found == null)
+        if (!found)
         {
-            Debug.LogWarning($"[{nameof(BallMovement)}] '{barrierName}' carries no Collider2D - that side of the arena is unguarded.", barrier);
+            Debug.LogWarning($"[{nameof(BallMovement)}] no usable collider called '{barrierName}' - that side of the arena is unguarded.", this);
+            return unguarded;
         }
 
-        return found;
+        return face;
     }
 
     // Blocks and walls bounce the ball at a restitution of exactly 1, and a perfectly elastic
