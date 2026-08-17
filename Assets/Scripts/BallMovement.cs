@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BallMovement : MonoBehaviour
 {
@@ -9,13 +8,18 @@ public class BallMovement : MonoBehaviour
     [Tooltip("Random nudge, in world units per second, added to the velocity on every bounce " +
         "so identical bounces stop repeating forever. 0 turns it off.")]
     public float randomFactor = 0.2f;
-    public float minVelocity;
-    [Tooltip("Hard ceiling on the ball's speed, the counterpart to minVelocity. 0 turns it off.")]
-    public float maxVelocity = 15f;
+    [Tooltip("Speed the ball is held at when the cat in play does not name one of its own. Each cat can, in its entry on AvatarSwitcher.")]
+    public float defaultSpeed = 10f;
     [Tooltip("Degrees per second the flight path is bent downwards. 0 turns it off.")]
     public float fakeGravityFactor;
-    [SerializeField] private float launchBallSpeed;
-    public int velocitySamples = 10;
+
+    [Header("Arena")]
+    [Tooltip("Names of the barriers the ball must never pass, or come to rest against. A name that matches nothing leaves that side of the arena unguarded, and says so once on load. The bottom is deliberately not guarded - that is where a life is lost.")]
+    public string leftBarrierName = "Leftbarrier";
+    public string rightBarrierName = "RightBarrier";
+    public string upperBarrierName = "UpperBarrier";
+    [Tooltip("How far back inside the arena the ball is placed when it has managed to touch or cross a barrier.")]
+    public float barrierSkin = 0.05f;
 
     [Header("Anti-stall")]
     [Tooltip("The ball is never allowed to fly within this many degrees of horizontal.")]
@@ -35,9 +39,26 @@ public class BallMovement : MonoBehaviour
     public bool hasBeenLaunched;
     public bool canBeLaunched;
 
-    private readonly Queue<float> velocityAverage = new();
     private Rigidbody2D myRigidBody2D;
+    private AvatarSwitcher avatarSwitcher;
     private Transform lastMountPoint;
+
+    private Collider2D leftBarrier;
+    private Collider2D rightBarrier;
+    private Collider2D upperBarrier;
+    private Collider2D ballCollider;
+
+    // Every cat is the ball, so every cat gets to fly at its own speed; a cat that leaves its
+    // entry at 0 flies at the default. Read live rather than resolved once, since the cat can be
+    // swapped from the menu between levels.
+    public float CurrentSpeed
+    {
+        get
+        {
+            float speedForThisCat = avatarSwitcher != null ? avatarSwitcher.CurrentBallSpeed : 0f;
+            return speedForThisCat > 0f ? speedForThisCat : defaultSpeed;
+        }
+    }
 
     private float stallTimer;
     private float stallMinY;
@@ -46,6 +67,10 @@ public class BallMovement : MonoBehaviour
     private void Awake()
     {
         myRigidBody2D = GetComponent<Rigidbody2D>();
+        avatarSwitcher = GetComponentInChildren<AvatarSwitcher>(true);
+        leftBarrier = FindBarrier(leftBarrierName);
+        rightBarrier = FindBarrier(rightBarrierName);
+        upperBarrier = FindBarrier(upperBarrierName);
         SetLaunchBool(string.Empty);
         SceneLoader.OnSceneChanged += SetLaunchBool;
         Level.OnLevelCompleted += ReLockBall;
@@ -59,42 +84,130 @@ public class BallMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (velocityAverage.Count > velocitySamples)
-        {
-            velocityAverage.Dequeue();
-            velocityAverage.Enqueue(myRigidBody2D.velocity.magnitude);
-            AdjustVelocity();
-        }
-        else
-        {
-            velocityAverage.Enqueue(myRigidBody2D.velocity.magnitude);
-        }
-
-        ClampMaxSpeed();
+        HoldSpeed();
         ClampFlightAngle();
+        KeepInsideArena();
         TrackStall();
     }
 
-    // Blocks and walls bounce the ball at a restitution of exactly 1. A perfectly elastic bounce
-    // is the one case the solver cannot hold to precisely, and it errs upwards, so the ball comes
-    // off a little faster than it went in. minVelocity was a floor with nothing facing it, which
-    // made every one of those gains permanent and let them stack up over a level. Applied at once
-    // rather than through the rolling average, since a single bad bounce is what has to be caught.
-    private void ClampMaxSpeed()
+    // The barriers alone cannot promise the ball stays in the arena. They are a tenth of a unit
+    // thick, the quicker cats cross more than twice that in one physics step, and a discrete
+    // solver only ever looks at where a body ended up - a step that starts inside and ends
+    // outside meets nothing on the way. Continuous detection on the rigidbody closes most of
+    // that; this closes the rest, and does it without trusting the solver at all. Wherever the
+    // ball has got to, it is put back inside and pointed away from the surface it reached, so it
+    // can neither cross a barrier nor settle against one. Firing on a plain touch is intended:
+    // the correction is then simply the bounce, done exactly.
+    //
+    // The floor is left out on purpose - that is where a life is lost, and the ball has to be
+    // able to reach it.
+    private void KeepInsideArena()
     {
-        if (maxVelocity <= 0f)
+        if (!hasBeenLaunched)
+        {
+            return;
+        }
+
+        Collider2D shape = ResolveBallCollider();
+        if (shape == null)
+        {
+            return;
+        }
+
+        Bounds ball = shape.bounds;
+        Vector2 correction = Vector2.zero;
+        Vector2 velocity = myRigidBody2D.velocity;
+
+        if (rightBarrier != null && ball.max.x > rightBarrier.bounds.min.x)
+        {
+            correction.x = rightBarrier.bounds.min.x - ball.max.x - barrierSkin;
+            velocity.x = -Mathf.Abs(velocity.x);
+        }
+        else if (leftBarrier != null && ball.min.x < leftBarrier.bounds.max.x)
+        {
+            correction.x = leftBarrier.bounds.max.x - ball.min.x + barrierSkin;
+            velocity.x = Mathf.Abs(velocity.x);
+        }
+
+        if (upperBarrier != null && ball.max.y > upperBarrier.bounds.min.y)
+        {
+            correction.y = upperBarrier.bounds.min.y - ball.max.y - barrierSkin;
+            velocity.y = -Mathf.Abs(velocity.y);
+        }
+
+        if (correction == Vector2.zero)
+        {
+            return;
+        }
+
+        myRigidBody2D.position += correction;
+        myRigidBody2D.velocity = velocity;
+    }
+
+    // The cat in play is whichever avatar is switched on, and its collider is the ball's shape -
+    // so the check is against the real outline of the cat being played, not a guessed radius.
+    private Collider2D ResolveBallCollider()
+    {
+        if (ballCollider != null && ballCollider.gameObject.activeInHierarchy)
+        {
+            return ballCollider;
+        }
+
+        // GetComponentInChildren skips the avatars that are switched off.
+        ballCollider = GetComponentInChildren<Collider2D>();
+        return ballCollider;
+    }
+
+    private Collider2D FindBarrier(string barrierName)
+    {
+        if (string.IsNullOrEmpty(barrierName))
+        {
+            return null;
+        }
+
+        GameObject barrier = GameObject.Find(barrierName);
+        if (barrier == null)
+        {
+            Debug.LogWarning($"[{nameof(BallMovement)}] nothing in the scene is called '{barrierName}' - that side of the arena is unguarded.", this);
+            return null;
+        }
+
+        Collider2D found = barrier.GetComponent<Collider2D>();
+        if (found == null)
+        {
+            Debug.LogWarning($"[{nameof(BallMovement)}] '{barrierName}' carries no Collider2D - that side of the arena is unguarded.", barrier);
+        }
+
+        return found;
+    }
+
+    // Blocks and walls bounce the ball at a restitution of exactly 1, and a perfectly elastic
+    // bounce is the one case the solver cannot hold to precisely - it errs upwards, so the ball
+    // comes off a little faster than it went in. A floor and a ceiling left room for those gains
+    // to stack up between them: the ball ratcheted from its launch speed to the ceiling over a
+    // level and sat there, which is what read as speeding up at random. One exact speed leaves
+    // nowhere to drift to. Direction stays entirely the solver's business; only the length of the
+    // vector is ours.
+    private void HoldSpeed()
+    {
+        if (!hasBeenLaunched)
         {
             return;
         }
 
         Vector2 velocity = myRigidBody2D.velocity;
         float speed = velocity.magnitude;
-        if (speed <= maxVelocity)
+
+        // A ball stopped dead has no direction left to scale up, and scaling zero by anything is
+        // still zero - it would sit there for the rest of the level. Send it at the paddle
+        // instead, the same way a stall is broken.
+        if (speed < Mathf.Epsilon)
         {
+            KickOutOfStall();
             return;
         }
 
-        myRigidBody2D.velocity = velocity.normalized * maxVelocity;
+        myRigidBody2D.velocity = velocity / speed * CurrentSpeed;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -232,7 +345,7 @@ public class BallMovement : MonoBehaviour
     private void KickOutOfStall()
     {
         Vector2 velocity = myRigidBody2D.velocity;
-        float speed = Mathf.Max(velocity.magnitude, minVelocity);
+        float speed = CurrentSpeed;
         float signX = velocity.x < 0f ? -1f : 1f;
         float radians = stallEscapeAngle * Mathf.Deg2Rad;
 
@@ -242,29 +355,13 @@ public class BallMovement : MonoBehaviour
         ) * speed;
     }
 
-    private void AdjustVelocity()
-    {
-        float sum = 0;
-        foreach (float velocity in velocityAverage)
-        {
-            sum += velocity;
-        }
-
-        sum /= velocityAverage.Count;
-
-        if (sum < minVelocity)
-        {
-            myRigidBody2D.velocity = myRigidBody2D.velocity.normalized * minVelocity;
-        }
-    }
-
     public void LaunchBall()
     {
         if (!canBeLaunched) return;
 
         transform.SetParent(null);
         myRigidBody2D.constraints = RigidbodyConstraints2D.None;
-        myRigidBody2D.velocity = new Vector2(xPush, yPush).normalized * launchBallSpeed;
+        myRigidBody2D.velocity = new Vector2(xPush, yPush).normalized * CurrentSpeed;
         hasBeenLaunched = true;
     }
 
