@@ -26,7 +26,7 @@ public static class OptionsWindowSetup
 
     // Short of a full blackout on purpose - past this the background art is simply gone, and the
     // point is to quiet it down, not throw it away.
-    private const float MaxBackgroundDim = 0.8f;
+    private const float MaxBackgroundDim = 0.9f;
 
     private const float ValueColumnWidth = 110f;
     private const float SliderColumnWidth = 200f;

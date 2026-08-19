@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dimSetting: {fileID: 11400000, guid: 79008260f1a56a84f97b2aa5c9f2f3df, type: 2}
-  maxDim: 0.8
+  maxDim: 0.9
   includeInactive: 1
 --- !u!1 &3809005328496160857
 GameObject:

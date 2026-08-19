@@ -15,7 +15,7 @@ public class BackgroundDimmer : MonoBehaviour
     public TypeDistinguisher dimSetting;
 
     [Tooltip("The strongest dim the setting can ask for, and the top of the options slider. Short of 1 on purpose - fully black would throw the art away rather than quiet it down.")]
-    public float maxDim = 0.8f;
+    public float maxDim = 0.9f;
 
     [Tooltip("Renderers that are switched off when this object wakes up are picked up too.")]
     public bool includeInactive = true;
