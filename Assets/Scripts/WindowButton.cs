@@ -34,39 +34,23 @@ public class WindowButton : MonoBehaviour
         targetWindow.SetActive(true);
     }
 
+    // Escape is not read here any more. It has one owner now - EscapeShortcut on GameSession - which
+    // closes whichever window is on top and opens the options window when none is. Two readers meant
+    // a single press both closed this window and toggled the pause overlay, and the branch below
+    // walked into menuWindow and objectActivation, neither of which is set outside the menu scene.
     public void PullMenu()
     {
         if (SceneManager.GetActiveScene().name == "Menu")
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                CloseWindow();
-            }
+            return;
         }
 
-        else
+        // Guarded: shopWindow is left empty on every instance of this component in the project, and
+        // WindowManager already opens the shop on the same key.
+        if (Input.GetKeyDown(KeyCode.Tab) && shopWindow != null && gameSession != null)
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                if (objectActivation.selectedObject == menuWindow)
-                {
-                    CloseWindow();
-                }
-
-                if (objectActivation.selectedObject != targetWindow)
-                {
-                    CloseWindow();
-                }
-
-                menuWindow.SetActive(true);
-                gameSession.Pause();
-            }
-
-            if (Input.GetKeyDown(KeyCode.Tab))
-            {
-                shopWindow.SetActive(true);
-                gameSession.Pause();
-            }
+            shopWindow.SetActive(true);
+            gameSession.Pause();
         }
     }
 }

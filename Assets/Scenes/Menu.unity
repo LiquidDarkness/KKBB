@@ -3474,6 +3474,7 @@ GameObject:
   - component: {fileID: 598431058}
   - component: {fileID: 598431060}
   - component: {fileID: 598431059}
+  - component: {fileID: 598431061}
   m_Layer: 5
   m_Name: CreditsBG
   m_TagString: Untagged
@@ -9906,6 +9907,7 @@ GameObject:
   - component: {fileID: 1768879937}
   - component: {fileID: 1768879939}
   - component: {fileID: 1768879938}
+  - component: {fileID: 1768879940}
   m_Layer: 5
   m_Name: ControlsBG
   m_TagString: Untagged
@@ -11189,3 +11191,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20b850432d73f624b88852a243859f08, type: 3}
+--- !u!114 &1768879940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768879936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bbedd238c0bb1e4b8565732c34a1fdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &598431061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598431057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bbedd238c0bb1e4b8565732c34a1fdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

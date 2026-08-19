@@ -70,6 +70,10 @@ public static class OptionsWindowSetup
 
     // Order inside each tab. Headers included, so a header always sits directly above the rows it
     // introduces. Anything not listed keeps its place at the end.
+    // Switched off until there is more than one language in the json files. The rows stay in place
+    // and keep their wiring; only the row objects are off, which is now the way to hide a row.
+    private static readonly HashSet<string> ParkedRows = new HashSet<string> { "Language", "Text", "Narration" };
+
     private static readonly Dictionary<string, string[]> GroupOrder = new Dictionary<string, string[]>
     {
         { "gameplayGroup", new[] { "Language", "Text", "Narration", "Paddle control", "Ball return", "Ball return delay" } },
@@ -196,6 +200,7 @@ public static class OptionsWindowSetup
             FixLanguageRowKeys(groups);
             AutoSizeTabLabels(categories);
             OrderRows(groups);
+            ParkRows(groups);
 
             WireTabs(options, categories, scrollView, groups);
             AddFocusAndFontScaler(root, options);
@@ -1155,6 +1160,35 @@ public static class OptionsWindowSetup
         }
     }
 
+    private static void ParkRows(Dictionary<string, GameObject> groups)
+    {
+        foreach (string rowName in ParkedRows)
+        {
+            Transform row = FindRow(groups, rowName);
+
+            if (row != null && row.gameObject.activeSelf)
+            {
+                row.gameObject.SetActive(false);
+                Debug.Log("[OptionsWindowSetup] " + rowName + " switched off - nothing to pick between while only EN.json is filled in.");
+            }
+        }
+    }
+
+    // Escape gets one owner: EscapeShortcut closes whichever EscapeWindow is on top, and opens the
+    // options window when none is.
+    private static void MarkEscapeWindow(Transform window)
+    {
+        if (window == null)
+        {
+            return;
+        }
+
+        if (window.GetComponent<EscapeWindow>() == null)
+        {
+            window.gameObject.AddComponent<EscapeWindow>();
+        }
+    }
+
     private static void WireTabs(Transform options, Transform categories, Transform scrollView, Dictionary<string, GameObject> groups)
     {
         var tabs = options.GetComponent<OptionsTabs>();
@@ -1196,6 +1230,9 @@ public static class OptionsWindowSetup
         {
             options.gameObject.AddComponent<WindowKeyboardFocus>();
         }
+
+        // On the prefab root, because that is the object WindowManager switches on and off.
+        MarkEscapeWindow(root.transform);
 
         var scaler = root.GetComponent<FontScaler>();
 
@@ -1252,12 +1289,50 @@ public static class OptionsWindowSetup
             AddFocus(root.transform, "Canvas/ShopScreen");
             AddFocus(root.transform, "Canvas/GameOverScreen");
 
+            MarkEscapeWindow(root.transform.Find("Canvas/ShopScreen"));
+            MarkEscapeWindow(root.transform.Find("Canvas/Pause"));
+
+            WireEscapeShortcut(root);
+
             PrefabUtility.SaveAsPrefabAsset(root, GameSessionPrefabPath);
         }
         finally
         {
             PrefabUtility.UnloadPrefabContents(root);
         }
+    }
+
+    private static void WireEscapeShortcut(GameObject gameSession)
+    {
+        var shortcut = gameSession.GetComponent<EscapeShortcut>();
+
+        if (shortcut == null)
+        {
+            shortcut = gameSession.AddComponent<EscapeShortcut>();
+        }
+
+        shortcut.windowManager = gameSession.GetComponent<WindowManager>();
+        shortcut.cancelButton = "Cancel";
+        shortcut.topLevelScene = "Menu";
+
+        if (shortcut.windowManager == null)
+        {
+            Debug.LogError("[OptionsWindowSetup] no WindowManager on GameSession - Escape cannot open the options window.");
+            return;
+        }
+
+        // The options window is taken from the manager's own list rather than by path, so it stays
+        // the same window the O key opens.
+        foreach (WindowManager.WindowToggle entry in shortcut.windowManager.windows)
+        {
+            if (entry.window != null && entry.window.name == "OptionsBG")
+            {
+                shortcut.optionsWindow = entry.window;
+                return;
+            }
+        }
+
+        Debug.LogError("[OptionsWindowSetup] WindowManager has no OptionsBG entry - Escape has nothing to open.");
     }
 
     private static void EnableWithSetting(Transform root, string path, System.Type effectType, TypeDistinguisher setting)
