@@ -11,32 +11,41 @@ public class ToggleSetter : MonoBehaviour
 
     public void OnEnable()
     {
-        if (overrideOff != null)
-        {
-            overrideOff.OnValueChanged += Refresh;
-        }
-
         Refresh();
     }
 
-    public void OnDisable()
+    // Polled rather than driven by the setting's event. The override is set on a different tab from
+    // the toggles it covers, and a tab that is not on screen is switched off - so its toggles are
+    // disabled, unsubscribed, and miss the event entirely. Waiting for OnEnable to catch up left
+    // them showing on while the effect they name was already off.
+    //
+    // Nothing is written unless it actually changed, so this costs a comparison per toggle per
+    // frame and never touches the layout.
+    private void Update()
     {
-        // The setting is a ScriptableObject and outlives every scene, so a handler left behind here
-        // would be called on a destroyed component for the rest of the run.
-        if (overrideOff != null)
-        {
-            overrideOff.OnValueChanged -= Refresh;
-        }
+        Refresh();
     }
 
-    // The stored value is never touched: switching the master off has to give the player back
-    // exactly the toggles they had set, so the override only decides what is shown and whether the
-    // control answers to a click.
+    // The stored value is never touched: switching the master off has to hand back exactly the
+    // toggles the player had set, so the override decides what is drawn, not what is saved.
     private void Refresh()
     {
-        bool overridden = overrideOff != null && overrideOff.BoolValue;
+        if (toggle == null || typeDistinguisher == null)
+        {
+            return;
+        }
 
-        toggle.SetIsOnWithoutNotify(typeDistinguisher.BoolValue && !overridden);
-        toggle.interactable = !overridden;
+        bool overridden = overrideOff != null && overrideOff.BoolValue;
+        bool shouldBeOn = typeDistinguisher.BoolValue && !overridden;
+
+        if (toggle.isOn != shouldBeOn)
+        {
+            toggle.SetIsOnWithoutNotify(shouldBeOn);
+        }
+
+        if (toggle.interactable == overridden)
+        {
+            toggle.interactable = !overridden;
+        }
     }
 }
