@@ -216,6 +216,7 @@ public static class OptionsWindowSetup
             AutoSizeTabLabels(categories);
             OrderRows(groups);
             ParkRows(groups);
+            LinkTogglesToReduceMotion(groups);
 
             WireTabs(options, categories, scrollView, groups);
             AddFocusAndFontScaler(root, options);
@@ -1172,6 +1173,37 @@ public static class OptionsWindowSetup
                 label.fontSizeMax = label.fontSize;
                 label.fontSizeMin = 8f;
             }
+        }
+    }
+
+    // The rows whose effect the master switch turns off. Their toggles show off and stop answering
+    // to clicks while it is on, because a switch that silently overrides another switch reads as a
+    // broken switch - which is exactly how it looked the first time.
+    private static readonly string[] MotionRows = { "Menu animation", "Game Over", "Rainbow effects" };
+
+    private static void LinkTogglesToReduceMotion(Dictionary<string, GameObject> groups)
+    {
+        TypeDistinguisher reduceMotion = Setting("reduceMotion");
+
+        foreach (string rowName in MotionRows)
+        {
+            Transform row = FindRow(groups, rowName);
+
+            if (row == null)
+            {
+                Debug.LogWarning("[OptionsWindowSetup] no row called " + rowName + " to put under the master switch.");
+                continue;
+            }
+
+            var setter = row.GetComponentInChildren<ToggleSetter>(true);
+
+            if (setter == null)
+            {
+                Debug.LogWarning("[OptionsWindowSetup] " + rowName + " has no ToggleSetter - it will not show the override.");
+                continue;
+            }
+
+            setter.overrideOff = reduceMotion;
         }
     }
 
