@@ -83,7 +83,7 @@ public static class OptionsWindowSetup
         { "gameplayGroup", new[] { "Language", "Text", "Narration", "Paddle control", "Ball return", "Ball return delay" } },
         { "audioGroup", new[] { "Audio", "Master", "Music", "SFX" } },
         { "videoGroup", new[] { "Screen", "Resolution", "Fullscreen", "Animations", "Menu animation", "Game Over", "Rainbow effects" } },
-        { "accessibilityGroup", new[] { "Text size", "Text size preview", "Background dim", "Reduce motion", "Story scroller", "Scroll" } },
+        { "accessibilityGroup", new[] { "Text size", "Text size preview", "Background dim", "Highlight the cat", "Reduce motion", "Story scroller", "Scroll" } },
     };
 
     private class Readout
@@ -113,6 +113,7 @@ public static class OptionsWindowSetup
         WireGameSession();
         WirePaddles();
         WireBackgroundDimmers();
+        WireBallHighlight();
         AssetDatabase.SaveAssets();
         Debug.Log("[OptionsWindowSetup] done.");
     }
@@ -191,6 +192,10 @@ public static class OptionsWindowSetup
                 // The master switch lives here rather than beside the individual animation toggles
                 // in the video tab, the way an operating system keeps Reduce motion in its
                 // accessibility settings and lets it override what each app asks for.
+                // Next to the dim slider on purpose: both are about the same thing, telling the
+                // foreground apart from what is behind it.
+                BuildToggleRow(groups, groups["accessibilityGroup"].transform, toggleTemplate, "Highlight the cat", "Highlight the cat", Setting("ballHighlight"));
+
                 BuildToggleRow(groups, groups["accessibilityGroup"].transform, toggleTemplate, "Reduce motion", "Reduce motion", Setting("reduceMotion"));
 
                 // Control choice belongs with the rest of how the game plays, not with the reading
@@ -1447,6 +1452,29 @@ public static class OptionsWindowSetup
     // Three backdrops, three places to put a dimmer: the menu (UI images), the arena the blocks sit
     // on, and the panel the story text is read over. The story one lives in the Gameplay scene and
     // is wired there; these two are prefabs.
+    private static void WireBallHighlight()
+    {
+        const string PlayerPrefabPath = "Assets/Prefabs/player.prefab";
+        GameObject root = PrefabUtility.LoadPrefabContents(PlayerPrefabPath);
+
+        try
+        {
+            var highlight = root.GetComponent<BallHighlight>();
+
+            if (highlight == null)
+            {
+                highlight = root.AddComponent<BallHighlight>();
+            }
+
+            highlight.activeSetting = Setting("ballHighlight");
+            PrefabUtility.SaveAsPrefabAsset(root, PlayerPrefabPath);
+        }
+        finally
+        {
+            PrefabUtility.UnloadPrefabContents(root);
+        }
+    }
+
     private static void WireBackgroundDimmers()
     {
         TypeDistinguisher dim = Setting("backgroundDim");

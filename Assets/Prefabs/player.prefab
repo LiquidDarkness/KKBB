@@ -337,6 +337,7 @@ GameObject:
   - component: {fileID: 8779602759318055746}
   - component: {fileID: 3879601751326070766}
   - component: {fileID: 4066440606657341225}
+  - component: {fileID: 4446077744737634882}
   m_Layer: 7
   m_Name: player
   m_TagString: Untagged
@@ -386,7 +387,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 19.45629
+  m_Mass: 19.456291
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -412,6 +413,10 @@ MonoBehaviour:
   randomFactor: 0.2
   defaultSpeed: 10
   fakeGravityFactor: 0
+  leftBarrierName: Leftbarrier
+  rightBarrierName: RightBarrier
+  upperBarrierName: UpperBarrier
+  barrierSkin: 0.05
   minAngleFromHorizontal: 20
   minAngleFromVertical: 8
   stallTimeout: 4
@@ -439,6 +444,21 @@ MonoBehaviour:
     m_Bits: 512
   bombDisplay: {fileID: 8990461386262090067}
   explosionPrefab: {fileID: 7231286687866221172, guid: 42c5c6f7c787d6148b24c5ee593faac3, type: 3}
+--- !u!114 &4446077744737634882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8779602759318055750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7a9ab3e0503f484cb2882ffe1bbc17a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeSetting: {fileID: 11400000, guid: 9bba5aaa2c5efdb44a32e6b756c575fe, type: 2}
+  glow: {r: 1, g: 0.95, b: 0.45, a: 0.55}
+  padding: 1.6
 --- !u!1 &8990461386262090067
 GameObject:
   m_ObjectHideFlags: 0

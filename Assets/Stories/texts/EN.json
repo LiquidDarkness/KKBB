@@ -390,5 +390,10 @@
 		   "key": "Reduce motion",
 		   "value": "Reduce motion"
 		 }
+		 ,
+		 {
+		   "key": "Highlight the cat",
+		   "value": "Highlight the cat"
+		 }
 	]
 }
