@@ -380,5 +380,10 @@
 		   "key": "Game Over TV static effect",
 		   "value": "Tłumaczonko w drodze."
 		 }
+		 ,
+		 {
+		   "key": "Background dim",
+		   "value": "Tłumaczonko w drodze."
+		 }
 	]
 }

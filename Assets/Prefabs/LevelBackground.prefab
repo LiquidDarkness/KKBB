@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 3809005327984370566}
   - component: {fileID: 3809005327984370565}
   - component: {fileID: 3809005327984370567}
+  - component: {fileID: 2371469712757976627}
   m_Layer: 5
   m_Name: LevelBackground
   m_TagString: Untagged
@@ -220,6 +221,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   signal: level loaded
+--- !u!114 &2371469712757976627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3809005327984370564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483bd3b5162022e4c8238a6a119e76be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dimSetting: {fileID: 11400000, guid: 79008260f1a56a84f97b2aa5c9f2f3df, type: 2}
+  maxDim: 0.8
+  includeInactive: 1
 --- !u!1 &3809005328496160857
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,6 +24,10 @@ public static class OptionsWindowSetup
     // it. Every component that reads the setting clamps to the same number.
     private const float MaxTextScale = 1.5f;
 
+    // Short of a full blackout on purpose - past this the background art is simply gone, and the
+    // point is to quiet it down, not throw it away.
+    private const float MaxBackgroundDim = 0.8f;
+
     private const float ValueColumnWidth = 110f;
     private const float SliderColumnWidth = 200f;
     private const float DropdownColumnWidth = 210f;
@@ -79,7 +83,7 @@ public static class OptionsWindowSetup
         { "gameplayGroup", new[] { "Language", "Text", "Narration", "Paddle control", "Ball return", "Ball return delay" } },
         { "audioGroup", new[] { "Audio", "Master", "Music", "SFX" } },
         { "videoGroup", new[] { "Screen", "Resolution", "Fullscreen", "Animations", "Menu animation", "Game Over", "Rainbow effects" } },
-        { "accessibilityGroup", new[] { "Text size", "Text size preview", "Story scroller", "Scroll" } },
+        { "accessibilityGroup", new[] { "Text size", "Text size preview", "Background dim", "Story scroller", "Scroll" } },
     };
 
     private class Readout
@@ -99,6 +103,7 @@ public static class OptionsWindowSetup
         { "Scroll", new Readout { Format = "0.00", Multiplier = 1f, Suffix = " lines/s" } },
         { "Ball return delay", new Readout { Format = "0", Multiplier = 1f, Suffix = " s" } },
         { "Text size", new Readout { Format = "0", Multiplier = 100f, Suffix = "%" } },
+        { "Background dim", new Readout { Format = "0", Multiplier = 100f, Suffix = "%" } },
     };
 
     [MenuItem("Debug/Accessibility - build options tabs")]
@@ -107,6 +112,7 @@ public static class OptionsWindowSetup
         BuildOptionsWindow();
         WireGameSession();
         WirePaddles();
+        WireBackgroundDimmers();
         AssetDatabase.SaveAssets();
         Debug.Log("[OptionsWindowSetup] done.");
     }
@@ -177,6 +183,10 @@ public static class OptionsWindowSetup
                 BuildToggleRow(groups, groups["gameplayGroup"].transform, toggleTemplate, "Ball return", "Return the ball when a run gets stuck", Setting("ballRecallActive"));
                 BuildSliderRow(groups, groups["gameplayGroup"].transform, sliderTemplate, "Ball return delay", "Seconds before the ball is returned", Setting("ballRecallDelay"), 5f, 60f, 20f, true);
                 BuildSliderRow(groups, groups["accessibilityGroup"].transform, sliderTemplate, "Text size", "Text size", Setting("uiFontScale"), 0.75f, MaxTextScale, 1f, false);
+
+                // Starts at 0 and means it: an unwritten float key reads as 0, which is exactly "no
+                // dim", so this is the one slider that wants a real zero at the bottom of its range.
+                BuildSliderRow(groups, groups["accessibilityGroup"].transform, sliderTemplate, "Background dim", "Background dim", Setting("backgroundDim"), 0f, MaxBackgroundDim, 0f, false);
 
                 // Control choice belongs with the rest of how the game plays, not with the reading
                 // aids, even though it was added for players who cannot use a mouse comfortably.
@@ -1380,6 +1390,37 @@ public static class OptionsWindowSetup
         if (window.GetComponent<WindowKeyboardFocus>() == null)
         {
             window.gameObject.AddComponent<WindowKeyboardFocus>();
+        }
+    }
+
+    // Three backdrops, three places to put a dimmer: the menu (UI images), the arena the blocks sit
+    // on, and the panel the story text is read over. The story one lives in the Gameplay scene and
+    // is wired there; these two are prefabs.
+    private static void WireBackgroundDimmers()
+    {
+        TypeDistinguisher dim = Setting("backgroundDim");
+
+        foreach (string path in new[] { "Assets/Prefabs/Menu/Background.prefab", "Assets/Prefabs/LevelBackground.prefab" })
+        {
+            GameObject root = PrefabUtility.LoadPrefabContents(path);
+
+            try
+            {
+                var dimmer = root.GetComponent<BackgroundDimmer>();
+
+                if (dimmer == null)
+                {
+                    dimmer = root.AddComponent<BackgroundDimmer>();
+                }
+
+                dimmer.dimSetting = dim;
+                dimmer.maxDim = MaxBackgroundDim;
+                PrefabUtility.SaveAsPrefabAsset(root, path);
+            }
+            finally
+            {
+                PrefabUtility.UnloadPrefabContents(root);
+            }
         }
     }
 

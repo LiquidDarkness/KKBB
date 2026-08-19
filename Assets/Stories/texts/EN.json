@@ -380,5 +380,10 @@
 		   "key": "Game Over TV static effect",
 		   "value": "Game Over TV static effect"
 		 }
+		 ,
+		 {
+		   "key": "Background dim",
+		   "value": "Background dim"
+		 }
 	]
 }
