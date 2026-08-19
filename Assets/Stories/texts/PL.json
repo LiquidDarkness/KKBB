@@ -320,5 +320,65 @@
 		   "key": "Tutorial5",
 		   "value": "Tłumaczonko w drodze."
 		 }
+		 ,
+		 {
+		   "key": "Text language",
+		   "value": "Tłumaczonko w drodze."
+		 }
+		 ,
+		 {
+		   "key": "Narration language",
+		   "value": "Tłumaczonko w drodze."
+		 }
+		 ,
+		 {
+		   "key": "Paddle control",
+		   "value": "Tłumaczonko w drodze."
+		 }
+		 ,
+		 {
+		   "key": "Return the ball when a run gets stuck",
+		   "value": "Tłumaczonko w drodze."
+		 }
+		 ,
+		 {
+		   "key": "Seconds before the ball is returned",
+		   "value": "Tłumaczonko w drodze."
+		 }
+		 ,
+		 {
+		   "key": "Rainbow text effects",
+		   "value": "Tłumaczonko w drodze."
+		 }
+		 ,
+		 {
+		   "key": "Text size",
+		   "value": "Tłumaczonko w drodze."
+		 }
+		 ,
+		 {
+		   "key": "Text size preview",
+		   "value": "Tłumaczonko w drodze."
+		 }
+		 ,
+		 {
+		   "key": "Story text auto scroll",
+		   "value": "Tłumaczonko w drodze."
+		 }
+		 ,
+		 {
+		   "key": "Autoscrolling speed",
+		   "value": "Tłumaczonko w drodze."
+		 }
+		 ,
+		 {
+		   "key": "Main menu star background",
+		   "value": "Tłumaczonko w drodze."
+		 }
+		 ,
+		 {
+		   "key": "Game Over TV static effect",
+		   "value": "Tłumaczonko w drodze."
+		 }
 	]
 }

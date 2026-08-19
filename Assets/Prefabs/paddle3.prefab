@@ -253,9 +253,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   desiredPositionX: 0
   paddleWidth: 0
-  navigateByMouse: 0
   mountPoint: {fileID: 544995602977672359}
   paddleSpeed: 25
+  controlModeSetting: {fileID: 11400000, guid: 2e4d47adb1eec5c448544b4eece50677, type: 2}
+  mouseTakeoverThreshold: 0.15
+  mouseFollowsInstantly: 1
+  mousePaddleSpeed: 0
   currentPositionX: 0
 --- !u!114 &6152976371839717897
 MonoBehaviour:

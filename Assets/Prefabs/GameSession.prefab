@@ -852,6 +852,7 @@ GameObject:
   - component: {fileID: 3007742471343142554}
   - component: {fileID: 3007742471343142548}
   - component: {fileID: 8337841074404637579}
+  - component: {fileID: 1927708981391735020}
   m_Layer: 0
   m_Name: GameSession
   m_TagString: Untagged
@@ -1093,6 +1094,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a4d3f04478c1840806b2dc41cb6453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1927708981391735020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3007742471343142533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adff13d3efaf17a45940724ba5bf5d9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeSetting: {fileID: 11400000, guid: df5ce41309827df4195ba906fb476e96, type: 2}
+  delaySetting: {fileID: 11400000, guid: edd12d9f483089243b3bbf5d6fc13ec9, type: 2}
+  defaultDelay: 20
+  minDelay: 5
+  maxDelay: 60
 --- !u!1 &3007742471348010940
 GameObject:
   m_ObjectHideFlags: 0
@@ -1513,6 +1531,7 @@ GameObject:
   - component: {fileID: 3007742471407538043}
   - component: {fileID: 3007742471407538037}
   - component: {fileID: 3007742471407538042}
+  - component: {fileID: 7419315586427852893}
   m_Layer: 5
   m_Name: ShopScreen
   m_TagString: Untagged
@@ -1580,6 +1599,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 0.01
+--- !u!114 &7419315586427852893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3007742471407538040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fd16bd806b23af45aa2fdfb08f6dbb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstSelected: {fileID: 0}
+  restoreOnClose: 1
+  horizontalAxis: Horizontal
+  verticalAxis: Vertical
+  submitButton: Submit
 --- !u!1 &3007742471414308742
 GameObject:
   m_ObjectHideFlags: 0
@@ -4845,6 +4881,7 @@ GameObject:
   - component: {fileID: 3007742472114097604}
   - component: {fileID: 3007742472114097606}
   - component: {fileID: 3007742472114097601}
+  - component: {fileID: 2935295473761712744}
   m_Layer: 5
   m_Name: GameOverScreen
   m_TagString: Untagged
@@ -4910,6 +4947,23 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &2935295473761712744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3007742472114097605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fd16bd806b23af45aa2fdfb08f6dbb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstSelected: {fileID: 0}
+  restoreOnClose: 1
+  horizontalAxis: Horizontal
+  verticalAxis: Vertical
+  submitButton: Submit
 --- !u!1 &3007742472125554697
 GameObject:
   m_ObjectHideFlags: 0
@@ -4923,6 +4977,7 @@ GameObject:
   - component: {fileID: 3007742472125554698}
   - component: {fileID: 3007742472125554699}
   - component: {fileID: 3007742472125554692}
+  - component: {fileID: 4568484493965036111}
   m_Layer: 5
   m_Name: shopHeaderBG
   m_TagString: Untagged
@@ -5015,6 +5070,20 @@ Halo:
     serializedVersion: 2
     rgba: 4294952429
   m_Size: 65
+--- !u!114 &4568484493965036111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3007742472125554697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8956ed671ba97bb4baf44252457c5fd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeDistinguisher: {fileID: 11400000, guid: a0eb1cdcd1fd43544bd28e81ef1ccbef, type: 2}
+  target: {fileID: 3007742472125554699}
 --- !u!1 &3007742472138927819
 GameObject:
   m_ObjectHideFlags: 0
@@ -9597,6 +9666,7 @@ GameObject:
   - component: {fileID: 9160088572623889319}
   - component: {fileID: 8372490303942712413}
   - component: {fileID: 3620702663420715041}
+  - component: {fileID: 7009566333859779513}
   m_Layer: 5
   m_Name: PurchaseWindow
   m_TagString: Untagged
@@ -9677,6 +9747,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2000
   purchaseBg: {fileID: 8372490303942712413}
+--- !u!114 &7009566333859779513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6012778887657244196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8956ed671ba97bb4baf44252457c5fd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeDistinguisher: {fileID: 11400000, guid: a0eb1cdcd1fd43544bd28e81ef1ccbef, type: 2}
+  target: {fileID: 3620702663420715041}
 --- !u!1001 &3007742472544732982
 PrefabInstance:
   m_ObjectHideFlags: 0

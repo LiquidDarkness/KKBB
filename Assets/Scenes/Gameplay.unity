@@ -752,6 +752,7 @@ GameObject:
   - component: {fileID: 957724307}
   - component: {fileID: 957724309}
   - component: {fileID: 957724310}
+  - component: {fileID: 957724311}
   m_Layer: 5
   m_Name: StoryText
   m_TagString: Untagged
@@ -1636,3 +1637,20 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2132305249887795185, guid: 4840b6f5369914348b0fa1ada15b8091, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4840b6f5369914348b0fa1ada15b8091, type: 3}
+--- !u!114 &957724311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957724305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48de59adebea4a347a1403482e2e9602, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fontScaleSetting: {fileID: 11400000, guid: a46ee1f32aa38d742b5c4ccd2d984014, type: 2}
+  defaultScale: 1
+  minScale: 0.6
+  maxScale: 1.5
+  includeInactive: 1

@@ -320,5 +320,65 @@
 		   "key": "ZiggiesMunda11",
 		   "value": "[TODO: ZiggiesMunda11 - farewell]"
 		 }
+		 ,
+		 {
+		   "key": "Text language",
+		   "value": "Text language"
+		 }
+		 ,
+		 {
+		   "key": "Narration language",
+		   "value": "Narration language"
+		 }
+		 ,
+		 {
+		   "key": "Paddle control",
+		   "value": "Paddle control"
+		 }
+		 ,
+		 {
+		   "key": "Return the ball when a run gets stuck",
+		   "value": "Return the ball when a run gets stuck"
+		 }
+		 ,
+		 {
+		   "key": "Seconds before the ball is returned",
+		   "value": "Seconds before the ball is returned"
+		 }
+		 ,
+		 {
+		   "key": "Rainbow text effects",
+		   "value": "Rainbow text effects"
+		 }
+		 ,
+		 {
+		   "key": "Text size",
+		   "value": "Text size"
+		 }
+		 ,
+		 {
+		   "key": "Text size preview",
+		   "value": "Kitty bounces, blocks break, the story goes on. Set this to a size you can read without leaning in."
+		 }
+		 ,
+		 {
+		   "key": "Story text auto scroll",
+		   "value": "Story text auto scroll"
+		 }
+		 ,
+		 {
+		   "key": "Autoscrolling speed",
+		   "value": "Autoscrolling speed"
+		 }
+		 ,
+		 {
+		   "key": "Main menu star background",
+		   "value": "Main menu star background"
+		 }
+		 ,
+		 {
+		   "key": "Game Over TV static effect",
+		   "value": "Game Over TV static effect"
+		 }
 	]
 }

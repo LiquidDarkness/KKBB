@@ -569,6 +569,10 @@ MonoBehaviour:
   paddleWidth: 0
   mountPoint: {fileID: 7668614241603886350}
   paddleSpeed: 25
+  controlModeSetting: {fileID: 11400000, guid: 2e4d47adb1eec5c448544b4eece50677, type: 2}
+  mouseTakeoverThreshold: 0.15
+  mouseFollowsInstantly: 1
+  mousePaddleSpeed: 0
   currentPositionX: 0
 --- !u!114 &8227290859190499697
 MonoBehaviour:
@@ -708,7 +712,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8779602759318055746, guid: c1bd0bf6fe7a7f8468f299e5750dcbec, type: 3}
       propertyPath: m_Mass
-      value: 19.45629
+      value: 19.456291
       objectReference: {fileID: 0}
     - target: {fileID: 8779602759318055748, guid: c1bd0bf6fe7a7f8468f299e5750dcbec, type: 3}
       propertyPath: m_RootOrder
