@@ -224,22 +224,29 @@ MonoBehaviour:
     - {fileID: 8392847222695776749}
     - {fileID: 6011122786984368157}
     ballSpeed: 9
+    paws: {fileID: 0}
   - elements:
     - {fileID: 4979113723522744106}
     - {fileID: 8392847222695776749}
     - {fileID: 6011122786984368157}
     ballSpeed: 5
+    paws: {fileID: 21300000, guid: bfbe276ad61187944862998189660004, type: 3}
   - elements:
     - {fileID: 5855698159590429620}
     - {fileID: 8392847222695776749}
     - {fileID: 6011122786984368157}
     ballSpeed: 11
+    paws: {fileID: 21300000, guid: b2158bbf91595514486b1b84770de457, type: 3}
   - elements:
     - {fileID: 2433539772181572400}
     - {fileID: 8392847222695776749}
     - {fileID: 6011122786984368157}
     ballSpeed: 7
+    paws: {fileID: 0}
   chosenAvatar: {fileID: 11400000, guid: 99aea120c2a54a1438731252991fb1c2, type: 2}
+  pawRenderers:
+  - {fileID: 7437149700296461709}
+  - {fileID: 8415393654998544389}
 --- !u!1 &8392847222695776749
 GameObject:
   m_ObjectHideFlags: 0

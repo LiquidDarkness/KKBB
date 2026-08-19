@@ -114,6 +114,7 @@ public static class OptionsWindowSetup
         WirePaddles();
         WireBackgroundDimmers();
         WireBallHighlight();
+        WireCatPaws();
         AssetDatabase.SaveAssets();
         Debug.Log("[OptionsWindowSetup] done.");
     }
@@ -1473,6 +1474,108 @@ public static class OptionsWindowSetup
         {
             PrefabUtility.UnloadPrefabContents(root);
         }
+    }
+
+    // Each cat holds a bomb with her own paws. The pair of renderers is shared - there is one bomb
+    // display - so the paws are picked per cat and put on when she is switched in.
+    //
+    // The pairing is by name rather than by hand: a cat drawn with "Simba" takes "pawSimba" if that
+    // sprite exists, and falls back to the plain paw if it does not. Draw pawTutorialDummy one day
+    // and running this again picks it up.
+    private static void WireCatPaws()
+    {
+        const string PlayerPrefabPath = "Assets/Prefabs/player.prefab";
+        GameObject root = PrefabUtility.LoadPrefabContents(PlayerPrefabPath);
+
+        try
+        {
+            var switcher = root.GetComponentInChildren<AvatarSwitcher>(true);
+            var bomb = root.GetComponent<Bomb>();
+
+            if (switcher == null || bomb == null || bomb.bombDisplay == null)
+            {
+                Debug.LogError("[OptionsWindowSetup] no AvatarSwitcher or bomb display on the player - paws left alone.");
+                return;
+            }
+
+            // Everything on the bomb display that is not the bomb itself is a paw. Named that way
+            // rather than by "CircleLeft"/"CircleRight" so renaming those does not break this.
+            var paws = new List<SpriteRenderer>();
+
+            foreach (SpriteRenderer renderer in bomb.bombDisplay.GetComponentsInChildren<SpriteRenderer>(true))
+            {
+                if (renderer.gameObject != bomb.bombDisplay && renderer.name != "bomb")
+                {
+                    paws.Add(renderer);
+                }
+            }
+
+            switcher.pawRenderers = paws.ToArray();
+
+            for (int i = 0; i < switcher.avatars.Count; i++)
+            {
+                AvatarSwitcher.Avatar avatar = switcher.avatars[i];
+                avatar.paws = PawsFor(avatar);
+                switcher.avatars[i] = avatar;
+            }
+
+            PrefabUtility.SaveAsPrefabAsset(root, PlayerPrefabPath);
+            Debug.Log("[OptionsWindowSetup] paw renderers: " + paws.Count);
+        }
+        finally
+        {
+            PrefabUtility.UnloadPrefabContents(root);
+        }
+    }
+
+    private static Sprite PawsFor(AvatarSwitcher.Avatar avatar)
+    {
+        foreach (GameObject element in avatar.elements)
+        {
+            if (element == null)
+            {
+                continue;
+            }
+
+            var renderer = element.GetComponent<SpriteRenderer>();
+
+            if (renderer == null || renderer.sprite == null)
+            {
+                continue;
+            }
+
+            Sprite paws = FindSprite("paw" + renderer.sprite.name);
+
+            if (paws != null)
+            {
+                Debug.Log("[OptionsWindowSetup] " + renderer.sprite.name + " holds the bomb with " + paws.name);
+                return paws;
+            }
+        }
+
+        // Nothing of her own: the fallback in AvatarSwitcher hands her the pair the display was
+        // drawn with, so leaving this empty is the right answer, not a failure.
+        return null;
+    }
+
+    private static Sprite FindSprite(string name)
+    {
+        foreach (string guid in AssetDatabase.FindAssets(name + " t:Sprite"))
+        {
+            string path = AssetDatabase.GUIDToAssetPath(guid);
+
+            foreach (Object asset in AssetDatabase.LoadAllAssetsAtPath(path))
+            {
+                var sprite = asset as Sprite;
+
+                if (sprite != null && string.Equals(sprite.name, name, System.StringComparison.OrdinalIgnoreCase))
+                {
+                    return sprite;
+                }
+            }
+        }
+
+        return null;
     }
 
     private static void WireBackgroundDimmers()

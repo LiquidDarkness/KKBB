@@ -11,10 +11,53 @@ public class AvatarSwitcher : MonoBehaviour
 
         [Tooltip("How fast this cat flies. Left at 0 the cat uses BallMovement.defaultSpeed - only fill it in for a cat meant to feel different from the rest.")]
         public float ballSpeed;
+
+        [Tooltip("The paws this cat holds a bomb with. Left empty she borrows the ones the bomb display was drawn with.")]
+        public Sprite paws;
     }
 
     public List<Avatar> avatars;
     public TypeDistinguisher chosenAvatar;
+
+    [Tooltip("The paw renderers on the bomb display. There is one pair, shared by every cat, so the chosen cat's paws are put onto it when she is switched in.")]
+    public SpriteRenderer[] pawRenderers;
+
+    // What the pair was drawn with, kept so a cat with no paws of her own falls back to it instead
+    // of inheriting whichever cat held the bomb last.
+    private Sprite drawnPaws;
+
+    private void Awake()
+    {
+        foreach (SpriteRenderer paw in pawRenderers)
+        {
+            if (paw != null)
+            {
+                drawnPaws = paw.sprite;
+                break;
+            }
+        }
+    }
+
+    // Called from Start, once the cat has been settled on. The renderers may well be switched off
+    // at the time - the bomb display only shows while a bomb is being carried - and assigning a
+    // sprite to an inactive renderer is fine.
+    private void ApplyPaws(Avatar avatar)
+    {
+        Sprite wanted = avatar.paws != null ? avatar.paws : drawnPaws;
+
+        if (wanted == null)
+        {
+            return;
+        }
+
+        foreach (SpriteRenderer paw in pawRenderers)
+        {
+            if (paw != null)
+            {
+                paw.sprite = wanted;
+            }
+        }
+    }
 
     // The speed asked for by the cat currently in play, or 0 for "no opinion, use the default".
     // Resolved on every read rather than cached: the avatar is chosen from the menu, and this
@@ -63,5 +106,7 @@ public class AvatarSwitcher : MonoBehaviour
         {
             element.SetActive(true);
         }
+
+        ApplyPaws(avatars[chosenIndex]);
     }
 }
