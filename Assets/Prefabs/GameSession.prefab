@@ -1058,6 +1058,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeDistinguisher: {fileID: 11400000, guid: 442d88f7d91d79e4487d4ab12653f32d, type: 2}
   target: {fileID: 3007742471343142552}
+  overrideOff: {fileID: 11400000, guid: 49061f32f25247547abeb37adcc51ff6, type: 2}
 --- !u!114 &3007742471343142554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5127,6 +5128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeDistinguisher: {fileID: 11400000, guid: a0eb1cdcd1fd43544bd28e81ef1ccbef, type: 2}
   target: {fileID: 3007742472125554699}
+  overrideOff: {fileID: 11400000, guid: 49061f32f25247547abeb37adcc51ff6, type: 2}
 --- !u!1 &3007742472138927819
 GameObject:
   m_ObjectHideFlags: 0
@@ -9804,6 +9806,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeDistinguisher: {fileID: 11400000, guid: a0eb1cdcd1fd43544bd28e81ef1ccbef, type: 2}
   target: {fileID: 3620702663420715041}
+  overrideOff: {fileID: 11400000, guid: 49061f32f25247547abeb37adcc51ff6, type: 2}
 --- !u!1001 &3007742472544732982
 PrefabInstance:
   m_ObjectHideFlags: 0

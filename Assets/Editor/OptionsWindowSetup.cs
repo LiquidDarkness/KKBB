@@ -83,7 +83,7 @@ public static class OptionsWindowSetup
         { "gameplayGroup", new[] { "Language", "Text", "Narration", "Paddle control", "Ball return", "Ball return delay" } },
         { "audioGroup", new[] { "Audio", "Master", "Music", "SFX" } },
         { "videoGroup", new[] { "Screen", "Resolution", "Fullscreen", "Animations", "Menu animation", "Game Over", "Rainbow effects" } },
-        { "accessibilityGroup", new[] { "Text size", "Text size preview", "Background dim", "Story scroller", "Scroll" } },
+        { "accessibilityGroup", new[] { "Text size", "Text size preview", "Background dim", "Reduce motion", "Story scroller", "Scroll" } },
     };
 
     private class Readout
@@ -187,6 +187,11 @@ public static class OptionsWindowSetup
                 // Starts at 0 and means it: an unwritten float key reads as 0, which is exactly "no
                 // dim", so this is the one slider that wants a real zero at the bottom of its range.
                 BuildSliderRow(groups, groups["accessibilityGroup"].transform, sliderTemplate, "Background dim", "Background dim", Setting("backgroundDim"), 0f, MaxBackgroundDim, 0f, false);
+
+                // The master switch lives here rather than beside the individual animation toggles
+                // in the video tab, the way an operating system keeps Reduce motion in its
+                // accessibility settings and lets it override what each app asks for.
+                BuildToggleRow(groups, groups["accessibilityGroup"].transform, toggleTemplate, "Reduce motion", "Reduce motion", Setting("reduceMotion"));
 
                 // Control choice belongs with the rest of how the game plays, not with the reading
                 // aids, even though it was added for players who cannot use a mouse comfortably.
@@ -1296,6 +1301,8 @@ public static class OptionsWindowSetup
             EnableWithSetting(root.transform, "Canvas/ShopScreen/Shop/shopHeaderBG", typeof(RainbowEffect), rainbow);
             EnableWithSetting(root.transform, "Canvas/ShopScreen/PurchaseBG/PurchaseWindow", typeof(RainbowAnimation), rainbow);
 
+            LinkEnablersToReduceMotion(root);
+
             AddFocus(root.transform, "Canvas/ShopScreen");
             AddFocus(root.transform, "Canvas/GameOverScreen");
 
@@ -1343,6 +1350,18 @@ public static class OptionsWindowSetup
         }
 
         Debug.LogError("[OptionsWindowSetup] WindowManager has no OptionsBG entry - Escape has nothing to open.");
+    }
+
+    // Every animation toggle in the project answers to the one master switch, so Reduce motion turns
+    // the lot off without disturbing what each individual toggle is set to.
+    private static void LinkEnablersToReduceMotion(GameObject root)
+    {
+        TypeDistinguisher reduceMotion = Setting("reduceMotion");
+
+        foreach (ComponentEnabler enabler in root.GetComponentsInChildren<ComponentEnabler>(true))
+        {
+            enabler.overrideOff = reduceMotion;
+        }
     }
 
     private static void EnableWithSetting(Transform root, string path, System.Type effectType, TypeDistinguisher setting)
@@ -1415,6 +1434,7 @@ public static class OptionsWindowSetup
 
                 dimmer.dimSetting = dim;
                 dimmer.maxDim = MaxBackgroundDim;
+                LinkEnablersToReduceMotion(root);
                 PrefabUtility.SaveAsPrefabAsset(root, path);
             }
             finally

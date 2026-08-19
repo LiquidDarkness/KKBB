@@ -281,6 +281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeDistinguisher: {fileID: 11400000, guid: 4e16946711904274291baa1839a89516, type: 2}
   target: {fileID: 3530514532760349834}
+  overrideOff: {fileID: 11400000, guid: 49061f32f25247547abeb37adcc51ff6, type: 2}
 --- !u!1 &3530514534398835448
 GameObject:
   m_ObjectHideFlags: 0

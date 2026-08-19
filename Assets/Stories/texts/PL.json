@@ -385,5 +385,10 @@
 		   "key": "Background dim",
 		   "value": "Tłumaczonko w drodze."
 		 }
+		 ,
+		 {
+		   "key": "Reduce motion",
+		   "value": "Tłumaczonko w drodze."
+		 }
 	]
 }

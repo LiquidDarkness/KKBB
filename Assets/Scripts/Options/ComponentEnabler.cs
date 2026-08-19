@@ -6,9 +6,17 @@ public class ComponentEnabler : MonoBehaviour
     public TypeDistinguisher typeDistinguisher;
     public MonoBehaviour target;
 
+    [Tooltip("Optional. While this one is on the target stays off, whatever the setting above says - it is how a single Reduce motion switch turns every animation off at once without disturbing the individual toggles.")]
+    public TypeDistinguisher overrideOff;
+
     private void Awake()
     {
         typeDistinguisher.OnValueChanged += Toggle;
+
+        if (overrideOff != null)
+        {
+            overrideOff.OnValueChanged += Toggle;
+        }
     }
 
     private IEnumerator Start()
@@ -22,6 +30,9 @@ public class ComponentEnabler : MonoBehaviour
         // Ważne — odsubskrybowanie eventu, by uniknąć wywołań po zniszczeniu
         if (typeDistinguisher != null)
             typeDistinguisher.OnValueChanged -= Toggle;
+
+        if (overrideOff != null)
+            overrideOff.OnValueChanged -= Toggle;
     }
 
     private void Toggle()
@@ -32,6 +43,6 @@ public class ComponentEnabler : MonoBehaviour
             return;
         }
 
-        target.enabled = typeDistinguisher.BoolValue;
+        target.enabled = typeDistinguisher.BoolValue && !(overrideOff != null && overrideOff.BoolValue);
     }
 }

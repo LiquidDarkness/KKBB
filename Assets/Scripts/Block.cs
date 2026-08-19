@@ -104,6 +104,13 @@ public class Block : MonoBehaviour
 
     public void TriggerSparklesVFX()
     {
+        // Nothing to spawn is a valid state now: the effect is left unassigned while the
+        // player has Reduce motion on, and Instantiate(null) throws.
+        if (blockSparklesVFX == null || OptionSettings.MotionReduced)
+        {
+            return;
+        }
+
         Instantiate(blockSparklesVFX, transform.position, transform.rotation);
     }
 

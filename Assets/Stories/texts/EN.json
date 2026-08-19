@@ -385,5 +385,10 @@
 		   "key": "Background dim",
 		   "value": "Background dim"
 		 }
+		 ,
+		 {
+		   "key": "Reduce motion",
+		   "value": "Reduce motion"
+		 }
 	]
 }
