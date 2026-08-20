@@ -16,8 +16,10 @@ public class DropdownListScaler : MonoBehaviour
     [Tooltip("The template itself; its height is how much of the list is on screen at once.")]
     public RectTransform list;
 
-    public float baseItemHeight = 40f;
-    public float baseListHeight = 150f;
+    public float baseItemHeight = 44f;
+
+    [Tooltip("How many entries the list shows before it starts scrolling. Always a whole number of them - a list sized to three and a half entries cuts the last one in half against the mask.")]
+    public int visibleItems = 3;
 
     [Tooltip("The list is never allowed past this, whatever the text size. It is drawn inside the options window's mask, so a list taller than the window is not scrollable - it is simply cut off.")]
     public float maxListHeight = 220f;
@@ -59,7 +61,13 @@ public class DropdownListScaler : MonoBehaviour
 
         if (list != null)
         {
-            list.sizeDelta = new Vector2(list.sizeDelta.x, Mathf.Min(baseListHeight * scale, maxListHeight));
+            float entry = baseItemHeight * scale;
+
+            // Fewer entries at a larger text size rather than a taller list: the list is drawn
+            // inside the options window's mask, and anything past the window is cut off, not
+            // scrollable. Whole entries either way.
+            int visible = Mathf.Max(1, Mathf.Min(visibleItems, Mathf.FloorToInt(maxListHeight / Mathf.Max(1f, entry))));
+            list.sizeDelta = new Vector2(list.sizeDelta.x, entry * visible);
         }
     }
 }

@@ -36,10 +36,13 @@ public static class OptionsWindowSetup
     private const float DropdownClosedHeight = 44f;
     private const float DropdownItemHeight = 44f;
     private const float DropdownTextSize = 22f;
-    private const float DropdownListHeight = 150f;
+    // A whole number of entries. Sized to three and a half, the last one is cut in half against the
+    // mask and looks like a rendering fault.
+    private const int DropdownVisibleItems = 3;
 
-    // The list hangs below the closed control with a gap, instead of opening on top of it.
-    private const float DropdownListGap = 4f;
+    // The list sits straight under the closed control. Any gap here reads as a hole between the
+    // chosen entry and the first one offered.
+    private const float DropdownListGap = 0f;
 
     // Room kept on the right of every entry for the tick that marks the chosen one, and the margin
     // on its left.
@@ -916,6 +919,12 @@ public static class OptionsWindowSetup
 
                     entry.enableWordWrapping = false;
                     entry.overflowMode = TextOverflowModes.Ellipsis;
+
+                    // Left horizontally, middle vertically. The text was riding high in its box
+                    // because nothing had ever said where it should sit up and down.
+                    entry.alignment = TextAlignmentOptions.Left;
+                    entry.margin = Vector4.zero;
+                    CentreVertically(entry.rectTransform);
                 }
 
                 ScaleDropdownList(dropdown);
@@ -950,7 +959,16 @@ public static class OptionsWindowSetup
         dropdown.template.anchorMin = new Vector2(0f, 0f);
         dropdown.template.anchorMax = new Vector2(1f, 0f);
         dropdown.template.anchoredPosition = new Vector2(0f, -DropdownListGap);
-        dropdown.template.sizeDelta = new Vector2(0f, DropdownListHeight);
+        dropdown.template.sizeDelta = new Vector2(0f, DropdownItemHeight * DropdownVisibleItems);
+
+        // The content rect is what the entries are laid out inside; left at its authored height it
+        // is shorter than a single entry and the first one hangs out of the top of it.
+        var content = dropdown.template.Find("Viewport/Content") as RectTransform;
+
+        if (content != null)
+        {
+            content.sizeDelta = new Vector2(content.sizeDelta.x, DropdownItemHeight);
+        }
 
         MoveCheckmarkRight(item);
 
@@ -964,7 +982,7 @@ public static class OptionsWindowSetup
         scaler.item = item;
         scaler.list = dropdown.template;
         scaler.baseItemHeight = DropdownItemHeight;
-        scaler.baseListHeight = DropdownListHeight;
+        scaler.visibleItems = DropdownVisibleItems;
         scaler.maxScale = MaxTextScale;
         scaler.fontScaleSetting = Setting("uiFontScale");
 
@@ -981,6 +999,19 @@ public static class OptionsWindowSetup
         {
             columnScaler.baseHeight = DropdownClosedHeight;
         }
+    }
+
+    // A text stretched over its field should be exactly its field: the same inset top and bottom, so
+    // whatever the font does with the space, it does it symmetrically.
+    private static void CentreVertically(RectTransform rect)
+    {
+        if (rect.anchorMin.y == rect.anchorMax.y)
+        {
+            return;
+        }
+
+        rect.sizeDelta = new Vector2(rect.sizeDelta.x, 0f);
+        rect.anchoredPosition = new Vector2(rect.anchoredPosition.x, 0f);
     }
 
     // The tick marking the chosen entry belongs on the right, where there is room for it. On the
@@ -1005,8 +1036,8 @@ public static class OptionsWindowSetup
             // tick's column on the right, and the offset is half the difference between the two.
             label.anchorMin = new Vector2(0f, 0f);
             label.anchorMax = new Vector2(1f, 1f);
-            label.sizeDelta = new Vector2(-(EntryTextMargin + CheckmarkColumn), label.sizeDelta.y);
-            label.anchoredPosition = new Vector2((EntryTextMargin - CheckmarkColumn) * 0.5f, label.anchoredPosition.y);
+            label.sizeDelta = new Vector2(-(EntryTextMargin + CheckmarkColumn), 0f);
+            label.anchoredPosition = new Vector2((EntryTextMargin - CheckmarkColumn) * 0.5f, 0f);
         }
     }
 
