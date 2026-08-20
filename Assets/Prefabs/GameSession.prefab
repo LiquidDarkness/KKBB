@@ -1073,9 +1073,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   windows:
   - window: {fileID: 3007742471407538040}
-    toggleKey: ShopWindow
+    toggleKey: Shop
   - window: {fileID: 3007742472506412230}
-    toggleKey: OptionsWindow
+    toggleKey: Options
   - window: {fileID: 3007742471206756756}
     toggleKey: Pause
 --- !u!114 &3007742471343142548

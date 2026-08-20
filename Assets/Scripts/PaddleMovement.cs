@@ -29,6 +29,14 @@ public class PaddleMovement : MonoBehaviour
     [Tooltip("Paddle speed used while the mouse is steering and it does not follow instantly. 0 keeps the shared paddleSpeed.")]
     public float mousePaddleSpeed = 0f;
 
+    [Header("Keyboard")]
+    [Tooltip("How fast the keyboard steer winds up to full, per second. This was the Input Manager axis sensitivity, kept at the value it had.")]
+    public float keySensitivity = 3f;
+
+    [Tooltip("How fast it winds back down to nothing once the keys are let go. This was the axis gravity.")]
+    public float keyGravity = 3f;
+
+    private float keyAxis;
     private float screenWidthInUnits;
     private float cameraSize;
     private Camera targetCamera;
@@ -132,11 +140,31 @@ public class PaddleMovement : MonoBehaviour
         }
     }
 
+    // The Input Manager axis this used to read cannot be rebound while the game is running, so the
+    // ramp it gave for free is done here instead - the same wind-up, wind-down and direction snap,
+    // driven by whichever keys the player has chosen.
     private bool ReadKeyboardInput(out float viewportPosition)
     {
-        float v = Input.GetAxis("PaddleMovementNavigation");
-        viewportPosition = (v + 1) / 2;
-        return v != 0;
+        float target = (Controls.Held(Controls.MoveRight) ? 1f : 0f) - (Controls.Held(Controls.MoveLeft) ? 1f : 0f);
+
+        if (target != 0f)
+        {
+            // Snap, as the axis had: turning around starts from the middle instead of coasting
+            // through it.
+            if (keyAxis != 0f && Mathf.Sign(keyAxis) != Mathf.Sign(target))
+            {
+                keyAxis = 0f;
+            }
+
+            keyAxis = Mathf.MoveTowards(keyAxis, target, keySensitivity * Time.deltaTime);
+        }
+        else
+        {
+            keyAxis = Mathf.MoveTowards(keyAxis, 0f, keyGravity * Time.deltaTime);
+        }
+
+        viewportPosition = (keyAxis + 1f) / 2f;
+        return keyAxis != 0f;
     }
 
     private float MouseViewportX()

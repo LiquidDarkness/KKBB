@@ -33,7 +33,7 @@ public class WindowManager : MonoBehaviour
         // Sprawdzenie, czy któryœ z klawiszy przypisanych do okienek zosta³ wciœniêty
         foreach (var windowToggle in windows)
         {
-            if (Input.GetButtonDown(windowToggle.toggleKey))
+            if (Controls.Pressed(windowToggle.toggleKey))
             {
                 ToggleWindow(windowToggle.WindowName);
             }

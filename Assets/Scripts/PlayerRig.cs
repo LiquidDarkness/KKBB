@@ -26,7 +26,7 @@ public class PlayerRig : MonoBehaviour
 
     private void Update()
     {
-        if (ball.canBeLaunched && Input.GetButton("LaunchBall"))
+        if (ball.canBeLaunched && Controls.Held(Controls.Launch))
         {
             LaunchBall();
         }

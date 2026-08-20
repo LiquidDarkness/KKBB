@@ -573,6 +573,8 @@ MonoBehaviour:
   mouseTakeoverThreshold: 0.15
   mouseFollowsInstantly: 1
   mousePaddleSpeed: 0
+  keySensitivity: 3
+  keyGravity: 3
   currentPositionX: 0
 --- !u!114 &8227290859190499697
 MonoBehaviour:

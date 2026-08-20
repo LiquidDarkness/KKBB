@@ -31,7 +31,20 @@ public static class OptionsWindowSetup
     private const float ValueColumnWidth = 110f;
     private const float SliderColumnWidth = 200f;
     private const float DropdownColumnWidth = 210f;
-    private const float DropdownClosedHeight = 30f;
+    // Every dropdown in the window is built to the same numbers, so they differ only in what is
+    // written in them. Left to grow out of each row's own font they came out three different sizes.
+    private const float DropdownClosedHeight = 44f;
+    private const float DropdownItemHeight = 44f;
+    private const float DropdownTextSize = 22f;
+    private const float DropdownListHeight = 150f;
+
+    // The list hangs below the closed control with a gap, instead of opening on top of it.
+    private const float DropdownListGap = 4f;
+
+    // Room kept on the right of every entry for the tick that marks the chosen one, and the margin
+    // on its left.
+    private const float CheckmarkColumn = 35f;
+    private const float EntryTextMargin = 10f;
 
     // Ceilings as a share of the row. Together they leave the label roughly half the row at any
     // text size, which is what keeps a long label from being crushed into a column one letter wide.
@@ -892,9 +905,12 @@ public static class OptionsWindowSetup
                         entry.font = bodyFont;
                     }
 
+                    // One size for every dropdown, not the size of whichever row it happens to sit
+                    // in: they are meant to look like one control repeated, not four cousins.
+                    entry.fontSize = DropdownTextSize;
+
                     if (rowLabel != null)
                     {
-                        entry.fontSize = rowLabel.fontSize;
                         entry.color = rowLabel.color;
                     }
 
@@ -926,45 +942,71 @@ public static class OptionsWindowSetup
             return;
         }
 
-        float entrySize = dropdown.itemText != null ? dropdown.itemText.fontSize : 20f;
-        float itemHeight = Mathf.Max(item.sizeDelta.y, entrySize * 1.7f);
+        item.sizeDelta = new Vector2(item.sizeDelta.x, DropdownItemHeight);
 
-        // Written into the asset as well, so the list is the right shape in the editor and not only
-        // once the scaler has run.
-        item.sizeDelta = new Vector2(item.sizeDelta.x, itemHeight);
+        // Pivot at the top, pinned to the bottom edge of the closed control: at y = -gap the list
+        // starts below it. It used to sit at +2, which opened the first entry on top of the caption.
+        dropdown.template.pivot = new Vector2(0.5f, 1f);
+        dropdown.template.anchorMin = new Vector2(0f, 0f);
+        dropdown.template.anchorMax = new Vector2(1f, 0f);
+        dropdown.template.anchoredPosition = new Vector2(0f, -DropdownListGap);
+        dropdown.template.sizeDelta = new Vector2(0f, DropdownListHeight);
+
+        MoveCheckmarkRight(item);
 
         var scaler = dropdown.GetComponent<DropdownListScaler>();
 
         if (scaler == null)
         {
             scaler = dropdown.gameObject.AddComponent<DropdownListScaler>();
-            scaler.baseListHeight = dropdown.template.sizeDelta.y;
         }
 
         scaler.item = item;
         scaler.list = dropdown.template;
-        scaler.baseItemHeight = itemHeight;
+        scaler.baseItemHeight = DropdownItemHeight;
+        scaler.baseListHeight = DropdownListHeight;
         scaler.maxScale = MaxTextScale;
         scaler.fontScaleSetting = Setting("uiFontScale");
-
-        // Same rule for the closed control: 25pt caption text in the authored 30px box clips its
-        // descenders. Taken from the constant rather than from the current height, so running this
-        // again cannot ratchet the row taller each time.
-        float captionSize = dropdown.captionText != null ? dropdown.captionText.fontSize : entrySize;
-        float closedHeight = Mathf.Max(DropdownClosedHeight, captionSize * 1.7f);
 
         var element = dropdown.GetComponent<LayoutElement>();
 
         if (element != null)
         {
-            element.preferredHeight = closedHeight;
+            element.preferredHeight = DropdownClosedHeight;
         }
 
         var columnScaler = dropdown.GetComponent<ScaledLayoutSize>();
 
         if (columnScaler != null)
         {
-            columnScaler.baseHeight = closedHeight;
+            columnScaler.baseHeight = DropdownClosedHeight;
+        }
+    }
+
+    // The tick marking the chosen entry belongs on the right, where there is room for it. On the
+    // left it sat under the first letters of the entry and was all but invisible.
+    private static void MoveCheckmarkRight(RectTransform item)
+    {
+        var checkmark = item.Find("Item Checkmark") as RectTransform;
+
+        if (checkmark != null)
+        {
+            checkmark.anchorMin = new Vector2(1f, 0.5f);
+            checkmark.anchorMax = new Vector2(1f, 0.5f);
+            checkmark.pivot = new Vector2(0.5f, 0.5f);
+            checkmark.anchoredPosition = new Vector2(-CheckmarkColumn * 0.5f, 0f);
+        }
+
+        var label = item.Find("Item Label") as RectTransform;
+
+        if (label != null)
+        {
+            // Stretched across the entry: the width it gives up is the margin on the left plus the
+            // tick's column on the right, and the offset is half the difference between the two.
+            label.anchorMin = new Vector2(0f, 0f);
+            label.anchorMax = new Vector2(1f, 1f);
+            label.sizeDelta = new Vector2(-(EntryTextMargin + CheckmarkColumn), label.sizeDelta.y);
+            label.anchoredPosition = new Vector2((EntryTextMargin - CheckmarkColumn) * 0.5f, label.anchoredPosition.y);
         }
     }
 
@@ -1340,6 +1382,7 @@ public static class OptionsWindowSetup
             EnableWithSetting(root.transform, "Canvas/ShopScreen/PurchaseBG/PurchaseWindow", typeof(RainbowAnimation), rainbow);
 
             LinkEnablersToReduceMotion(root);
+            RenameWindowKeys(root);
 
             AddFocus(root.transform, "Canvas/ShopScreen");
             AddFocus(root.transform, "Canvas/GameOverScreen");
@@ -1399,6 +1442,37 @@ public static class OptionsWindowSetup
         foreach (ComponentEnabler enabler in root.GetComponentsInChildren<ComponentEnabler>(true))
         {
             enabler.overrideOff = reduceMotion;
+        }
+    }
+
+    // WindowManager used to name Input Manager buttons; it names Controls actions now, so the keys
+    // that open the shop, the options and the pause overlay are the player's to change.
+    private static readonly Dictionary<string, string> WindowKeyRenames = new Dictionary<string, string>
+    {
+        { "ShopWindow", Controls.Shop },
+        { "OptionsWindow", Controls.Options },
+        { "Pause", Controls.Pause },
+    };
+
+    private static void RenameWindowKeys(GameObject gameSession)
+    {
+        var manager = gameSession.GetComponent<WindowManager>();
+
+        if (manager == null)
+        {
+            Debug.LogError("[OptionsWindowSetup] no WindowManager on GameSession - window keys left alone.");
+            return;
+        }
+
+        foreach (WindowManager.WindowToggle entry in manager.windows)
+        {
+            string renamed;
+
+            if (WindowKeyRenames.TryGetValue(entry.toggleKey, out renamed) && entry.toggleKey != renamed)
+            {
+                Debug.Log("[OptionsWindowSetup] window key " + entry.toggleKey + " -> " + renamed);
+                entry.toggleKey = renamed;
+            }
         }
     }
 
