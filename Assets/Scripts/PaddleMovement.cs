@@ -62,6 +62,16 @@ public class PaddleMovement : MonoBehaviour
     private void Update()
     {
         CalculateScreenSize();
+
+        // Nothing steers while the game is paused. Every other path here travels towards its target
+        // by Time.deltaTime and so stops of its own accord at timeScale 0, but the mouse sets the
+        // position outright - which is how the paddle went wandering after the cursor while the
+        // options window was open, and the ball was away before the player had looked up.
+        if (PauseManager.IsPaused)
+        {
+            return;
+        }
+
         ReadInput();
         Move();
     }

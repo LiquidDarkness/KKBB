@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 // What the game asks about instead of asking about keys. Every player-facing action is named here
 // once, and what it is bound to comes from a saved setting the player can change.
@@ -135,12 +136,25 @@ public static class Controls
 
     private static bool IsDown(KeyCode key)
     {
-        return key != KeyCode.None && Input.GetKey(key);
+        return key != KeyCode.None && !SwallowedByInterface(key) && Input.GetKey(key);
     }
 
     private static bool WentDown(KeyCode key)
     {
-        return key != KeyCode.None && Input.GetKeyDown(key);
+        return key != KeyCode.None && !SwallowedByInterface(key) && Input.GetKeyDown(key);
+    }
+
+    // A click that lands on a window belongs to the window. Launch is bound to the left mouse
+    // button by default, so without this, pressing a button in the options window served the ball
+    // at the same time.
+    private static bool SwallowedByInterface(KeyCode key)
+    {
+        if (key < KeyCode.Mouse0 || key > KeyCode.Mouse6)
+        {
+            return false;
+        }
+
+        return EventSystem.current != null && EventSystem.current.IsPointerOverGameObject();
     }
 
     private static Binding Resolve(string action)
