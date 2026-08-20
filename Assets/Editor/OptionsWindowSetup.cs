@@ -46,6 +46,10 @@ public static class OptionsWindowSetup
 
     // Room kept on the right of every entry for the tick that marks the chosen one, and the margin
     // on its left.
+    // Two key buttons side by side take the space one dropdown would.
+    private const float KeyColumnWidth = 100f;
+    private const float KeyMaxFraction = 0.17f;
+
     private const float CheckmarkColumn = 35f;
     private const float EntryTextMargin = 10f;
 
@@ -96,7 +100,8 @@ public static class OptionsWindowSetup
 
     private static readonly Dictionary<string, string[]> GroupOrder = new Dictionary<string, string[]>
     {
-        { "gameplayGroup", new[] { "Language", "Text", "Narration", "Paddle control", "Ball return", "Ball return delay" } },
+        { "gameplayGroup", new[] { "Language", "Text", "Narration", "Paddle control", "Ball return", "Ball return delay",
+            "Controls", "Key MoveLeft", "Key MoveRight", "Key Launch", "Key Pause", "Key Shop", "Key Options", "Reset controls" } },
         { "audioGroup", new[] { "Audio", "Master", "Music", "SFX" } },
         { "videoGroup", new[] { "Screen", "Resolution", "Fullscreen", "Animations", "Menu animation", "Game Over", "Rainbow effects" } },
         { "accessibilityGroup", new[] { "Text size", "Text size preview", "Background dim", "Highlight the cat", "Reduce motion", "Story scroller", "Scroll" } },
@@ -223,6 +228,8 @@ public static class OptionsWindowSetup
                     new List<string> { "Last used", "Keyboard", "Mouse" });
 
                 BuildPreviewBox(groups, groups["accessibilityGroup"].transform, headerTemplate, options);
+                BuildControlsSection(groups, groups["gameplayGroup"].transform, headerTemplate, dropdownTemplate,
+                    categories.GetComponent<AudioSource>());
             }
 
             RestructureRows(groups);
@@ -473,6 +480,177 @@ public static class OptionsWindowSetup
 
         setter.dropdown = dropdown;
         setter.typeDistinguisher = setting;
+    }
+
+    // The rebinding screen. Each row is a label and two buttons, and the buttons are dropdowns with
+    // their list and arrow taken away - same frame, same height, same face, so the section sits in
+    // the window as though it had always been there.
+    private static readonly string[][] ControlRows =
+    {
+        new[] { Controls.MoveLeft, "Move left" },
+        new[] { Controls.MoveRight, "Move right" },
+        new[] { Controls.Launch, "Launch the ball" },
+        new[] { Controls.Pause, "Pause the game" },
+        new[] { Controls.Shop, "Open the shop" },
+        new[] { Controls.Options, "Open the options" },
+    };
+
+    private static void BuildControlsSection(Dictionary<string, GameObject> groups, Transform parent, Transform headerTemplate,
+        Transform dropdownTemplate, AudioSource click)
+    {
+        CloneRow(groups, headerTemplate, parent, "Controls", "Controls");
+
+        foreach (string[] row in ControlRows)
+        {
+            string action = row[0];
+            GameObject built = CloneRow(groups, dropdownTemplate, parent, "Key " + action, row[1]);
+            GameObject primary = ConvertToKeyButton(built.transform, "Primary", click);
+
+            if (primary == null)
+            {
+                continue;
+            }
+
+            Transform found = built.transform.Find("Secondary");
+            GameObject secondary = found != null ? found.gameObject : Object.Instantiate(primary, built.transform);
+            secondary.name = "Secondary";
+
+            WireKeyButton(primary, action, false);
+            WireKeyButton(secondary, action, true);
+        }
+
+        GameObject resetRow = CloneRow(groups, dropdownTemplate, parent, "Reset controls", "Reset controls");
+        GameObject resetButton = ConvertToKeyButton(resetRow.transform, "Primary", click);
+
+        if (resetButton == null)
+        {
+            return;
+        }
+
+        // Nothing to capture on this one, so the binding component comes off and the reset one goes
+        // on in its place.
+        DestroyIfPresent(resetButton.GetComponent<KeyBindingButton>());
+
+        var reset = resetButton.GetComponent<KeyBindingReset>();
+
+        if (reset == null)
+        {
+            reset = resetButton.AddComponent<KeyBindingReset>();
+        }
+
+        reset.button = resetButton.GetComponent<Button>();
+        SetKeyButtonText(resetButton, "Reset");
+    }
+
+    // Turns the dropdown a cloned row came with into a plain button. Done this way rather than built
+    // from nothing so it keeps the sprite, the height and the text style of every other control in
+    // the window without any of that being written down a second time.
+    private static GameObject ConvertToKeyButton(Transform row, string name, AudioSource click)
+    {
+        Transform existing = row.Find(name);
+
+        if (existing != null)
+        {
+            return existing.gameObject;
+        }
+
+        var dropdown = row.GetComponentInChildren<TMP_Dropdown>(true);
+
+        if (dropdown == null)
+        {
+            Debug.LogError("[OptionsWindowSetup] " + row.name + " has no dropdown to turn into a key button.");
+            return null;
+        }
+
+        GameObject control = dropdown.gameObject;
+        TMP_Text caption = dropdown.captionText;
+
+        if (dropdown.template != null)
+        {
+            Object.DestroyImmediate(dropdown.template.gameObject);
+        }
+
+        Transform arrow = control.transform.Find("Arrow");
+
+        if (arrow != null)
+        {
+            Object.DestroyImmediate(arrow.gameObject);
+        }
+
+        DestroyIfPresent(control.GetComponent<DropdownSetter>());
+        DestroyIfPresent(control.GetComponent<DropdownListScaler>());
+        Object.DestroyImmediate(dropdown);
+
+        control.name = name;
+
+        var button = control.GetComponent<Button>();
+
+        if (button == null)
+        {
+            button = control.AddComponent<Button>();
+        }
+
+        button.targetGraphic = control.GetComponent<Image>();
+
+        // The same click the rest of the window makes. There is one source for it, shared - the
+        // controls do not each carry their own.
+        if (click != null && button.onClick.GetPersistentEventCount() == 0)
+        {
+            UnityEventTools.AddVoidPersistentListener(button.onClick, click.Play);
+        }
+
+        if (caption != null)
+        {
+            // The arrow is gone, so the text gets the whole button and sits in the middle of it.
+            RectTransform rect = caption.rectTransform;
+            rect.anchorMin = Vector2.zero;
+            rect.anchorMax = Vector2.one;
+            rect.sizeDelta = new Vector2(-EntryTextMargin * 2f, 0f);
+            rect.anchoredPosition = Vector2.zero;
+            caption.alignment = TextAlignmentOptions.Center;
+            caption.fontSize = DropdownTextSize;
+            caption.enableWordWrapping = false;
+            caption.overflowMode = TextOverflowModes.Ellipsis;
+        }
+
+        return control;
+    }
+
+    private static void WireKeyButton(GameObject control, string action, bool secondary)
+    {
+        var binding = control.GetComponent<KeyBindingButton>();
+
+        if (binding == null)
+        {
+            binding = control.AddComponent<KeyBindingButton>();
+        }
+
+        binding.action = action;
+        binding.secondary = secondary;
+        binding.button = control.GetComponent<Button>();
+        binding.label = control.GetComponentInChildren<TMP_Text>(true);
+        binding.waitingText = "press a key";
+        SetKeyButtonText(control, secondary ? "-" : "...");
+    }
+
+    // Only what shows in the editor; the component overwrites it with the real binding the moment
+    // the window opens.
+    private static void SetKeyButtonText(GameObject control, string text)
+    {
+        var label = control.GetComponentInChildren<TMP_Text>(true);
+
+        if (label != null)
+        {
+            label.text = text;
+        }
+    }
+
+    private static void DestroyIfPresent(Component component)
+    {
+        if (component != null)
+        {
+            Object.DestroyImmediate(component);
+        }
     }
 
     // A framed panel of sample prose that scales with the text size setting, so the player sets the
@@ -1150,7 +1328,11 @@ public static class OptionsWindowSetup
             {
                 foreach (Transform child in row)
                 {
+                    // Key buttons are dropdowns with the dropdown taken off them, so asking for the
+                    // component would miss every one of them; they are known by name instead.
                     bool scalable = child.name == "Value"
+                        || child.name == "Primary"
+                        || child.name == "Secondary"
                         || child.GetComponent<Slider>() != null
                         || child.GetComponent<TMP_Dropdown>() != null;
 
@@ -1178,6 +1360,11 @@ public static class OptionsWindowSetup
                     {
                         width = SliderColumnWidth;
                         fraction = SliderMaxFraction;
+                    }
+                    else if (child.name == "Primary" || child.name == "Secondary")
+                    {
+                        width = KeyColumnWidth;
+                        fraction = KeyMaxFraction;
                     }
                     else
                     {

@@ -29,6 +29,13 @@ public class EscapeShortcut : MonoBehaviour
             return;
         }
 
+        // A rebinding button waiting for a key owns Escape: it means "never mind", not "close the
+        // window".
+        if (KeyBindingButton.Capturing)
+        {
+            return;
+        }
+
         EscapeWindow top = EscapeWindow.Topmost;
 
         if (top != null)

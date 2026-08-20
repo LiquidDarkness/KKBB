@@ -395,5 +395,45 @@
 		   "key": "Highlight the cat",
 		   "value": "Tłumaczonko w drodze."
 		 }
+		 ,
+		 {
+		   "key": "Controls",
+		   "value": "Tłumaczonko w drodze."
+		 }
+		 ,
+		 {
+		   "key": "Move left",
+		   "value": "Tłumaczonko w drodze."
+		 }
+		 ,
+		 {
+		   "key": "Move right",
+		   "value": "Tłumaczonko w drodze."
+		 }
+		 ,
+		 {
+		   "key": "Launch the ball",
+		   "value": "Tłumaczonko w drodze."
+		 }
+		 ,
+		 {
+		   "key": "Pause the game",
+		   "value": "Tłumaczonko w drodze."
+		 }
+		 ,
+		 {
+		   "key": "Open the shop",
+		   "value": "Tłumaczonko w drodze."
+		 }
+		 ,
+		 {
+		   "key": "Open the options",
+		   "value": "Tłumaczonko w drodze."
+		 }
+		 ,
+		 {
+		   "key": "Reset controls",
+		   "value": "Tłumaczonko w drodze."
+		 }
 	]
 }

@@ -395,5 +395,45 @@
 		   "key": "Highlight the cat",
 		   "value": "Highlight the cat"
 		 }
+		 ,
+		 {
+		   "key": "Controls",
+		   "value": "Controls"
+		 }
+		 ,
+		 {
+		   "key": "Move left",
+		   "value": "Move left"
+		 }
+		 ,
+		 {
+		   "key": "Move right",
+		   "value": "Move right"
+		 }
+		 ,
+		 {
+		   "key": "Launch the ball",
+		   "value": "Launch the ball"
+		 }
+		 ,
+		 {
+		   "key": "Pause the game",
+		   "value": "Pause the game"
+		 }
+		 ,
+		 {
+		   "key": "Open the shop",
+		   "value": "Open the shop"
+		 }
+		 ,
+		 {
+		   "key": "Open the options",
+		   "value": "Open the options"
+		 }
+		 ,
+		 {
+		   "key": "Reset controls",
+		   "value": "Reset controls"
+		 }
 	]
 }
