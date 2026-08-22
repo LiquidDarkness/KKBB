@@ -30,10 +30,10 @@ public class PaddleMovement : MonoBehaviour
     public float mousePaddleSpeed = 0f;
 
     [Header("Keyboard")]
-    [Tooltip("How fast the keyboard steer winds up to full, per second. This was the Input Manager axis sensitivity, kept at the value it had.")]
+    [Tooltip("How fast the keyboard steer winds up to full speed, per second. This was the Input Manager axis sensitivity, kept at the value it had.")]
     public float keySensitivity = 3f;
 
-    [Tooltip("How fast it winds back down to nothing once the keys are let go. This was the axis gravity.")]
+    [Tooltip("How fast it winds back down to a standstill once the keys are let go - the paddle coasts for that long. This was the axis gravity.")]
     public float keyGravity = 3f;
 
     private float keyAxis;
@@ -107,7 +107,7 @@ public class PaddleMovement : MonoBehaviour
     // other device's reading is simply thrown away.
     private void ReadInput()
     {
-        bool keyboardMoved = ReadKeyboardInput(out float keyboardPosition);
+        bool keyboardMoved = UpdateKeySteer();
         bool mouseMoved = Mathf.Abs(Input.GetAxis("Mouse X")) > mouseTakeoverThreshold;
 
         switch (CurrentMode)
@@ -140,7 +140,7 @@ public class PaddleMovement : MonoBehaviour
 
         if (keyboardMoved)
         {
-            SetPosition(keyboardPosition);
+            StepKeySteer();
         }
         else
         {
@@ -153,7 +153,7 @@ public class PaddleMovement : MonoBehaviour
     // The Input Manager axis this used to read cannot be rebound while the game is running, so the
     // ramp it gave for free is done here instead - the same wind-up, wind-down and direction snap,
     // driven by whichever keys the player has chosen.
-    private bool ReadKeyboardInput(out float viewportPosition)
+    private bool UpdateKeySteer()
     {
         float target = (Controls.Held(Controls.MoveRight) ? 1f : 0f) - (Controls.Held(Controls.MoveLeft) ? 1f : 0f);
 
@@ -173,8 +173,27 @@ public class PaddleMovement : MonoBehaviour
             keyAxis = Mathf.MoveTowards(keyAxis, 0f, keyGravity * Time.deltaTime);
         }
 
-        viewportPosition = (keyAxis + 1f) / 2f;
         return keyAxis != 0f;
+    }
+
+    // The keyboard steers by speed: how long a key is held decides how far the paddle travels, and
+    // letting go coasts it to a stop wherever it stands.
+    //
+    // The axis used to be read as a position instead - full right meaning the right-hand edge of
+    // the screen. That looks the same while a key is held down and is wrong the moment it is let
+    // go: winding the axis back down to zero walked the target back to the middle of the screen,
+    // and the paddle dutifully drove off the edge it had just been parked against. Pressing
+    // towards an edge the paddle was already resting on had the same fault in reverse - the target
+    // started at the middle and pulled it inwards before catching up.
+    private void StepKeySteer()
+    {
+        CalcuteBounds(out float minX, out float maxX);
+
+        currentPositionX = Mathf.Clamp(currentPositionX + (keyAxis * paddleSpeed * Time.deltaTime), minX, maxX);
+
+        // Move() runs straight after this and travels towards desiredPositionX. The step above is
+        // the whole of the movement, so the target is the spot it just reached.
+        desiredPositionX = currentPositionX;
     }
 
     private float MouseViewportX()
