@@ -50,6 +50,11 @@ public class StoryManager : MonoBehaviour, ICoreReferencer
         Level.OnLevelCompleted -= Progress;
     }
 
+    // Story shortcuts for working on the game rather than playing it: G skips the beat on
+    // screen, E jumps straight into the level. Behind a define because this reads the bare
+    // keyboard every frame, with nothing to say it is meant for development - in a shipped
+    // build a player who rested a hand on G walked out of the story.
+#if AUTOPLAY
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.G))
@@ -61,6 +66,7 @@ public class StoryManager : MonoBehaviour, ICoreReferencer
             ProgressToLevel();
         }
     }
+#endif
 
     [ContextMenu("test progress")]
     public void Progress()
