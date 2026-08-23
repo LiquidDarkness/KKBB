@@ -18,6 +18,12 @@ public class StoryManager : MonoBehaviour, ICoreReferencer
     public Story currentStory;
     internal static bool isStoryActive;
 
+    // The farewell entry is the end of the scenario - it is the one story beat with no level to
+    // play, so reaching it is the only reliable "the player finished this one". Static, like every
+    // other signal here, and this component belongs to the Gameplay scene: subscribers must drop
+    // it again or a destroyed one throws and stops the delegates queued behind it.
+    public static event Action OnScenarioFinished;
+
     [Header("Blocks")]
     public GameObject ending;
     public GameObject boink;
@@ -131,6 +137,7 @@ public class StoryManager : MonoBehaviour, ICoreReferencer
         if (shouldShow)
         {
             PlayEndingMusic();
+            OnScenarioFinished?.Invoke();
         }
     }
 

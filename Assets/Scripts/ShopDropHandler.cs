@@ -1,9 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ShopDropHandler : MonoBehaviour
 {
+    // Raised once the points have actually been taken, carrying whatever was bought. A click that
+    // could not be afforded, or one on an offer with nothing behind it, never gets here - so a
+    // listener counting purchases counts only the ones that happened.
+    public static event Action<MonoBehaviour> OnPurchase;
+
     public MonoBehaviour dropToSpawn;
 
     // The price and the button live on the ShopEntry next to this one, which ShopManager reads
@@ -58,5 +64,6 @@ public class ShopDropHandler : MonoBehaviour
 
         Score.AddToScore(-price);
         receiver.DigestDrop(null);
+        OnPurchase?.Invoke(dropToSpawn);
     }
 }

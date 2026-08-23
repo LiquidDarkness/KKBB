@@ -868,6 +868,7 @@ GameObject:
   - component: {fileID: 8337841074404637579}
   - component: {fileID: 1927708981391735020}
   - component: {fileID: 1761356747975104655}
+  - component: {fileID: 1435930156354009571}
   m_Layer: 0
   m_Name: GameSession
   m_TagString: Untagged
@@ -1143,6 +1144,28 @@ MonoBehaviour:
   windowManager: {fileID: 3007742471343142554}
   optionsWindow: {fileID: 3007742472506412230}
   topLevelScene: Menu
+--- !u!114 &1435930156354009571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3007742471343142533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 605072f02ded1c645959c50f94c75348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scenarioManager: {fileID: 11400000, guid: 7b5aa1d039a59d243a78b288c4fcaea3, type: 2}
+  diffcultyManager: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  currentLevel: {fileID: 11400000, guid: 76e20662c26c8734698d39f790c7cb65, type: 2}
+  dropsCaught: {fileID: 11400000, guid: d1c7fcc5fac40ac4eb7a00792fc4509b, type: 2}
+  countsAsHard:
+  - {fileID: 11400000, guid: 604f473655c9e2748ba1823a348c28af, type: 2}
+  - {fileID: 11400000, guid: 66b9f254e4d0b24449d77afec98d9db2, type: 2}
+  dropsWanted: 500
+  speedStreakWanted: 180
+  heartsWanted: 9
 --- !u!1 &3007742471348010940
 GameObject:
   m_ObjectHideFlags: 0

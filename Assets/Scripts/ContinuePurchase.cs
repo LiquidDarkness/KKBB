@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,11 @@ using UnityEngine.UI;
 // uses, and for the same reason.
 public class ContinuePurchase : MonoBehaviour
 {
+    // Raised when the player actually carries on - after the price is settled, so a click that
+    // could not be afforded never gets here. Static like the rest of the signals in this game, and
+    // this component lives on GameSession, so it outlives the Gameplay scene.
+    public static event Action OnContinued;
+
     [Header("References")]
     public GameObject gameOverScreen;
     public GameSession gameSession;
@@ -99,6 +105,7 @@ public class ContinuePurchase : MonoBehaviour
             }
         }
 
+        OnContinued?.Invoke();
         Resume();
     }
 
