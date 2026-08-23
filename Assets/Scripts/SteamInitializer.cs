@@ -29,5 +29,66 @@ public class SteamInitializer : MonoBehaviour
         Debug.Log("Init's working");
 
         //SceneManager.LoadScene(1);
+
+        HookStats();
+    }
+
+    // Steam will not answer a question about achievements until it has sent the stats over, and it
+    // only sends them when asked. Once they land, everything the save already knows about is handed
+    // over - which is how a demo player's earnings turn up in the full game on its first run.
+    private void HookStats()
+    {
+        if (!Steamworks.SteamClient.IsValid)
+        {
+            return;
+        }
+
+        Steamworks.SteamUserStats.OnUserStatsReceived += HandleStatsReceived;
+        Steamworks.SteamUserStats.RequestCurrentStats();
+    }
+
+    private void HandleStatsReceived(Steamworks.SteamId id, Steamworks.Result result)
+    {
+        // The same callback carries other people's stats - a friends list asking after them is
+        // enough to raise it - and those say nothing about what this player has earned.
+        if (!Steamworks.SteamClient.IsValid || id != Steamworks.SteamClient.SteamId)
+        {
+            return;
+        }
+
+        if (result != Steamworks.Result.OK)
+        {
+            Debug.LogWarning($"Steam sent no stats ({result}), so achievements earned offline stay unsent for now.");
+            return;
+        }
+
+        Achievements.PushEarned();
+    }
+
+    // Steam talks back through callbacks, and it only gets to run them when it is asked to. Without
+    // this the answers never arrive: stats come back empty, and an achievement unlocks in silence
+    // with no notification in the corner. This object carries DontDestroyOnLoaded, so asking here
+    // covers the whole run.
+    private void Update()
+    {
+        if (!Steamworks.SteamClient.IsValid)
+        {
+            return;
+        }
+
+        Steamworks.SteamClient.RunCallbacks();
+    }
+
+    // Steam wants telling that the game is going, and a client left running is what makes the next
+    // Init fail with the app already open.
+    private void OnDestroy()
+    {
+        if (!Steamworks.SteamClient.IsValid)
+        {
+            return;
+        }
+
+        Steamworks.SteamUserStats.OnUserStatsReceived -= HandleStatsReceived;
+        Steamworks.SteamClient.Shutdown();
     }
 }
