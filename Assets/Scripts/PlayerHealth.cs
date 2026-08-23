@@ -21,7 +21,10 @@ public static class PlayerHealth
     {
         healthTD = td;
 
-        if (livesForDifficulty.HasValue && livesForDifficulty.Value > 0)
+        // Zero is an answer, not a missing one: METAL asks for it, and since death is declared at
+        // -1 that means exactly one attempt. Refusing it left the hardest difficulty on the default
+        // three - more lives than Hard.
+        if (livesForDifficulty.HasValue && livesForDifficulty.Value >= 0)
         {
             startingHealth = livesForDifficulty.Value;
         }
