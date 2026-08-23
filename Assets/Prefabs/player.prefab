@@ -224,7 +224,7 @@ MonoBehaviour:
     - {fileID: 8392847222695776749}
     - {fileID: 6011122786984368157}
     ballSpeed: 9
-    paws: {fileID: 0}
+    paws: {fileID: 21300000, guid: 983ce59c38a848545b6f379a3ea71947, type: 3}
   - elements:
     - {fileID: 4979113723522744106}
     - {fileID: 8392847222695776749}
@@ -242,7 +242,7 @@ MonoBehaviour:
     - {fileID: 8392847222695776749}
     - {fileID: 6011122786984368157}
     ballSpeed: 7
-    paws: {fileID: 0}
+    paws: {fileID: 21300000, guid: f6ae781b7e5bc4947906a508fedeb3b2, type: 3}
   chosenAvatar: {fileID: 11400000, guid: 99aea120c2a54a1438731252991fb1c2, type: 2}
   pawRenderers:
   - {fileID: 7437149700296461709}
