@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de026e5a0771fbd49933004fa9fc52a8, type: 3}
   m_Name: SB09
   m_EditorClassIdentifier: 
-  title: 
-  sceneName: 
   levelThumbnail: {fileID: 21300000, guid: 210eb42598f75064f9cd7085a86904c2, type: 3}
   background: {fileID: 21300000, guid: 210eb42598f75064f9cd7085a86904c2, type: 3}
   content: {fileID: 7876416055580535996, guid: f02677bb93b8d3947a8db9e83c8f6c89, type: 3}
-  ambience: {fileID: 8300000, guid: bcbe39c3b9f8c424f96379c46184743a, type: 3}
+  intro: {fileID: 8300000, guid: 5fb235cafdbfdfd4dbb6a141f243f824, type: 3}
+  loop: {fileID: 8300000, guid: 1895a442b1b1a9c4e9178226d68afd15, type: 3}
