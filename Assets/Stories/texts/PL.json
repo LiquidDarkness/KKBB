@@ -352,6 +352,11 @@
 		 }
 		 ,
 		 {
+		   "key": "Dim the flames",
+		   "value": "Przygaś płomienie"
+		 }
+		 ,
+		 {
 		   "key": "Text size",
 		   "value": "Tłumaczonko w drodze."
 		 }

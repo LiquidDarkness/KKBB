@@ -352,6 +352,11 @@
 		 }
 		 ,
 		 {
+		   "key": "Dim the flames",
+		   "value": "Dim the flames"
+		 }
+		 ,
+		 {
 		   "key": "Text size",
 		   "value": "Text size"
 		 }
