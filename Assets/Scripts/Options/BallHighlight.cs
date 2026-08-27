@@ -12,10 +12,10 @@ public class BallHighlight : MonoBehaviour
     public TypeDistinguisher activeSetting;
 
     [Tooltip("Colour and strength of the glow. Alpha is what decides how loud it is.")]
-    public Color glow = new Color(1f, 0.95f, 0.45f, 0.55f);
+    public Color glow = new Color(1f, 0.95f, 0.45f, 0.72f);
 
     [Tooltip("How far past the cat the glow reaches, as a multiple of her size.")]
-    public float padding = 1.6f;
+    public float padding = 2.1f;
 
     private SpriteRenderer highlight;
     private static Sprite discSprite;
@@ -157,7 +157,9 @@ public class BallHighlight : MonoBehaviour
             {
                 float distance = Vector2.Distance(new Vector2(x + 0.5f, y + 0.5f), new Vector2(Middle, Middle)) / Middle;
                 float strength = Mathf.Clamp01(1f - distance);
-                strength *= strength;
+                // Softer than a square: the glow keeps its body further out from the cat, which is
+                // what makes the halo read as brighter rather than merely wider.
+                strength = Mathf.Pow(strength, 1.6f);
                 pixels[(y * Size) + x] = new Color32(255, 255, 255, (byte)(strength * 255f));
             }
         }

@@ -464,8 +464,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeSetting: {fileID: 11400000, guid: 9bba5aaa2c5efdb44a32e6b756c575fe, type: 2}
-  glow: {r: 1, g: 0.95, b: 0.45, a: 0.55}
-  padding: 1.6
+  glow: {r: 1, g: 0.95, b: 0.45, a: 0.72}
+  padding: 2.1
 --- !u!1 &8990461386262090067
 GameObject:
   m_ObjectHideFlags: 0
