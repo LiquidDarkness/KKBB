@@ -1687,3 +1687,63 @@ MonoBehaviour:
   target: {fileID: 0}
   maxDim: 0.9
   response: 0.9
+--- !u!1 &1928400001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1928400002}
+  - component: {fileID: 1928400003}
+  m_Layer: 0
+  m_Name: MetalAmbience
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1928400002
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928400001}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1928400003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928400001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1246d76e608969c4b92c048a76899c47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diffcultyManager: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  playsOn:
+  - {fileID: 11400000, guid: 66b9f254e4d0b24449d77afec98d9db2, type: 2}
+  reduceMotion: {fileID: 11400000, guid: 49061f32f25247547abeb37adcc51ff6, type: 2}
+  dimSetting: {fileID: 11400000, guid: 3f7c1a5d94e84c2ea1b6d0f27c358b41, type: 2}
+  view: {fileID: 0}
+  glowColour: {r: 0.72, g: 0.06, b: 0.03, a: 1}
+  glowStrength: 0.5
+  glowPulse: 0.35
+  glowPulseSpeed: 0.55
+  glowSortingOrder: 1000
+  flameHeight: 0.22
+  flameDensity: 3.5
+  emberDensity: 0.35
+  flameSortingLayer: Story
+  flameSortingOrder: 50
