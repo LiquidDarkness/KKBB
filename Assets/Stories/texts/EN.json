@@ -440,5 +440,35 @@
 		   "key": "Reset controls",
 		   "value": "Reset controls"
 		 }
+		 ,
+		 {
+		   "key": "Points collected",
+		   "value": "Points collected"
+		 }
+		 ,
+		 {
+		   "key": "Lives left",
+		   "value": "Lives left"
+		 }
+		 ,
+		 {
+		   "key": "Difficulty",
+		   "value": "Difficulty"
+		 }
+		 ,
+		 {
+		   "key": "Final score",
+		   "value": "Final score"
+		 }
+		 ,
+		 {
+		   "key": "Best on this difficulty",
+		   "value": "Best on this difficulty"
+		 }
+		 ,
+		 {
+		   "key": "A new record on this difficulty!",
+		   "value": "A new record on this difficulty!"
+		 }
 	]
 }

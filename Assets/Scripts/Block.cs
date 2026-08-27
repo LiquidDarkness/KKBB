@@ -6,7 +6,10 @@ public class Block : MonoBehaviour
 {
     public GameObject blockSparklesVFX;
     [SerializeField] Sprite[] hitSprites;
-    [SerializeField] int pointsPerBlockDestroyed = 10;
+    // Five for a block that goes down to one boink, fifteen for one that has to be worked at -
+    // the invisible blocks take three. Kept per block rather than worked out from hitSprites, so
+    // a block can be worth something unusual without a rule having to be written for it.
+    [SerializeField] int pointsPerBlockDestroyed = 5;
     [SerializeField] int timesHit;
     [SerializeField] DiffcultyManager difficultySettings;
     public static event Action<Vector3> OnBlockBroken;

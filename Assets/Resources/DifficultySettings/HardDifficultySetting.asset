@@ -18,6 +18,7 @@ MonoBehaviour:
   blockAnimationSpeed: 2
   chainDestructionProbability: 0.15
   chainDamageMultiplier: 0.15
+  scoreMultiplier: 1.5
   particleEffect: {fileID: 5753145595872108419, guid: 8e2fe5e70f447b74f91d95c7277ed880, type: 3}
   drops:
   - prefab: {fileID: 2053659990884397355, guid: 93ecba752aa2acd4795a3c11a0e9c33e, type: 3}

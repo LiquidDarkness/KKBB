@@ -16,6 +16,10 @@ public class DifficultySettings : ScriptableObject
     // Damage multiplier applied to neighbors during chain block destruction (ChainDestroyer).
     // 0.15 is the highest sensible value.
     public float chainDamageMultiplier = 0.15f;
+    // What the levels are worth on this difficulty once the scenario is over. One is the score as
+    // it was collected; harder settings pay more for the same drops, which is the only thing that
+    // makes a METAL run comparable to an Easy one at the end.
+    public float scoreMultiplier = 1f;
     public GameObject particleEffect;
     public List<DropSetting> drops;
 

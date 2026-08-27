@@ -102,7 +102,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -239,7 +239,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -376,7 +376,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -513,7 +513,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -650,7 +650,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -787,7 +787,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -924,7 +924,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -1061,7 +1061,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -1198,7 +1198,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -1335,7 +1335,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -1472,7 +1472,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -1609,7 +1609,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -1746,7 +1746,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -1883,7 +1883,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -2020,7 +2020,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -2157,7 +2157,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -2294,7 +2294,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -2431,7 +2431,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -2568,7 +2568,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -2705,7 +2705,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -2842,7 +2842,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -2979,7 +2979,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -3116,7 +3116,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -3253,7 +3253,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -3390,7 +3390,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -3527,7 +3527,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -3664,7 +3664,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -3801,7 +3801,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -3938,7 +3938,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -4075,7 +4075,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -4212,7 +4212,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -4349,7 +4349,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -4486,7 +4486,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -4623,7 +4623,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -4760,7 +4760,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -4897,7 +4897,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -5034,7 +5034,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -5171,7 +5171,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -5308,7 +5308,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -5445,7 +5445,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -5582,7 +5582,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -5719,7 +5719,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -5856,7 +5856,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -5993,7 +5993,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -6130,7 +6130,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -6267,7 +6267,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -6404,7 +6404,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -6541,7 +6541,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -6678,7 +6678,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -6815,7 +6815,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -6952,7 +6952,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -7089,7 +7089,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -7226,7 +7226,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -7363,7 +7363,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -7500,7 +7500,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -7637,7 +7637,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -7774,7 +7774,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -7911,7 +7911,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -8048,7 +8048,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -8185,7 +8185,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -8322,7 +8322,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -8459,7 +8459,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -8596,7 +8596,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -8733,7 +8733,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -8870,7 +8870,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -9007,7 +9007,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -9144,7 +9144,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -9281,7 +9281,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -9418,7 +9418,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -9555,7 +9555,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -9692,7 +9692,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -9829,7 +9829,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -9966,7 +9966,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -10103,7 +10103,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -10240,7 +10240,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -10377,7 +10377,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -10514,7 +10514,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -10651,7 +10651,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -10788,7 +10788,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -10925,7 +10925,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -11062,7 +11062,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -11199,7 +11199,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -11336,7 +11336,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -11473,7 +11473,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -11610,7 +11610,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -11747,7 +11747,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -11884,7 +11884,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -12021,7 +12021,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -12158,7 +12158,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -12295,7 +12295,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -12432,7 +12432,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -12569,7 +12569,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -12706,7 +12706,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -12843,7 +12843,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -12980,7 +12980,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -13117,7 +13117,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -13254,7 +13254,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -13391,7 +13391,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -13528,7 +13528,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -13665,7 +13665,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -13802,7 +13802,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -13939,7 +13939,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -14076,7 +14076,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -14213,7 +14213,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -14350,7 +14350,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -14648,7 +14648,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -14785,7 +14785,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -14922,7 +14922,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -15059,7 +15059,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -15196,7 +15196,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -15333,7 +15333,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -15470,7 +15470,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -15607,7 +15607,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -15744,7 +15744,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -15881,7 +15881,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -16018,7 +16018,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}
@@ -16155,7 +16155,7 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 5753145595872108419, guid: 6c6edd462dfc20244af01014a8c70050, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 6ac7ef79cdf7be246843d252e90fb6f7, type: 3}
-  pointsPerBlockDestroyed: 10
+  pointsPerBlockDestroyed: 5
   timesHit: 0
   difficultySettings: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   chainDestroyer: {fileID: 1563749621804154692, guid: 2e249cc270aa9f54a85c63261f23fdae, type: 3}

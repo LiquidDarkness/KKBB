@@ -440,5 +440,35 @@
 		   "key": "Reset controls",
 		   "value": "Tłumaczonko w drodze."
 		 }
+		 ,
+		 {
+		   "key": "Points collected",
+		   "value": "Zebrane punkty"
+		 }
+		 ,
+		 {
+		   "key": "Lives left",
+		   "value": "Pozostałe życia"
+		 }
+		 ,
+		 {
+		   "key": "Difficulty",
+		   "value": "Poziom trudności"
+		 }
+		 ,
+		 {
+		   "key": "Final score",
+		   "value": "Wynik końcowy"
+		 }
+		 ,
+		 {
+		   "key": "Best on this difficulty",
+		   "value": "Najlepszy na tym poziomie"
+		 }
+		 ,
+		 {
+		   "key": "A new record on this difficulty!",
+		   "value": "Nowy rekord na tym poziomie trudności!"
+		 }
 	]
 }
