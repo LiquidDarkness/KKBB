@@ -9,7 +9,12 @@ public class TypeDistinguisher : ScriptableObject
     public PlayerPrefType prefType;
     public bool purgable = true;
 
+    [Tooltip("What this setting is worth before the player has ever touched it. Written once, the first time the game runs with the setting in it - which includes a save file written before the setting existed. Read with the invariant culture, so 0.55 means the same thing on a Polish machine as on an English one. BOOL takes true/false or 1/0.\n\nLeave it blank and nothing is written at all: that is what the score, the chosen scenario and the rest of the saved progress want, since for them zero is already the right answer.")]
+    public string defaultValue;
+
     public event Action OnValueChanged;
+
+    public bool HasStoredValue => PlayerPrefs.HasKey(PrefsKey);
 
     private void OnEnable()
     {
@@ -32,6 +37,88 @@ public class TypeDistinguisher : ScriptableObject
     public  void LogValue()
     {
         Debug.Log(this.ToString());
+    }
+
+    // Seeding, done once per setting per install. PlayerPrefs answers 0 for a key nobody has
+    // written - and BoolValue therefore false - which is why every component that wanted a
+    // non-zero default used to carry a copy of one: FontScaler, VolumeSetter, StuckBallRecall and
+    // StoryTextScrollSetup each had their own, and the three animation toggles, having nobody to
+    // carry one for them, simply came up switched off on a fresh install. The default belongs to
+    // the setting, where there is one answer and the save file can carry it.
+    //
+    // Returns true when it actually wrote something, so the caller knows the save file is behind.
+    public bool ApplyDefaultIfUnset()
+    {
+        if (string.IsNullOrWhiteSpace(defaultValue) || HasStoredValue)
+        {
+            return false;
+        }
+
+        switch (prefType)
+        {
+            case PlayerPrefType.INT:
+                if (!int.TryParse(defaultValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out int intDefault))
+                {
+                    return ComplainAboutDefault("a whole number");
+                }
+
+                PlayerPrefs.SetInt(PrefsKey, intDefault);
+                break;
+
+            case PlayerPrefType.FLOAT:
+                if (!float.TryParse(defaultValue, NumberStyles.Float, CultureInfo.InvariantCulture, out float floatDefault))
+                {
+                    return ComplainAboutDefault("a number written with a dot for the decimal point");
+                }
+
+                PlayerPrefs.SetFloat(PrefsKey, floatDefault);
+                break;
+
+            case PlayerPrefType.BOOL:
+                if (!TryParseBool(defaultValue, out bool boolDefault))
+                {
+                    return ComplainAboutDefault("true, false, 1 or 0");
+                }
+
+                PlayerPrefs.SetInt(PrefsKey, boolDefault ? 1 : 0);
+                break;
+
+            case PlayerPrefType.STRING:
+                PlayerPrefs.SetString(PrefsKey, defaultValue);
+                break;
+
+            default:
+                return false;
+        }
+
+        OnValueChanged?.Invoke();
+        return true;
+    }
+
+    private static bool TryParseBool(string text, out bool value)
+    {
+        if (bool.TryParse(text, out value))
+        {
+            return true;
+        }
+
+        // 1 and 0 are how a bool is written in PlayerPrefs and in the save file, so they have to be
+        // accepted here too - anything else would make the default the odd one out.
+        if (int.TryParse(text, NumberStyles.Integer, CultureInfo.InvariantCulture, out int number))
+        {
+            value = number > 0;
+            return true;
+        }
+
+        return false;
+    }
+
+    // Loud, and then left alone: a default nobody can read is a wiring mistake to fix in the
+    // Inspector, and guessing a value in its place would hide it.
+    private bool ComplainAboutDefault(string expected)
+    {
+        Debug.LogError($"[{nameof(TypeDistinguisher)}] {PrefsKey}: defaultValue \"{defaultValue}\" is not {expected} - the setting is left unset.", this);
+        return false;
     }
 
     public int IntValue => PlayerPrefs.GetInt(PrefsKey);

@@ -49,8 +49,13 @@ public static class SaveManager
                 // Disposed, unlike before: the handle stayed open for the rest of the run and the
                 // first Save could then fail to open the same path for writing.
                 File.Create(SaveFilePath).Dispose();
-                LoadDefaults();
             }
+
+            // After the file, not only in place of it. A save written before a setting existed is
+            // silent about it, and the setting would otherwise start from the zero PlayerPrefs
+            // hands back for a key nobody wrote - which for a switch reads as the player having
+            // turned it off.
+            LoadDefaults();
         }
         finally
         {
@@ -61,29 +66,37 @@ public static class SaveManager
         //Save();
     }
 
+    // Gives every setting that has a default and nothing saved the value it was authored with.
+    // Anything the player has already set is left exactly as they left it, so this is safe to run
+    // on every start - and it has to run on every start, because a setting can be added to the
+    // game long after a save file was written.
+    //
+    // It used to write each key back the value PlayerPrefs already held, which for an untouched
+    // install meant writing zeros over zeros: the log line said defaults had been loaded while
+    // nothing of the kind had happened.
     public static void LoadDefaults()
     {
         var all = Resources.LoadAll<TypeDistinguisher>("TypeDistinguishers");
+        int seeded = 0;
+
         foreach (var t in all)
         {
-            switch (t.prefType)
+            if (t.ApplyDefaultIfUnset())
             {
-                case TypeDistinguisher.PlayerPrefType.INT:
-                    PlayerPrefs.SetInt(t.PrefsKey, t.IntValue);
-                    break;
-                case TypeDistinguisher.PlayerPrefType.FLOAT:
-                    PlayerPrefs.SetFloat(t.PrefsKey, t.FloatValue);
-                    break;
-                case TypeDistinguisher.PlayerPrefType.STRING:
-                    PlayerPrefs.SetString(t.PrefsKey, t.StringValue);
-                    break;
-                case TypeDistinguisher.PlayerPrefType.BOOL:
-                    PlayerPrefs.SetInt(t.PrefsKey, t.BoolValue ? 1 : 0);
-                    break;
+                seeded++;
             }
         }
 
-        Debug.Log($"[SaveManager] Loaded defaults for {all.Length} TypeDistinguishers.");
+        if (seeded == 0)
+        {
+            return;
+        }
+
+        Debug.Log($"[{nameof(SaveManager)}] Seeded {seeded} of {all.Length} settings from their defaults.");
+
+        // Written straight back out, so the next run reads them from the file instead of seeding
+        // them again, and so a setting added today cannot later look like one the player turned off.
+        Save();
     }
 
 #if UNITY_EDITOR
