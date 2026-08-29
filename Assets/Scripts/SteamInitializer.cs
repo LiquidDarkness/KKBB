@@ -1,12 +1,26 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Starts Steam, keeps its callbacks running, and shuts it down again.
+//
+// NO_STEAM, a scripting define like DEMO_BUILD, takes the whole of Steam out of a build: no
+// client is started, no callbacks are pumped, no achievements are sent and no scores go to a
+// leaderboard. It is what a copy uploaded somewhere other than Steam is built with - itch, a
+// direct download, a key handed to a festival - where there is no client to talk to and the
+// native steam_api dll need not ship at all, since nothing here ever loads it.
+//
+// Everything Steam-facing in the game asks one of three switches, all of which NO_STEAM answers
+// no to: this initialiser, Achievements.IsSteamAvailable and Leaderboards.IsAvailable. Playing,
+// scoring, records and the save file are untouched by it - they were never Steam's to begin with.
 public class SteamInitializer : MonoBehaviour
 {
     public int demoID, fullID;
 
     private void Start()
     {
+#if NO_STEAM
+        Debug.Log("Built with NO_STEAM: no Steam client is started, and nothing is reported to one.");
+#else
         //skomentuj, żeby unablnąć aczki
         //PlayerPrefs.SetInt("storiesRead", storiesRead.);
 
@@ -31,6 +45,7 @@ public class SteamInitializer : MonoBehaviour
         //SceneManager.LoadScene(1);
 
         HookStats();
+#endif
     }
 
     // Steam will not answer a question about achievements until it has sent the stats over, and it
@@ -71,18 +86,21 @@ public class SteamInitializer : MonoBehaviour
     // covers the whole run.
     private void Update()
     {
+#if !NO_STEAM
         if (!Steamworks.SteamClient.IsValid)
         {
             return;
         }
 
         Steamworks.SteamClient.RunCallbacks();
+#endif
     }
 
     // Steam wants telling that the game is going, and a client left running is what makes the next
     // Init fail with the app already open.
     private void OnDestroy()
     {
+#if !NO_STEAM
         if (!Steamworks.SteamClient.IsValid)
         {
             return;
@@ -90,5 +108,6 @@ public class SteamInitializer : MonoBehaviour
 
         Steamworks.SteamUserStats.OnUserStatsReceived -= HandleStatsReceived;
         Steamworks.SteamClient.Shutdown();
+#endif
     }
 }

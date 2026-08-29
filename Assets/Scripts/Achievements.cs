@@ -97,7 +97,16 @@ public static class Achievements
 
     // Whether Steam is there at all. Never true in the editor without a steam_appid.txt beside the
     // project, and never true in a build the player launched outside Steam.
-    public static bool IsSteamAvailable => Steamworks.SteamClient.IsValid;
+    //
+    // NO_STEAM makes it never true at all: see SteamInitializer for what that define is for.
+    // Every call this class makes to Steam goes through here, so switching it off switches all of
+    // them off - earning still happens, it is written to the save, and nothing is sent.
+    public static bool IsSteamAvailable =>
+#if NO_STEAM
+        false;
+#else
+        Steamworks.SteamClient.IsValid;
+#endif
 
     // --- Earning -------------------------------------------------------------------------------
 

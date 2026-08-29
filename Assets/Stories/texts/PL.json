@@ -490,5 +490,10 @@
 		   "key": "Close",
 		   "value": "Zamknij"
 		 }
+		 ,
+		 {
+		   "key": "Steam leaderboard",
+		   "value": "Tabela wyników Steam"
+		 }
 	]
 }

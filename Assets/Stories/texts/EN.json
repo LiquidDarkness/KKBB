@@ -490,5 +490,10 @@
 		   "key": "Close",
 		   "value": "Close"
 		 }
+		 ,
+		 {
+		   "key": "Steam leaderboard",
+		   "value": "Steam leaderboard"
+		 }
 	]
 }

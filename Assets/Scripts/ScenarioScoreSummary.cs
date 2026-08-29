@@ -1,4 +1,5 @@
 using System.Globalization;
+using System.Threading.Tasks;
 using System.Text;
 using TMPro;
 using UnityEngine;
@@ -37,8 +38,18 @@ public class ScenarioScoreSummary : MonoBehaviour
     [Tooltip("Points for each life still in hand at the end. METAL hands out none, and pays for it with its multiplier instead.")]
     public int pointsPerRemainingLife = 750;
 
+    [Header("Steam")]
+    [Tooltip("How many places above and below the player to show once the score is on the ladder.")]
+    public int neighboursAbove = 2;
+
+    public int neighboursBelow = 2;
+
     private Breakdown last;
     private bool hasFinished;
+
+    // Filled in later than everything else: posting a score and reading the ladder back is a round
+    // trip to Steam, and the window is drawn long before the answer arrives.
+    private string standings = string.Empty;
 
     public struct Breakdown
     {
@@ -98,7 +109,61 @@ public class ScenarioScoreSummary : MonoBehaviour
 
         last = Tally();
         hasFinished = true;
+        standings = string.Empty;
         Redraw();
+        PostToSteam(last);
+    }
+
+    // Fire and forget on purpose: the run is already counted, saved and recorded on this machine, so
+    // the ladder is a nicety that redraws the window if and when it answers.
+    private async void PostToSteam(Breakdown result)
+    {
+        int[] details = { result.Collected, result.Lives, Mathf.RoundToInt(result.Multiplier * 100f) };
+        Steamworks.Data.LeaderboardEntry[] entries = await Leaderboards.PostAndReadAsync(
+            result.Scenario, result.Difficulty, result.Total, details, neighboursAbove, neighboursBelow);
+
+        // Away for as long as Steam took to answer: the scenario may have been left behind, and a
+        // summary that has been forgotten must not be redrawn with a ladder from the run before.
+        if (this == null || !hasFinished || !Equals(result.Scenario, last.Scenario) || result.Total != last.Total)
+        {
+            return;
+        }
+
+        standings = Standings(entries);
+        Redraw();
+    }
+
+    private string Standings(Steamworks.Data.LeaderboardEntry[] entries)
+    {
+        if (entries == null || entries.Length == 0)
+        {
+            return string.Empty;
+        }
+
+        var text = new StringBuilder();
+        text.Append("\n\n");
+        text.Append($"<size=110%><align=center>{Translate("Steam leaderboard")}</align></size>");
+
+        ulong self = Steamworks.SteamClient.IsValid ? Steamworks.SteamClient.SteamId.Value : 0;
+
+        foreach (Steamworks.Data.LeaderboardEntry entry in entries)
+        {
+            string who = $"{entry.GlobalRank}. {NameOf(entry.User)}";
+            string score = Number(entry.Score);
+
+            // The player's own line stands out from the neighbours, the same way the final score
+            // stands out from what went into it.
+            if (self != 0 && entry.User.Id.Value == self)
+            {
+                who = Bold(who);
+                score = Bold(score);
+            }
+
+            text.Append('\n');
+            text.Append(Row(who, score));
+        }
+
+        return text.ToString();
     }
 
     // Called by the block through its CollisionExposer, and by a close button inside the window.
@@ -142,6 +207,23 @@ public class ScenarioScoreSummary : MonoBehaviour
 
         window.SetActive(false);
         PauseManager.Unpause(window.name);
+    }
+
+    // Steam answers with a name only when it has one to hand, and asking at all throws outright
+    // when there is no client behind it. A player whose name has not arrived is still worth a line -
+    // it is the rank and the score the ladder is about - and this runs inside a redraw, where an
+    // exception would leave the window holding half a summary.
+    private static string NameOf(Steamworks.Friend user)
+    {
+        try
+        {
+            string name = user.Name;
+            return string.IsNullOrEmpty(name) ? "..." : name;
+        }
+        catch (System.Exception)
+        {
+            return "...";
+        }
     }
 
     public Breakdown Tally()
@@ -197,6 +279,8 @@ public class ScenarioScoreSummary : MonoBehaviour
     {
         hasFinished = false;
 
+        standings = string.Empty;
+
         if (summary != null)
         {
             summary.text = string.Empty;
@@ -229,6 +313,7 @@ public class ScenarioScoreSummary : MonoBehaviour
         text.Append(Row(Translate("Difficulty"), "x" + last.Multiplier.ToString("0.##", CultureInfo.CurrentCulture)));
         text.Append('\n');
         text.Append(Row(Bold(Translate("Final score")), Bold(Number(last.Total))));
+        text.Append(standings);
 
         summary.text = text.ToString();
     }
