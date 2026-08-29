@@ -15,6 +15,12 @@ public class ScenarioScoreSummary : MonoBehaviour
     [Header("Where it is written")]
     public TextMeshProUGUI summary;
 
+    [Tooltip("The window the summary sits in. Off until the player boinks the block for it, and it takes a pause lock under its own name while it is up - the name EscapeWindow gives back when Escape closes it.")]
+    public GameObject window;
+
+    [Tooltip("Registers this summary for the Gameplay scene to reach - the block that opens the window lives there and this lives on GameSession, which outlives it.")]
+    public CoreReferences coreReferences;
+
     [Header("What it reads")]
     public DiffcultyManager diffcultyManager;
     public ScenarioManager scenarioManager;
@@ -22,9 +28,14 @@ public class ScenarioScoreSummary : MonoBehaviour
     [Tooltip("Where the best score of every scenario is kept, as name=score;name=score.")]
     public TypeDistinguisher bestScores;
 
+    [Tooltip("The running score and the lives left, read from what is saved rather than from Score.currentScore and PlayerHealth. A scenario can be walked into on its farewell beat, and the tally then runs before ScoreManager has read the save back into either of them.")]
+    public TypeDistinguisher collectedScore;
+
+    public TypeDistinguisher remainingLives;
+
     [Header("What a life is worth")]
     [Tooltip("Points for each life still in hand at the end. METAL hands out none, and pays for it with its multiplier instead.")]
-    public int pointsPerRemainingLife = 250;
+    public int pointsPerRemainingLife = 750;
 
     private Breakdown last;
     private bool hasFinished;
@@ -42,9 +53,24 @@ public class ScenarioScoreSummary : MonoBehaviour
         public bool IsRecord;
     }
 
+    private void Awake()
+    {
+        // This component rides GameSession, which outlives every scene; the Gameplay scene reaches
+        // it through the same shared asset GameEnding uses to find the story manager.
+        if (coreReferences != null)
+        {
+            coreReferences.scenarioScoreSummary = this;
+        }
+    }
+
     private void OnEnable()
     {
         StoryManager.OnScenarioFinished += HandleScenarioFinished;
+        // Not OnGameplayLoaded: that fires after the scene has already started, and a scenario
+        // entered on its farewell beat has worked its summary out by then - the wipe would land on
+        // top of it. SummaryBoinkController clears this from the scene instead, before any beat is
+        // shown. Leaving for the menu is safe to catch here, there being nothing left to undo.
+        SceneLoader.OnMenuLoaded += Hide;
         TranslationJSONDeserializer.OnTransaltionUpdated += Redraw;
         Hide();
     }
@@ -52,6 +78,7 @@ public class ScenarioScoreSummary : MonoBehaviour
     private void OnDisable()
     {
         StoryManager.OnScenarioFinished -= HandleScenarioFinished;
+        SceneLoader.OnMenuLoaded -= Hide;
         TranslationJSONDeserializer.OnTransaltionUpdated -= Redraw;
     }
 
@@ -74,6 +101,49 @@ public class ScenarioScoreSummary : MonoBehaviour
         Redraw();
     }
 
+    // Called by the block through its CollisionExposer, and by a close button inside the window.
+    [ContextMenu(nameof(ToggleWindow))]
+    public void ToggleWindow()
+    {
+        if (window == null)
+        {
+            return;
+        }
+
+        if (window.activeSelf)
+        {
+            CloseWindow();
+        }
+        else
+        {
+            OpenWindow();
+        }
+    }
+
+    public void OpenWindow()
+    {
+        if (window == null || window.activeSelf)
+        {
+            return;
+        }
+
+        window.SetActive(true);
+        // Locked under the window's own name: EscapeWindow, closing a window nobody else claims,
+        // gives the lock back under exactly that name.
+        PauseManager.Pause(window.name);
+    }
+
+    public void CloseWindow()
+    {
+        if (window == null || !window.activeSelf)
+        {
+            return;
+        }
+
+        window.SetActive(false);
+        PauseManager.Unpause(window.name);
+    }
+
     public Breakdown Tally()
     {
         DifficultySettings difficulty = diffcultyManager != null ? diffcultyManager.CurrentSettings : null;
@@ -85,8 +155,8 @@ public class ScenarioScoreSummary : MonoBehaviour
 
         // Death is declared at -1, so the last life is spent at 0 and a finished run can honestly
         // hold none - on METAL it never holds any.
-        int lives = Mathf.Max(0, PlayerHealth.Health);
-        int collected = Score.currentScore;
+        int lives = Mathf.Max(0, remainingLives != null ? remainingLives.IntValue : PlayerHealth.Health);
+        int collected = collectedScore != null ? collectedScore.IntValue : Score.currentScore;
         int livesReward = lives * pointsPerRemainingLife;
 
         var breakdown = new Breakdown
@@ -116,6 +186,13 @@ public class ScenarioScoreSummary : MonoBehaviour
         return breakdown;
     }
 
+    // Back to how a scenario starts: no window, nothing written, no tally standing. Called from the
+    // scene as it comes up, so a summary cannot be left over from the run before.
+    public void Forget()
+    {
+        Hide();
+    }
+
     private void Hide()
     {
         hasFinished = false;
@@ -123,6 +200,13 @@ public class ScenarioScoreSummary : MonoBehaviour
         if (summary != null)
         {
             summary.text = string.Empty;
+        }
+
+        if (window != null)
+        {
+            // Straight off rather than through CloseWindow: there is no pause of ours to give back
+            // when the scene has only just started, and PauseManager was cleared by the load.
+            window.SetActive(false);
         }
     }
 
@@ -136,24 +220,56 @@ public class ScenarioScoreSummary : MonoBehaviour
         }
 
         var text = new StringBuilder();
-        text.Append(Line(Translate("Points collected"), last.Collected.ToString("N0", CultureInfo.CurrentCulture)));
+        text.Append(Header());
+        text.Append("\n\n");
+        text.Append(Row(Translate("Points collected"), Number(last.Collected)));
         text.Append('\n');
-        text.Append(Line($"{Translate("Lives left")} ({last.Lives})", last.LivesReward.ToString("N0", CultureInfo.CurrentCulture)));
+        text.Append(Row($"{Translate("Lives left")} ({last.Lives})", Number(last.LivesReward)));
         text.Append('\n');
-        text.Append(Line(Translate("Difficulty"), "x" + last.Multiplier.ToString("0.##", CultureInfo.CurrentCulture)));
+        text.Append(Row(Translate("Difficulty"), "x" + last.Multiplier.ToString("0.##", CultureInfo.CurrentCulture)));
         text.Append('\n');
-        text.Append(Line(Translate("Final score"), last.Total.ToString("N0", CultureInfo.CurrentCulture)));
-        text.Append('\n');
-        text.Append(last.IsRecord
-            ? Translate("A new record on this difficulty!")
-            : Line(Translate("Best on this difficulty"), last.Best.ToString("N0", CultureInfo.CurrentCulture)));
+        text.Append(Row(Bold(Translate("Final score")), Bold(Number(last.Total))));
 
         summary.text = text.ToString();
     }
 
-    private static string Line(string label, string value)
+    // What there is to beat, said at the top, or the fact that it has just been beaten.
+    private string Header()
     {
-        return $"{label}: {value}";
+        string line = last.IsRecord
+            ? Translate("A new record on this difficulty!")
+            : $"{Translate("Best on this difficulty")}: {Number(last.Best)}";
+
+        return $"<size=125%><align=center>{line}</align></size>";
+    }
+
+    // Words to the left, number to the right, dots strung between them. The dots are counted rather
+    // than guessed at: TMP measures both halves in the font actually in use, so the column lines up
+    // whatever the language says and whatever size the player has set the text to.
+    private string Row(string label, string value)
+    {
+        const string Gap = " ";
+        float available = summary.rectTransform.rect.width;
+        float dotWidth = summary.GetPreferredValues(".").x;
+        float used = summary.GetPreferredValues(label + Gap + Gap + value).x;
+
+        // A rect that has not been laid out yet measures zero, which would ask for a nonsense number
+        // of dots; a short fixed run is the honest answer until there is a width to fill.
+        int dots = available > 1f && dotWidth > 0f
+            ? Mathf.FloorToInt((available - used) / dotWidth)
+            : 3;
+
+        return label + Gap + new string('.', Mathf.Clamp(dots, 2, 200)) + Gap + value;
+    }
+
+    private static string Bold(string text)
+    {
+        return $"<b>{text}</b>";
+    }
+
+    private static string Number(int value)
+    {
+        return value.ToString("N0", CultureInfo.CurrentCulture);
     }
 
     // The same fallback TranslationMediator uses: a key with no translation behind it shows as

@@ -74,6 +74,12 @@ public class StoryManager : MonoBehaviour, ICoreReferencer
     }
 #endif
 
+    // Whether the beat on screen is the farewell one: the last entry, the one paired with a
+    // placeholder level that is never played. Asked of the beat itself rather than of the step
+    // that got us here, because a scenario can be walked straight into on it - Continue from the
+    // main menu lands there - and the ending has to be on screen without anyone having pressed on.
+    private bool IsOnEndingBeat => mainManager.levels.Count > 0 && currentLvl.IntValue == mainManager.levels.Count - 1;
+
     [ContextMenu("test progress")]
     public void Progress()
     {
@@ -82,7 +88,6 @@ public class StoryManager : MonoBehaviour, ICoreReferencer
         int currentLevelNumber = currentLvl.IntValue + 1;
         PlayerPrefs.SetInt(currentLvl.PrefsKey, currentLevelNumber % mainManager.levels.Count);
         DisplayStoryContent();
-        ShowEndingButton(currentLevelNumber == mainManager.levels.Count - 1);
 
         Debug.Log("Storymanager progress to level: " + currentLvl.IntValue);
     }
@@ -102,11 +107,19 @@ public class StoryManager : MonoBehaviour, ICoreReferencer
         //LiquidDarkness1
         storyText.UpdateTranslation();
 
+        // Reaching the farewell beat by any road ends the scenario, and that includes walking
+        // straight into it: Continue from the main menu lands on that beat without ever going
+        // through Progress, which used to leave the block that carries on standing there - and
+        // boinking it took the player into the placeholder level behind the ending, which has no
+        // content to play. Settled before the music, since ShowEndingButton asks for the finale
+        // track itself when the answer is yes.
+        ShowEndingButton(IsOnEndingBeat);
+
         // The story beat is shown before its level is loaded, so leaving the music to
         // LevelLoader meant a scenario opened on silence and its track only started once
         // the player had read the text and pressed on. The ending is no exception: its
-        // placeholder level carries the finale track and ShowEndingButton then asks for
-        // that very same one, which MusicSwitcher recognises and does not restart.
+        // placeholder level carries the finale track and the call above asks for that very
+        // same one, which MusicSwitcher recognises and does not restart.
         PlayMusicFor(currentStory?.level);
     }
 
@@ -154,7 +167,11 @@ public class StoryManager : MonoBehaviour, ICoreReferencer
     // has no music of its own yet.
     private void PlayMusicFor(LevelData levelData)
     {
-        if (levelData == null || levelData.loop == null || coreReferences == null)
+        // The switcher is injected at runtime and is missing in the editor outside play mode. It
+        // is checked here rather than left to throw because this is called from inside
+        // ShowEndingButton, one line ahead of the signal that a scenario has been finished - and
+        // an exception there would take the achievements and the score summary down with it.
+        if (levelData == null || levelData.loop == null || coreReferences == null || coreReferences.musicSwitcher == null)
         {
             return;
         }

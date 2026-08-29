@@ -470,5 +470,25 @@
 		   "key": "A new record on this difficulty!",
 		   "value": "Nowy rekord na tym poziomie trudności!"
 		 }
+		 ,
+		 {
+		   "key": "Boink to continue",
+		   "value": "Stuknij, żeby lecieć dalej"
+		 }
+		 ,
+		 {
+		   "key": "Boink to return to main menu",
+		   "value": "Stuknij, żeby wrócić do menu"
+		 }
+		 ,
+		 {
+		   "key": "Boink to see your score",
+		   "value": "Stuknij, żeby zobaczyć wynik"
+		 }
+		 ,
+		 {
+		   "key": "Close",
+		   "value": "Zamknij"
+		 }
 	]
 }

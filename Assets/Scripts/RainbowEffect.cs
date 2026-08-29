@@ -8,11 +8,22 @@ public class RainbowEffect : MonoBehaviour
 
     public TextMeshProUGUI textMeshComp;
     public float refreshSpeed;
+
+    [Tooltip("Colour only the digits and leave the words alone. The score summary wants its numbers to dance without turning the labels into a fruit salad.")]
+    public bool onlyDigits;
     private int count = 0;  // Zmienna œledz¹ca przesuniêcie kolorów
 
-    private void Start()
+    // Started here rather than in Start, and stopped again when the component is switched off:
+    // disabling a MonoBehaviour does not stop its coroutines, so turning the rainbow off in the
+    // options used to leave it running until the scene was reloaded.
+    private void OnEnable()
     {
         StartCoroutine(ColorRainbow());
+    }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
     }
 
     IEnumerator ColorRainbow()
@@ -22,6 +33,11 @@ public class RainbowEffect : MonoBehaviour
             for (int i = 0; i < textMeshComp.textInfo.characterCount; ++i)
             {
                 if (!textMeshComp.textInfo.characterInfo[i].isVisible)
+                {
+                    continue;
+                }
+
+                if (onlyDigits && !char.IsDigit(textMeshComp.textInfo.characterInfo[i].character))
                 {
                     continue;
                 }
