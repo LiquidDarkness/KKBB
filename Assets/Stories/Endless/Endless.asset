@@ -9,13 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d67d0f15856dd264ab152121f3ccf240, type: 3}
-  m_Name: New Scenario Manager
+  m_Script: {fileID: 11500000, guid: fdbe65b9403803d499ee03443c9aeec4, type: 3}
+  m_Name: Endless
   m_EditorClassIdentifier: 
-  scenarios:
+  stories: []
+  availableInDemo: 1
+  levelSources:
   - {fileID: 11400000, guid: 8b6b10916b653634f9cb6ec27eeb0609, type: 2}
   - {fileID: 11400000, guid: 1c9a4921218b86e4b8442123b43f036e, type: 2}
   - {fileID: 11400000, guid: 4ad866cf1419b994d955ce2f71fc7557, type: 2}
   - {fileID: 11400000, guid: cd2b1be85f1d21a40b97b4f905faf63b, type: 2}
-  - {fileID: 11400000, guid: 09bd42bd99ba90c4bbbe571a8616159b, type: 2}
-  chosenScenario: {fileID: 11400000, guid: bdd0fc957230cb3419174682bda9452b, type: 2}
+  runSeed: {fileID: 11400000, guid: dbd8f5f954e1145488a0caa57bb76b85, type: 2}
+  wavesToTopSpeed: 15
+  speedRampShare: 0.5
+  scoreMultiplierPerWave: 0.1
+  maxScoreMultiplier: 3
+  extraLifeEveryWaves: 5

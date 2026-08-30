@@ -24,6 +24,14 @@ public class StoryManager : MonoBehaviour, ICoreReferencer
     // it again or a destroyed one throws and stops the delegates queued behind it.
     public static event Action OnScenarioFinished;
 
+    // Raised whenever a beat is put on screen, carrying the beat number. It is what endless is
+    // built on: the wave card, the speed ramp and the lives handed back all hang off it, and for a
+    // scenario with no story to progress through there is no other moment that means "a new wave
+    // starts here". Static like the rest of the signals in this class, and with the same duty on
+    // whoever listens - drop it in OnDisable, or a destroyed subscriber throws and takes the
+    // delegates queued behind it down with it.
+    public static event Action<int> OnBeatShown;
+
     [Header("Blocks")]
     public GameObject ending;
     public GameObject boink;
@@ -78,15 +86,27 @@ public class StoryManager : MonoBehaviour, ICoreReferencer
     // placeholder level that is never played. Asked of the beat itself rather than of the step
     // that got us here, because a scenario can be walked straight into on it - Continue from the
     // main menu lands there - and the ending has to be on screen without anyone having pressed on.
-    private bool IsOnEndingBeat => mainManager.levels.Count > 0 && currentLvl.IntValue == mainManager.levels.Count - 1;
+    // A scenario can also have no farewell at all - endless is exactly that - and then there is no
+    // last entry to land on, however many beats have been played.
+    private bool IsOnEndingBeat => mainManager.HasFarewellBeat && mainManager.BeatCount > 0 && currentLvl.IntValue == mainManager.BeatCount - 1;
 
     [ContextMenu("test progress")]
     public void Progress()
     {
         Debug.Log("Storymanager progress from level: " + currentLvl.IntValue);
 
+        int beatCount = mainManager.BeatCount;
+
+        if (beatCount <= 0)
+        {
+            // Modulo by zero throws, and a scenario with no beats in it is a wiring mistake worth
+            // hearing about rather than an exception in the middle of finishing a level.
+            Debug.LogError($"[{nameof(StoryManager)}] {mainManager.chosenScenario.name} has no beats to progress through.");
+            return;
+        }
+
         int currentLevelNumber = currentLvl.IntValue + 1;
-        PlayerPrefs.SetInt(currentLvl.PrefsKey, currentLevelNumber % mainManager.levels.Count);
+        PlayerPrefs.SetInt(currentLvl.PrefsKey, currentLevelNumber % beatCount);
         DisplayStoryContent();
 
         Debug.Log("Storymanager progress to level: " + currentLvl.IntValue);
@@ -103,9 +123,14 @@ public class StoryManager : MonoBehaviour, ICoreReferencer
             textContainer.SetActive(true);
         }
 
-        storyText.key = mainManager.chosenScenario.name + currentLvl.IntValue;
-        //LiquidDarkness1
-        storyText.UpdateTranslation();
+        // A scenario whose beats carry no text of their own puts up its own card instead: there is
+        // nothing the translation files could hold about wave 37, so endless writes that one itself.
+        if (mainManager.chosenScenario.HasBeatText)
+        {
+            storyText.key = mainManager.chosenScenario.name + currentLvl.IntValue;
+            //LiquidDarkness1
+            storyText.UpdateTranslation();
+        }
 
         // Reaching the farewell beat by any road ends the scenario, and that includes walking
         // straight into it: Continue from the main menu lands on that beat without ever going
@@ -121,6 +146,10 @@ public class StoryManager : MonoBehaviour, ICoreReferencer
         // placeholder level carries the finale track and the call above asks for that very
         // same one, which MusicSwitcher recognises and does not restart.
         PlayMusicFor(currentStory?.level);
+
+        // Last of all, so that everyone listening finds the beat settled: the ending decided, the
+        // music asked for and currentStory holding the beat that is now on screen.
+        OnBeatShown?.Invoke(currentLvl.IntValue);
     }
 
     public void HideStoryText()

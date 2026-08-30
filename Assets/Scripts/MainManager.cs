@@ -39,16 +39,22 @@ public class MainManager : MonoBehaviour
         get
         {
             int index = currentLevel.IntValue;
-            if (index < 0 || index >= chosenScenario.stories.Length)
+            if (index < 0 || index >= chosenScenario.BeatCount)
             {
-                Debug.LogWarning($"[{nameof(MainManager)}] Saved level index {index} is outside {chosenScenario.name} (0-{chosenScenario.stories.Length - 1}). Starting that scenario over.");
+                Debug.LogWarning($"[{nameof(MainManager)}] Saved level index {index} is outside {chosenScenario.name} (0-{chosenScenario.BeatCount - 1}). Starting that scenario over.");
                 index = 0;
                 currentLevel.SetIntValue(index);
             }
 
-            return chosenScenario.stories[index];
+            return chosenScenario.BeatAt(index);
         }
     }
+
+    // Asked of the scenario rather than counted off the list below, because a scenario need not
+    // have one: the endless one works its beats out as they are asked for, and its list is empty.
+    public int BeatCount => chosenScenario != null ? chosenScenario.BeatCount : 0;
+
+    public bool HasFarewellBeat => chosenScenario != null && chosenScenario.HasFarewellBeat;
 
     public static event Action OnLevelLoaded;
     public static event Action OnStoryLoaded;
@@ -65,6 +71,9 @@ public class MainManager : MonoBehaviour
         levels.Clear();
         chosenScenario = scenarioManager.CurrentScenarioSettings;
         Debug.Log($"[{nameof(MainManager)}] chosenScenario: {chosenScenario.name}");
+        // A mirror of the beats for anything that wants to look the whole scenario over at once.
+        // Left empty by a scenario that has no list to mirror - the endless one deals its levels
+        // out as they come up - which is why nothing here counts beats off it any more.
         foreach (var item in chosenScenario.stories)
         {
             levels.Add(item.level);
@@ -107,7 +116,7 @@ public class MainManager : MonoBehaviour
     {
         Debug.Log("MainManager progress");
 
-        if (levels.Count == 0)
+        if (BeatCount == 0)
         {
             // Modulo by zero throws outright, so say what is wrong instead of dying on
             // a scenario that was left without a single story entry.
@@ -115,13 +124,13 @@ public class MainManager : MonoBehaviour
             return;
         }
 
-        int currentLevelIndex = (currentLevel.IntValue + 1) % levels.Count;
+        int currentLevelIndex = (currentLevel.IntValue + 1) % BeatCount;
         if (contentContainer.childCount != 0)
         {
             Destroy(contentContainer.GetChild(0).gameObject);
         }
 
-        LevelData levelData = levels[currentLevelIndex];
+        LevelData levelData = chosenScenario.BeatAt(currentLevelIndex).level;
         currentLevel.SetIntValue(currentLevelIndex);
         LoadLevel(levelData);
     }

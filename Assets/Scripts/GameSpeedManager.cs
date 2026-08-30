@@ -28,6 +28,13 @@ public class GameSpeedManager : MonoBehaviour
     public event Action<bool> OnGameSpeedChanged;
 
     public DiffcultyManager diffcultyManager;
+
+    [Tooltip("Read to find out whether the scenario being played sets its own pace. Endless does: every wave is a little quicker than the one before, up from the chosen difficulty and part of the way towards its ceiling.")]
+    public ScenarioManager scenarioManager;
+
+    [Tooltip("Which beat the player is on, which for endless is which wave. Left empty, an endless run simply never speeds up.")]
+    public TypeDistinguisher currentLvl;
+
     private Coroutine routine;
 
     public void Awake()
@@ -36,6 +43,9 @@ public class GameSpeedManager : MonoBehaviour
         PauseManager.OnPause += HandlePause;
         PauseManager.OnUnpause += HandleUnpause;
         Level.OnLevelCompleted += HandleLevelCompleted;
+        // A new beat can mean a new pace, which is what makes endless tighten as it goes. For a
+        // written scenario this recomputes the same number it already held.
+        StoryManager.OnBeatShown += HandleBeatShown;
     }
 
     private void OnDestroy()
@@ -44,6 +54,12 @@ public class GameSpeedManager : MonoBehaviour
         PauseManager.OnPause -= HandlePause;
         PauseManager.OnUnpause -= HandleUnpause;
         Level.OnLevelCompleted -= HandleLevelCompleted;
+        StoryManager.OnBeatShown -= HandleBeatShown;
+    }
+
+    private void HandleBeatShown(int _)
+    {
+        SetGameSpeed();
     }
 
     private void HandleLevelCompleted()
@@ -78,9 +94,25 @@ public class GameSpeedManager : MonoBehaviour
 
     public void SetGameSpeed()
     {
-        originalGameSpeed = ClampToDifficulty(diffcultyManager.CurrentSettings.baseGameSpeed);
+        originalGameSpeed = ClampToDifficulty(BaseSpeed());
         gameSpeed = originalGameSpeed;
         ApplyTimeScale();
+    }
+
+    // The pace a level starts at. Normally the chosen difficulty says it outright; an endless run
+    // says it per wave instead, and asks for it in terms of the very same difficulty - so picking
+    // METAL still means starting at METAL speed, only with somewhere left to climb.
+    private float BaseSpeed()
+    {
+        DifficultySettings difficulty = diffcultyManager.CurrentSettings;
+
+        if (scenarioManager != null && currentLvl != null
+            && scenarioManager.CurrentScenarioSettings is EndlessScenario endless)
+        {
+            return endless.SpeedForWave(difficulty, EndlessScenario.WaveOf(currentLvl.IntValue));
+        }
+
+        return difficulty.baseGameSpeed;
     }
 
     // baseGameSpeed is the pace a level runs at, maxSpeed the ceiling no drop may push Kitty

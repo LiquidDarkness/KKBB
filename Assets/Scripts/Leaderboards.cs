@@ -26,6 +26,10 @@ public static class Leaderboards
         { "SimbaBimba", "SIMBA_BIMBA" },
         { "ZiggiesMunda", "ZIGGIES_MUNDA" },
 
+        // The one board where the score says how long the player lasted rather than how well they
+        // played something with an end to it.
+        { "Endless", "ENDLESS" },
+
         // The tutorial teaches; it is not somewhere to compete, and it is where a player who has
         // never played is at their worst. Listed so a missing board can still be told apart from a
         // scenario nobody has written down.

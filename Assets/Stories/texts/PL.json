@@ -495,5 +495,65 @@
 		   "key": "Steam leaderboard",
 		   "value": "Tabela wyników Steam"
 		 }
+		 ,
+		 {
+		   "key": "Endless",
+		   "value": "Bez końca"
+		 }
+		 ,
+		 {
+		   "key": "Wave {0}",
+		   "value": "Fala {0}"
+		 }
+		 ,
+		 {
+		   "key": "Points are worth x{0}",
+		   "value": "Punkty warte x{0}"
+		 }
+		 ,
+		 {
+		   "key": "Waves survived",
+		   "value": "Przetrwane fale"
+		 }
+		 ,
+		 {
+		   "key": "Liquid Darkness",
+		   "value": "Liquid Darkness"
+		 }
+		 ,
+		 {
+		   "key": "The OG Kitty, quick on the bounce. The one every story here starts with.",
+		   "value": "Ten pierwszy, szybki w odbiciu. Od niego zaczyna się tu każda historia."
+		 }
+		 ,
+		 {
+		   "key": "Simba",
+		   "value": "Simba"
+		 }
+		 ,
+		 {
+		   "key": "Big boy fluff, nice and soft. The slowest of the four, and the kindest to steer.",
+		   "value": "Wielki kłąb futra, miękki i miły. Najwolniejszy z całej czwórki i najwdzięczniejszy w prowadzeniu."
+		 }
+		 ,
+		 {
+		   "key": "Ziggy",
+		   "value": "Ziggy"
+		 }
+		 ,
+		 {
+		   "key": "A free spirit, quick on her feet. The fastest cat here, by a good margin.",
+		   "value": "Wolny duch, szybka na łapach. Zdecydowanie najszybsza kotka z tej czwórki."
+		 }
+		 ,
+		 {
+		   "key": "Dummy",
+		   "value": "Dummy"
+		 }
+		 ,
+		 {
+		   "key": "The cat the tutorial is taught with. Unhurried, and forgiving to play.",
+		   "value": "Kot od samouczka. Bez pośpiechu i wyrozumiały w prowadzeniu."
+		 }
 	]
 }

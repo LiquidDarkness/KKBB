@@ -55,6 +55,11 @@ public class ScenarioScoreSummary : MonoBehaviour
     {
         public string Scenario;
         public string Difficulty;
+
+        // Waves survived, and zero for a scenario played to its ending - a written scenario is
+        // finished rather than survived, and how many beats it has is nobody's achievement.
+        public int Waves;
+
         public int Collected;
         public int Lives;
         public int LivesReward;
@@ -102,12 +107,23 @@ public class ScenarioScoreSummary : MonoBehaviour
     // reports the run as having merely equalled it.
     private void HandleScenarioFinished()
     {
+        // The score as it was saved when the last level was completed, which for a scenario played
+        // to its ending is the whole of it.
+        FinishRun(0, collectedScore != null ? collectedScore.IntValue : Score.currentScore);
+    }
+
+    // The other way a run can end. Endless has no ending to reach, so death is what settles it, and
+    // death happens in the middle of a level rather than after one - the score has to be handed in
+    // as it stands, the saved one being a whole wave out of date. Along with how far the player
+    // got, which is what an endless run is really measured in.
+    public void FinishRun(int waves, int collected)
+    {
         if (hasFinished)
         {
             return;
         }
 
-        last = Tally();
+        last = Tally(waves, collected);
         hasFinished = true;
         standings = string.Empty;
         Redraw();
@@ -118,7 +134,7 @@ public class ScenarioScoreSummary : MonoBehaviour
     // the ladder is a nicety that redraws the window if and when it answers.
     private async void PostToSteam(Breakdown result)
     {
-        int[] details = { result.Collected, result.Lives, Mathf.RoundToInt(result.Multiplier * 100f) };
+        int[] details = { result.Collected, result.Lives, Mathf.RoundToInt(result.Multiplier * 100f), result.Waves };
         Steamworks.Data.LeaderboardEntry[] entries = await Leaderboards.PostAndReadAsync(
             result.Scenario, result.Difficulty, result.Total, details, neighboursAbove, neighboursBelow);
 
@@ -228,6 +244,11 @@ public class ScenarioScoreSummary : MonoBehaviour
 
     public Breakdown Tally()
     {
+        return Tally(0, collectedScore != null ? collectedScore.IntValue : Score.currentScore);
+    }
+
+    private Breakdown Tally(int waves, int collected)
+    {
         DifficultySettings difficulty = diffcultyManager != null ? diffcultyManager.CurrentSettings : null;
         StoryContainer scenario = scenarioManager != null ? scenarioManager.CurrentScenarioSettings : null;
 
@@ -238,13 +259,13 @@ public class ScenarioScoreSummary : MonoBehaviour
         // Death is declared at -1, so the last life is spent at 0 and a finished run can honestly
         // hold none - on METAL it never holds any.
         int lives = Mathf.Max(0, remainingLives != null ? remainingLives.IntValue : PlayerHealth.Health);
-        int collected = collectedScore != null ? collectedScore.IntValue : Score.currentScore;
         int livesReward = lives * pointsPerRemainingLife;
 
         var breakdown = new Breakdown
         {
             Scenario = scenario != null ? scenario.name : string.Empty,
             Difficulty = difficulty != null ? difficulty.name : string.Empty,
+            Waves = waves,
             Collected = collected,
             Lives = lives,
             LivesReward = livesReward,
@@ -306,9 +327,25 @@ public class ScenarioScoreSummary : MonoBehaviour
         var text = new StringBuilder();
         text.Append(Header());
         text.Append("\n\n");
+
+        // What an endless run is measured in, said first, ahead of what it was worth.
+        if (last.Waves > 0)
+        {
+            text.Append(Row(Translate("Waves survived"), Number(last.Waves)));
+            text.Append('\n');
+        }
+
         text.Append(Row(Translate("Points collected"), Number(last.Collected)));
-        text.Append('\n');
-        text.Append(Row($"{Translate("Lives left")} ({last.Lives})", Number(last.LivesReward)));
+
+        // An endless run always ends on the last life, so that line would say nothing but zero
+        // every time. A scenario played to its ending keeps it whatever it comes to: none left is
+        // worth knowing when it could have been three.
+        if (last.Waves == 0 || last.LivesReward > 0)
+        {
+            text.Append('\n');
+            text.Append(Row($"{Translate("Lives left")} ({last.Lives})", Number(last.LivesReward)));
+        }
+
         text.Append('\n');
         text.Append(Row(Translate("Difficulty"), "x" + last.Multiplier.ToString("0.##", CultureInfo.CurrentCulture)));
         text.Append('\n');

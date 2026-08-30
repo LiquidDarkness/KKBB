@@ -35,6 +35,29 @@ components register themselves into. `GameEnding` reaching the story manager is 
   farewell**, and its level is a placeholder with no content that must never be loaded - showing a
   beat is what decides whether the ending block or the continue block is on screen
   (`StoryManager.IsOnEndingBeat`), because a scenario can be walked into on that beat with Continue.
+  A scenario is asked for its beats rather than read off its array - `BeatCount`, `BeatAt`,
+  `HasFarewellBeat`, `HasBeatText` - so one can answer without keeping a list. `OnBeatShown` fires
+  every time a beat goes up, and is what anything per-level should hang off.
+- **Endless** is a scenario like any other (`EndlessScenario`, `Assets/Stories/Endless`), last in
+  the scenario manager's list and started by its own button on the main menu, which rolls a seed
+  and sends the player through the same difficulty screen. It has no beats written down: wave N is
+  dealt from `endlessSeed` and N alone, the whole pool shuffled per cycle and no level twice
+  running, so a save carries one number and the run comes back the same. It has no farewell either,
+  so a run ends at death - `EndlessRunController` tallies it there and puts the summary up over the
+  Game Over screen, and a bought continue re-arms it. Each wave is quicker (part of the way from
+  `baseGameSpeed` to `maxSpeed`) and pays more (`Score.pointsMultiplier`), with a life back every
+  few waves and no ceiling on them; `EndlessBeatCard` writes the wave card in place of story text. Having no
+  story to pick a cat for it, it asks: the button opens `AvatarWindow` - the scenario window copied,
+  one tile per entry in `AvatarSwitcher.avatars`, writing `ChosenAvatar` - and the cat tiles open the
+  difficulty window the way a scenario tile does. The button lives in `Content` just after the
+  easter egg art so it is drawn over it and still under the windows; it wears the cat's own halo
+  (`TextGlow`, the font's glow rather than a sprite), arrives from behind the logo (`MenuEntrance`,
+  which is hierarchy order and nothing else - it is lent to the logo's branch for the flight) and
+  bounces its letters (`TextBounceEffect`, in the mesh rather than the transform, so no layout is
+  disturbed), while the art beside it breathes (`IdleSway`). Every one of those that moves is under
+  the Menu animations setting through a `ComponentEnabler` of its own, like every other animation. Rebuilt or
+  re-wired from **Debug > Endless** (`Assets/Editor/EndlessSetup.cs`), which is idempotent and
+  leaves the button where anyone has since dragged it.
 - **Translations.** Every string a player reads goes through a `TranslationMediator` (key +
   `onTranslationSet` -> `TMP_Text.set_text`) with entries in **both** `Assets/Stories/texts/EN.json`
   and `PL.json`. The key is the English text. This includes labels sitting in a scene, like the

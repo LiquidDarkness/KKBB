@@ -870,6 +870,7 @@ GameObject:
   - component: {fileID: 1761356747975104655}
   - component: {fileID: 1435930156354009571}
   - component: {fileID: 2163305091827889026}
+  - component: {fileID: 209988280402083587}
   m_Layer: 0
   m_Name: GameSession
   m_TagString: Untagged
@@ -927,6 +928,8 @@ MonoBehaviour:
   minGameSpeed: 1
   pausedTimeScale: 0.0001
   diffcultyManager: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
+  scenarioManager: {fileID: 11400000, guid: 7b5aa1d039a59d243a78b288c4fcaea3, type: 2}
+  currentLvl: {fileID: 11400000, guid: 76e20662c26c8734698d39f790c7cb65, type: 2}
 --- !u!114 &3007742471343142531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1189,6 +1192,23 @@ MonoBehaviour:
   collectedScore: {fileID: 11400000, guid: 37525c481e03b5a4baaec2e278496745, type: 2}
   remainingLives: {fileID: 11400000, guid: d4400d2620aebaa4a91d89bf65aa975f, type: 2}
   pointsPerRemainingLife: 750
+  neighboursAbove: 2
+  neighboursBelow: 2
+--- !u!114 &209988280402083587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3007742471343142533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c6eb2c5752be994ebe0ca717956dabe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scenarioManager: {fileID: 11400000, guid: 7b5aa1d039a59d243a78b288c4fcaea3, type: 2}
+  currentLvl: {fileID: 11400000, guid: 76e20662c26c8734698d39f790c7cb65, type: 2}
+  coreReferences: {fileID: 11400000, guid: 9ff01efc2579a3241b409409c97497ca, type: 2}
 --- !u!1 &3007742471348010940
 GameObject:
   m_ObjectHideFlags: 0

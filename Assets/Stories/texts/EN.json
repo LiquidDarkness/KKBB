@@ -495,5 +495,65 @@
 		   "key": "Steam leaderboard",
 		   "value": "Steam leaderboard"
 		 }
+		 ,
+		 {
+		   "key": "Endless",
+		   "value": "Endless"
+		 }
+		 ,
+		 {
+		   "key": "Wave {0}",
+		   "value": "Wave {0}"
+		 }
+		 ,
+		 {
+		   "key": "Points are worth x{0}",
+		   "value": "Points are worth x{0}"
+		 }
+		 ,
+		 {
+		   "key": "Waves survived",
+		   "value": "Waves survived"
+		 }
+		 ,
+		 {
+		   "key": "Liquid Darkness",
+		   "value": "Liquid Darkness"
+		 }
+		 ,
+		 {
+		   "key": "The OG Kitty, quick on the bounce. The one every story here starts with.",
+		   "value": "The OG Kitty, quick on the bounce. The one every story here starts with."
+		 }
+		 ,
+		 {
+		   "key": "Simba",
+		   "value": "Simba"
+		 }
+		 ,
+		 {
+		   "key": "Big boy fluff, nice and soft. The slowest of the four, and the kindest to steer.",
+		   "value": "Big boy fluff, nice and soft. The slowest of the four, and the kindest to steer."
+		 }
+		 ,
+		 {
+		   "key": "Ziggy",
+		   "value": "Ziggy"
+		 }
+		 ,
+		 {
+		   "key": "A free spirit, quick on her feet. The fastest cat here, by a good margin.",
+		   "value": "A free spirit, quick on her feet. The fastest cat here, by a good margin."
+		 }
+		 ,
+		 {
+		   "key": "Dummy",
+		   "value": "Dummy"
+		 }
+		 ,
+		 {
+		   "key": "The cat the tutorial is taught with. Unhurried, and forgiving to play.",
+		   "value": "The cat the tutorial is taught with. Unhurried, and forgiving to play."
+		 }
 	]
 }
