@@ -15,7 +15,7 @@ public class KeyBindingButton : MonoBehaviour
     public Button button;
     public TMP_Text label;
 
-    [Tooltip("Shown while the button is waiting for a key.")]
+    [Tooltip("Shown while the button is waiting for a key. A translation key like every other string a player reads, so it needs an entry in EN.json and PL.json.")]
     public string waitingText = "press a key";
 
     // Every button on screen, so that binding a key on one of them can redraw the rest - taking a
@@ -49,6 +49,10 @@ public class KeyBindingButton : MonoBehaviour
     {
         live.Add(this);
 
+        // The face is looked up rather than printed as written, so it has to be drawn again when
+        // the language changes under it.
+        TranslationJSONDeserializer.OnTransaltionUpdated += Refresh;
+
         if (button != null)
         {
             // Runtime listeners only; anything wired in the Inspector, like the click sound, stays.
@@ -61,27 +65,31 @@ public class KeyBindingButton : MonoBehaviour
 
     private void OnDisable()
     {
+        TranslationJSONDeserializer.OnTransaltionUpdated -= Refresh;
         live.Remove(this);
         waiting = false;
     }
 
     public void Refresh()
     {
-        if (label != null && !waiting)
+        if (label == null)
         {
-            label.text = Controls.Describe(secondary ? Controls.Secondary(action) : Controls.Primary(action));
+            return;
         }
+
+        // Both of these are translation keys: waitingText is a sentence, and what Describe returns
+        // is the name of a key. A name with no entry of its own - "A", "F5" - prints itself, which
+        // is what it would have said anyway.
+        label.text = TranslationLookup.Get(waiting
+            ? waitingText
+            : Controls.Describe(secondary ? Controls.Secondary(action) : Controls.Primary(action)));
     }
 
     private void BeginCapture()
     {
         waiting = true;
         startedOnFrame = Time.frameCount;
-
-        if (label != null)
-        {
-            label.text = waitingText;
-        }
+        Refresh();
     }
 
     private void Update()
@@ -112,6 +120,14 @@ public class KeyBindingButton : MonoBehaviour
         foreach (KeyCode key in everyKey)
         {
             if (!Input.GetKeyDown(key))
+            {
+                continue;
+            }
+
+            // A pad is not rebound here. Its buttons are fixed in Controls, and on Steam it is
+            // remapped in Steam's configurator - so a stray press while this screen is open should
+            // not quietly take a key away from the keyboard.
+            if (key >= KeyCode.JoystickButton0)
             {
                 continue;
             }

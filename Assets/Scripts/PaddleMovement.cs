@@ -152,9 +152,21 @@ public class PaddleMovement : MonoBehaviour
 
     // The Input Manager axis this used to read cannot be rebound while the game is running, so the
     // ramp it gave for free is done here instead - the same wind-up, wind-down and direction snap,
-    // driven by whichever keys the player has chosen.
+    // driven by whichever keys the player has chosen. A gamepad stick skips the ramp; it has its
+    // own idea of how hard it is being pushed and does not need one invented for it.
     private bool UpdateKeySteer()
     {
+        float stick = Controls.MoveAxis();
+
+        // A stick says how far, not only which way, so it steers straight instead of through the
+        // wind-up the keys need - half a push is half the speed. Letting go drops through to the
+        // branch below and coasts to a stop the same way, so the two read as one control.
+        if (stick != 0f)
+        {
+            keyAxis = Mathf.Clamp(stick, -1f, 1f);
+            return true;
+        }
+
         float target = (Controls.Held(Controls.MoveRight) ? 1f : 0f) - (Controls.Held(Controls.MoveLeft) ? 1f : 0f);
 
         if (target != 0f)

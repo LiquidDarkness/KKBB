@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
@@ -13,6 +14,10 @@ using UnityEngine.EventSystems;
 // The bindings live in one string setting rather than a dozen: it is a TypeDistinguisher like every
 // other setting, so it rides the same save file, the same Steam Cloud and the same purge rules
 // without anyone adding an asset per key.
+//
+// A gamepad answers to the same actions but is not part of that: its buttons are fixed, and its
+// stick is an axis rather than a key. A player who wants a pad laid out differently remaps it in
+// Steam's own configurator, which is where someone holding one looks first.
 public static class Controls
 {
     public const string MoveLeft = "MoveLeft";
@@ -45,8 +50,28 @@ public static class Controls
         { Options, new Binding { Primary = KeyCode.O, Secondary = KeyCode.None } },
     };
 
+    // What a gamepad does with no setting up at all. XInput numbering, which is what Unity reports
+    // on Windows: A, X, Back, Start. Left and right are the stick, read as an axis below.
+    private static readonly Dictionary<string, KeyCode> GamepadButtons = new Dictionary<string, KeyCode>
+    {
+        { Launch, KeyCode.JoystickButton0 },
+        { Shop, KeyCode.JoystickButton2 },
+        { Options, KeyCode.JoystickButton6 },
+        { Pause, KeyCode.JoystickButton7 },
+    };
+
+    // Joystick-only on purpose. The Input Manager's own "Horizontal" folds the arrow keys into the
+    // same reading, so arrows a player had rebound away would go on steering.
+    private const string GamepadAxis = "Gamepad Horizontal";
+
     private static Dictionary<string, Binding> bindings;
     private static bool warnedAboutSetting;
+    private static bool warnedAboutAxis;
+
+    // Raised whenever a binding changes, so anything printing a key can write itself again. The
+    // rebinding screen redraws its own buttons through KeyBindingButton.RefreshAll, but a key can
+    // be moved while a screen behind the options window is still saying what it used to be.
+    public static event Action OnBindingsChanged;
 
     // Cleared on every play, the way PauseManager clears its locks: a static dictionary survives
     // entering and leaving play mode in the editor and would otherwise carry the last run's edits.
@@ -55,6 +80,8 @@ public static class Controls
     {
         bindings = null;
         warnedAboutSetting = false;
+        warnedAboutAxis = false;
+        OnBindingsChanged = null;
     }
 
     public static KeyCode Primary(string action)
@@ -70,13 +97,40 @@ public static class Controls
     public static bool Held(string action)
     {
         Binding binding = Resolve(action);
-        return IsDown(binding.Primary) || IsDown(binding.Secondary);
+        return IsDown(binding.Primary) || IsDown(binding.Secondary) || IsDown(GamepadButton(action));
     }
 
     public static bool Pressed(string action)
     {
         Binding binding = Resolve(action);
-        return WentDown(binding.Primary) || WentDown(binding.Secondary);
+        return WentDown(binding.Primary) || WentDown(binding.Secondary) || WentDown(GamepadButton(action));
+    }
+
+    // How far the stick is pushed sideways, -1 to 1, or 0 with no pad plugged in. The dead zone is
+    // the axis's own, so a resting stick reads as nothing here rather than everywhere it is used.
+    public static float MoveAxis()
+    {
+        if (warnedAboutAxis)
+        {
+            return 0f;
+        }
+
+        try
+        {
+            return Input.GetAxis(GamepadAxis);
+        }
+        catch (System.ArgumentException)
+        {
+            warnedAboutAxis = true;
+            Debug.LogWarning("Controls: no \"" + GamepadAxis + "\" axis in the Input Manager - a gamepad stick will not steer.");
+            return 0f;
+        }
+    }
+
+    private static KeyCode GamepadButton(string action)
+    {
+        KeyCode key;
+        return GamepadButtons.TryGetValue(action, out key) ? key : KeyCode.None;
     }
 
     public static void Bind(string action, KeyCode key, bool secondary)
@@ -94,22 +148,31 @@ public static class Controls
 
         bindings[action] = binding;
         Save();
+        OnBindingsChanged?.Invoke();
     }
 
     public static void ResetToDefaults()
     {
         bindings = new Dictionary<string, Binding>(Defaults);
         Save();
+        OnBindingsChanged?.Invoke();
     }
 
     // "Left Arrow" rather than "LeftArrow", and something readable for the mouse buttons, because
-    // this is what the rebinding screen prints on its buttons.
+    // this is what the rebinding screen prints on its buttons. The result is also the translation
+    // key the screen looks the face up by, which is why the enum names that read as nothing to a
+    // player - Alpha1 for the 1 above the letters, Keypad1 for the one on the numpad - are turned
+    // into what the key is actually called before they leave here.
     public static string Describe(KeyCode key)
     {
         switch (key)
         {
             case KeyCode.None:
                 return "-";
+            // "Return" would collide with the Return that takes a player out of a window, which is
+            // a different word in most languages and would end up on the key.
+            case KeyCode.Return:
+                return "Enter";
             case KeyCode.Mouse0:
                 return "Left mouse";
             case KeyCode.Mouse1:
@@ -119,6 +182,28 @@ public static class Controls
         }
 
         string name = key.ToString();
+
+        if (name.StartsWith("Alpha"))
+        {
+            return name.Substring("Alpha".Length);
+        }
+
+        if (name.StartsWith("Keypad"))
+        {
+            return "Numpad " + Spaced(name.Substring("Keypad".Length));
+        }
+
+        if (name.StartsWith("Mouse"))
+        {
+            return "Mouse " + name.Substring("Mouse".Length);
+        }
+
+        return Spaced(name);
+    }
+
+    // A space wherever the enum name runs two words together, and nowhere else.
+    private static string Spaced(string name)
+    {
         var spaced = new StringBuilder(name.Length + 4);
 
         for (int i = 0; i < name.Length; i++)
@@ -149,6 +234,14 @@ public static class Controls
     // at the same time.
     private static bool SwallowedByInterface(KeyCode key)
     {
+        // A pad's A button is Submit as well, so while a window is up it belongs to the window -
+        // otherwise buying something in the shop served the ball at the same time. Only that one:
+        // the buttons that open and close windows have to go on working while a window is open.
+        if (key == KeyCode.JoystickButton0)
+        {
+            return PauseManager.IsPaused;
+        }
+
         if (key < KeyCode.Mouse0 || key > KeyCode.Mouse6)
         {
             return false;

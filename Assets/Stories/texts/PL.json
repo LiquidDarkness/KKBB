@@ -555,5 +555,445 @@
 		   "key": "The cat the tutorial is taught with. Unhurried, and forgiving to play.",
 		   "value": "Kot od samouczka. Bez pośpiechu i wyrozumiały w prowadzeniu."
 		 }
+		 ,
+		 {
+		   "key": "SFX",
+		   "value": "SFX"
+		 }
+		 ,
+		 {
+		   "key": "Easy",
+		   "value": "Łatwy"
+		 }
+		 ,
+		 {
+		   "key": "Hard",
+		   "value": "Trudny"
+		 }
+		 ,
+		 {
+		   "key": "Audio",
+		   "value": "Dźwięk"
+		 }
+		 ,
+		 {
+		   "key": "METAL",
+		   "value": "METAL"
+		 }
+		 ,
+		 {
+		   "key": "Mouse",
+		   "value": "Mysz"
+		 }
+		 ,
+		 {
+		   "key": "Reset",
+		   "value": "Reset"
+		 }
+		 ,
+		 {
+		   "key": "SCORE",
+		   "value": "WYNIK"
+		 }
+		 ,
+		 {
+		   "key": "Video",
+		   "value": "Obraz"
+		 }
+		 ,
+		 {
+		   "key": "Master",
+		   "value": "Główna"
+		 }
+		 ,
+		 {
+		   "key": "Medium",
+		   "value": "Średni"
+		 }
+		 ,
+		 {
+		   "key": "Return",
+		   "value": "Wróć"
+		 }
+		 ,
+		 {
+		   "key": "Screen",
+		   "value": "Ekran"
+		 }
+		 ,
+		 {
+		   "key": "Credits",
+		   "value": "Twórcy"
+		 }
+		 ,
+		 {
+		   "key": "Proceed",
+		   "value": "Dalej"
+		 }
+		 ,
+		 {
+		   "key": "Gameplay",
+		   "value": "Rozgrywka"
+		 }
+		 ,
+		 {
+		   "key": "Keyboard",
+		   "value": "Klawiatura"
+		 }
+		 ,
+		 {
+		   "key": "Last used",
+		   "value": "Ostatnio używane"
+		 }
+		 ,
+		 {
+		   "key": "Game paused",
+		   "value": "Gra wstrzymana"
+		 }
+		 ,
+		 {
+		   "key": "Simba\nBimba",
+		   "value": "Simba\nBimba"
+		 }
+		 ,
+		 {
+		   "key": "Ziggys\nMunda",
+		   "value": "Ziggys\nMunda"
+		 }
+		 ,
+		 {
+		   "key": "Accessibility",
+		   "value": "Ułatwienia"
+		 }
+		 ,
+		 {
+		   "key": "Tutorial\nKitty",
+		   "value": "Samouczek\nKitty"
+		 }
+		 ,
+		 {
+		   "key": "Loading game...",
+		   "value": "Wczytywanie gry..."
+		 }
+		 ,
+		 {
+		   "key": "RETURN TO MAIN MENU",
+		   "value": "POWRÓT DO MENU GŁÓWNEGO"
+		 }
+		 ,
+		 {
+		   "key": "Unavailable in demo",
+		   "value": "Niedostępne w demie"
+		 }
+		 ,
+		 {
+		   "key": "Game Over.\nWhat now?",
+		   "value": "Koniec gry.\nI co teraz?"
+		 }
+		 ,
+		 {
+		   "key": "BUY YOURSELF SOMETHING",
+		   "value": "KUP SOBIE COŚ"
+		 }
+		 ,
+		 {
+		   "key": "Press {0} to open options",
+		   "value": "Wciśnij {0}, żeby otworzyć opcje"
+		 }
+		 ,
+		 {
+		   "key": "Press {0} or {1} to resume",
+		   "value": "Wciśnij {0} lub {1}, żeby wrócić do gry"
+		 }
+		 ,
+		 {
+		   "key": "Press {0} to resume",
+		   "value": "Wciśnij {0}, żeby wrócić do gry"
+		 }
+		 ,
+		 {
+		   "key": "Learn how to play the game here!",
+		   "value": "Tutaj nauczysz się grać!"
+		 }
+		 ,
+		 {
+		   "key": "Are you sure you want to leave the game?",
+		   "value": "Na pewno chcesz wyjść z gry?"
+		 }
+		 ,
+		 {
+		   "key": "Thanks for playing Kitty Kitty Bounce Bounce!",
+		   "value": "Dzięki za grę w Kitty Kitty Bounce Bounce!"
+		 }
+		 ,
+		 {
+		   "key": "Music:\nPlacek z Cukinii\nKacper \"Stridmon\" Garbacz\nZapslat.com\n\nSFX:\nFreesound.org",
+		   "value": "Muzyka:\nPlacek z Cukinii\nKacper \"Stridmon\" Garbacz\nZapslat.com\n\nDźwięki:\nFreesound.org"
+		 }
+		 ,
+		 {
+		   "key": "The OG Kitty who inspired the Kitty Kitty series and the very Liquid Darkness existance.",
+		   "value": "Ten pierwszy Kitty, od którego wzięła się cała seria Kitty Kitty i samo istnienie Liquid Darkness."
+		 }
+		 ,
+		 {
+		   "key": "A free spirit who bound their life with their human. Quick on her feet, nimble and flexy.",
+		   "value": "Wolny duch, który związał swoje życie z człowiekiem. Szybka na łapach, zwinna i gibka."
+		 }
+		 ,
+		 {
+		   "key": "Big boy fluff, nice and soft, but not very bright. It's important to look after him closely.",
+		   "value": "Wielki kłąb futra, miękki i miły, ale niezbyt bystry. Trzeba mieć go na oku."
+		 }
+		 ,
+		 {
+		   "key": "Starting a new game resets any progress you've made so far. Are you sure you want to proceed?",
+		   "value": "Nowa gra kasuje cały dotychczasowy postęp. Na pewno chcesz to zrobić?"
+		 }
+		 ,
+		 {
+		   "key": "- available in the full version after finishing any scenario on 'Hard',\n- it really is hard-hard",
+		   "value": "- dostępny w pełnej wersji po ukończeniu dowolnego scenariusza na 'Trudnym',\n- naprawdę jest trudno-trudno"
+		 }
+		 ,
+		 {
+		   "key": "- best for the first-time play,\n- slower game speed,\n- more desireable drops\n- drops very few achievements",
+		   "value": "- najlepszy na pierwsze podejście,\n- wolniejsze tempo gry,\n- częstsze przydatne bonusy\n- prawie nie daje osiągnięć"
+		 }
+		 ,
+		 {
+		   "key": "Two fluffy siblings on an adventure of their lives! They can only ever be seen apart is when it's litter tray time.",
+		   "value": "Dwoje puchatego rodzeństwa na przygodzie życia! Rozdzielają się tylko wtedy, gdy przychodzi pora na kuwetę."
+		 }
+		 ,
+		 {
+		   "key": "- regular game speed\n- balanced drop chance\n- unlocks higher level of difficulty for all scenarios if you finish one on it",
+		   "value": "- normalne tempo gry\n- wyważona szansa na bonusy\n- ukończenie dowolnego scenariusza odblokowuje wyższy poziom trudności we wszystkich"
+		 }
+		 ,
+		 {
+		   "key": "- unlockable once you finish any scenario on \"Medium\" difficulty\n- quite a challange, probably not the best for your first playthrough",
+		   "value": "- odblokowywany po ukończeniu dowolnego scenariusza na \"Średnim\"\n- spore wyzwanie, raczej nie na pierwsze przejście"
+		 }
+		 ,
+		 {
+		   "key": "press a key",
+		   "value": "wciśnij klawisz"
+		 }
+		 ,
+		 {
+		   "key": "Left mouse",
+		   "value": "Lewy przycisk myszy"
+		 }
+		 ,
+		 {
+		   "key": "Right mouse",
+		   "value": "Prawy przycisk myszy"
+		 }
+		 ,
+		 {
+		   "key": "Middle mouse",
+		   "value": "Środkowy przycisk myszy"
+		 }
+		 ,
+		 {
+		   "key": "Left Arrow",
+		   "value": "Strzałka w lewo"
+		 }
+		 ,
+		 {
+		   "key": "Right Arrow",
+		   "value": "Strzałka w prawo"
+		 }
+		 ,
+		 {
+		   "key": "Up Arrow",
+		   "value": "Strzałka w górę"
+		 }
+		 ,
+		 {
+		   "key": "Down Arrow",
+		   "value": "Strzałka w dół"
+		 }
+		 ,
+		 {
+		   "key": "Space",
+		   "value": "Spacja"
+		 }
+		 ,
+		 {
+		   "key": "Enter",
+		   "value": "Enter"
+		 }
+		 ,
+		 {
+		   "key": "Escape",
+		   "value": "Esc"
+		 }
+		 ,
+		 {
+		   "key": "Tab",
+		   "value": "Tab"
+		 }
+		 ,
+		 {
+		   "key": "Backspace",
+		   "value": "Backspace"
+		 }
+		 ,
+		 {
+		   "key": "Delete",
+		   "value": "Delete"
+		 }
+		 ,
+		 {
+		   "key": "Insert",
+		   "value": "Insert"
+		 }
+		 ,
+		 {
+		   "key": "Home",
+		   "value": "Home"
+		 }
+		 ,
+		 {
+		   "key": "End",
+		   "value": "End"
+		 }
+		 ,
+		 {
+		   "key": "Page Up",
+		   "value": "Page Up"
+		 }
+		 ,
+		 {
+		   "key": "Page Down",
+		   "value": "Page Down"
+		 }
+		 ,
+		 {
+		   "key": "Caps Lock",
+		   "value": "Caps Lock"
+		 }
+		 ,
+		 {
+		   "key": "Left Shift",
+		   "value": "Lewy Shift"
+		 }
+		 ,
+		 {
+		   "key": "Right Shift",
+		   "value": "Prawy Shift"
+		 }
+		 ,
+		 {
+		   "key": "Left Control",
+		   "value": "Lewy Ctrl"
+		 }
+		 ,
+		 {
+		   "key": "Right Control",
+		   "value": "Prawy Ctrl"
+		 }
+		 ,
+		 {
+		   "key": "Left Alt",
+		   "value": "Lewy Alt"
+		 }
+		 ,
+		 {
+		   "key": "Right Alt",
+		   "value": "Prawy Alt"
+		 }
+		 ,
+		 {
+		   "key": "Left Windows",
+		   "value": "Lewy Windows"
+		 }
+		 ,
+		 {
+		   "key": "Right Windows",
+		   "value": "Prawy Windows"
+		 }
+		 ,
+		 {
+		   "key": "Numpad 0",
+		   "value": "Num 0"
+		 }
+		 ,
+		 {
+		   "key": "Numpad 1",
+		   "value": "Num 1"
+		 }
+		 ,
+		 {
+		   "key": "Numpad 2",
+		   "value": "Num 2"
+		 }
+		 ,
+		 {
+		   "key": "Numpad 3",
+		   "value": "Num 3"
+		 }
+		 ,
+		 {
+		   "key": "Numpad 4",
+		   "value": "Num 4"
+		 }
+		 ,
+		 {
+		   "key": "Numpad 5",
+		   "value": "Num 5"
+		 }
+		 ,
+		 {
+		   "key": "Numpad 6",
+		   "value": "Num 6"
+		 }
+		 ,
+		 {
+		   "key": "Numpad 7",
+		   "value": "Num 7"
+		 }
+		 ,
+		 {
+		   "key": "Numpad 8",
+		   "value": "Num 8"
+		 }
+		 ,
+		 {
+		   "key": "Numpad 9",
+		   "value": "Num 9"
+		 }
+		 ,
+		 {
+		   "key": "Numpad Enter",
+		   "value": "Num Enter"
+		 }
+		 ,
+		 {
+		   "key": "Numpad Plus",
+		   "value": "Num +"
+		 }
+		 ,
+		 {
+		   "key": "Numpad Minus",
+		   "value": "Num -"
+		 }
+		 ,
+		 {
+		   "key": "Numpad Multiply",
+		   "value": "Num *"
+		 }
+		 ,
+		 {
+		   "key": "Numpad Divide",
+		   "value": "Num /"
+		 }
+		 ,
+		 {
+		   "key": "Numpad Period",
+		   "value": "Num ."
+		 }
 	]
 }

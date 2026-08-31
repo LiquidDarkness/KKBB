@@ -198,7 +198,7 @@
 		 ,
 		 {
 		   "key": "SimbaBimba0",
-		   "value": "Itty bitty ginger Kitty found himself in a pickle. He could feel he was being carried around but the cosy darkness surrounding him didn’t allow looking around. When the Kitty container was put down on the floor and the cosy factor was removed from over Kitty’s head, the air vents and portviews became visible, letting blinding light in. Once the gates opened, Kitty ran out into the big glare, finally escaping his cushiony jail and promptly beginning the exploration.\nThis new environment was rather exciting, full of new shapes, colours, and scents. Once out in the wild and with his sight returned, Kitty turned around to face his kitty-napper. He found two people staring back at him, lovingly.\nHe stepped closer to them and suddenly felt his fur stand up on his back. An adversary was near. Kitty looked around but saw nothing - until he looked behind himself. There it was - his temporary prison, ready to swallow him once more, who knows for how long this time!\nKitty had to make sure it never had another chance."
+		   "value": "Itty bitty ginger Kitty found himself in a pickle. He could feel he was being carried around but the cosy darkness surrounding him didn’t allow looking around. When the Kitty container was put down on the floor and the cosy factor was removed from over Kitty’s head, the air vents became visible, letting blinding light in. Once the gates opened, Kitty ran out into the big glare, finally escaping his cushiony jail and promptly beginning the exploration.\nThis new environment was rather exciting, full of new shapes, colours, and scents. Once out in the wild and with his sight returned, Kitty turned around to face his kitty-napper. He found two people staring back at him, lovingly.\nHe stepped closer to them and suddenly felt his fur stand up on his back. An adversary was near. Kitty looked around but saw nothing - until he looked behind himself. There it was - his temporary prison, ready to swallow him once more, who knows for how long this time!\nKitty had to make sure it never had another chance."
 		 }
 		 ,
 		 {
@@ -554,6 +554,446 @@
 		 {
 		   "key": "The cat the tutorial is taught with. Unhurried, and forgiving to play.",
 		   "value": "The cat the tutorial is taught with. Unhurried, and forgiving to play."
+		 }
+		 ,
+		 {
+		   "key": "SFX",
+		   "value": "SFX"
+		 }
+		 ,
+		 {
+		   "key": "Easy",
+		   "value": "Easy"
+		 }
+		 ,
+		 {
+		   "key": "Hard",
+		   "value": "Hard"
+		 }
+		 ,
+		 {
+		   "key": "Audio",
+		   "value": "Audio"
+		 }
+		 ,
+		 {
+		   "key": "METAL",
+		   "value": "METAL"
+		 }
+		 ,
+		 {
+		   "key": "Mouse",
+		   "value": "Mouse"
+		 }
+		 ,
+		 {
+		   "key": "Reset",
+		   "value": "Reset"
+		 }
+		 ,
+		 {
+		   "key": "SCORE",
+		   "value": "SCORE"
+		 }
+		 ,
+		 {
+		   "key": "Video",
+		   "value": "Video"
+		 }
+		 ,
+		 {
+		   "key": "Master",
+		   "value": "Master"
+		 }
+		 ,
+		 {
+		   "key": "Medium",
+		   "value": "Medium"
+		 }
+		 ,
+		 {
+		   "key": "Return",
+		   "value": "Return"
+		 }
+		 ,
+		 {
+		   "key": "Screen",
+		   "value": "Screen"
+		 }
+		 ,
+		 {
+		   "key": "Credits",
+		   "value": "Credits"
+		 }
+		 ,
+		 {
+		   "key": "Proceed",
+		   "value": "Proceed"
+		 }
+		 ,
+		 {
+		   "key": "Gameplay",
+		   "value": "Gameplay"
+		 }
+		 ,
+		 {
+		   "key": "Keyboard",
+		   "value": "Keyboard"
+		 }
+		 ,
+		 {
+		   "key": "Last used",
+		   "value": "Last used"
+		 }
+		 ,
+		 {
+		   "key": "Game paused",
+		   "value": "Game paused"
+		 }
+		 ,
+		 {
+		   "key": "Simba\nBimba",
+		   "value": "Simba\nBimba"
+		 }
+		 ,
+		 {
+		   "key": "Ziggys\nMunda",
+		   "value": "Ziggys\nMunda"
+		 }
+		 ,
+		 {
+		   "key": "Accessibility",
+		   "value": "Accessibility"
+		 }
+		 ,
+		 {
+		   "key": "Tutorial\nKitty",
+		   "value": "Tutorial\nKitty"
+		 }
+		 ,
+		 {
+		   "key": "Loading game...",
+		   "value": "Loading game..."
+		 }
+		 ,
+		 {
+		   "key": "RETURN TO MAIN MENU",
+		   "value": "RETURN TO MAIN MENU"
+		 }
+		 ,
+		 {
+		   "key": "Unavailable in demo",
+		   "value": "Unavailable in demo"
+		 }
+		 ,
+		 {
+		   "key": "Game Over.\nWhat now?",
+		   "value": "Game Over.\nWhat now?"
+		 }
+		 ,
+		 {
+		   "key": "BUY YOURSELF SOMETHING",
+		   "value": "BUY YOURSELF SOMETHING"
+		 }
+		 ,
+		 {
+		   "key": "Press {0} to open options",
+		   "value": "Press {0} to open options"
+		 }
+		 ,
+		 {
+		   "key": "Press {0} or {1} to resume",
+		   "value": "Press {0} or {1} to resume"
+		 }
+		 ,
+		 {
+		   "key": "Press {0} to resume",
+		   "value": "Press {0} to resume"
+		 }
+		 ,
+		 {
+		   "key": "Learn how to play the game here!",
+		   "value": "Learn how to play the game here!"
+		 }
+		 ,
+		 {
+		   "key": "Are you sure you want to leave the game?",
+		   "value": "Are you sure you want to leave the game?"
+		 }
+		 ,
+		 {
+		   "key": "Thanks for playing Kitty Kitty Bounce Bounce!",
+		   "value": "Thanks for playing Kitty Kitty Bounce Bounce!"
+		 }
+		 ,
+		 {
+		   "key": "Music:\nPlacek z Cukinii\nKacper \"Stridmon\" Garbacz\nZapslat.com\n\nSFX:\nFreesound.org",
+		   "value": "Music:\nPlacek z Cukinii\nKacper \"Stridmon\" Garbacz\nZapslat.com\n\nSFX:\nFreesound.org"
+		 }
+		 ,
+		 {
+		   "key": "The OG Kitty who inspired the Kitty Kitty series and the very Liquid Darkness existance.",
+		   "value": "The OG Kitty who inspired the Kitty Kitty series and the very Liquid Darkness existance."
+		 }
+		 ,
+		 {
+		   "key": "A free spirit who bound their life with their human. Quick on her feet, nimble and flexy.",
+		   "value": "A free spirit who bound their life with their human. Quick on her feet, nimble and flexy."
+		 }
+		 ,
+		 {
+		   "key": "Big boy fluff, nice and soft, but not very bright. It's important to look after him closely.",
+		   "value": "Big boy fluff, nice and soft, but not very bright. It's important to look after him closely."
+		 }
+		 ,
+		 {
+		   "key": "Starting a new game resets any progress you've made so far. Are you sure you want to proceed?",
+		   "value": "Starting a new game resets any progress you've made so far. Are you sure you want to proceed?"
+		 }
+		 ,
+		 {
+		   "key": "- available in the full version after finishing any scenario on 'Hard',\n- it really is hard-hard",
+		   "value": "- available in the full version after finishing any scenario on 'Hard',\n- it really is hard-hard"
+		 }
+		 ,
+		 {
+		   "key": "- best for the first-time play,\n- slower game speed,\n- more desireable drops\n- drops very few achievements",
+		   "value": "- best for the first-time play,\n- slower game speed,\n- more desireable drops\n- drops very few achievements"
+		 }
+		 ,
+		 {
+		   "key": "Two fluffy siblings on an adventure of their lives! They can only ever be seen apart is when it's litter tray time.",
+		   "value": "Two fluffy siblings on an adventure of their lives! They can only ever be seen apart is when it's litter tray time."
+		 }
+		 ,
+		 {
+		   "key": "- regular game speed\n- balanced drop chance\n- unlocks higher level of difficulty for all scenarios if you finish one on it",
+		   "value": "- regular game speed\n- balanced drop chance\n- unlocks higher level of difficulty for all scenarios if you finish one on it"
+		 }
+		 ,
+		 {
+		   "key": "- unlockable once you finish any scenario on \"Medium\" difficulty\n- quite a challange, probably not the best for your first playthrough",
+		   "value": "- unlockable once you finish any scenario on \"Medium\" difficulty\n- quite a challange, probably not the best for your first playthrough"
+		 }
+		 ,
+		 {
+		   "key": "press a key",
+		   "value": "press a key"
+		 }
+		 ,
+		 {
+		   "key": "Left mouse",
+		   "value": "Left mouse"
+		 }
+		 ,
+		 {
+		   "key": "Right mouse",
+		   "value": "Right mouse"
+		 }
+		 ,
+		 {
+		   "key": "Middle mouse",
+		   "value": "Middle mouse"
+		 }
+		 ,
+		 {
+		   "key": "Left Arrow",
+		   "value": "Left Arrow"
+		 }
+		 ,
+		 {
+		   "key": "Right Arrow",
+		   "value": "Right Arrow"
+		 }
+		 ,
+		 {
+		   "key": "Up Arrow",
+		   "value": "Up Arrow"
+		 }
+		 ,
+		 {
+		   "key": "Down Arrow",
+		   "value": "Down Arrow"
+		 }
+		 ,
+		 {
+		   "key": "Space",
+		   "value": "Space"
+		 }
+		 ,
+		 {
+		   "key": "Enter",
+		   "value": "Enter"
+		 }
+		 ,
+		 {
+		   "key": "Escape",
+		   "value": "Escape"
+		 }
+		 ,
+		 {
+		   "key": "Tab",
+		   "value": "Tab"
+		 }
+		 ,
+		 {
+		   "key": "Backspace",
+		   "value": "Backspace"
+		 }
+		 ,
+		 {
+		   "key": "Delete",
+		   "value": "Delete"
+		 }
+		 ,
+		 {
+		   "key": "Insert",
+		   "value": "Insert"
+		 }
+		 ,
+		 {
+		   "key": "Home",
+		   "value": "Home"
+		 }
+		 ,
+		 {
+		   "key": "End",
+		   "value": "End"
+		 }
+		 ,
+		 {
+		   "key": "Page Up",
+		   "value": "Page Up"
+		 }
+		 ,
+		 {
+		   "key": "Page Down",
+		   "value": "Page Down"
+		 }
+		 ,
+		 {
+		   "key": "Caps Lock",
+		   "value": "Caps Lock"
+		 }
+		 ,
+		 {
+		   "key": "Left Shift",
+		   "value": "Left Shift"
+		 }
+		 ,
+		 {
+		   "key": "Right Shift",
+		   "value": "Right Shift"
+		 }
+		 ,
+		 {
+		   "key": "Left Control",
+		   "value": "Left Control"
+		 }
+		 ,
+		 {
+		   "key": "Right Control",
+		   "value": "Right Control"
+		 }
+		 ,
+		 {
+		   "key": "Left Alt",
+		   "value": "Left Alt"
+		 }
+		 ,
+		 {
+		   "key": "Right Alt",
+		   "value": "Right Alt"
+		 }
+		 ,
+		 {
+		   "key": "Left Windows",
+		   "value": "Left Windows"
+		 }
+		 ,
+		 {
+		   "key": "Right Windows",
+		   "value": "Right Windows"
+		 }
+		 ,
+		 {
+		   "key": "Numpad 0",
+		   "value": "Numpad 0"
+		 }
+		 ,
+		 {
+		   "key": "Numpad 1",
+		   "value": "Numpad 1"
+		 }
+		 ,
+		 {
+		   "key": "Numpad 2",
+		   "value": "Numpad 2"
+		 }
+		 ,
+		 {
+		   "key": "Numpad 3",
+		   "value": "Numpad 3"
+		 }
+		 ,
+		 {
+		   "key": "Numpad 4",
+		   "value": "Numpad 4"
+		 }
+		 ,
+		 {
+		   "key": "Numpad 5",
+		   "value": "Numpad 5"
+		 }
+		 ,
+		 {
+		   "key": "Numpad 6",
+		   "value": "Numpad 6"
+		 }
+		 ,
+		 {
+		   "key": "Numpad 7",
+		   "value": "Numpad 7"
+		 }
+		 ,
+		 {
+		   "key": "Numpad 8",
+		   "value": "Numpad 8"
+		 }
+		 ,
+		 {
+		   "key": "Numpad 9",
+		   "value": "Numpad 9"
+		 }
+		 ,
+		 {
+		   "key": "Numpad Enter",
+		   "value": "Numpad Enter"
+		 }
+		 ,
+		 {
+		   "key": "Numpad Plus",
+		   "value": "Numpad Plus"
+		 }
+		 ,
+		 {
+		   "key": "Numpad Minus",
+		   "value": "Numpad Minus"
+		 }
+		 ,
+		 {
+		   "key": "Numpad Multiply",
+		   "value": "Numpad Multiply"
+		 }
+		 ,
+		 {
+		   "key": "Numpad Divide",
+		   "value": "Numpad Divide"
+		 }
+		 ,
+		 {
+		   "key": "Numpad Period",
+		   "value": "Numpad Period"
 		 }
 	]
 }

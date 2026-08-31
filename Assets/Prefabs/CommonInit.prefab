@@ -64,6 +64,7 @@ MonoBehaviour:
   parameter: MusicVolume
   mixerValue: -6.0206003
   mixerVolume: {fileID: 11400000, guid: 94a8f033223e0174bbe58beb92ce84f7, type: 2}
+  defaultVolume: 1
 --- !u!114 &1625150766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,6 +81,7 @@ MonoBehaviour:
   parameter: SFXVolume
   mixerValue: 0
   mixerVolume: {fileID: 11400000, guid: 0f2ba36e8e509fd41ac84294f254ba83, type: 2}
+  defaultVolume: 1
 --- !u!114 &1625150765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,6 +98,7 @@ MonoBehaviour:
   parameter: MasterVolume
   mixerValue: 0
   mixerVolume: {fileID: 11400000, guid: 0edde094540c0ff49a97f64c5b303111, type: 2}
+  defaultVolume: 1
 --- !u!1 &1386160224048462656
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,6 +187,7 @@ GameObject:
   - component: {fileID: 5949928727422356297}
   - component: {fileID: 194929707238006083}
   - component: {fileID: 8458164971999023452}
+  - component: {fileID: 3949564216045846364}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -308,6 +312,34 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3949564216045846364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5264973522193155971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45fe760becc1e17438d400abd9ef5eae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: Loading game...
+  onTranslationSet:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8458164971999023452}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5889970325341804519
 GameObject:
   m_ObjectHideFlags: 0
