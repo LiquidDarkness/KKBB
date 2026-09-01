@@ -64,6 +64,14 @@ public static class Controls
     // same reading, so arrows a player had rebound away would go on steering.
     private const string GamepadAxis = "Gamepad Horizontal";
 
+    // How far a stick has to leave the middle before it counts. It is done here rather than in the
+    // axis's own dead zone so that it can be seen and changed in one place - and so that the
+    // reading can be squeezed back out to the full range past it. The axis's version only snaps
+    // small readings to zero, which means crossing the threshold steps straight to a fifth of full
+    // speed instead of starting from a standstill. Nobody feels that through a phone screen; a
+    // thumb on a real stick does.
+    private const float StickDeadZone = 0.19f;
+
     private static Dictionary<string, Binding> bindings;
     private static bool warnedAboutSetting;
     private static bool warnedAboutAxis;
@@ -115,9 +123,11 @@ public static class Controls
             return 0f;
         }
 
+        float reading;
+
         try
         {
-            return Input.GetAxis(GamepadAxis);
+            reading = Input.GetAxis(GamepadAxis);
         }
         catch (System.ArgumentException)
         {
@@ -125,6 +135,15 @@ public static class Controls
             Debug.LogWarning("Controls: no \"" + GamepadAxis + "\" axis in the Input Manager - a gamepad stick will not steer.");
             return 0f;
         }
+
+        float distance = Mathf.Abs(reading);
+
+        if (distance <= StickDeadZone)
+        {
+            return 0f;
+        }
+
+        return Mathf.Sign(reading) * Mathf.Min(1f, (distance - StickDeadZone) / (1f - StickDeadZone));
     }
 
     private static KeyCode GamepadButton(string action)
