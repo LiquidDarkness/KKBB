@@ -995,5 +995,15 @@
 		   "key": "Numpad Period",
 		   "value": "Num ."
 		 }
+		 ,
+		 {
+		   "key": "Dim the drop borders",
+		   "value": "Przygaś ramki dropów"
+		 }
+		 ,
+		 {
+		   "key": "Screen flash on losing a life",
+		   "value": "Błysk ekranu przy utracie życia"
+		 }
 	]
 }

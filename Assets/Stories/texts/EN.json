@@ -995,5 +995,15 @@
 		   "key": "Numpad Period",
 		   "value": "Numpad Period"
 		 }
+		 ,
+		 {
+		   "key": "Dim the drop borders",
+		   "value": "Dim the drop borders"
+		 }
+		 ,
+		 {
+		   "key": "Screen flash on losing a life",
+		   "value": "Screen flash on losing a life"
+		 }
 	]
 }
