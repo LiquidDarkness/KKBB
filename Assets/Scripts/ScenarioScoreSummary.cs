@@ -87,6 +87,9 @@ public class ScenarioScoreSummary : MonoBehaviour
         // top of it. SummaryBoinkController clears this from the scene instead, before any beat is
         // shown. Leaving for the menu is safe to catch here, there being nothing left to undo.
         SceneLoader.OnMenuLoaded += Hide;
+        // Any scene change at all, not only the way back to the menu. An endless run ends with this
+        // window over the game-over screen, and leaving from there by any road left it standing.
+        SceneLoader.OnSceneChanged += HandleSceneChanged;
         TranslationJSONDeserializer.OnTransaltionUpdated += Redraw;
         Hide();
     }
@@ -95,6 +98,7 @@ public class ScenarioScoreSummary : MonoBehaviour
     {
         StoryManager.OnScenarioFinished -= HandleScenarioFinished;
         SceneLoader.OnMenuLoaded -= Hide;
+        SceneLoader.OnSceneChanged -= HandleSceneChanged;
         TranslationJSONDeserializer.OnTransaltionUpdated -= Redraw;
     }
 
@@ -292,6 +296,12 @@ public class ScenarioScoreSummary : MonoBehaviour
     // Back to how a scenario starts: no window, nothing written, no tally standing. Called from the
     // scene as it comes up, so a summary cannot be left over from the run before.
     public void Forget()
+    {
+        Hide();
+    }
+
+    // Whatever scene we are on the way to, this window belongs to the one being left.
+    private void HandleSceneChanged(string _)
     {
         Hide();
     }
