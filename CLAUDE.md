@@ -61,7 +61,14 @@ components register themselves into. `GameEnding` reaching the story manager is 
 - **Translations.** Every string a player reads goes through a `TranslationMediator` (key +
   `onTranslationSet` -> `TMP_Text.set_text`) with entries in **both** `Assets/Stories/texts/EN.json`
   and `PL.json`. The key is the English text. This includes labels sitting in a scene, like the
-  boinks.
+  boinks. Two things the component cannot reach have their own way in: a dropdown keeps its options
+  as strings on itself rather than in labels, so `DropdownOptionTranslator` looks the whole list up
+  and refreshes the caption; and text whose key is not known until it is on screen - the face of a
+  key binding is whatever the player pressed last - asks `TranslationLookup.Get`, which reads the
+  same dictionary and hands back the key itself when there is no entry. That fallback is why a bare
+  key name like "A" or "F5" needs no entry, while the words - "Space", "Left mouse", "Numpad 1" -
+  have one. Anything looking a string up itself has to redraw on
+  `TranslationJSONDeserializer.OnTransaltionUpdated`, the same event the mediator listens to.
 - **Windows over the game.** A window is a GameObject with `EscapeWindow` (Escape closes the topmost
   one) and `WindowKeyboardFocus` (selection lands on a control, so Enter/Space work without a
   mouse). Pausing is `PauseManager.Pause(name)` / `Unpause(name)` - **the lock name must be the
@@ -69,6 +76,20 @@ components register themselves into. `GameEnding` reaching the story manager is 
   nobody else claims. Windows in `WindowManager.windows` get all of this for free, but their
   `toggleKey` is read every frame through `Controls.Pressed`, which warns loudly about a key that is
   not on the list - so do not register a window with an empty toggle key.
+- **Controllers.** A gamepad plays the game without Steam Input and without a line of Steam code.
+  Menus were already covered by the Input Manager's own defaults - `Submit` carries joystick button
+  0, `Cancel` carries button 1, and `Horizontal`/`Vertical` each have a joystick entry beside the
+  keyboard one. Gameplay is `Controls`: the paddle takes the left stick through the **`Gamepad
+  Horizontal`** axis, which is joystick-only on purpose, because the Input Manager's own
+  `Horizontal` folds the arrow keys into the same reading and arrows a player had rebound away
+  would go on steering. The buttons are a fixed table in `Controls.GamepadButtons` - A launches, X
+  opens the shop, Back opens the options, Start pauses, in XInput numbering - checked by `Held` and
+  `Pressed` beside the two keys each action already had. A is also `Submit`, so it alone is
+  swallowed while the game is paused; the buttons that open and close windows have to keep working
+  while a window is up. **The rebinding screen is the keyboard's**: it ignores a joystick button
+  pressed while it is waiting, because a pad is remapped in Steam's configurator, which is where
+  someone holding one looks. A stick skips the wind-up ramp the keys need - it already says how
+  hard it is being pushed.
 - **Scoring.** Blocks pay by how hard they are to break (5 for one hit, 15 for the invisible
   three-hit ones, per block in `Block.pointsPerBlockDestroyed`); drops pay through `PointAdder`. A
   scenario counts from nothing at its opening beat and is added up when it ends:
@@ -76,6 +97,12 @@ components register themselves into. `GameEnding` reaching the story manager is 
   in `scenarioBestScores` as `Scenario|Difficulty=score` (`ScenarioRecords`), and shown by
   `ScenarioScoreSummary` - which lives on GameSession, while `SummaryBoinkController` in the scene
   puts the block that opens it on screen.
+- **Steam Input is not integrated**, and the game does not miss it: see Controllers above. What is
+  still owed is partner-site work nobody can do from here - opt the controller types into Steam
+  Input, build a default configuration in Big Picture and publish it, then record a touch
+  configuration for Remote Play on a phone. None of that is code. Full Steam Input - an in-game
+  actions file, action sets, `ISteamInput` polling and device-specific glyphs - is a separate
+  decision that has not been taken.
 - **Steam** is Facepunch.Steamworks (not Steamworks.NET), in `Assets/Facepunch.Steamworks`.
   `Achievements` writes every unlock to the save first and tells Steam second, so a demo player
   keeps what they earned when they first run the full game. `Leaderboards` holds one board per
@@ -154,6 +181,7 @@ switcher to be missing.
 
 ## Git
 
-Branch `dev`. Commit **`Assets/` only** - `ProjectSettings.asset` is tracked but stays out of
-commits, because its scripting defines get changed constantly for local tests and builds. Commit
-messages are English prose saying what changed and why it was wrong before.
+Branch `dev`. Commit **`Assets/` only, plus `ProjectSettings/InputManager.asset` when an axis
+changes** - it is the one file outside `Assets/` the game will not run without. `ProjectSettings.asset`
+is tracked but stays out of commits, because its scripting defines get changed constantly for local
+tests and builds. Commit messages are English prose saying what changed and why it was wrong before.
