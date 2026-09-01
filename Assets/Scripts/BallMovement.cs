@@ -430,9 +430,14 @@ public class BallMovement : MonoBehaviour
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.identity;
 
-        // Nie resetujemy velocity, jeśli kulka już leci
-        if (!hasBeenLaunched)
-            myRigidBody2D.velocity = Vector2.zero;
+        // Everything stops, whatever the cat was doing a moment ago. This used to leave the speed
+        // and the spin of a cat that was still flying, because the only caller was the level ending
+        // and there was nothing left to notice - and then the stuck-ball recall started calling it
+        // mid-rally, which is exactly the case it was written not to handle. What the player saw
+        // was the cat hanging over the paddle at whatever angle it happened to be turned to.
+        myRigidBody2D.velocity = Vector2.zero;
+        myRigidBody2D.angularVelocity = 0f;
+        myRigidBody2D.rotation = 0f;
 
         myRigidBody2D.constraints = RigidbodyConstraints2D.FreezeAll;
         lastMountPoint = mountPoint;
