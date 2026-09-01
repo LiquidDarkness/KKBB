@@ -160,6 +160,18 @@ public class StoryManager : MonoBehaviour, ICoreReferencer
 
     public void ProgressToLevel()
     {
+        // The farewell beat's level is a placeholder with nothing in it to play. Loading it
+        // drops the player into an arena that cannot be cleared and cannot be died out of -
+        // which is where a tutorial player ended up, with no way out but wiping their save. The
+        // block that leads here is meant to be hidden on this beat; whatever road got round
+        // that, this one is closed.
+        if (IsOnEndingBeat)
+        {
+            Debug.LogError($"[{nameof(StoryManager)}] Asked to play the farewell beat's placeholder level. Showing the ending instead.");
+            ShowEndingButton(true);
+            return;
+        }
+
         coreReferences.loadingScreen.FadeToBlack(() =>
         {
             //Dzia³a jak event Action, ale nie ma potrzeby subskrybowania siê i odsubrybowania,
