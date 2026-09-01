@@ -37,12 +37,16 @@ public class GameSpeedManager : MonoBehaviour
 
     private Coroutine routine;
 
+    [Tooltip("The scene an effect belongs to. Leaving it puts the speed back and takes the border away.")]
+    public string gameplaySceneName = "Gameplay";
+
     public void Awake()
     {
         DiffcultyManager.OnSettingsChanged += HandleDifficultySettingsChanged;
         PauseManager.OnPause += HandlePause;
         PauseManager.OnUnpause += HandleUnpause;
         Level.OnLevelCompleted += HandleLevelCompleted;
+        SceneLoader.OnSceneChanged += HandleSceneChanged;
         // A new beat can mean a new pace, which is what makes endless tighten as it goes. For a
         // written scenario this recomputes the same number it already held.
         StoryManager.OnBeatShown += HandleBeatShown;
@@ -54,6 +58,7 @@ public class GameSpeedManager : MonoBehaviour
         PauseManager.OnPause -= HandlePause;
         PauseManager.OnUnpause -= HandleUnpause;
         Level.OnLevelCompleted -= HandleLevelCompleted;
+        SceneLoader.OnSceneChanged -= HandleSceneChanged;
         StoryManager.OnBeatShown -= HandleBeatShown;
     }
 
@@ -63,6 +68,25 @@ public class GameSpeedManager : MonoBehaviour
     }
 
     private void HandleLevelCompleted()
+    {
+        EndEffect();
+    }
+
+    // This manager and the border it drives both live on GameSession, which outlives every scene
+    // load. Nothing used to end a running effect on the way out of gameplay, so a ramp caught in
+    // the last rally went on counting down over the main menu - where there was nothing left for it
+    // to speed up and no way to be rid of it.
+    private void HandleSceneChanged(string sceneName)
+    {
+        if (sceneName == gameplaySceneName)
+        {
+            return;
+        }
+
+        EndEffect();
+    }
+
+    private void EndEffect()
     {
         if (routine != null)
         {
