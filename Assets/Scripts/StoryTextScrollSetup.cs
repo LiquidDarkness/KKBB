@@ -32,6 +32,43 @@ public class StoryTextScrollSetup : MonoBehaviour
     private float manualScrollCooldown;
     private float autoScrollStartCountdown;
     private string lastText;
+    private bool atEnd;
+
+    // The one story text on screen, or none at all while no beat is up. Held rather than searched
+    // for, so that whoever asks the question below gets an answer without walking the scene.
+    private static StoryTextScrollSetup active;
+
+    // Whether the beat on screen has been read to its last line. The paddle waits on this, and so
+    // does the block that carries on. With no story text alive the answer is yes: nothing should
+    // ever be held still waiting on something that is not there.
+    public static bool TextRead => active == null || active.atEnd;
+
+    // Statics survive entering and leaving play mode in the editor, the way Controls and
+    // PauseManager clear theirs.
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    private static void ResetStatics()
+    {
+        active = null;
+    }
+
+    public void OnEnable()
+    {
+        active = this;
+
+        // A beat can be shown a second time - Continue from the main menu lands on the one last
+        // played - carrying the very same text, so watching the text alone would never notice it
+        // had come back and the player would be handed a beat already scrolled to its end.
+        lastText = null;
+        atEnd = false;
+    }
+
+    public void OnDisable()
+    {
+        if (active == this)
+        {
+            active = null;
+        }
+    }
 
     public void Awake()
     {
@@ -89,6 +126,9 @@ public class StoryTextScrollSetup : MonoBehaviour
     {
         if (scrollRect == null)
         {
+            // Nothing was ever built to scroll, so there is nothing left to read: whatever waits on
+            // this must not wait forever.
+            atEnd = true;
             return;
         }
 
@@ -147,6 +187,26 @@ public class StoryTextScrollSetup : MonoBehaviour
             scrollRect.verticalNormalizedPosition = Mathf.Clamp01(
                 scrollRect.verticalNormalizedPosition + delta * Time.unscaledDeltaTime);
         }
+
+        atEnd = IsAtEnd();
+    }
+
+    // Read to the end, or too short to have an end worth scrolling to. The second case matters as
+    // much as the first: most beats fit their box, and a player must not be held still in front of
+    // a text that was never going to move.
+    private bool IsAtEnd()
+    {
+        if (scrollRect.content == null || scrollRect.viewport == null)
+        {
+            return true;
+        }
+
+        if (scrollRect.content.rect.height <= scrollRect.viewport.rect.height + 1f)
+        {
+            return true;
+        }
+
+        return scrollRect.verticalNormalizedPosition <= 0.01f;
     }
 
     private void ScrollToTop()

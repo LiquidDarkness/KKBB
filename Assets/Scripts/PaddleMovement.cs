@@ -72,6 +72,14 @@ public class PaddleMovement : MonoBehaviour
             return;
         }
 
+        // A beat on screen holds the paddle still until it has been read to its last line. The
+        // paddle is how the block that carries on is reached, so letting it move sooner is letting
+        // the player leave a beat they have not seen - which is exactly what they did.
+        if (StoryManager.isStoryActive && !StoryTextScrollSetup.TextRead)
+        {
+            return;
+        }
+
         ReadInput();
         Move();
     }
