@@ -97,12 +97,14 @@ components register themselves into. `GameEnding` reaching the story manager is 
   in `scenarioBestScores` as `Scenario|Difficulty=score` (`ScenarioRecords`), and shown by
   `ScenarioScoreSummary` - which lives on GameSession, while `SummaryBoinkController` in the scene
   puts the block that opens it on screen.
-- **Steam Input is not integrated**, and the game does not miss it: see Controllers above. What is
-  still owed is partner-site work nobody can do from here - opt the controller types into Steam
-  Input, build a default configuration in Big Picture and publish it, then record a touch
-  configuration for Remote Play on a phone. None of that is code. Full Steam Input - an in-game
-  actions file, action sets, `ISteamInput` polling and device-specific glyphs - is a separate
-  decision that has not been taken.
+- **Steam Input is not integrated**, and the game does not miss it: see Controllers above. Every
+  controller type is opted into Steam Input on the partner site, and the game has been played
+  through the Steam Link app on a phone, which is the awkward case - it arrives as an emulated
+  XInput pad, the same road a real Xbox pad takes on Windows. What is still owed is partner-site
+  work nobody can do from here: a default configuration built in Big Picture and published, which
+  needs a pad in hand, and a touch configuration recorded for Remote Play. Neither is code. Full
+  Steam Input - an in-game actions file, action sets, `ISteamInput` polling and device-specific
+  glyphs - is a separate decision that has not been taken.
 - **Steam** is Facepunch.Steamworks (not Steamworks.NET), in `Assets/Facepunch.Steamworks`.
   `Achievements` writes every unlock to the save first and tells Steam second, so a demo player
   keeps what they earned when they first run the full game. `Leaderboards` holds one board per
