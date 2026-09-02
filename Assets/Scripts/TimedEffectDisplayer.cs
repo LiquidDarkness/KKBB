@@ -16,6 +16,9 @@ public class TimedEffectDisplayer : MonoBehaviour
     [Tooltip("Optional. How far the border has been turned down in the options: 0 leaves it as designed, 1 takes it off the screen altogether. Held as a reduction rather than as an intensity because a fresh install has nothing saved yet, and the zero PlayerPrefs answers with then has to mean \"as designed\" - the same reasoning behind backgroundDim and flameDim.")]
     public TypeDistinguisher dimSetting;
 
+    [Tooltip("Optional. With Reduce motion on the border and its countdown stay - they are what says how long the drop has left - but the sparks flying off them do not.")]
+    public TypeDistinguisher reduceMotion;
+
     // What the effect currently reads, kept so that turning the slider while a drop is running
     // redraws what is on screen instead of waiting for the next frame of the countdown.
     private bool effectShowing;
@@ -31,7 +34,14 @@ public class TimedEffectDisplayer : MonoBehaviour
         {
             dimSetting.OnValueChanged += Reapply;
         }
+
+        if (reduceMotion != null)
+        {
+            reduceMotion.OnValueChanged += Reapply;
+        }
     }
+
+    private bool MotionAllowed => reduceMotion == null || !reduceMotion.BoolValue;
 
     // 1 is the border as designed, 0 is no border at all, and everything between is the player
     // asking for less of it.
@@ -47,8 +57,12 @@ public class TimedEffectDisplayer : MonoBehaviour
 
         border.enabled = shown;
         timer.enabled = shown;
-        particleFedderDown.particleSystem.gameObject.SetActive(shown);
-        particleFedderUp.particleSystem.gameObject.SetActive(shown);
+
+        // The border says how long is left and stays whatever else is switched off. The sparks say
+        // nothing that the border does not, so Reduce motion is welcome to have them.
+        bool sparks = shown && MotionAllowed;
+        particleFedderDown.particleSystem.gameObject.SetActive(sparks);
+        particleFedderUp.particleSystem.gameObject.SetActive(sparks);
     }
 
     private void UpdateTimer(float timeLeft, bool isSpedUp)
@@ -59,6 +73,11 @@ public class TimedEffectDisplayer : MonoBehaviour
         Color colour = Faded(isSpedUp ? speedUpColor : speedDownColor);
         border.color = colour;
         timer.color = colour;
+
+        if (!MotionAllowed)
+        {
+            return;
+        }
 
         if (isSpedUp)
         {
@@ -99,6 +118,11 @@ public class TimedEffectDisplayer : MonoBehaviour
         if (dimSetting != null)
         {
             dimSetting.OnValueChanged -= Reapply;
+        }
+
+        if (reduceMotion != null)
+        {
+            reduceMotion.OnValueChanged -= Reapply;
         }
     }
 }

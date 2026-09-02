@@ -1109,6 +1109,7 @@ MonoBehaviour:
   particleFedderDown: {fileID: 3007742472820369409}
   particleFedderUp: {fileID: 2870624377563659907}
   dimSetting: {fileID: 11400000, guid: 0e7c769ee76e97543804669304a0ce51, type: 2}
+  reduceMotion: {fileID: 11400000, guid: 49061f32f25247547abeb37adcc51ff6, type: 2}
 --- !u!114 &8337841074404637579
 MonoBehaviour:
   m_ObjectHideFlags: 0
