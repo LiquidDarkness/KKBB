@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.IO;
 using UnityEngine;
 
@@ -5,6 +6,13 @@ public static class SaveManager
 {
     private const string SaveFileName = "save.json";
     private static string SaveFilePath => Path.Combine(Application.persistentDataPath, SaveFileName);
+
+    // Bumped whenever a save written by an older build has to be put right on the way in. Version 1
+    // is the first stamp there has ever been, so a file without one was written before settings had
+    // defaults - which is the whole reason this exists. Written as the first line and marked with a
+    // hash, so it can never be read as a setting: FromString expects three parts and would assert.
+    private const int SaveFormatVersion = 1;
+    private const string VersionPrefix = "#version ";
 
     public static bool HasLoaded { get; private set; } = false;
 
@@ -20,6 +28,8 @@ public static class SaveManager
 
         using (StreamWriter outputFile = new StreamWriter(SaveFilePath, false))
         {
+            outputFile.WriteLine(VersionPrefix + SaveFormatVersion.ToString(CultureInfo.InvariantCulture));
+
             foreach (TypeDistinguisher item in typeDistinguishers)
             {
                 outputFile.WriteLine(item.ToString());
@@ -38,9 +48,22 @@ public static class SaveManager
         {
             if (File.Exists(SaveFilePath))
             {
-                foreach (var item in File.ReadAllLines(SaveFilePath))
+                string[] lines = File.ReadAllLines(SaveFilePath);
+
+                foreach (var item in lines)
                 {
+                    // Anything marked with a hash is about the file rather than about a setting.
+                    if (item.StartsWith("#"))
+                    {
+                        continue;
+                    }
+
                     TypeDistinguisher.FromString(item);
+                }
+
+                if (VersionOf(lines) < SaveFormatVersion)
+                {
+                    Repair();
                 }
             }
             else
@@ -64,6 +87,55 @@ public static class SaveManager
 
         //PlayerPrefs.Save();
         //Save();
+    }
+
+    // What version wrote this file. No stamp means it was written before there were any, which is
+    // the state that needs putting right.
+    public static int VersionOf(string[] lines)
+    {
+        if (lines == null)
+        {
+            return 0;
+        }
+
+        foreach (string line in lines)
+        {
+            if (!line.StartsWith(VersionPrefix))
+            {
+                continue;
+            }
+
+            if (int.TryParse(line.Substring(VersionPrefix.Length).Trim(), NumberStyles.Integer,
+                    CultureInfo.InvariantCulture, out int version))
+            {
+                return version;
+            }
+        }
+
+        return 0;
+    }
+
+    // Run once, on the way in, for a save with no version stamp. See
+    // TypeDistinguisher.RepairIfStoredValueLooksUnwritten for what counts as needing repair and
+    // what is deliberately left alone.
+    private static void Repair()
+    {
+        var all = Resources.LoadAll<TypeDistinguisher>("TypeDistinguishers");
+        int repaired = 0;
+
+        foreach (var t in all)
+        {
+            if (t.RepairIfStoredValueLooksUnwritten())
+            {
+                repaired++;
+            }
+        }
+
+        Debug.Log($"[{nameof(SaveManager)}] Save written before settings had defaults: {repaired} of {all.Length} put back to what they were authored with.");
+
+        // Written out whatever the count, because the stamp itself has to land - otherwise every
+        // start from here on would go looking for the same thing again.
+        Save();
     }
 
     // Gives every setting that has a default and nothing saved the value it was authored with.

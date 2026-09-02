@@ -95,6 +95,77 @@ public class TypeDistinguisher : ScriptableObject
         return true;
     }
 
+    // The one-time repair for a save written before any setting had a default. Back then every
+    // setting the player had not deliberately touched was stored as the zero PlayerPrefs hands
+    // back for a key nobody wrote, and ApplyDefaultIfUnset cannot help with that: a stored zero is
+    // a stored value, so it is left alone for ever. A player who never opened the options was left
+    // with no sound at all, every animation off and no rescue for a wedged ball - and nothing short
+    // of wiping their progress would give any of it back. One turned up doing exactly that.
+    //
+    // Only a stored value that cannot be told apart from "never written" is replaced, and only
+    // where the default is something other than that same zero. Anything the player set to any
+    // other value is theirs and is left where it is. The cost is that a deliberate zero - a game
+    // someone muted on purpose - is read as an accident and given its default back. That is the one
+    // case there is no way to tell apart, and silence left in place by mistake is the worse of the
+    // two to ship.
+    //
+    // Returns true when it actually wrote something.
+    public bool RepairIfStoredValueLooksUnwritten()
+    {
+        if (string.IsNullOrWhiteSpace(defaultValue) || !HasStoredValue)
+        {
+            return false;
+        }
+
+        switch (prefType)
+        {
+            case PlayerPrefType.INT:
+                if (!int.TryParse(defaultValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out int intDefault)
+                    || intDefault == 0 || IntValue != 0)
+                {
+                    return false;
+                }
+
+                PlayerPrefs.SetInt(PrefsKey, intDefault);
+                break;
+
+            case PlayerPrefType.FLOAT:
+                if (!float.TryParse(defaultValue, NumberStyles.Float, CultureInfo.InvariantCulture, out float floatDefault)
+                    || floatDefault == 0f || FloatValue != 0f)
+                {
+                    return false;
+                }
+
+                PlayerPrefs.SetFloat(PrefsKey, floatDefault);
+                break;
+
+            case PlayerPrefType.BOOL:
+                // A default of false has nothing to repair towards: false is the zero.
+                if (!TryParseBool(defaultValue, out bool boolDefault) || !boolDefault || BoolValue)
+                {
+                    return false;
+                }
+
+                PlayerPrefs.SetInt(PrefsKey, 1);
+                break;
+
+            case PlayerPrefType.STRING:
+                if (defaultValue.Length == 0 || !string.IsNullOrEmpty(StringValue))
+                {
+                    return false;
+                }
+
+                PlayerPrefs.SetString(PrefsKey, defaultValue);
+                break;
+
+            default:
+                return false;
+        }
+
+        OnValueChanged?.Invoke();
+        return true;
+    }
+
     private static bool TryParseBool(string text, out bool value)
     {
         if (bool.TryParse(text, out value))
