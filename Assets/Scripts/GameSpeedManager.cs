@@ -179,7 +179,11 @@ public class GameSpeedManager : MonoBehaviour
             // on screen: the countdown, the speed and the border all wait for the unpause.
             if (!isPaused)
             {
-                elapsedTime += Time.deltaTime;
+                // Unscaled, because Time.timeScale is the very thing this effect is changing.
+                // Counting in scaled time made a drop run out faster the harder it sped the game
+                // up - ten seconds of speed-up lasted about six and a half - and slower when it
+                // slowed the game down. The countdown said seconds and did not tick in seconds.
+                elapsedTime += Time.unscaledDeltaTime;
                 effectCountDown = duration - elapsedTime;
                 ApplyTimeScale();
                 bool isGameSpedUp = gameSpeed > originalGameSpeed;
