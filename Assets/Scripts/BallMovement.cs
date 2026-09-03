@@ -89,10 +89,34 @@ public class BallMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        SitUpright();
         HoldSpeed();
         ClampFlightAngle();
         KeepInsideArena();
         TrackStall();
+    }
+
+    // A cat waiting on the paddle sits up straight, and goes on sitting up straight. Ordering this
+    // once inside LockBall was not enough: whatever physics does with a frozen body's pose between
+    // that call and the next step is not something this side can see, and twice now the answer has
+    // been a cat left leaning. So it is stated again every step for as long as she is waiting,
+    // which costs one comparison and settles the question without having to win a race.
+    private void SitUpright()
+    {
+        if (hasBeenLaunched)
+        {
+            return;
+        }
+
+        if (transform.localRotation != Quaternion.identity)
+        {
+            transform.localRotation = Quaternion.identity;
+        }
+
+        if (myRigidBody2D.angularVelocity != 0f)
+        {
+            myRigidBody2D.angularVelocity = 0f;
+        }
     }
 
     // The barriers alone cannot promise the ball stays in the arena. They are a tenth of a unit
@@ -426,23 +450,20 @@ public class BallMovement : MonoBehaviour
 
     public void LockBall(Transform mountPoint)
     {
+        // Everything stops before anything is moved. The body is frozen first so that nothing is
+        // still being simulated while the pose below is written - zeroing the rotation and then
+        // freezing left the two racing, and the spin the cat happened to be carrying could be put
+        // back on the transform after it had been cleared. That is the cat hanging over the paddle
+        // at an angle, which is what a player saw twice.
+        myRigidBody2D.velocity = Vector2.zero;
+        myRigidBody2D.angularVelocity = 0f;
+        myRigidBody2D.constraints = RigidbodyConstraints2D.FreezeAll;
+
         transform.SetParent(mountPoint);
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.identity;
-
-        // Everything stops, whatever the cat was doing a moment ago. This used to leave the speed
-        // and the spin of a cat that was still flying, because the only caller was the level ending
-        // and there was nothing left to notice - and then the stuck-ball recall started calling it
-        // mid-rally, which is exactly the case it was written not to handle. What the player saw
-        // was the cat hanging over the paddle at whatever angle it happened to be turned to.
-        myRigidBody2D.velocity = Vector2.zero;
-        myRigidBody2D.angularVelocity = 0f;
         myRigidBody2D.rotation = 0f;
-
-        myRigidBody2D.constraints = RigidbodyConstraints2D.FreezeAll;
         lastMountPoint = mountPoint;
-
-        // Tylko jeśli kulka nie była w ruchu
         hasBeenLaunched = false;
     }
 
