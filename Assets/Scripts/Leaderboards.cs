@@ -45,9 +45,11 @@ public static class Leaderboards
         { "Tutorial", null },
     };
 
+#if !NO_STEAM
     // Cached per board name: finding one is a round trip to Steam, and the same board is asked for
     // twice in a row every time - once to post, once to read the standings back.
     private static readonly Dictionary<string, Leaderboard> Found = new Dictionary<string, Leaderboard>();
+#endif
 
     public static bool IsAvailable
     {
@@ -91,6 +93,7 @@ public static class Leaderboards
         return scenarioId + "_" + difficultyId;
     }
 
+#if !NO_STEAM
     // Posts the score and hands back where the player stands, or null if there is nothing to show:
     // no Steam, no board, or an answer that never came. Steam keeps the better of the two scores,
     // which is what a record means here - a worse run does not cost the player their place.
@@ -163,4 +166,5 @@ public static class Leaderboards
 
         return board;
     }
+#endif
 }

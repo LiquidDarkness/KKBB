@@ -48,6 +48,7 @@ public class SteamInitializer : MonoBehaviour
 #endif
     }
 
+#if !NO_STEAM
     // Steam will not answer a question about achievements until it has sent the stats over, and it
     // only sends them when asked. Once they land, everything the save already knows about is handed
     // over - which is how a demo player's earnings turn up in the full game on its first run.
@@ -79,6 +80,7 @@ public class SteamInitializer : MonoBehaviour
 
         Achievements.PushEarned();
     }
+#endif
 
     // Steam talks back through callbacks, and it only gets to run them when it is asked to. Without
     // this the answers never arrive: stats come back empty, and an achievement unlocks in silence

@@ -190,6 +190,11 @@ public static class Achievements
             return;
         }
 
+#if !NO_STEAM
+        // IsSteamAvailable already answers no under NO_STEAM, so nothing below would run - but the
+        // type still has to disappear, not merely go unreached. Where both Facepunch assemblies end
+        // up referenced, which is every platform their Windows filters do not cover, naming a type
+        // they share is ambiguous and the build stops there.
         try
         {
             var achievement = new Steamworks.Data.Achievement(apiName);
@@ -209,6 +214,7 @@ public static class Achievements
             // down over - the player would lose a run to a missing line on a website.
             Debug.LogWarning($"[Achievements] could not unlock '{apiName}': {e.Message}");
         }
+#endif
     }
 
     private static bool IsOnThisAppId(string apiName)
