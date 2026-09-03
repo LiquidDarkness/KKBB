@@ -116,6 +116,15 @@ components register themselves into. `GameEnding` reaching the story manager is 
 | --- | --- |
 | `DEMO_BUILD` | Gates which scenarios are playable and which app id is reported. Clear it for the full build, or the full game ships as the demo. Also switches leaderboards off, the demo being a separate app id. |
 | `NO_STEAM` | Takes all of Steam out: no client started, no callbacks pumped, no achievement sent, no score posted. For copies uploaded anywhere other than Steam. Play, scoring, records and the save are untouched, and the native steam_api dll need not ship, since nothing loads it. |
+
+**Defines are per build target group, and `ProjectSettings.asset` is not committed** - so switching
+platform hands you an empty define list, and nothing warns you. A WebGL build wants
+`DEMO_BUILD;NO_STEAM`: without the first the full game goes out wearing the demo's name, and without
+the second the two Facepunch assemblies both come along - they exclude each other by Windows
+architecture, a filter WebGL matches none of, and every Steam type becomes ambiguous. That is the
+eight CS0433 errors. **A non-Steam build still starts from `SteamInit`**: the switch is the define,
+never a different starting scene, and `NonSteamInit` is empty - enabling it in the build settings
+boots the game into a blank screen.
 | `AUTOPLAY` | Debug autoplayer and the story shortcuts. Never ship with it. |
 
 ## Conventions and traps, all of them found the hard way

@@ -134,6 +134,16 @@ public class ScenarioScoreSummary : MonoBehaviour
         PostToSteam(last);
     }
 
+#if NO_STEAM
+    // Built for somewhere that is not Steam - see SteamInitializer for what that define is for.
+    // Skipping the call would not be enough: the Steam assemblies are not in such a build at all, so
+    // the signatures below name types that would not resolve, and they have to go with it. Nothing
+    // is lost but the ladder - the run is counted, saved and recorded on this machine before any of
+    // this would have run.
+    private void PostToSteam(Breakdown result)
+    {
+    }
+#else
     // Fire and forget on purpose: the run is already counted, saved and recorded on this machine, so
     // the ladder is a nicety that redraws the window if and when it answers.
     private async void PostToSteam(Breakdown result)
@@ -185,6 +195,7 @@ public class ScenarioScoreSummary : MonoBehaviour
 
         return text.ToString();
     }
+#endif
 
     // Called by the block through its CollisionExposer, and by a close button inside the window.
     [ContextMenu(nameof(ToggleWindow))]
@@ -229,6 +240,7 @@ public class ScenarioScoreSummary : MonoBehaviour
         PauseManager.Unpause(window.name);
     }
 
+#if !NO_STEAM
     // Steam answers with a name only when it has one to hand, and asking at all throws outright
     // when there is no client behind it. A player whose name has not arrived is still worth a line -
     // it is the rank and the score the ladder is about - and this runs inside a redraw, where an
@@ -245,6 +257,7 @@ public class ScenarioScoreSummary : MonoBehaviour
             return "...";
         }
     }
+#endif
 
     public Breakdown Tally()
     {
