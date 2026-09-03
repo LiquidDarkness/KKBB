@@ -2512,7 +2512,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 49061f32f25247547abeb37adcc51ff6, type: 2}
+      - m_Target: {fileID: 11400000, guid: 3209df32a81248843a43b66da59d0488, type: 2}
         m_TargetAssemblyTypeName: TypeDistinguisher, Assembly-CSharp
         m_MethodName: SetBoolValue
         m_Mode: 0
@@ -3098,8 +3098,8 @@ RectTransform:
   m_Father: {fileID: 8888801517071962413}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.083333336, y: 0}
-  m_AnchorMax: {x: 0.083333336, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -16195,7 +16195,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.083333336, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0.1949997}
   m_SizeDelta: {x: 10, y: 0.39000106}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -18477,7 +18477,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 3667142173005627240}
   m_Direction: 0
   m_MinValue: 0.000000001
-  m_MaxValue: 3
+  m_MaxValue: 10
   m_WholeNumbers: 0
   m_Value: 0.25
   m_OnValueChanged:
@@ -22441,7 +22441,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 3f7c1a5d94e84c2ea1b6d0f27c358b41, type: 2}
+      - m_Target: {fileID: 11400000, guid: 0e7c769ee76e97543804669304a0ce51, type: 2}
         m_TargetAssemblyTypeName: TypeDistinguisher, Assembly-CSharp
         m_MethodName: SetFloatValue
         m_Mode: 0
