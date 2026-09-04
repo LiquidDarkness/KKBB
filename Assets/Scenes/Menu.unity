@@ -14552,7 +14552,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '- quite a challange, probably not the best for your first playthrough,
+  m_text: '- quite a challenge, probably not the best for your first playthrough,
 
     -
     you can finish the scenario really fast, though'
@@ -14644,7 +14644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45fe760becc1e17438d400abd9ef5eae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: '- quite a challange, probably not the best for your first playthrough,
+  key: '- quite a challenge, probably not the best for your first playthrough,
 
     -
     you can finish the scenario really fast, though'
