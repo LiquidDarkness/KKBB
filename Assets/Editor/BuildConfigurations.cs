@@ -43,6 +43,14 @@ public static class BuildConfigurations
     {
         Apply(BuildTargetGroup.WebGL, "DEMO_BUILD;NO_STEAM", "the demo in a browser");
 
+        // Unity's own template gives the canvas a fixed size in pixels and centres it under an
+        // overflow:hidden, so a portal that hands the build a smaller window than it asked for
+        // clips the game on all four sides - which is what a player on Newgrounds saw. Embedded
+        // fits the canvas to the room the page gives it and keeps the shape. Set from here for the
+        // same reason the defines are: it lives in ProjectSettings.asset, which is not committed.
+        PlayerSettings.WebGL.template = "PROJECT:Embedded";
+        Debug.Log("[Build] WebGL template set to Embedded - the canvas fits the page instead of overflowing it.");
+
         if (EditorUserBuildSettings.activeBuildTarget != BuildTarget.WebGL)
         {
             Debug.Log("[Build] Switching the active target to WebGL - this reimports and takes a while.");

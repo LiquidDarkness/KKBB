@@ -171,6 +171,11 @@ boots the game into a blank screen.
     screen and a block near the edge cannot be aimed at. `ArenaFraming` on the camera raises the
     size until the barriers are back inside and never lowers it - under a percent at 16:9, and it
     settles every other shape.
+11. **A browser build needs the `Embedded` WebGL template**, not Unity's Default. The Default one
+    sizes the canvas in fixed pixels and centres it under `overflow: hidden`, so a portal whose
+    player is smaller than the build's own dimensions clips the game on all four sides. `Build >
+    Set up: WebGL demo` selects it, because the choice lives in `ProjectSettings.asset` and is
+    therefore not committed.
 
 ## Verifying without the Editor GUI
 
