@@ -163,6 +163,14 @@ boots the game into a blank screen.
    drew it at 126x128. The WebGL entry in `cursor.png.meta` is therefore overridden to
    `maxTextureSize: 32`. A re-import or a platform settings reset drops that and the cursor goes
    back to filling a fifth of the screen.
+10. **The arena is wider than the picture, and always has been.** The gameplay camera is
+    orthographic at size 15, so it shows 30 units tall and `30 * aspect` across, while the side
+    barriers stand at x = +/-26.91 - which needs an aspect of 1.794. A 16:9 window gives 1.778 and
+    misses by a quarter of a unit, close enough that nobody noticed for years; a 960x600 build gives
+    1.600 and cuts nearly three units off each side, so the cat bounces off a wall that is not on
+    screen and a block near the edge cannot be aimed at. `ArenaFraming` on the camera raises the
+    size until the barriers are back inside and never lowers it - under a percent at 16:9, and it
+    settles every other shape.
 
 ## Verifying without the Editor GUI
 
