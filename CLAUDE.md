@@ -156,6 +156,13 @@ boots the game into a blank screen.
    dll even though it is missing from its XML docs; they are only created as a fallback, because a
    board made from code stays off the community hub until it is given a Community Name on the
    partner site.
+9. **The mouse cursor is a texture, and only Windows makes it cursor-sized.** `cursor.png` is
+   345x350; Windows draws the hardware cursor at the system size whatever it is handed, so the
+   Standalone build looks right by accident. WebGL has no such step - Unity hands the imported
+   texture straight to `canvas.style.cursor` as a CSS image at its own pixel size - so the browser
+   drew it at 126x128. The WebGL entry in `cursor.png.meta` is therefore overridden to
+   `maxTextureSize: 32`. A re-import or a platform settings reset drops that and the cursor goes
+   back to filling a fifth of the screen.
 
 ## Verifying without the Editor GUI
 
