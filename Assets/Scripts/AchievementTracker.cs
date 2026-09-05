@@ -20,6 +20,9 @@ public class AchievementTracker : MonoBehaviour
     [Tooltip("dropsCaught - the lifetime tally, kept in the save.")]
     public TypeDistinguisher dropsCaught;
 
+    [Tooltip("ChosenAvatar - which cat is in play, as an index into AvatarSwitcher.avatars.")]
+    public TypeDistinguisher chosenAvatar;
+
     [Tooltip("Which difficulties count as 'hard or above'. Listed rather than matched by name, so renaming an asset cannot quietly break an achievement.")]
     public DifficultySettings[] countsAsHard;
 
@@ -30,6 +33,49 @@ public class AchievementTracker : MonoBehaviour
     public float speedStreakWanted = 180f;
 
     public int heartsWanted = 9;
+
+    [Header("Endless")]
+    [Tooltip("Any cat, any difficulty - the one for simply getting somewhere.")]
+    public EndlessMilestone endlessForAnyone = new EndlessMilestone { wave = 5 };
+
+    [Tooltip("Ziggy, and only on METAL.")]
+    public EndlessMilestone endlessForZiggy = new EndlessMilestone { wave = 10, cat = 2 };
+
+    [Tooltip("Simba Bimba, and only on Easy.")]
+    public EndlessMilestone endlessForSimbaBimba = new EndlessMilestone { wave = 15, cat = 1 };
+
+    // What one endless achievement asks for. Kept as data rather than as three pairs of loose
+    // numbers so that the difficulty is an asset reference - the same reason countsAsHard is one -
+    // and so adding a fourth is a field rather than another branch.
+    [System.Serializable]
+    public class EndlessMilestone
+    {
+        public const int AnyCat = -1;
+
+        [Tooltip("The wave that has to be reached, counted from one the way the card on screen says it.")]
+        public int wave = 5;
+
+        [Tooltip("Left empty this counts on any difficulty. Otherwise only on this one, held as a reference so that renaming the asset cannot quietly stop the achievement being earned.")]
+        public DifficultySettings difficulty;
+
+        [Tooltip("-1 counts for any cat. Otherwise an index into AvatarSwitcher.avatars: 0 Liquid Darkness, 1 Simba Bimba, 2 Ziggy, 3 the tutorial dummy.")]
+        public int cat = AnyCat;
+
+        public bool IsReachedBy(int reachedWave, DifficultySettings playedOn, int playedAs)
+        {
+            if (reachedWave < wave)
+            {
+                return false;
+            }
+
+            if (difficulty != null && playedOn != difficulty)
+            {
+                return false;
+            }
+
+            return cat == AnyCat || playedAs == cat;
+        }
+    }
 
     // Which scenario earns which achievement, by asset name. A new scenario adds a line here and a
     // line in Achievements, and nothing else changes.
@@ -70,6 +116,7 @@ public class AchievementTracker : MonoBehaviour
         Level.OnLevelCompleted += HandleLevelCompleted;
         ContinuePurchase.OnContinued += HandleContinued;
         DiffcultyManager.OnSettingsChanged += HandleDifficultyChanged;
+        StoryManager.OnBeatShown += HandleBeatShown;
 
         if (gameSpeed != null)
         {
@@ -90,6 +137,7 @@ public class AchievementTracker : MonoBehaviour
         Level.OnLevelCompleted -= HandleLevelCompleted;
         ContinuePurchase.OnContinued -= HandleContinued;
         DiffcultyManager.OnSettingsChanged -= HandleDifficultyChanged;
+        StoryManager.OnBeatShown -= HandleBeatShown;
 
         if (gameSpeed != null)
         {
@@ -207,6 +255,38 @@ public class AchievementTracker : MonoBehaviour
         {
             hardAllRun = false;
             speedStreak = 0f;
+        }
+    }
+
+    // --- Endless -----------------------------------------------------------------------------
+
+    // Every beat of every scenario comes through here, and only the endless one is answered. There
+    // is nothing to remember between waves: the wave number is the whole of the progress and it is
+    // saved, so a run picked up in a later session is asked the same question and answers it the
+    // same way. The difficulty and the cat are read as they stand, which is the whole story - both
+    // are chosen on the way into a run and there is no road from the game back to either without
+    // starting a different run, which zeroes the wave.
+    private void HandleBeatShown(int beat)
+    {
+        if (scenarioManager == null || !(scenarioManager.CurrentScenarioSettings is EndlessScenario))
+        {
+            return;
+        }
+
+        int wave = EndlessScenario.WaveOf(beat);
+        DifficultySettings difficulty = diffcultyManager != null ? diffcultyManager.CurrentSettings : null;
+        int cat = chosenAvatar != null ? chosenAvatar.IntValue : EndlessMilestone.AnyCat;
+
+        Award(endlessForAnyone, Achievements.EndlessWaveFive, wave, difficulty, cat);
+        Award(endlessForZiggy, Achievements.EndlessZiggyOnMetal, wave, difficulty, cat);
+        Award(endlessForSimbaBimba, Achievements.EndlessSimbaOnEasy, wave, difficulty, cat);
+    }
+
+    private static void Award(EndlessMilestone milestone, string apiName, int wave, DifficultySettings difficulty, int cat)
+    {
+        if (milestone != null && milestone.IsReachedBy(wave, difficulty, cat))
+        {
+            Achievements.Unlock(apiName);
         }
     }
 

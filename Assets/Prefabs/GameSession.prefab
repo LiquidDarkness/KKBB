@@ -1171,12 +1171,25 @@ MonoBehaviour:
   diffcultyManager: {fileID: 11400000, guid: ead308b03c2ff6248b922b1f4c236b07, type: 2}
   currentLevel: {fileID: 11400000, guid: 76e20662c26c8734698d39f790c7cb65, type: 2}
   dropsCaught: {fileID: 11400000, guid: d1c7fcc5fac40ac4eb7a00792fc4509b, type: 2}
+  chosenAvatar: {fileID: 11400000, guid: 99aea120c2a54a1438731252991fb1c2, type: 2}
   countsAsHard:
   - {fileID: 11400000, guid: 604f473655c9e2748ba1823a348c28af, type: 2}
   - {fileID: 11400000, guid: 66b9f254e4d0b24449d77afec98d9db2, type: 2}
   dropsWanted: 500
   speedStreakWanted: 180
   heartsWanted: 9
+  endlessForAnyone:
+    wave: 5
+    difficulty: {fileID: 0}
+    cat: -1
+  endlessForZiggy:
+    wave: 10
+    difficulty: {fileID: 11400000, guid: 66b9f254e4d0b24449d77afec98d9db2, type: 2}
+    cat: 2
+  endlessForSimbaBimba:
+    wave: 15
+    difficulty: {fileID: 11400000, guid: c5ca12f361cb5114c942637ab7925461, type: 2}
+    cat: 1
 --- !u!114 &2163305091827889026
 MonoBehaviour:
   m_ObjectHideFlags: 0

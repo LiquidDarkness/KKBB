@@ -14,10 +14,29 @@ public static class AchievementTrackerSetup
 
     private const string LevelSetting = "currentLvl";
     private const string DropsSetting = "dropsCaught";
+    private const string AvatarSetting = "ChosenAvatar";
+
+    // Which cat is which, as an index into AvatarSwitcher.avatars in the Gameplay scene. There is
+    // nothing on an avatar to name it by, so the index is the only handle there is - and it is
+    // written here, once, rather than typed into the inspector three times. EndlessAchievementTests
+    // holds these against the paws each cat actually carries, so reordering the list fails a test
+    // instead of quietly moving an achievement onto a different cat.
+    private const int SimbaBimbaCat = 1;
+    private const int ZiggyCat = 2;
+
+    // The waves the endless achievements ask for. Changing one is a change here and a re-run of the
+    // menu item below - the component is filled in from this, so an inspector edit is undone by the
+    // next run.
+    private const int WaveForAnyone = 5;
+    private const int WaveForZiggy = 10;
+    private const int WaveForSimbaBimba = 15;
 
     // The difficulties that count as "hard or above". Named here, but stored on the component as
     // asset references, so renaming one later cannot quietly stop an achievement from being earned.
-    private static readonly string[] HardOrAbove = { "HardDifficultySetting", "METAL" };
+    private static readonly string[] HardOrAbove = { "HardDifficultySetting", MetalDifficulty };
+
+    private const string MetalDifficulty = "METAL";
+    private const string EasyDifficulty = "EasyDifficultySetting";
 
     [MenuItem("Debug/Steam - wire the achievement tracker", priority = 102)]
     public static void Build()
@@ -37,6 +56,7 @@ public static class AchievementTrackerSetup
             tracker.diffcultyManager = FindOne<DiffcultyManager>();
             tracker.currentLevel = Setting(LevelSetting);
             tracker.dropsCaught = Setting(DropsSetting);
+            tracker.chosenAvatar = Setting(AvatarSetting);
 
             tracker.countsAsHard = HardOrAbove
                 .Select(Difficulty)
@@ -47,6 +67,27 @@ public static class AchievementTrackerSetup
             {
                 Debug.LogWarning($"[AchievementTrackerSetup] only {tracker.countsAsHard.Length} of {HardOrAbove.Length} hard difficulties were found - the ones missing will not count.");
             }
+
+            tracker.endlessForAnyone = new AchievementTracker.EndlessMilestone
+            {
+                wave = WaveForAnyone,
+                difficulty = null,
+                cat = AchievementTracker.EndlessMilestone.AnyCat,
+            };
+
+            tracker.endlessForZiggy = new AchievementTracker.EndlessMilestone
+            {
+                wave = WaveForZiggy,
+                difficulty = Difficulty(MetalDifficulty),
+                cat = ZiggyCat,
+            };
+
+            tracker.endlessForSimbaBimba = new AchievementTracker.EndlessMilestone
+            {
+                wave = WaveForSimbaBimba,
+                difficulty = Difficulty(EasyDifficulty),
+                cat = SimbaBimbaCat,
+            };
 
             PrefabUtility.SaveAsPrefabAsset(root, GameSessionPrefabPath);
             AssetDatabase.SaveAssets();

@@ -38,6 +38,13 @@ public static class Achievements
     public const string NineHearts = "NINE_HEARTS";
     public const string SpeedStreakOnHard = "SPEED_STREAK_ON_HARD";
 
+    // --- Endless -------------------------------------------------------------------------------
+    // Measured in waves reached rather than survived: the card for a wave goes up when the player
+    // has cleared everything before it, so being shown wave ten is having got there.
+    public const string EndlessWaveFive = "ENDLESS_WAVE_FIVE";
+    public const string EndlessZiggyOnMetal = "ENDLESS_ZIGGY_ON_METAL_WAVE_TEN";
+    public const string EndlessSimbaOnEasy = "ENDLESS_SIMBA_ON_EASY_WAVE_FIFTEEN";
+
     // --- Playing at all ------------------------------------------------------------------------
     public const string TutorialGameOver = "TUTORIAL_GAME_OVER";
     public const string FirstPurchase = "FIRST_PURCHASE";
@@ -68,6 +75,13 @@ public static class Achievements
         { BoughtAContinue, false },
         { SpeedBoughtInZiggiesMunda, false },
         { FiveHundredDrops, false },
+        // Endless is playable in the demo, so these can be earned there - and they are, into the
+        // save, which is what carries them into the full game on its first run. They are marked as
+        // the full game's alone because a name marked for the demo has to be entered on the demo's
+        // own partner page too, and that is a decision rather than an oversight.
+        { EndlessWaveFive, false },
+        { EndlessZiggyOnMetal, false },
+        { EndlessSimbaOnEasy, false },
     };
 
     // The save holds the earned names in one entry, the way the key bindings do - one asset rather
