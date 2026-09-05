@@ -23,6 +23,9 @@ public class AchievementTracker : MonoBehaviour
     [Tooltip("ChosenAvatar - which cat is in play, as an index into AvatarSwitcher.avatars.")]
     public TypeDistinguisher chosenAvatar;
 
+    [Tooltip("endlessContinueUsed - whether this run has been bought back from a death. Saved rather than remembered, since an endless run is built to be left and picked up again.")]
+    public TypeDistinguisher endlessContinueUsed;
+
     [Tooltip("Which difficulties count as 'hard or above'. Listed rather than matched by name, so renaming an asset cannot quietly break an achievement.")]
     public DifficultySettings[] countsAsHard;
 
@@ -44,6 +47,9 @@ public class AchievementTracker : MonoBehaviour
     [Tooltip("Simba Bimba, and only on Easy.")]
     public EndlessMilestone endlessForSimbaBimba = new EndlessMilestone { wave = 15, cat = 1 };
 
+    [Tooltip("Any cat, any difficulty, and no continue bought along the way.")]
+    public EndlessMilestone endlessWithoutContinues = new EndlessMilestone { wave = 10, withoutContinues = true };
+
     // What one endless achievement asks for. Kept as data rather than as three pairs of loose
     // numbers so that the difficulty is an asset reference - the same reason countsAsHard is one -
     // and so adding a fourth is a field rather than another branch.
@@ -61,7 +67,10 @@ public class AchievementTracker : MonoBehaviour
         [Tooltip("-1 counts for any cat. Otherwise an index into AvatarSwitcher.avatars: 0 Liquid Darkness, 1 Simba Bimba, 2 Ziggy, 3 the tutorial dummy.")]
         public int cat = AnyCat;
 
-        public bool IsReachedBy(int reachedWave, DifficultySettings playedOn, int playedAs)
+        [Tooltip("Ticked, a run that has bought its way past a death no longer counts, however far it gets afterwards.")]
+        public bool withoutContinues;
+
+        public bool IsReachedBy(int reachedWave, DifficultySettings playedOn, int playedAs, bool continueBought)
         {
             if (reachedWave < wave)
             {
@@ -69,6 +78,11 @@ public class AchievementTracker : MonoBehaviour
             }
 
             if (difficulty != null && playedOn != difficulty)
+            {
+                return false;
+            }
+
+            if (withoutContinues && continueBought)
             {
                 return false;
             }
@@ -174,6 +188,15 @@ public class AchievementTracker : MonoBehaviour
         lostLifeThisRun = !watched;
         hardAllRun = watched && IsHardOrAbove();
         speedStreak = 0f;
+
+        if (watched)
+        {
+            // A run beginning at its first level has bought nothing yet. Cleared for every
+            // scenario rather than only the endless one: starting any run at all overwrites the
+            // wave and the scenario an endless run was saved under, so there is nothing left to
+            // keep it for.
+            SetContinueUsed(false);
+        }
     }
 
     private void HandleHealthLost()
@@ -192,6 +215,22 @@ public class AchievementTracker : MonoBehaviour
     private void HandleContinued()
     {
         Achievements.Unlock(Achievements.BoughtAContinue);
+        SetContinueUsed(true);
+    }
+
+    // Written to the save rather than merely remembered: an endless run is meant to be left and
+    // picked up in another session, and a continue bought before the break has to still count
+    // against it. Saved there and then, because the file is otherwise only written when a level
+    // is finished - and a player who buys a continue and quits would come back to a clean sheet.
+    private void SetContinueUsed(bool used)
+    {
+        if (endlessContinueUsed == null || endlessContinueUsed.BoolValue == used)
+        {
+            return;
+        }
+
+        endlessContinueUsed.SetBoolValue(used);
+        SaveManager.Save();
     }
 
     private void HandleDeath()
@@ -276,15 +315,17 @@ public class AchievementTracker : MonoBehaviour
         int wave = EndlessScenario.WaveOf(beat);
         DifficultySettings difficulty = diffcultyManager != null ? diffcultyManager.CurrentSettings : null;
         int cat = chosenAvatar != null ? chosenAvatar.IntValue : EndlessMilestone.AnyCat;
+        bool bought = endlessContinueUsed != null && endlessContinueUsed.BoolValue;
 
-        Award(endlessForAnyone, Achievements.EndlessWaveFive, wave, difficulty, cat);
-        Award(endlessForZiggy, Achievements.EndlessZiggyOnMetal, wave, difficulty, cat);
-        Award(endlessForSimbaBimba, Achievements.EndlessSimbaOnEasy, wave, difficulty, cat);
+        Award(endlessForAnyone, Achievements.EndlessWaveFive, wave, difficulty, cat, bought);
+        Award(endlessForZiggy, Achievements.EndlessZiggyOnMetal, wave, difficulty, cat, bought);
+        Award(endlessForSimbaBimba, Achievements.EndlessSimbaOnEasy, wave, difficulty, cat, bought);
+        Award(endlessWithoutContinues, Achievements.EndlessWithoutContinues, wave, difficulty, cat, bought);
     }
 
-    private static void Award(EndlessMilestone milestone, string apiName, int wave, DifficultySettings difficulty, int cat)
+    private static void Award(EndlessMilestone milestone, string apiName, int wave, DifficultySettings difficulty, int cat, bool continueBought)
     {
-        if (milestone != null && milestone.IsReachedBy(wave, difficulty, cat))
+        if (milestone != null && milestone.IsReachedBy(wave, difficulty, cat, continueBought))
         {
             Achievements.Unlock(apiName);
         }

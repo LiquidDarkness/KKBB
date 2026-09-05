@@ -15,6 +15,7 @@ public static class AchievementTrackerSetup
     private const string LevelSetting = "currentLvl";
     private const string DropsSetting = "dropsCaught";
     private const string AvatarSetting = "ChosenAvatar";
+    private const string ContinueSetting = "endlessContinueUsed";
 
     // Which cat is which, as an index into AvatarSwitcher.avatars in the Gameplay scene. There is
     // nothing on an avatar to name it by, so the index is the only handle there is - and it is
@@ -30,6 +31,7 @@ public static class AchievementTrackerSetup
     private const int WaveForAnyone = 5;
     private const int WaveForZiggy = 10;
     private const int WaveForSimbaBimba = 15;
+    private const int WaveForNoContinues = 10;
 
     // The difficulties that count as "hard or above". Named here, but stored on the component as
     // asset references, so renaming one later cannot quietly stop an achievement from being earned.
@@ -57,6 +59,7 @@ public static class AchievementTrackerSetup
             tracker.currentLevel = Setting(LevelSetting);
             tracker.dropsCaught = Setting(DropsSetting);
             tracker.chosenAvatar = Setting(AvatarSetting);
+            tracker.endlessContinueUsed = Setting(ContinueSetting);
 
             tracker.countsAsHard = HardOrAbove
                 .Select(Difficulty)
@@ -87,6 +90,14 @@ public static class AchievementTrackerSetup
                 wave = WaveForSimbaBimba,
                 difficulty = Difficulty(EasyDifficulty),
                 cat = SimbaBimbaCat,
+            };
+
+            tracker.endlessWithoutContinues = new AchievementTracker.EndlessMilestone
+            {
+                wave = WaveForNoContinues,
+                difficulty = null,
+                cat = AchievementTracker.EndlessMilestone.AnyCat,
+                withoutContinues = true,
             };
 
             PrefabUtility.SaveAsPrefabAsset(root, GameSessionPrefabPath);

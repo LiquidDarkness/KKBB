@@ -45,6 +45,10 @@ public static class Achievements
     public const string EndlessZiggyOnMetal = "ENDLESS_ZIGGY_ON_METAL_WAVE_TEN";
     public const string EndlessSimbaOnEasy = "ENDLESS_SIMBA_ON_EASY_WAVE_FIFTEEN";
 
+    // The one that asks how cleanly rather than how far: any cat, any difficulty, and not a
+    // single continue bought since the run began.
+    public const string EndlessWithoutContinues = "ENDLESS_NO_CONTINUES_WAVE_TEN";
+
     // --- Playing at all ------------------------------------------------------------------------
     public const string TutorialGameOver = "TUTORIAL_GAME_OVER";
     public const string FirstPurchase = "FIRST_PURCHASE";
@@ -82,6 +86,7 @@ public static class Achievements
         { EndlessWaveFive, false },
         { EndlessZiggyOnMetal, false },
         { EndlessSimbaOnEasy, false },
+        { EndlessWithoutContinues, false },
     };
 
     // The save holds the earned names in one entry, the way the key bindings do - one asset rather

@@ -32,9 +32,9 @@ public class EndlessAchievementTests
     {
         var milestone = new AchievementTracker.EndlessMilestone { wave = 10 };
 
-        Assert.That(milestone.IsReachedBy(9, null, 2), Is.False);
-        Assert.That(milestone.IsReachedBy(10, null, 2), Is.True);
-        Assert.That(milestone.IsReachedBy(400, null, 2), Is.True, "a deeper run has still passed the mark");
+        Assert.That(milestone.IsReachedBy(9, null, 2, false), Is.False);
+        Assert.That(milestone.IsReachedBy(10, null, 2, false), Is.True);
+        Assert.That(milestone.IsReachedBy(400, null, 2, false), Is.True, "a deeper run has still passed the mark");
     }
 
     [Test]
@@ -45,9 +45,9 @@ public class EndlessAchievementTests
 
         var milestone = new AchievementTracker.EndlessMilestone { wave = 10, difficulty = metal };
 
-        Assert.That(milestone.IsReachedBy(10, metal, 2), Is.True);
-        Assert.That(milestone.IsReachedBy(10, easy, 2), Is.False);
-        Assert.That(milestone.IsReachedBy(10, null, 2), Is.False, "a difficulty nobody could read is not the one asked for");
+        Assert.That(milestone.IsReachedBy(10, metal, 2, false), Is.True);
+        Assert.That(milestone.IsReachedBy(10, easy, 2, false), Is.False);
+        Assert.That(milestone.IsReachedBy(10, null, 2, false), Is.False, "a difficulty nobody could read is not the one asked for");
 
         Object.DestroyImmediate(metal);
         Object.DestroyImmediate(easy);
@@ -59,8 +59,8 @@ public class EndlessAchievementTests
         DifficultySettings anything = ScriptableObject.CreateInstance<DifficultySettings>();
         var milestone = new AchievementTracker.EndlessMilestone { wave = 5 };
 
-        Assert.That(milestone.IsReachedBy(5, anything, 0), Is.True);
-        Assert.That(milestone.IsReachedBy(5, null, 3), Is.True);
+        Assert.That(milestone.IsReachedBy(5, anything, 0, false), Is.True);
+        Assert.That(milestone.IsReachedBy(5, null, 3, false), Is.True);
 
         Object.DestroyImmediate(anything);
     }
@@ -70,9 +70,28 @@ public class EndlessAchievementTests
     {
         var milestone = new AchievementTracker.EndlessMilestone { wave = 10, cat = 2 };
 
-        Assert.That(milestone.IsReachedBy(10, null, 2), Is.True);
-        Assert.That(milestone.IsReachedBy(10, null, 1), Is.False);
-        Assert.That(milestone.IsReachedBy(10, null, AchievementTracker.EndlessMilestone.AnyCat), Is.False);
+        Assert.That(milestone.IsReachedBy(10, null, 2, false), Is.True);
+        Assert.That(milestone.IsReachedBy(10, null, 1, false), Is.False);
+        Assert.That(milestone.IsReachedBy(10, null, AchievementTracker.EndlessMilestone.AnyCat, false), Is.False);
+    }
+
+    [Test]
+    public void ABoughtContinueEndsTheCleanRun()
+    {
+        var milestone = new AchievementTracker.EndlessMilestone { wave = 10, withoutContinues = true };
+
+        Assert.That(milestone.IsReachedBy(10, null, 0, false), Is.True);
+        Assert.That(milestone.IsReachedBy(10, null, 0, true), Is.False, "a continue was bought, so the run is no longer clean");
+        Assert.That(milestone.IsReachedBy(400, null, 0, true), Is.False, "and no amount of depth afterwards buys it back");
+    }
+
+    [Test]
+    public void TheOtherThreeDoNotCareAboutContinues()
+    {
+        var milestone = new AchievementTracker.EndlessMilestone { wave = 10 };
+
+        Assert.That(milestone.IsReachedBy(10, null, 0, true), Is.True,
+            "only a milestone that asks for a clean run may be spoiled by a continue.");
     }
 
     // --- What the game actually ships with -----------------------------------------------------
@@ -102,6 +121,23 @@ public class EndlessAchievementTests
         Assert.That(tracker.endlessForSimbaBimba.wave, Is.EqualTo(15));
         Assert.That(tracker.endlessForSimbaBimba.difficulty, Is.Not.Null, "Simba Bimba's is meant to be Easy only");
         Assert.That(tracker.endlessForSimbaBimba.difficulty.name, Is.EqualTo("EasyDifficultySetting"));
+    }
+
+    [Test]
+    public void TheCleanRunMilestoneIsWiredAndSaved()
+    {
+        AchievementTracker tracker = Tracker();
+
+        Assert.That(tracker.endlessContinueUsed, Is.Not.Null,
+            "without endlessContinueUsed wired, a bought continue is never noticed.");
+        Assert.That(tracker.endlessContinueUsed.name, Is.EqualTo("endlessContinueUsed"));
+        Assert.That(tracker.endlessContinueUsed.prefType, Is.EqualTo(TypeDistinguisher.PlayerPrefType.BOOL));
+        Assert.That(tracker.endlessContinueUsed.purgable, Is.True, "it belongs to a run, so New Game must clear it");
+
+        Assert.That(tracker.endlessWithoutContinues.wave, Is.EqualTo(10));
+        Assert.That(tracker.endlessWithoutContinues.withoutContinues, Is.True);
+        Assert.That(tracker.endlessWithoutContinues.difficulty, Is.Null, "it counts on any difficulty");
+        Assert.That(tracker.endlessWithoutContinues.cat, Is.EqualTo(AchievementTracker.EndlessMilestone.AnyCat), "and with any cat");
     }
 
     // The one that guards the indices. A cat has no name of its own, but it does carry its own paws,
