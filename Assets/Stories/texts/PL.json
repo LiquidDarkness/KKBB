@@ -3,7 +3,7 @@
 	[
 		 {
 		   "key": "Options",
-		   "value": "Tłumaczonko w drodze."
+		   "value": "Opcje"
 		 }
 		 ,
 		 {
@@ -17,33 +17,18 @@
 		 }
 		 ,
 		 {
-		   "key": "How to play",
-		   "value": "Tłumaczonko w drodze."
-		 }
-		 ,
-		 {
-		   "key": "Resume",
-		   "value": "Tłumaczonko w drodze."
-		 }
-		 ,
-		 {
-		   "key": "Main Menu",
-		   "value": "Tłumaczonko w drodze."
-		 }
-		 ,
-		 {
 		   "key": "New Game",
-		   "value": "Tłumaczonko w drodze."
+		   "value": "Nowa gra"
 		 }
 		 ,
 		 {
 		   "key": "Continue",
-		   "value": "Tłumaczonko w drodze."
+		   "value": "Kontynuuj"
 		 }
 		 ,
 		 {
 		   "key": "Quit",
-		   "value": "Tłumaczonko w drodze."
+		   "value": "Wyjście"
 		 }
 		 ,
 		 {
@@ -59,36 +44,6 @@
 		 {
 		   "key": "Fullscreen",
 		   "value": "Pełny ekran"
-		 }
-		 ,
-		 {
-		   "key": "Confirmation",
-		   "value": "Tłumaczonko w drodze."
-		 }
-		 ,
-		 {
-		   "key": "Game Over",
-		   "value": "Tłumaczonko w drodze."
-		 }
-		 ,
-		 {
-		   "key": "Buy more lives",
-		   "value": "Tłumaczonko w drodze."
-		 }
-		 ,
-		 {
-		   "key": "Polish",
-		   "value": "Tłumaczonko w drodze."
-		 }
-		 ,
-		 {
-		   "key": "English",
-		   "value": "Tłumaczonko w drodze."
-		 }
-		 ,
-		 {
-		   "key": "German",
-		   "value": "Tłumaczonko w drodze."
 		 }
 		 ,
 		 {

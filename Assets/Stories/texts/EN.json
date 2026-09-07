@@ -17,21 +17,6 @@
 		 }
 		 ,
 		 {
-		   "key": "How to play",
-		   "value": "How to play"
-		 }
-		 ,
-		 {
-		   "key": "Resume",
-		   "value": "Resume"
-		 }
-		 ,
-		 {
-		   "key": "Main Menu",
-		   "value": "Main Menu"
-		 }
-		 ,
-		 {
 		   "key": "New Game",
 		   "value": "New Game"
 		 }
@@ -59,36 +44,6 @@
 		 {
 		   "key": "Fullscreen",
 		   "value": "Fullscreen"
-		 }
-		 ,
-		 {
-		   "key": "Confirmation",
-		   "value": "Confirmation"
-		 }
-		 ,
-		 {
-		   "key": "Game Over",
-		   "value": "Game Over"
-		 }
-		 ,
-		 {
-		   "key": "Buy more lives",
-		   "value": "Buy more lives"
-		 }
-		 ,
-		 {
-		   "key": "Polish",
-		   "value": "Polish"
-		 }
-		 ,
-		 {
-		   "key": "English",
-		   "value": "English"
-		 }
-		 ,
-		 {
-		   "key": "German",
-		   "value": "German"
 		 }
 		 ,
 		 {
