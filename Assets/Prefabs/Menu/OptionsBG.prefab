@@ -2183,7 +2183,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3973475898726603690
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5890,7 +5890,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7799559134311765466
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22451,7 +22451,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.25
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -32290,6 +32290,7 @@ GameObject:
   - component: {fileID: 2352325454443375604}
   - component: {fileID: 7278064815189578428}
   - component: {fileID: 5198953136753371638}
+  - component: {fileID: 1657320655825019813}
   m_Layer: 5
   m_Name: Dropdown
   m_TagString: Untagged
@@ -32421,19 +32422,19 @@ MonoBehaviour:
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 7663525688556577719}
-        m_TargetAssemblyTypeName: ResolutionSelector, Assembly-CSharp
-        m_MethodName: SetResolution
+      - m_Target: {fileID: 1657320655825019813}
+        m_TargetAssemblyTypeName: LanguageDropdown, Assembly-CSharp
+        m_MethodName: Choose
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -32596,6 +32597,20 @@ MonoBehaviour:
   defaultScale: 1
   minScale: 0.6
   maxScale: 1.5
+--- !u!114 &1657320655825019813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8536260658464287651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c1f7a4b62d94f0d9a5e8c17b4d2e6a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropdown: {fileID: 7151996989879413505}
+  selector: {fileID: 11400000, guid: d49d98d2afc0ec24480bace880ed97c5, type: 2}
 --- !u!1 &8559231508173649949
 GameObject:
   m_ObjectHideFlags: 0

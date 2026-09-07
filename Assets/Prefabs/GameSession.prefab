@@ -948,6 +948,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   translations:
   - {fileID: 4900000, guid: 908cf6a10d6e1224a8f8bceb7229d218, type: 3}
+  - {fileID: 4900000, guid: 1c7aa8f551cd8d947bd61a2a1a8f2f76, type: 3}
   defaultTranslation: {fileID: 4900000, guid: 908cf6a10d6e1224a8f8bceb7229d218, type: 3}
 --- !u!114 &3007742471343142530
 MonoBehaviour:

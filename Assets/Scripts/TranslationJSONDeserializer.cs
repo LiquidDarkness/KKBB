@@ -11,17 +11,31 @@ public class TranslationJSONDeserializer : MonoBehaviour
 
     public static event Action OnTransaltionUpdated;
 
-    public void Awake()
+    // Subscribed here rather than in Awake, and dropped again, because this is a static event on a
+    // class that outlives every scene: a copy of this that dies with a scene without letting go is
+    // called on a destroyed object, and the exception stops every handler queued behind it.
+    public void OnEnable()
     {
         LanguageSelector.OnLanguageSelected += SelectLanguage;
     }
 
-    public void Start()
+    public void OnDisable()
     {
-        // Load default translation initially
-        SelectLanguage("default");
+        LanguageSelector.OnLanguageSelected -= SelectLanguage;
     }
 
+    // In Start, not in OnEnable: the stored language is read out of PlayerPrefs, and PlayerPrefs is
+    // not what the player chose until SaveManager.Load has applied save.json to it - which happens
+    // in an Awake. Asking any earlier reads an empty setting and would take the first start's guess
+    // over a choice that has been on file for months.
+    public void Start()
+    {
+        SelectLanguage(LanguageSelector.CurrentLanguageId);
+    }
+
+    // The id is matched against the names of the TextAssets in the list, so it has to be spelled
+    // the way the file is - EN, PL. Anything else falls back to the default file, which is the one
+    // every key is written in.
     private void SelectLanguage(string language)
     {
         foreach (var item in translations)

@@ -588,7 +588,6 @@ GameObject:
   m_Component:
   - component: {fileID: 513490288}
   - component: {fileID: 513490291}
-  - component: {fileID: 513490290}
   - component: {fileID: 513490289}
   - component: {fileID: 513490292}
   - component: {fileID: 513490293}
@@ -628,21 +627,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   signal: story loaded
---- !u!114 &513490290
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 513490287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a68eb9671b5049241aff79274594272a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  translations:
-  - {fileID: 4900000, guid: 908cf6a10d6e1224a8f8bceb7229d218, type: 3}
-  defaultTranslation: {fileID: 4900000, guid: 908cf6a10d6e1224a8f8bceb7229d218, type: 3}
 --- !u!114 &513490291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -660,7 +644,7 @@ MonoBehaviour:
   textContainer: {fileID: 1299573600}
   storyText: {fileID: 957724309}
   storyContainer: {fileID: 0}
-  jSONDeserializer: {fileID: 513490290}
+  jSONDeserializer: {fileID: 0}
   currentLvl: {fileID: 11400000, guid: 76e20662c26c8734698d39f790c7cb65, type: 2}
   chosenScenario: {fileID: 11400000, guid: bdd0fc957230cb3419174682bda9452b, type: 2}
   currentStory:

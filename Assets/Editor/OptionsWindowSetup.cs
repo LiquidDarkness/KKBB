@@ -94,9 +94,13 @@ public static class OptionsWindowSetup
 
     // Order inside each tab. Headers included, so a header always sits directly above the rows it
     // introduces. Anything not listed keeps its place at the end.
-    // Switched off until there is more than one language in the json files. The rows stay in place
-    // and keep their wiring; only the row objects are off, which is now the way to hide a row.
-    private static readonly HashSet<string> ParkedRows = new HashSet<string> { "Language", "Text", "Narration" };
+    // Switched off until there is something to pick between. The rows stay in place and keep their
+    // wiring; only the row objects are off, which is now the way to hide a row.
+    //
+    // The two language rows came off this list once EN and PL were both being read - LanguageSetup
+    // switches them on and drives the dropdown. Narration stays: there is no recorded narration to
+    // choose a language for.
+    private static readonly HashSet<string> ParkedRows = new HashSet<string> { "Narration" };
 
     private static readonly Dictionary<string, string[]> GroupOrder = new Dictionary<string, string[]>
     {
@@ -1223,7 +1227,10 @@ public static class OptionsWindowSetup
     // behind them yet, but they should at least say what they would offer. Nothing else is touched:
     // the resolution list is cleared and rebuilt by ResolutionSelector at startup, so whatever is
     // serialised there is scaffolding, not content.
-    private static readonly HashSet<string> LanguageRows = new HashSet<string> { "Text", "Narration" };
+    // Only Narration now. The text-language dropdown is filled by LanguageDropdown from the
+    // languages that actually exist, and filling it from a list typed in here would quietly throw a
+    // third language away.
+    private static readonly HashSet<string> LanguageRows = new HashSet<string> { "Narration" };
 
     private static void NameUnnamedOptions(TMP_Dropdown dropdown, string rowName)
     {
