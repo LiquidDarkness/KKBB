@@ -101,3 +101,6 @@ InitTestScene*.unity*
 ################################################
 /[Aa]ssets/Facepunch.Steamworks/*
 /[Aa]ssets/Facepunch.Steamworks.meta
+
+# Local only: tells the Editor which app to talk to. Never shipped, never committed.
+/steam_appid.txt
