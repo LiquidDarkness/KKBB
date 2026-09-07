@@ -8,12 +8,12 @@
 		 ,
 		 {
 		   "key": "Animations",
-		   "value": "Animations"
+		   "value": "Animacje"
 		 }
 		 ,
 		 {
 		   "key": "Music",
-		   "value": "Tłumaczonko w drodze."
+		   "value": "Muzyka"
 		 }
 		 ,
 		 {
@@ -48,17 +48,17 @@
 		 ,
 		 {
 		   "key": "Resolution",
-		   "value": "Tłumaczonko w drodze."
+		   "value": "Rozdzielczość"
 		 }
 		 ,
 		 {
 		   "key": "Language",
-		   "value": "Tłumaczonko w drodze."
+		   "value": "Język"
 		 }
 		 ,
 		 {
 		   "key": "Fullscreen",
-		   "value": "Tłumaczonko w drodze."
+		   "value": "Pełny ekran"
 		 }
 		 ,
 		 {
@@ -323,32 +323,32 @@
 		 ,
 		 {
 		   "key": "Text language",
-		   "value": "Tłumaczonko w drodze."
+		   "value": "Język tekstu"
 		 }
 		 ,
 		 {
 		   "key": "Narration language",
-		   "value": "Tłumaczonko w drodze."
+		   "value": "Język narracji"
 		 }
 		 ,
 		 {
 		   "key": "Paddle control",
-		   "value": "Tłumaczonko w drodze."
+		   "value": "Nawigowanie paletką"
 		 }
 		 ,
 		 {
 		   "key": "Return the ball when a run gets stuck",
-		   "value": "Tłumaczonko w drodze."
+		   "value": "Powrót piłki na paletkę, kiedy kot utknie"
 		 }
 		 ,
 		 {
 		   "key": "Seconds before the ball is returned",
-		   "value": "Tłumaczonko w drodze."
+		   "value": "Sekundy, zanim piłka wróci na paletkę"
 		 }
 		 ,
 		 {
 		   "key": "Rainbow text effects",
-		   "value": "Tłumaczonko w drodze."
+		   "value": "Efekt tęczy na tekście"
 		 }
 		 ,
 		 {
@@ -358,87 +358,87 @@
 		 ,
 		 {
 		   "key": "Text size",
-		   "value": "Tłumaczonko w drodze."
+		   "value": "Rozmiar tekstu"
 		 }
 		 ,
 		 {
 		   "key": "Text size preview",
-		   "value": "Tłumaczonko w drodze."
+		   "value": "Kitku hopsa, psuje bloczki, historia leci dalej. Ustaw wielkość tekstu do wielkości tak, żeby był do przeczytania bez pochylania się bliżej ekranu."
 		 }
 		 ,
 		 {
 		   "key": "Story text auto scroll",
-		   "value": "Tłumaczonko w drodze."
+		   "value": "Automatyczne przewijanie tekstu historii"
 		 }
 		 ,
 		 {
 		   "key": "Autoscrolling speed",
-		   "value": "Tłumaczonko w drodze."
+		   "value": "Prędkość auto-przewijania"
 		 }
 		 ,
 		 {
 		   "key": "Main menu star background",
-		   "value": "Tłumaczonko w drodze."
+		   "value": "Gwiazdki w tle Menu głównego"
 		 }
 		 ,
 		 {
 		   "key": "Game Over TV static effect",
-		   "value": "Tłumaczonko w drodze."
+		   "value": "Efekt śnieżenia ekranu na Game Over"
 		 }
 		 ,
 		 {
 		   "key": "Background dim",
-		   "value": "Tłumaczonko w drodze."
+		   "value": "Przyciemnianie tła"
 		 }
 		 ,
 		 {
 		   "key": "Reduce motion",
-		   "value": "Tłumaczonko w drodze."
+		   "value": "Zmniejszenie ruchu"
 		 }
 		 ,
 		 {
 		   "key": "Highlight the cat",
-		   "value": "Tłumaczonko w drodze."
+		   "value": "Podświetlenie kota"
 		 }
 		 ,
 		 {
 		   "key": "Controls",
-		   "value": "Tłumaczonko w drodze."
+		   "value": "Sterowanie"
 		 }
 		 ,
 		 {
 		   "key": "Move left",
-		   "value": "Tłumaczonko w drodze."
+		   "value": "Ruch w lewo"
 		 }
 		 ,
 		 {
 		   "key": "Move right",
-		   "value": "Tłumaczonko w drodze."
+		   "value": "Ruch w prawo"
 		 }
 		 ,
 		 {
 		   "key": "Launch the ball",
-		   "value": "Tłumaczonko w drodze."
+		   "value": "Puszczanie piłeczki"
 		 }
 		 ,
 		 {
 		   "key": "Pause the game",
-		   "value": "Tłumaczonko w drodze."
+		   "value": "Pauzowanie gry"
 		 }
 		 ,
 		 {
 		   "key": "Open the shop",
-		   "value": "Tłumaczonko w drodze."
+		   "value": "Otwórz okno zakupów"
 		 }
 		 ,
 		 {
 		   "key": "Open the options",
-		   "value": "Tłumaczonko w drodze."
+		   "value": "Otwórz okno opcji"
 		 }
 		 ,
 		 {
 		   "key": "Reset controls",
-		   "value": "Tłumaczonko w drodze."
+		   "value": "Reset sterowania"
 		 }
 		 ,
 		 {
@@ -548,7 +548,7 @@
 		 ,
 		 {
 		   "key": "Dummy",
-		   "value": "Dummy"
+		   "value": "Kukiełka"
 		 }
 		 ,
 		 {
