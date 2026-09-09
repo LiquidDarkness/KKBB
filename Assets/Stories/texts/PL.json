@@ -248,32 +248,32 @@
 		 ,
 		 {
 		   "key": "Tutorial0",
-		   "value": "Tłumaczonko w drodze."
+		   "value": "Hejho! Witaj w Kitty Kitty Bounce Bounce!\nZapoznajmy się ze sterowaniem w grze. Po pierwsze, poruszanie się: żeby przesuwać paletką w lewo i prawo, wciśnij A/D lub lewą/prawą strzałkę na klawiaturze. Kiedy stwierdzisz, że nadszedł czas wystrzelić Kitku, wciśnij spację lub lewy przycisk myszy - ale puszczanie Kitku jest możliwe jedynie w widoku gry, więc niech Cię nie zdziwi, że teraz nie działa.\nZdarza się, że tekst wyświetlany na ekranie jest nieco przydługi - i tu wchodzi autoprzewijanie. Jest włączone domyślnie, ale możesz to zmienić - tak samo, jak prędkość przewijania - w opcjach. Wciśnij ‘O’ na klawiaturze, żeby otworzyć okienko z opcjami w dowolnym momencie. Jeśli jakaś część historii przewinie się za szybko albo stwierdzisz, że czytasz szybciej niż najszybsze ustawienie autoprzewijania, możesz ręcznie przewinąć w górę i w dół albo używając W/S na klawiaturze, albo strzałek w górę/w dół.\nKiedy zechcesz kontynuować, stuknij w zielony bloczek za pomocą Kitku."
 		 }
 		 ,
 		 {
 		   "key": "Tutorial1",
-		   "value": "Tłumaczonko w drodze."
+		   "value": "Może już udało Ci się zauważyć, że z rozbijanych bloków potrafi coś wypaść. Skupmy się na tych, które mają wielki i długotrwały wpływ na Twoją rozgrywkę: paletki. Różnią się rozmiarem i sprężystością, więc warto poszukać tej skrojonej pod Twój styl grania.\nNa początek paletka domyślna: <sprite name=\"paddle\"> fioletowa, wyważona, średniej wielkości. Całkiem wygodna — ani nie pomoże, ani nie przeszkodzi. Solidny średniak: nie zachwyci, nie zawiedzie.\nDalej mamy śmigacza: <sprite name=\"paddle2\"> złota, sprężysta i odrobinę węższa od domyślnej. Ta dodatkowa sprężystość i mniejszy rozmiar potrafią dać w kość, ale zdecydowanie przyśpieszają rozgrywkę i dorzucają do niej dreszczyku! Dla tych, co lubią, jak się dzieje.\nI na koniec, choć nie z ostatniej łapki: <sprite name=\"paddle3\"> niebieska, miękka i naprawdę szeroka. Siatka bezpieczeństwa w formie poduchy — raczej Cię nie zaskoczy i jest pewnym sposobem na spokojniejszą partyjkę. Gra na luzie, nerwy jak postronki."
 		 }
 		 ,
 		 {
 		   "key": "Tutorial2",
-		   "value": "Tłumaczonko w drodze."
+		   "value": "Kolejne dwa typy dropów, których warto wypatrywać to:\n <sprite name=\"bomb\">\ni\n<sprite name=\"serducho\">.\nZgadniesz, co robią?\nTak, serduszko daje Ci kolejną szansę na wypadek, gdyby Kitku minął paletkę i stracił życie.\nAle bomba! To jest dopiero fajne. Złap dropa, a on uzbroi Cię w bombę - możesz złapać więcej niż jedną na raz! Kiedy już masz bombę i Kitku styknie się z paletką, automatycznie weźmie jedną z bomb i użyje jej na pierwszym bloczku, w który uderzy. Kiedy tylko się to stanie, nastąpi wybuch!\nA jeśli lubisz eksplozje, to spodoba Ci się efekt domina, który jest uruchamiany losowo, częściej na niższych poziomach trudności."
 		 }
 		 ,
 		 {
 		   "key": "Tutorial3",
-		   "value": "Tłumaczonko w drodze."
+		   "value": "W końcu, istnieją też dropy, które dają Ci dodatkowe punkty, kiedy je złapiesz.\n<sprite name=\"5drop\"><sprite name=\"10drop\"><sprite name=\"15drop\">\nNiszczenie bloczków samo w sobie nagradza Cię punktami, ale szybko przekonasz się, że warto mieć więcej niż mniej punktów - zwłaszcza, kiedy znajdziesz się w tarapatach. W takiej sytuacji wciśnij “Tab”, żeby otworzyć okienko sklepu i wydaj nieco ciężko zarobionych punktów!"
 		 }
 		 ,
 		 {
 		   "key": "Tutorial4",
-		   "value": "Tłumaczonko w drodze."
+		   "value": "W porząsiu, ostatnia rada, obiecuję! Poza feerią dropów, masz też feerię bloczków i ich możliwości:\n<sprite name=\"01\"><sprite name=\"02\"><sprite name=\"03\"><sprite name=\"04\"><sprite name=\"05\"><sprite name=\"06\"><sprite name=\"07\"><sprite name=\"08\"><sprite name=\"09\"><sprite name=\"10\"><sprite name=\"11\"><sprite name=\"12\"><sprite name=\"13\"><sprite name=\"14\">\nTo zwykłe najzwyklejsze bloczki, Kitku zazwyczaj musi w nie uderzyć raz, żeby się rozpadły, Ty dostajesz punkty, może nawet dropa, adekwatnie do wybranego poziomu trudności.\n<sprite name=\"invisible0\"><sprite name=\"invisible1\"><sprite name=\"invisible2\"><sprite name=\"invisible3\">\nTe wymagają kilku uderzeń, zanim się poddadzą i rozpadną. Zaczynają się od lekko przezroczystych, tracąc na przezroczystości im więcej obrażeń otrzymują.\n<sprite name=\"invincible\">\nTe nie pojawiają się za często i są niezniszczalne, stąd ich niepokojący wygląd.\nA, i jeszcze jedno: wszystkie te bloki mogą być animowane - i czasem faktycznie są - dla dodatkowego lansu i żeby nie było za łatwo, hehe."
 		 }
 		 ,
 		 {
 		   "key": "Tutorial5",
-		   "value": "Tłumaczonko w drodze."
+		   "value": "Baw się dobrze i dzięki za grę w Kitty Kitty Bounce Bounce!"
 		 }
 		 ,
 		 {
