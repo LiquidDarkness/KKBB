@@ -258,7 +258,7 @@
 		 ,
 		 {
 		   "key": "Tutorial2",
-		   "value": "Kolejne dwa typy dropów, których warto wypatrywać to:\n <sprite name=\"bomb\">\ni\n<sprite name=\"serducho\">.\nZgadniesz, co robią?\nTak, serduszko daje Ci kolejną szansę na wypadek, gdyby Kitku minął paletkę i stracił życie.\nAle bomba! To jest dopiero fajne. Złap dropa, a on uzbroi Cię w bombę - możesz złapać więcej niż jedną na raz! Kiedy już masz bombę i Kitku styknie się z paletką, automatycznie weźmie jedną z bomb i użyje jej na pierwszym bloczku, w który uderzy. Kiedy tylko się to stanie, nastąpi wybuch!\nA jeśli lubisz eksplozje, to spodoba Ci się efekt domina, który jest uruchamiany losowo, częściej na niższych poziomach trudności."
+		   "value": "Kolejne dwa typy dropów, których warto wypatrywać to:\n <sprite name=\"bomb\">\ni\n<sprite name=\"serducho\">.\nZgadniesz, co robią?\nTak, serduszko daje Ci kolejną szansę na wypadek, gdyby Kitku minął paletkę i stracił życie.\nAle bomba! To jest dopiero fajne. Złap dropa, a on uzbroi Cię w bombę - możesz złapać więcej niż jedną na raz! Kiedy już masz bombę i Kitku zetknie się z paletką, automatycznie weźmie jedną z bomb i użyje jej na pierwszym bloczku, w który uderzy. Kiedy tylko się to stanie, nastąpi wybuch!\nA jeśli lubisz eksplozje, to spodoba Ci się efekt domina, który jest uruchamiany losowo, częściej na niższych poziomach trudności."
 		 }
 		 ,
 		 {
