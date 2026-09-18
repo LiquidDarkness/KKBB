@@ -13768,10 +13768,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: '- regular game speed
 
-    - balanced drop chance
-
-    - unlocks higher level
-    of difficulty for all scenarios if you finish one on it'
+    - balanced drop chance'
   onTranslationSet:
     m_PersistentCalls:
       m_Calls:
