@@ -733,42 +733,42 @@
 		 ,
 		 {
 		   "key": "press a key",
-		   "value": "wciśnij klawisz"
+		   "value": "wciśnij…"
 		 }
 		 ,
 		 {
 		   "key": "Left mouse",
-		   "value": "Lewy przycisk myszy"
+		   "value": "LPM"
 		 }
 		 ,
 		 {
 		   "key": "Right mouse",
-		   "value": "Prawy przycisk myszy"
+		   "value": "PPM"
 		 }
 		 ,
 		 {
 		   "key": "Middle mouse",
-		   "value": "Środkowy przycisk myszy"
+		   "value": "ŚPM"
 		 }
 		 ,
 		 {
 		   "key": "Left Arrow",
-		   "value": "Strzałka w lewo"
+		   "value": "Lewo"
 		 }
 		 ,
 		 {
 		   "key": "Right Arrow",
-		   "value": "Strzałka w prawo"
+		   "value": "Prawo"
 		 }
 		 ,
 		 {
 		   "key": "Up Arrow",
-		   "value": "Strzałka w górę"
+		   "value": "Góra"
 		 }
 		 ,
 		 {
 		   "key": "Down Arrow",
-		   "value": "Strzałka w dół"
+		   "value": "Dół"
 		 }
 		 ,
 		 {
@@ -793,7 +793,7 @@
 		 ,
 		 {
 		   "key": "Backspace",
-		   "value": "Backspace"
+		   "value": "Backsp."
 		 }
 		 ,
 		 {
@@ -818,57 +818,57 @@
 		 ,
 		 {
 		   "key": "Page Up",
-		   "value": "Page Up"
+		   "value": "PgUp"
 		 }
 		 ,
 		 {
 		   "key": "Page Down",
-		   "value": "Page Down"
+		   "value": "PgDn"
 		 }
 		 ,
 		 {
 		   "key": "Caps Lock",
-		   "value": "Caps Lock"
+		   "value": "CapsLk"
 		 }
 		 ,
 		 {
 		   "key": "Left Shift",
-		   "value": "Lewy Shift"
+		   "value": "L.Shift"
 		 }
 		 ,
 		 {
 		   "key": "Right Shift",
-		   "value": "Prawy Shift"
+		   "value": "P.Shift"
 		 }
 		 ,
 		 {
 		   "key": "Left Control",
-		   "value": "Lewy Ctrl"
+		   "value": "L.Ctrl"
 		 }
 		 ,
 		 {
 		   "key": "Right Control",
-		   "value": "Prawy Ctrl"
+		   "value": "P.Ctrl"
 		 }
 		 ,
 		 {
 		   "key": "Left Alt",
-		   "value": "Lewy Alt"
+		   "value": "L.Alt"
 		 }
 		 ,
 		 {
 		   "key": "Right Alt",
-		   "value": "Prawy Alt"
+		   "value": "P.Alt"
 		 }
 		 ,
 		 {
 		   "key": "Left Windows",
-		   "value": "Lewy Windows"
+		   "value": "L.Win"
 		 }
 		 ,
 		 {
 		   "key": "Right Windows",
-		   "value": "Prawy Windows"
+		   "value": "P.Win"
 		 }
 		 ,
 		 {
@@ -959,6 +959,36 @@
 		 {
 		   "key": "Screen flash on losing a life",
 		   "value": "Błysk ekranu przy utracie życia"
+		 }
+		 ,
+		 {
+		   "key": "Exit to desktop",
+		   "value": "Wyjście do pulpitu"
+		 }
+		 ,
+		 {
+		   "key": "Exit to menu",
+		   "value": "Wyjście do menu"
+		 }
+		 ,
+		 {
+		   "key": "No, I'll stay!",
+		   "value": "Nie, zostaję!"
+		 }
+		 ,
+		 {
+		   "key": "Yeah, I'm done",
+		   "value": "Tak, kończę"
+		 }
+		 ,
+		 {
+		   "key": "Main menu",
+		   "value": "Menu główne"
+		 }
+		 ,
+		 {
+		   "key": "Shop",
+		   "value": "Sklep"
 		 }
 	]
 }

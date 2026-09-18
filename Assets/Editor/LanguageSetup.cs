@@ -4,7 +4,9 @@ using UnityEditor;
 using UnityEditor.Events;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 // Builder for the language switch: the setting that remembers the choice, the asset that says which
 // languages there are, and the places that have to be told about it.
@@ -64,9 +66,111 @@ public static class LanguageSetup
         WireDeserializer(selector);
         RemoveDuplicateDeserializer();
         WireOptionsRow(selector);
+        WireLegacyLabels();
 
         AssetDatabase.SaveAssets();
         Debug.Log("[LanguageSetup] done.");
+    }
+
+    // Seven labels the translation system had never touched, because they are not TMP: they are
+    // UnityEngine.UI.Text, the old component, and every sweep for text to translate had looked for
+    // TMP's m_text and walked straight past their m_Text. They say Exit to desktop, Exit to menu,
+    // Main menu, Shop, and the two answers to "are you sure you want to leave" - in English, in
+    // the middle of a window that is otherwise entirely Polish. A screenshot found them; no amount
+    // of reading the text files would have, since they have no keys in the text files at all.
+    //
+    // A mediator drives them the same way it drives a TMP label: the event is a UnityEvent<string>
+    // and does not care what is on the other end of it.
+    private static readonly string[][] LegacyLabels =
+    {
+        new[] { OptionsPrefabPath, "Options/buttonGroup/Quit/Text", "Exit to desktop" },
+        new[] { OptionsPrefabPath, "Options/buttonGroup/MainMenuButton/Text", "Exit to menu" },
+        new[] { OptionsPrefabPath, "popUpBG/popupWindow/buttonGroup/resume/Text", "No, I'll stay!" },
+        new[] { OptionsPrefabPath, "popUpBG/popupWindow/buttonGroup/quit/Text", "Yeah, I'm done" },
+        new[] { GameSessionPrefabPath, "Canvas/GameOverScreen/Buttons/MainMenu/Text (Legacy)", "Main menu" },
+        new[] { GameSessionPrefabPath, "Canvas/GameOverScreen/Buttons/Shop/Text (Legacy)", "Shop" },
+        new[] { GameSessionPrefabPath, "Canvas/GameOverScreen/Buttons/Continue/Text (Legacy)", "Continue" },
+    };
+
+    private static void WireLegacyLabels()
+    {
+        foreach (string prefabPath in new[] { OptionsPrefabPath, GameSessionPrefabPath })
+        {
+            GameObject root = PrefabUtility.LoadPrefabContents(prefabPath);
+            int wired = 0;
+
+            try
+            {
+                foreach (string[] label in LegacyLabels)
+                {
+                    if (label[0] != prefabPath)
+                    {
+                        continue;
+                    }
+
+                    Transform found = root.transform.Find(label[1]);
+
+                    if (found == null)
+                    {
+                        Debug.LogError("[LanguageSetup] no label at " + label[1] + " in " + prefabPath);
+                        continue;
+                    }
+
+                    var text = found.GetComponent<Text>();
+
+                    if (text == null)
+                    {
+                        Debug.LogError("[LanguageSetup] " + label[1] + " is not a UI.Text any more - check it by hand.");
+                        continue;
+                    }
+
+                    var mediator = found.GetComponent<TranslationMediator>();
+
+                    if (mediator == null)
+                    {
+                        mediator = found.gameObject.AddComponent<TranslationMediator>();
+                        wired++;
+                    }
+
+                    mediator.key = label[2];
+
+                    // AddComponent does not run the field initialisers a deserialised component
+                    // would have had, so a mediator made here has a null event until it is given
+                    // one.
+                    if (mediator.onTranslationSet == null)
+                    {
+                        mediator.onTranslationSet = new UnityStringEvent();
+                    }
+
+                    // Whatever it says now is the English the key was taken from; the mediator
+                    // writes over it the moment the game starts, in either language.
+                    text.text = label[2];
+
+                    while (mediator.onTranslationSet.GetPersistentEventCount() > 0)
+                    {
+                        UnityEventTools.RemovePersistentListener(mediator.onTranslationSet, 0);
+                    }
+
+                    // A property setter cannot be written as a method group in C#, and set_text is
+                    // exactly what Unity serialises for every other label in this project. Built
+                    // through the delegate instead, so the wiring comes out identical to the
+                    // mediators that were made in the Inspector.
+                    var write = (UnityAction<string>)System.Delegate.CreateDelegate(typeof(UnityAction<string>), text, "set_text");
+                    UnityEventTools.AddPersistentListener(mediator.onTranslationSet, write);
+                }
+
+                PrefabUtility.SaveAsPrefabAsset(root, prefabPath);
+            }
+            finally
+            {
+                PrefabUtility.UnloadPrefabContents(root);
+            }
+
+            if (wired > 0)
+            {
+                Debug.Log("[LanguageSetup] " + wired + " old-style labels in " + prefabPath + " now go through the translation files.");
+            }
+        }
     }
 
     private static TypeDistinguisher EnsureSetting()

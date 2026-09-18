@@ -960,5 +960,35 @@
 		   "key": "Screen flash on losing a life",
 		   "value": "Screen flash on losing a life"
 		 }
+		 ,
+		 {
+		   "key": "Exit to desktop",
+		   "value": "Exit to desktop"
+		 }
+		 ,
+		 {
+		   "key": "Exit to menu",
+		   "value": "Exit to menu"
+		 }
+		 ,
+		 {
+		   "key": "No, I'll stay!",
+		   "value": "No, I'll stay!"
+		 }
+		 ,
+		 {
+		   "key": "Yeah, I'm done",
+		   "value": "Yeah, I'm done"
+		 }
+		 ,
+		 {
+		   "key": "Main menu",
+		   "value": "Main menu"
+		 }
+		 ,
+		 {
+		   "key": "Shop",
+		   "value": "Shop"
+		 }
 	]
 }
