@@ -254,6 +254,7 @@ public static class OptionsWindowSetup
             WireTabs(options, categories, scrollView, groups);
             AddFocusAndFontScaler(root, options);
             HideMenuButtonInMenuScene(options);
+            ColourKeyButtons(options);
 
             PrefabUtility.SaveAsPrefabAsset(root, OptionsPrefabPath);
         }
@@ -1563,6 +1564,90 @@ public static class OptionsWindowSetup
 
         scaler.fontScaleSetting = Setting("uiFontScale");
         scaler.maxScale = MaxTextScale;
+    }
+
+    // The key buttons were written in the palest pink in the window, near enough white on a white
+    // button: "P" and "Tab" were there if you knew to look. They inherited the colour of the row
+    // label they were cloned beside, which is pale on purpose - that label is drawn through a
+    // vertex gradient that turns it pink, and the button caption took the colour without the
+    // gradient. They are the same control as the dropdowns a few rows up, built out of one, so they
+    // take the dropdowns' caption colour, read off a real dropdown here rather than typed in, so it
+    // follows the window if the window's colours ever change.
+    //
+    // Runs on its own as well, from the Debug menu, because it is the one step worth re-running
+    // without rebuilding the whole window around it.
+    [MenuItem("Debug/Accessibility - colour the key buttons")]
+    public static void ColourKeyButtons()
+    {
+        GameObject root = PrefabUtility.LoadPrefabContents(OptionsPrefabPath);
+
+        try
+        {
+            Transform options = Require(root.transform, "Options");
+
+            if (options == null)
+            {
+                return;
+            }
+
+            ColourKeyButtons(options);
+            PrefabUtility.SaveAsPrefabAsset(root, OptionsPrefabPath);
+        }
+        finally
+        {
+            PrefabUtility.UnloadPrefabContents(root);
+        }
+    }
+
+    private static void ColourKeyButtons(Transform options)
+    {
+        Color colour = new Color(0.596f, 0.361f, 0.627f);
+        TMP_Dropdown reference = null;
+
+        foreach (TMP_Dropdown dropdown in options.GetComponentsInChildren<TMP_Dropdown>(true))
+        {
+            if (dropdown.captionText != null)
+            {
+                reference = dropdown;
+                break;
+            }
+        }
+
+        if (reference != null)
+        {
+            colour = reference.captionText.color;
+        }
+        else
+        {
+            Debug.LogWarning("[OptionsWindowSetup] no dropdown left to take the caption colour from - the key buttons got the one it has always been.");
+        }
+
+        int coloured = 0;
+
+        foreach (Transform row in options.GetComponentsInChildren<Transform>(true))
+        {
+            if (!row.name.StartsWith("Key ") && row.name != "Reset controls")
+            {
+                continue;
+            }
+
+            foreach (string side in new[] { "Primary", "Secondary" })
+            {
+                Transform button = row.Find(side);
+                TMP_Text caption = button != null ? button.GetComponentInChildren<TMP_Text>(true) : null;
+
+                if (caption == null)
+                {
+                    continue;
+                }
+
+                caption.color = colour;
+                caption.enableVertexGradient = false;
+                coloured++;
+            }
+        }
+
+        Debug.Log("[OptionsWindowSetup] " + coloured + " key button captions now in the dropdowns' colour.");
     }
 
     private static void HideMenuButtonInMenuScene(Transform options)
