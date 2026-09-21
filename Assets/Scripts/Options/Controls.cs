@@ -177,6 +177,46 @@ public static class Controls
         OnBindingsChanged?.Invoke();
     }
 
+    // A punctuation key is printed as the mark on it. "Left Curly Bracket" is what the enum calls
+    // it, which is neither what anyone calls it nor anything that fits on a key button a hundred
+    // pixels wide - and in any other language it was English, since nobody writes a translation
+    // entry per punctuation mark. The mark reads the same in every language and needs no entry.
+    private static readonly Dictionary<KeyCode, string> Marks = new Dictionary<KeyCode, string>
+    {
+        { KeyCode.Exclaim, "!" },
+        { KeyCode.DoubleQuote, "\"" },
+        { KeyCode.Hash, "#" },
+        { KeyCode.Dollar, "$" },
+        { KeyCode.Percent, "%" },
+        { KeyCode.Ampersand, "&" },
+        { KeyCode.Quote, "'" },
+        { KeyCode.LeftParen, "(" },
+        { KeyCode.RightParen, ")" },
+        { KeyCode.Asterisk, "*" },
+        { KeyCode.Plus, "+" },
+        { KeyCode.Comma, "," },
+        { KeyCode.Minus, "-" },
+        { KeyCode.Period, "." },
+        { KeyCode.Slash, "/" },
+        { KeyCode.Colon, ":" },
+        { KeyCode.Semicolon, ";" },
+        { KeyCode.Less, "<" },
+        { KeyCode.Equals, "=" },
+        { KeyCode.Greater, ">" },
+        { KeyCode.Question, "?" },
+        { KeyCode.At, "@" },
+        { KeyCode.LeftBracket, "[" },
+        { KeyCode.Backslash, "\\" },
+        { KeyCode.RightBracket, "]" },
+        { KeyCode.Caret, "^" },
+        { KeyCode.Underscore, "_" },
+        { KeyCode.BackQuote, "`" },
+        { KeyCode.LeftCurlyBracket, "{" },
+        { KeyCode.Pipe, "|" },
+        { KeyCode.RightCurlyBracket, "}" },
+        { KeyCode.Tilde, "~" },
+    };
+
     // "Left Arrow" rather than "LeftArrow", and something readable for the mouse buttons, because
     // this is what the rebinding screen prints on its buttons. The result is also the translation
     // key the screen looks the face up by, which is why the enum names that read as nothing to a
@@ -184,6 +224,11 @@ public static class Controls
     // into what the key is actually called before they leave here.
     public static string Describe(KeyCode key)
     {
+        if (Marks.TryGetValue(key, out string mark))
+        {
+            return mark;
+        }
+
         switch (key)
         {
             case KeyCode.None:

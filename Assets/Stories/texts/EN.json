@@ -990,5 +990,90 @@
 		   "key": "Shop",
 		   "value": "Shop"
 		 }
+		 ,
+		 {
+		   "key": "Mouse 3",
+		   "value": "Mouse 3"
+		 }
+		 ,
+		 {
+		   "key": "Mouse 4",
+		   "value": "Mouse 4"
+		 }
+		 ,
+		 {
+		   "key": "Mouse 5",
+		   "value": "Mouse 5"
+		 }
+		 ,
+		 {
+		   "key": "Mouse 6",
+		   "value": "Mouse 6"
+		 }
+		 ,
+		 {
+		   "key": "Pause",
+		   "value": "Pause"
+		 }
+		 ,
+		 {
+		   "key": "Numlock",
+		   "value": "Numlock"
+		 }
+		 ,
+		 {
+		   "key": "Scroll Lock",
+		   "value": "Scroll Lock"
+		 }
+		 ,
+		 {
+		   "key": "Print",
+		   "value": "Print"
+		 }
+		 ,
+		 {
+		   "key": "Menu",
+		   "value": "Menu"
+		 }
+		 ,
+		 {
+		   "key": "Alt Gr",
+		   "value": "Alt Gr"
+		 }
+		 ,
+		 {
+		   "key": "Help",
+		   "value": "Help"
+		 }
+		 ,
+		 {
+		   "key": "Sys Req",
+		   "value": "Sys Req"
+		 }
+		 ,
+		 {
+		   "key": "Break",
+		   "value": "Break"
+		 }
+		 ,
+		 {
+		   "key": "Clear",
+		   "value": "Clear"
+		 }
+		 ,
+		 {
+		   "key": "Left Meta",
+		   "value": "Left Meta"
+		 }
+		 ,
+		 {
+		   "key": "Right Meta",
+		   "value": "Right Meta"
+		 }
+		 ,
+		 {
+		   "key": "Numpad Equals",
+		   "value": "Numpad Equals"
+		 }
 	]
 }

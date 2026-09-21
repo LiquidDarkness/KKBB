@@ -733,7 +733,7 @@
 		 ,
 		 {
 		   "key": "press a key",
-		   "value": "wciśnij…"
+		   "value": "wciśnij"
 		 }
 		 ,
 		 {
@@ -793,7 +793,7 @@
 		 ,
 		 {
 		   "key": "Backspace",
-		   "value": "Backsp."
+		   "value": "BkSp"
 		 }
 		 ,
 		 {
@@ -828,7 +828,7 @@
 		 ,
 		 {
 		   "key": "Caps Lock",
-		   "value": "CapsLk"
+		   "value": "CapsL"
 		 }
 		 ,
 		 {
@@ -923,7 +923,7 @@
 		 ,
 		 {
 		   "key": "Numpad Enter",
-		   "value": "Num Enter"
+		   "value": "Enter"
 		 }
 		 ,
 		 {
@@ -989,6 +989,91 @@
 		 {
 		   "key": "Shop",
 		   "value": "Sklep"
+		 }
+		 ,
+		 {
+		   "key": "Mouse 3",
+		   "value": "Mysz 3"
+		 }
+		 ,
+		 {
+		   "key": "Mouse 4",
+		   "value": "Mysz 4"
+		 }
+		 ,
+		 {
+		   "key": "Mouse 5",
+		   "value": "Mysz 5"
+		 }
+		 ,
+		 {
+		   "key": "Mouse 6",
+		   "value": "Mysz 6"
+		 }
+		 ,
+		 {
+		   "key": "Pause",
+		   "value": "Pauza"
+		 }
+		 ,
+		 {
+		   "key": "Numlock",
+		   "value": "NumL"
+		 }
+		 ,
+		 {
+		   "key": "Scroll Lock",
+		   "value": "ScrLk"
+		 }
+		 ,
+		 {
+		   "key": "Print",
+		   "value": "PrtSc"
+		 }
+		 ,
+		 {
+		   "key": "Menu",
+		   "value": "Menu"
+		 }
+		 ,
+		 {
+		   "key": "Alt Gr",
+		   "value": "AltGr"
+		 }
+		 ,
+		 {
+		   "key": "Help",
+		   "value": "Pomoc"
+		 }
+		 ,
+		 {
+		   "key": "Sys Req",
+		   "value": "SysRq"
+		 }
+		 ,
+		 {
+		   "key": "Break",
+		   "value": "Break"
+		 }
+		 ,
+		 {
+		   "key": "Clear",
+		   "value": "Clear"
+		 }
+		 ,
+		 {
+		   "key": "Left Meta",
+		   "value": "L.Cmd"
+		 }
+		 ,
+		 {
+		   "key": "Right Meta",
+		   "value": "P.Cmd"
+		 }
+		 ,
+		 {
+		   "key": "Numpad Equals",
+		   "value": "Num="
 		 }
 	]
 }
